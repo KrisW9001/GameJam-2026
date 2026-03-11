@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://mbsbpnms8l01"
+path="res://.godot/imported/vagabondintro.dialogue-c9893cda07b1bf89d6dbfcdb846c9bc9.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabondintro.dialogue"
+dest_files=["res://.godot/imported/vagabondintro.dialogue-c9893cda07b1bf89d6dbfcdb846c9bc9.tres"]
+
+[params]
+
+defaults=true

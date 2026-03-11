@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://payi41ebvih4"
+path="res://.godot/imported/11-21-2015 - 1 (fight 1 loop).ogg-ccc03323a23cf6ea3472cc349d7dfc9f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/trimmed/11-21-2015 - 1 (fight 1 loop).ogg"
+dest_files=["res://.godot/imported/11-21-2015 - 1 (fight 1 loop).ogg-ccc03323a23cf6ea3472cc349d7dfc9f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

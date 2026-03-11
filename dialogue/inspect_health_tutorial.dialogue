@@ -1,0 +1,7 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+Some numbers are floating around.
+...For some reason, it feels like this is connected to me somehow...
+...[shake rate=20 level=10]I'm already starting to hate it here.[/shake]
+set GlobalVariables.cutscenemode = false
+=> END

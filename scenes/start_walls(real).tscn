@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d25q6lv0kyna2"]
+
+[ext_resource type="Script" uid="uid://dkcvnjna2gxd8" path="res://scripts/start_walls(real).gd" id="1_hv5dc"]
+[ext_resource type="Texture2D" uid="uid://o0i6ggkojgyq" path="res://assets/effects/damage_particle.png" id="2_qbl0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv5dc"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h2qk3"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(10, 10, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+velocity_pivot = Vector3(10, 10, 0)
+direction = Vector3(10, 10, 0)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[node name="StartWalls(real)" type="Area2D" unique_id=2056869257]
+script = ExtResource("1_hv5dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1423289057]
+shape = SubResource("RectangleShape2D_hv5dc")
+debug_color = Color(0.8594398, 0.0006720978, 0.8743389, 0.41960785)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=428361266]
+texture_filter = 1
+emitting = false
+amount = 25
+texture = ExtResource("2_qbl0g")
+lifetime = 2.5
+one_shot = true
+preprocess = 1.1
+speed_scale = 3.0
+explosiveness = 0.1
+randomness = 0.2
+process_material = SubResource("ParticleProcessMaterial_h2qk3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=465592056]
+volume_db = -40.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

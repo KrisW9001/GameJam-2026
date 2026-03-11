@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bvmimmaaig6vs"]
+
+[ext_resource type="Script" uid="uid://jtq2hvmq7ti6" path="res://scripts/object_logic_1.gd" id="1_a43wy"]
+
+[node name="ObjectLogic1" type="Node" unique_id=986403099]
+script = ExtResource("1_a43wy")

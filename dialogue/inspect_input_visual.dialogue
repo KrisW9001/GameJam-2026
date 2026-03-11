@@ -1,0 +1,5 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+More floating numbers.
+set GlobalVariables.cutscenemode = false
+=> END

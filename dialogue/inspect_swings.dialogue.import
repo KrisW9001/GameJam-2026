@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dm0va0e46jhhq"
+path="res://.godot/imported/inspect_swings.dialogue-296719823a6d7e88fef5a44b9d72f702.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_swings.dialogue"
+dest_files=["res://.godot/imported/inspect_swings.dialogue-296719823a6d7e88fef5a44b9d72f702.tres"]
+
+[params]
+
+defaults=true

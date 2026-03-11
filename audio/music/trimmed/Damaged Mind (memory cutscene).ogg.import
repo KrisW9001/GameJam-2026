@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnsfu6yoybd0m"
+path="res://.godot/imported/Damaged Mind (memory cutscene).ogg-b5b365e3e49a2cafef43c3889cc14589.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/trimmed/Damaged Mind (memory cutscene).ogg"
+dest_files=["res://.godot/imported/Damaged Mind (memory cutscene).ogg-b5b365e3e49a2cafef43c3889cc14589.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

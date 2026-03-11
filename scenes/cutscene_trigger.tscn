@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b0j76qqfmovrw"]
+
+[ext_resource type="Script" uid="uid://c4148b6f3s8pv" path="res://scripts/cutscene_trigger.gd" id="1_u45bu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u45bu"]
+
+[node name="CutsceneTrigger" type="Area2D" unique_id=983906615]
+collision_mask = 2
+script = ExtResource("1_u45bu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=16213250]
+shape = SubResource("RectangleShape2D_u45bu")
+debug_color = Color(0, 0.6392157, 0.32156864, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

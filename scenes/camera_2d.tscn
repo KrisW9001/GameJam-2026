@@ -1,0 +1,477 @@
+[gd_scene format=3 uid="uid://d15fdufr1dj2o"]
+
+[ext_resource type="Script" uid="uid://3011ueddeovj" path="res://scripts/camera_2d.gd" id="1_qnfst"]
+[ext_resource type="Shader" uid="uid://bqde24p16vvny" path="res://shaders/tintfordamage.gdshader" id="2_h73wr"]
+[ext_resource type="Shader" uid="uid://b2eoim5h1p8xo" path="res://shaders/memory.gdshader" id="3_oor3b"]
+
+[sub_resource type="Animation" id="Animation_lt4wf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/trans_screen:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/memory/memorytint:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/memory/memorytint:material:shader_parameter/effect_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.2901961, 0, 0.45882353, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/memory/ColorRect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/memory/memorytint2:material:shader_parameter/effect_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.15686275, 0, 0.2509804, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/memory/memorytint2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_diphd"]
+resource_name = "dmg_shake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.01396263401595483, -0.01745329251994329, 0.01745329251994329, -0.01396263401595483, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_85k5n"]
+resource_name = "memory_on"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/memory/memorytint:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.5, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/memory/memorytint:material:shader_parameter/effect_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.2901961, 0, 0.45882353, 1), Color(0.2901961, 0, 0.45882353, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/memory/ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/memory/memorytint2:material:shader_parameter/effect_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.15686275, 0, 0.2509804, 1), Color(0.15686275, 0, 0.2509804, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/memory/memorytint2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.5, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pq3sa"]
+resource_name = "memory_on"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/memory/memorytint:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/memory/memorytint:material:shader_parameter/effect_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.2901961, 0, 0.45882353, 0), Color(0.2901961, 0, 0.45882353, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/memory/ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/memory/memorytint2:material:shader_parameter/effect_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.5, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.15686275, 0, 0.2509804, 0), Color(0.15686275, 0, 0.2509804, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/memory/memorytint2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i5tuv"]
+resource_name = "shake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(30, 25), Vector2(-30, -20), Vector2(-30, 25), Vector2(30, -25), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.01396263401595483, -0.01745329251994329, 0.01745329251994329, -0.01396263401595483, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_h73wr"]
+resource_name = "trans_off"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/trans_screen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oor3b"]
+resource_name = "trans_on"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/trans_screen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uhu2c"]
+_data = {
+&"RESET": SubResource("Animation_lt4wf"),
+&"dmg_shake": SubResource("Animation_diphd"),
+&"memory_off": SubResource("Animation_85k5n"),
+&"memory_on": SubResource("Animation_pq3sa"),
+&"shake": SubResource("Animation_i5tuv"),
+&"trans_off": SubResource("Animation_h73wr"),
+&"trans_on": SubResource("Animation_oor3b")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oor3b"]
+shader = ExtResource("2_h73wr")
+shader_parameter/speed = 0.6
+shader_parameter/pixelation = 8.0
+shader_parameter/zoom = 1.0
+shader_parameter/gradient_pixelation = 0.79200003762
+shader_parameter/background_threshold = 0.154000007315
+shader_parameter/color_low_threshold = 0.07200000342
+shader_parameter/color_mid_threshold = 0.058000002755
+shader_parameter/color_low = Color(0.21, 0.0041999957, 0.0076299473, 0.078431375)
+shader_parameter/color_mid = Color(0.38, 0, 0.0063332366, 0.039215688)
+shader_parameter/color_high = Color(1, 0.060000002, 0.060000002, 0.039215688)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h73wr"]
+shader = ExtResource("2_h73wr")
+shader_parameter/speed = 2.0
+shader_parameter/pixelation = 10.0
+shader_parameter/zoom = 2.0
+shader_parameter/gradient_pixelation = 0.79200003762
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_low_threshold = 0.31600001501
+shader_parameter/color_mid_threshold = 0.0650000030875
+shader_parameter/color_low = Color(0.21176471, 0.003921569, 0.007843138, 0.078431375)
+shader_parameter/color_mid = Color(0.38, 0, 0.0063332366, 0.078431375)
+shader_parameter/color_high = Color(1, 0.060000002, 0.060000002, 0.078431375)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pq3sa"]
+shader = ExtResource("3_oor3b")
+shader_parameter/radius = 1.05
+shader_parameter/speed = 3.0000001425
+shader_parameter/effect_color = Color(0.2901961, 0, 0.45882353, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqqy3"]
+shader = ExtResource("3_oor3b")
+shader_parameter/radius = 1.55
+shader_parameter/speed = 3.0000001425
+shader_parameter/effect_color = Color(0.15686275, 0, 0.2509804, 1)
+
+[node name="Camera2D" type="Camera2D" unique_id=793479075]
+process_mode = 3
+ignore_rotation = false
+script = ExtResource("1_qnfst")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=203969319]
+libraries/ = SubResource("AnimationLibrary_uhu2c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1925342993]
+
+[node name="damagetint" type="ColorRect" parent="CanvasLayer" unique_id=584360024]
+visible = false
+material = SubResource("ShaderMaterial_oor3b")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -866.21875
+offset_top = -488.0
+offset_right = 866.21875
+offset_bottom = 488.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="damagetint2" type="ColorRect" parent="CanvasLayer" unique_id=1263361803]
+visible = false
+material = SubResource("ShaderMaterial_h73wr")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -893.7319
+offset_top = -503.5
+offset_right = 893.73193
+offset_bottom = 503.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="memory" type="Node" parent="CanvasLayer" unique_id=1565781649]
+
+[node name="memorytint" type="ColorRect" parent="CanvasLayer/memory" unique_id=1479322777]
+visible = false
+material = SubResource("ShaderMaterial_pq3sa")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -397.0
+offset_right = 489.5735
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="memorytint2" type="ColorRect" parent="CanvasLayer/memory" unique_id=1305668535]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_fqqy3")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 384.00006
+offset_top = 340.0
+offset_right = 1177.5673
+offset_bottom = 1029.7412
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.140288
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/memory" unique_id=656783917]
+visible = false
+z_index = -2
+offset_left = -28.0
+offset_top = -33.0
+offset_right = 1102.5555
+offset_bottom = 721.0
+scale = Vector2(1.08, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="trans_screen" type="ColorRect" parent="CanvasLayer" unique_id=660207358]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -719.0
+offset_top = -433.0
+offset_right = 719.0
+offset_bottom = 433.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0799998, 1)
+color = Color(0.012666655, 0, 0.38, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2017529573]
+visible = false
+z_index = 5
+offset_left = 313.0
+offset_top = 226.0
+offset_right = 395.0
+offset_bottom = 249.0
+text = "jkhfsdjfsdf"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=60298023]
+visible = false
+z_index = 5
+offset_left = 309.0
+offset_top = 248.0
+offset_right = 395.0
+offset_bottom = 271.0
+text = "sdfsfdsasfs"

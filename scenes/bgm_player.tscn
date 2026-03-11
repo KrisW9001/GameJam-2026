@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://d2wqjrvgx1of7"]
+
+[ext_resource type="AudioStream" uid="uid://b0dv7o58i6lwu" path="res://audio/music/12-4-2016 - 1 (exploration theme).wav" id="1_nm08u"]
+[ext_resource type="Script" uid="uid://ccavm4ud5c7kl" path="res://scripts/music_controller.gd" id="1_wk4np"]
+
+[sub_resource type="Animation" id="Animation_nm08u"]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-30.0]
+}
+
+[sub_resource type="Animation" id="Animation_tlpki"]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-80.0, -50.0, -30.0]
+}
+
+[sub_resource type="Animation" id="Animation_gs5a3"]
+resource_name = "fadeout_fast"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-30.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_i0j14"]
+resource_name = "fadeout_slow"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-30.0, -50.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_annk1"]
+resource_name = "play_normal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-30.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_annk1"]
+_data = {
+&"RESET": SubResource("Animation_nm08u"),
+&"fade_in": SubResource("Animation_tlpki"),
+&"fadeout_fast": SubResource("Animation_gs5a3"),
+&"fadeout_slow": SubResource("Animation_i0j14"),
+&"play_normal": SubResource("Animation_annk1")
+}
+
+[node name="MusicController" type="Node" unique_id=1752187139 groups=["main_music_player"]]
+script = ExtResource("1_wk4np")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=320601186]
+libraries/ = SubResource("AnimationLibrary_annk1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=700760971]
+process_mode = 3
+stream = ExtResource("1_nm08u")
+volume_db = -30.0
+bus = &"Music"
+
+[node name="Timer" type="Timer" parent="." unique_id=1528921667]
+one_shot = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

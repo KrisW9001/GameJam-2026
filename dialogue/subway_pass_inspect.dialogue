@@ -1,0 +1,12 @@
+~ start
+A corrupted Corpse. Looks like someone was trying to find a safe place in their last moments.
+Well, they have my sympathy but I'm gonna need that subway pass.
+Something feels off, though...
+- Take the Pass
+	do get_tree().call_group("subway_pass", "despawn")
+	I got the Subway Pass.
+	#do Player.audio_player.stream = "res://audio/sfx/Explosion.wav"
+	#do Player.audio_player.play()
+	do CutsceneManager.cutscene2()
+	=> END
+- Not yet => END

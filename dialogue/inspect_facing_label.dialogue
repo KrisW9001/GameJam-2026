@@ -1,0 +1,5 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+For some reason, these floating words change when I move around.
+set GlobalVariables.cutscenemode = false
+=> END

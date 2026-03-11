@@ -1,0 +1,6 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+Looks like this was supposed to teach someone how to do something...But it's messed up and barely readable.
+Well, whatever. It's easy enough to understand the gist.
+set GlobalVariables.cutscenemode = false
+=> END

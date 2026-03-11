@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cyd05xkhtg604"
+path="res://.godot/imported/inspect_door_2.dialogue-56dadf1588a485261a33c8e063c8db4e.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_door_2.dialogue"
+dest_files=["res://.godot/imported/inspect_door_2.dialogue-56dadf1588a485261a33c8e063c8db4e.tres"]
+
+[params]
+
+defaults=true

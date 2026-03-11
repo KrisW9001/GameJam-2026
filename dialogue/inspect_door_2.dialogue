@@ -1,0 +1,12 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+"Pass Office - Unless your matter is urgent, please wait until you can be served."
+...This is the place.
+- Go in
+	do get_tree().call_group("inspect_w_room", "new_room")
+	do MusicController.music_fadeout_fast()
+	=> END
+- Not yet => exit
+~ exit
+set GlobalVariables.cutscenemode = false
+=> END

@@ -1,0 +1,522 @@
+[gd_scene format=3 uid="uid://6c82mhxr50dl"]
+
+[ext_resource type="FontFile" uid="uid://b5t4vmktelcvq" path="res://assets/fonts/CompassGold.ttf" id="1_myx47"]
+[ext_resource type="Script" uid="uid://r4f57g4hfvk2" path="res://scripts/pause_menu.gd" id="1_v4r4p"]
+[ext_resource type="FontFile" uid="uid://bveubh61dirkp" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://b14pclelv0le" path="res://assets/UI/menubutton.png" id="4_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://6t5755g8cjle" path="res://assets/UI/mm settings button.png" id="4_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://da002ge3ogtg7" path="res://assets/UI/cursor.png" id="5_7l7mv"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5d2l8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7l7mv"]
+font_size = 65
+shadow_size = 13
+shadow_color = Color(0, 0, 0, 0.44313726)
+shadow_offset = Vector2(4.025, 4.93)
+
+[sub_resource type="Shader" id="Shader_1s2dm"]
+code = "// Pixelated noise effect based on https://godotshaders.com/shader/warped-fractal-noise/
+//
+// Copyright Gerardo Montaño 2025
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of 
+// this software and associated documentation files (the “Software”), to deal in 
+// the Software without restriction, including without limitation the rights to 
+// use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies 
+// of the Software, and to permit persons to whom the Software is furnished to do 
+// so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all 
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+// SOFTWARE.
+
+shader_type canvas_item;
+uniform float speed = 0.1; 
+
+uniform float pixelation = 8.0;
+uniform float zoom = 2.0;
+
+uniform float gradient_pixelation : hint_range(0.001, 1.0) = 0.2;
+uniform float background_threshold : hint_range(0.0, 1.0) = 0.0;
+uniform float color_low_threshold : hint_range(0.0, 1.0)  = 0.24;
+uniform float color_mid_threshold : hint_range(0.0, 1.0)  = 0.48;
+
+uniform vec4 color_low : source_color = vec4(0.01, 0.41, 0.51, 1.0); 
+uniform vec4 color_mid : source_color = vec4(.50, 0.10, 0.30, 1.0); 
+uniform vec4 color_high : source_color = vec4(1.0, 1.0, 1.0, 1.0); 
+
+#define iTime (TIME * speed)
+#define iResolution 1.0/SCREEN_PIXEL_SIZE
+
+const mat2 mtx = mat2( vec2(0.80, -0.60), vec2(0.60, 0.80) );
+
+float rand(vec2 n) { 
+    return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+}
+
+float noise(vec2 p){
+    vec2 ip = floor(p);
+    vec2 u = fract(p);
+    u = u * u * (3.0 - 2.0 * u);
+
+    float res = mix(
+        mix(rand(ip), rand(ip + vec2(1.0, 0.0)), u.x),
+        mix(rand(ip + vec2(0.0, 1.0)), rand(ip + vec2(1.0, 1.0)), u.x), u.y);
+        
+    return res * res;
+}
+
+float fbm( vec2 p )
+{
+    float f = 0.0;
+    
+    f += 0.500000 * noise( p + iTime ); p = mtx * p * 2.02;
+    f += 0.031250 * noise( p ); p = mtx * p * 2.01;
+    f += 0.250000 * noise( p ); p = mtx * p * 2.03;
+    f += 0.125000 * noise( p ); p = mtx * p * 2.01;
+    f += 0.062500 * noise( p ); p = mtx * p * 2.04;
+    f += 0.015625 * noise( p + sin(iTime) );
+
+    return f / 0.96875;
+}
+
+float pattern( in vec2 p )
+{
+	return fbm( p + fbm( p + fbm( p ) ) );
+}
+
+vec4 colormap(float x, vec2 uv) {
+	
+	x *= (1.0 - pow(max(abs(0.5 - uv.x), abs(0.5 - uv.y)) * 2.0, 3.0));
+    
+    if (x < background_threshold) { 
+        return vec4(0.0, 0.0, 0.0, 0.0);
+    }
+    else if (x < color_low_threshold) { 
+        return mix(
+			vec4(0.0, 0.0, 0.0, 0.0),
+			color_low,
+			round((x - background_threshold) / (color_low_threshold - background_threshold) / gradient_pixelation) * gradient_pixelation
+		);
+    }
+    else if (x < color_mid_threshold) { 
+        return 
+			mix(
+				color_low,
+				color_mid,
+				round((x - color_low_threshold) / (color_mid_threshold - color_low_threshold) / gradient_pixelation) * gradient_pixelation
+			);
+    }
+	else
+		return
+			mix(
+				color_mid,
+				color_high,
+				round((x - color_mid_threshold) / (1.0 - color_mid_threshold) / gradient_pixelation) * gradient_pixelation
+			);
+}
+
+void fragment()
+{
+    vec2 uv = floor(UV / SCREEN_PIXEL_SIZE / pixelation) * SCREEN_PIXEL_SIZE * pixelation; 
+   	float shade = pattern(uv * zoom);
+    
+    COLOR = colormap(shade, uv);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_88e76"]
+shader = SubResource("Shader_1s2dm")
+shader_parameter/speed = 0.3
+shader_parameter/pixelation = 5.0
+shader_parameter/zoom = 1.5
+shader_parameter/gradient_pixelation = 0.0010000000475
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_low_threshold = 0.29200001387
+shader_parameter/color_mid_threshold = 0.41600001976
+shader_parameter/color_low = Color(0.070666656, 0, 0.08, 1)
+shader_parameter/color_mid = Color(0.36960006, 0.08799999, 0.44, 1)
+shader_parameter/color_high = Color(0.7, 0, 0.31499985, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("5_7l7mv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("5_7l7mv")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("5_7l7mv")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("5_7l7mv")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("5_7l7mv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("5_7l7mv")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4r4p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtw2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk1qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5d2l8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/menu_btn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/continue_btn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/cursor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/settings_btn:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7l7mv"]
+resource_name = "invis"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/menu_btn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.008333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/continue_btn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.008333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/cursor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.008333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.008333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/settings_btn:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_v4r4p"]
+resource_name = "invis"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/menu_btn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/continue_btn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/cursor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/settings_btn:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1s2dm"]
+_data = {
+&"RESET": SubResource("Animation_5d2l8"),
+&"create": SubResource("Animation_7l7mv"),
+&"invis": SubResource("Animation_v4r4p")
+}
+
+[node name="PauseMenu" type="Control" unique_id=829657669]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_v4r4p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=234259811]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1034795707]
+offset_right = 1154.0
+offset_bottom = 651.0
+color = Color(0.18718006, 0.1372, 0.28, 0.4392157)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1399396952]
+material = SubResource("CanvasItemMaterial_5d2l8")
+offset_left = 43.0
+offset_top = 54.0
+offset_right = 1080.0
+offset_bottom = 233.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_myx47")
+theme_override_font_sizes/font_size = 92
+text = "Let's take a breather."
+label_settings = SubResource("LabelSettings_7l7mv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="continue_btn" type="Button" parent="CanvasLayer" unique_id=1462544659]
+texture_filter = 1
+offset_left = 475.0
+offset_top = 292.0
+offset_right = 643.0
+offset_bottom = 381.0
+theme_override_fonts/font = ExtResource("2_7l7mv")
+theme_override_font_sizes/font_size = 18
+action_mode = 0
+button_mask = 0
+text = "I'm ready to keep going."
+flat = true
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/continue_btn" unique_id=1802455721]
+z_index = -1
+material = SubResource("ShaderMaterial_88e76")
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 89.0
+
+[node name="settings_btn" type="TextureButton" parent="CanvasLayer" unique_id=590610484]
+texture_filter = 1
+offset_left = 475.0
+offset_top = 398.0
+offset_right = 643.0
+offset_bottom = 483.0
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource("4_v4r4p")
+stretch_mode = 4
+
+[node name="menu_btn" type="TextureButton" parent="CanvasLayer" unique_id=560057455]
+texture_filter = 1
+offset_left = 481.0
+offset_top = 508.0
+offset_right = 637.0
+offset_bottom = 573.0
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource("4_7l7mv")
+stretch_mode = 0
+
+[node name="cursor" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1014970465]
+texture_filter = 1
+position = Vector2(691, 337.99997)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_v4r4p")
+autoplay = "default"
+frame = 5
+frame_progress = 0.2257227
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1350393667]
+volume_db = -20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1631799161]
+libraries/ = SubResource("AnimationLibrary_1s2dm")
+
+[connection signal="focus_entered" from="CanvasLayer/continue_btn" to="." method="_on_continue_btn_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/continue_btn" to="." method="_on_continue_btn_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/settings_btn" to="." method="_on_settings_btn_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/settings_btn" to="." method="_on_settings_btn_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/menu_btn" to="." method="_on_menu_btn_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/menu_btn" to="." method="_on_menu_btn_pressed"]

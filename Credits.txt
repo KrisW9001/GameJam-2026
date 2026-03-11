@@ -1,0 +1,41 @@
+Created by ThunderSpark
+
+Special thanks to CutieMonica for getting me to take a risk and make something, regardless of how good it would be.
+
+Special thanks to Adam from GodotGameLab. I doubt you even remember me, and I'm sorry to say I never finished that project, but going so far out of your way to help me with bugs meant a lot to me. Thank you for your help, even if the project it was for didn't work out.
+
+Special thanks to Mom and Dad, for teaching me that I shouldn't be ashamed of my interests and hobbies.
+
+All Original Characters by ThunderSpark
+All """Original""" Spritework by ThunderSpark
+
+Assets Used
+Tiny RPG - Battle Kit I by Gabriel "tiopalada" Lima
+
+GB Studio packs by Reakain
+-GB Studio Trains Asset Pack
+-GB Studio Vehicle Asset Pack
+-GB Studio Outdoor Tileset
+-GB Studio City Tileset
+-GB Studio Emote Pack
+-Soft Gameboy Font
+
+SKYETUNES music pack by Skye Ash
+
+Ambient Puzzle Music/SFX Pack by chrislsound
+
+Text & Dialogue SFX Pack by chrislsound
+
+Multi Platformer Tileset by Shackhal
+
+Deck Builder Tutorial Season 1 starter project by Adam Gulasci (GodotGameLab)
+
+_Credits for Brackeys Platformer Assets Pack_
+-Sprites by analogStudios & RottingPixels
+-Sounds by Brackeys & Asbjørn Thirslund
+-Music by Brackeys & Sofia Thirslund
+-Fonts by Jayvee Enaguas & HarvettFox96
+
+CompassGold Typeface
+
+PixelOperator8 Typeface

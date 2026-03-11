@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bmlmudrahqstw"
+path="res://.godot/imported/inspect_health_tutorial.dialogue-4a861d452f39ab1a53c9e67a3b50a400.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_health_tutorial.dialogue"
+dest_files=["res://.godot/imported/inspect_health_tutorial.dialogue-4a861d452f39ab1a53c9e67a3b50a400.tres"]
+
+[params]
+
+defaults=true

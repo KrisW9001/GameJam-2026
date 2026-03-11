@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c6cxtqyxjswlg"
+path="res://.godot/imported/inspect_input_visual.dialogue-58dcc1cb5ab93ac41b80f2cfbc7da5b2.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_input_visual.dialogue"
+dest_files=["res://.godot/imported/inspect_input_visual.dialogue-58dcc1cb5ab93ac41b80f2cfbc7da5b2.tres"]
+
+[params]
+
+defaults=true

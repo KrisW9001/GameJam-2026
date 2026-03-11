@@ -1,0 +1,11 @@
+~ start 
+???: [shake rate=20 level=10]Huff...Huff...[/shake]
+???: Well...It's an improvement, at least. Nothing here would draw the attention of those miscreants.
+???: Still, staying out in the open would be a fool's gambit. The tunnels should provide enough space to rest.
+???: In due time, you vile "Heroes". In due time.
+???: Once my strength has returned...[shake rate=20 level=10]you'll get your battle.[/shake]
+set GlobalVariables.seenfirstcut = true
+set GlobalVariables.cameralock = false
+do CutsceneManager.endcutscene()
+do CutsceneManager.vagabond_offscreen()
+=> END

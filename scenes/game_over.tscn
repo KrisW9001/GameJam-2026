@@ -1,0 +1,579 @@
+[gd_scene format=3 uid="uid://4tqwbavm5yiy"]
+
+[ext_resource type="Texture2D" uid="uid://da002ge3ogtg7" path="res://assets/UI/cursor.png" id="1_tbwuq"]
+[ext_resource type="Script" uid="uid://bagjbdc0t517x" path="res://scripts/game_over.gd" id="1_v3hpu"]
+[ext_resource type="Texture2D" uid="uid://byxmdlloh1gn1" path="res://assets/UI/retrybutton.png" id="3_v3hpu"]
+[ext_resource type="Texture2D" uid="uid://b14pclelv0le" path="res://assets/UI/menubutton.png" id="4_irg28"]
+[ext_resource type="FontFile" uid="uid://b5t4vmktelcvq" path="res://assets/fonts/CompassGold.ttf" id="4_racf3"]
+[ext_resource type="Shader" uid="uid://bwilq5lgy0yfy" path="res://shaders/damage.gdshader" id="5_7m3ot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_racf3"]
+atlas = ExtResource("1_tbwuq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m3ot"]
+atlas = ExtResource("1_tbwuq")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3hpu"]
+atlas = ExtResource("1_tbwuq")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irg28"]
+atlas = ExtResource("1_tbwuq")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jtsn"]
+atlas = ExtResource("1_tbwuq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bugq"]
+atlas = ExtResource("1_tbwuq")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wawo4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_racf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m3ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3hpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irg28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jtsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bugq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v3hpu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_irg28"]
+font_size = 65
+shadow_size = 13
+shadow_color = Color(0, 0, 0, 0.44313726)
+shadow_offset = Vector2(4.025, 4.93)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jtsn"]
+shader = ExtResource("5_7m3ot")
+shader_parameter/shake_power = 0.005
+shader_parameter/shake_rate = 0.10000000475
+shader_parameter/shake_speed = 2.0
+shader_parameter/shake_block_size = 50.0
+shader_parameter/shake_color_rate = 0.0030000001425
+
+[sub_resource type="Animation" id="Animation_racf3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/cursor:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Label/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/retry:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/menubutton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/retry:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/menubutton:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7m3ot"]
+resource_name = "create_death_menu"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/cursor:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.9, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Label/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/retry:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/menubutton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/retry:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/menubutton:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2jtsn"]
+resource_name = "invis"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/cursor:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/retry:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/menubutton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/retry:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/menubutton:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_irg28"]
+resource_name = "select_menu"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/cursor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/retry:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/retry:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/menubutton:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/menubutton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v3hpu"]
+resource_name = "select_retry"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/menubutton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Label/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/cursor:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/retry:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3hpu"]
+_data = {
+&"RESET": SubResource("Animation_racf3"),
+&"create_death_menu": SubResource("Animation_7m3ot"),
+&"invis": SubResource("Animation_2jtsn"),
+&"select_menu": SubResource("Animation_irg28"),
+&"select_retry": SubResource("Animation_v3hpu")
+}
+
+[node name="GameOverMenu" type="Control" unique_id=1419105346]
+process_mode = 3
+top_level = true
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+focus_mode = 2
+mouse_filter = 2
+script = ExtResource("1_v3hpu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1066757278]
+
+[node name="cursor" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=585046365]
+visible = false
+texture_filter = 1
+position = Vector2(691, 477.00003)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_wawo4")
+autoplay = "default"
+frame = 3
+frame_progress = 0.9488786
+
+[node name="retry" type="TextureButton" parent="CanvasLayer" unique_id=723602931]
+texture_filter = 1
+offset_left = 483.4
+offset_top = 442.0
+offset_right = 681.0
+offset_bottom = 518.0
+scale = Vector2(0.76, 0.76)
+focus_neighbor_bottom = NodePath("../menubutton")
+mouse_filter = 2
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource("3_v3hpu")
+stretch_mode = 0
+
+[node name="menubutton" type="TextureButton" parent="CanvasLayer" unique_id=766426133]
+texture_filter = 1
+offset_left = 483.0
+offset_top = 540.0
+offset_right = 680.6
+offset_bottom = 616.0
+scale = Vector2(0.76, 0.76)
+focus_neighbor_top = NodePath("../retry")
+mouse_filter = 2
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource("4_irg28")
+stretch_mode = 0
+
+[node name="im just so you can see the stuff" type="ColorRect" parent="CanvasLayer" unique_id=1491504614]
+visible = false
+z_index = -2
+offset_top = -2.0
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0.27058825, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=212997572]
+material = SubResource("CanvasItemMaterial_v3hpu")
+offset_left = 43.0
+offset_top = 54.0
+offset_right = 1080.0
+offset_bottom = 233.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_racf3")
+theme_override_font_sizes/font_size = 92
+text = "It's not over 'till you're underground."
+label_settings = SubResource("LabelSettings_irg28")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Label" unique_id=1107368332]
+visible = false
+material = SubResource("ShaderMaterial_2jtsn")
+layout_mode = 0
+offset_left = -127.0
+offset_top = -66.0
+offset_right = 1022.0
+offset_bottom = 175.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=417305054]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_v3hpu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=496504899]
+volume_db = -20.0
+bus = &"Sound Effects"
+
+[connection signal="focus_entered" from="CanvasLayer/retry" to="." method="_on_retry_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/menubutton" to="." method="_on_menubutton_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/menubutton" to="." method="_on_menubutton_pressed"]

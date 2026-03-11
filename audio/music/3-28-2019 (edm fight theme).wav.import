@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btxuvjmxrc7ql"
+path="res://.godot/imported/3-28-2019 (edm fight theme).wav-3f743e5c74282de679e96b208631b0c8.sample"
+
+[deps]
+
+source_file="res://audio/music/3-28-2019 (edm fight theme).wav"
+dest_files=["res://.godot/imported/3-28-2019 (edm fight theme).wav-3f743e5c74282de679e96b208631b0c8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

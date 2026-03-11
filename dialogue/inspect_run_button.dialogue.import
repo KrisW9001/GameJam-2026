@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c8emmwwv3bx3j"
+path="res://.godot/imported/inspect_run_button.dialogue-0fb0259d40804919d06b9d3778da9406.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_run_button.dialogue"
+dest_files=["res://.godot/imported/inspect_run_button.dialogue-0fb0259d40804919d06b9d3778da9406.tres"]
+
+[params]
+
+defaults=true

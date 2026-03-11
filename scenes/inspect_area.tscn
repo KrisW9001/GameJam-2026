@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d078wagbefdyf"]
+
+[ext_resource type="Script" uid="uid://b8mqprcbjua48" path="res://scripts/inspect_area.gd" id="1_n6xy4"]
+
+[node name="InspectArea" type="Area2D" unique_id=580571303]
+collision_mask = 2
+script = ExtResource("1_n6xy4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

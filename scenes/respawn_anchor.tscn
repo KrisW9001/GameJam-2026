@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c6tm48hgaxx1f"]
+
+[ext_resource type="Script" uid="uid://dscwx62v25815" path="res://scripts/respawn_anchor.gd" id="1_a8ikp"]
+
+[node name="RespawnAnchor" type="Area2D" unique_id=1057853141 groups=["event_trigger"]]
+collision_mask = 2
+script = ExtResource("1_a8ikp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

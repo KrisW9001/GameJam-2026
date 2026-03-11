@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://brihu5bdvef4f"]
+
+[ext_resource type="Script" uid="uid://dyv1cnupam73u" path="res://scripts/audio_trigger.gd" id="1_gjv70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjv70"]
+
+[node name="AudioTrigger" type="Area2D" unique_id=1633030172]
+process_mode = 3
+collision_mask = 2
+script = ExtResource("1_gjv70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1046118833]
+shape = SubResource("RectangleShape2D_gjv70")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

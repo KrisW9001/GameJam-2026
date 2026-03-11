@@ -1,0 +1,5 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+"Office of the Head of Subway Security - Have YOU been on your best behavior?"
+set GlobalVariables.cutscenemode = false
+=> END

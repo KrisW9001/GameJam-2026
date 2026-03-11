@@ -1,0 +1,14 @@
+~ start
+Voice: This is some text
+Voice: Impressive, right?
+- Sure.
+	Voice: Thanks, it really means a lot to me.
+- Not really.
+	Voice: everybody so mean to me
+Voice: yknow what fuck you
+Voice: youre a real fucking bitch
+- What are you gonnna do about it?
+	Voice: nothing lol => END
+- this is a waste of my time
+	Voice: And im boutta waste more of it
+	Voice: check this shit out => start

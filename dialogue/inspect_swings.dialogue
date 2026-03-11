@@ -1,0 +1,6 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+A playground swingset. It looks like it's brand new.
+[speed=0.2]Like it was never used.
+set GlobalVariables.cutscenemode = false
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cesi1p4cq85kg"
+path="res://.godot/imported/fighter_defeated.dialogue-53a3ceed91032f3e327d6b143be4ff11.tres"
+
+[deps]
+
+source_file="res://dialogue/fighter_defeated.dialogue"
+dest_files=["res://.godot/imported/fighter_defeated.dialogue-53a3ceed91032f3e327d6b143be4ff11.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bcouda6u1gm8h"
+path="res://.godot/imported/subway_pass_inspect.dialogue-58c7cff64d4b9c8c3b71a24df5a175be.tres"
+
+[deps]
+
+source_file="res://dialogue/subway_pass_inspect.dialogue"
+dest_files=["res://.godot/imported/subway_pass_inspect.dialogue-58c7cff64d4b9c8c3b71a24df5a175be.tres"]
+
+[params]
+
+defaults=true

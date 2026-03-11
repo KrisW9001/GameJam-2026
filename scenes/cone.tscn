@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://iv7m3djtreti"]
+
+[ext_resource type="Texture2D" uid="uid://cnx5j5s50xlhv" path="res://assets/temp/cone.png" id="1_1pvhk"]
+[ext_resource type="Script" uid="uid://db003ilrcl37" path="res://scripts/cone.gd" id="1_666jn"]
+[ext_resource type="Script" uid="uid://jtq2hvmq7ti6" path="res://scripts/object_logic_1.gd" id="2_666jn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iemwe"]
+size = Vector2(40, 36)
+
+[node name="Cone" type="CharacterBody2D" unique_id=1777513809 groups=["Objects"]]
+process_mode = 1
+z_index = 2
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_666jn")
+coll_type = "stop"
+throw_damage = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1051473749]
+texture_filter = 1
+position = Vector2(1, 0)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_1pvhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1027399318]
+shape = SubResource("RectangleShape2D_iemwe")
+
+[node name="ObjectLogic1" type="Node" parent="." unique_id=1353154570]
+script = ExtResource("2_666jn")
+metadata/_custom_type_script = "uid://jtq2hvmq7ti6"
+
+[node name="ray_up" type="RayCast2D" parent="." unique_id=1450580310]
+position = Vector2(0, -18)
+target_position = Vector2(0, -11)
+
+[node name="ray_down" type="RayCast2D" parent="." unique_id=667966300]
+position = Vector2(0, 18)
+target_position = Vector2(0, 11)
+
+[node name="ray_left" type="RayCast2D" parent="." unique_id=812895959]
+position = Vector2(-20, 0)
+target_position = Vector2(-13, 0)
+
+[node name="ray_right" type="RayCast2D" parent="." unique_id=771142895]
+position = Vector2(20, 0)
+target_position = Vector2(13, 0)

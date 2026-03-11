@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0dv7o58i6lwu"
+path="res://.godot/imported/12-4-2016 - 1 (exploration theme).wav-23b5348be84ffe3049dbaa3922e44f79.sample"
+
+[deps]
+
+source_file="res://audio/music/12-4-2016 - 1 (exploration theme).wav"
+dest_files=["res://.godot/imported/12-4-2016 - 1 (exploration theme).wav-23b5348be84ffe3049dbaa3922e44f79.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
