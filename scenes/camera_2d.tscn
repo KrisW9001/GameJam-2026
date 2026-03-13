@@ -52,7 +52,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -64,7 +64,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.2901961, 0, 0.45882353, 1)]
+"values": [Color(0.2913333, 0, 0.46, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -76,7 +76,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -88,7 +88,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.15686275, 0, 0.2509804, 1)]
+"values": [Color(0.1583333, 0, 0.25, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -100,7 +100,31 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/damagetint:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/damagetint2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_diphd"]
@@ -348,13 +372,13 @@ shader_parameter/color_high = Color(1, 0.060000002, 0.060000002, 0.078431375)
 shader = ExtResource("3_oor3b")
 shader_parameter/radius = 1.05
 shader_parameter/speed = 3.0000001425
-shader_parameter/effect_color = Color(0.2901961, 0, 0.45882353, 1)
+shader_parameter/effect_color = Color(0.2913333, 0, 0.46, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fqqy3"]
 shader = ExtResource("3_oor3b")
 shader_parameter/radius = 1.55
 shader_parameter/speed = 3.0000001425
-shader_parameter/effect_color = Color(0.15686275, 0, 0.2509804, 1)
+shader_parameter/effect_color = Color(0.1583333, 0, 0.25, 0)
 
 [node name="Camera2D" type="Camera2D" unique_id=793479075]
 process_mode = 3
@@ -399,7 +423,7 @@ grow_vertical = 2
 [node name="memory" type="Node" parent="CanvasLayer" unique_id=1565781649]
 
 [node name="memorytint" type="ColorRect" parent="CanvasLayer/memory" unique_id=1479322777]
-visible = false
+modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_pq3sa")
 anchors_preset = 8
 anchor_left = 0.5
@@ -414,7 +438,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="memorytint2" type="ColorRect" parent="CanvasLayer/memory" unique_id=1305668535]
-visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = -1
 material = SubResource("ShaderMaterial_fqqy3")
 anchors_preset = 8
@@ -431,7 +455,7 @@ grow_vertical = 2
 rotation = 3.140288
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/memory" unique_id=656783917]
-visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = -2
 offset_left = -28.0
 offset_top = -33.0
@@ -441,7 +465,6 @@ scale = Vector2(1.08, 1)
 color = Color(0, 0, 0, 1)
 
 [node name="trans_screen" type="ColorRect" parent="CanvasLayer" unique_id=660207358]
-visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 5
 anchors_preset = 8

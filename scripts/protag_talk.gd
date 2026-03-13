@@ -21,6 +21,8 @@ class_name DialogueManagerProtagBalloon extends CanvasLayer
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 var next_sfx = load("res://audio/sfx/Menu Navigate 2.wav")
+var fire_sfx = load("res://audio/sfx/Explosion Sharp.wav")
+var success_sfx = load("res://audio/sfx/Coin 6.wav")
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -90,7 +92,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_instance_valid(dialogue_line):
 		progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
-
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
@@ -165,13 +166,11 @@ func apply_dialogue_line() -> void:
 		balloon.focus_mode = Control.FOCUS_ALL
 		balloon.grab_focus()
 
-
 ## Go to the next line
 func next(next_id: String) -> void:
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(next_id, temporary_game_states)
 
 #region Signals
-
 
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:
@@ -207,11 +206,17 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(next_action) and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
 
-
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	audio_stream_player.stream = next_sfx
 	audio_stream_player.play()
 	next(response.next_id)
 
+#audio signals
+func sfx_fire() -> void:
+	audio_stream_player.stream = fire_sfx
+	audio_stream_player.play()
 
+func sfx_success() -> void:
+	audio_stream_player.stream = success_sfx
+	audio_stream_player.play()
 #endregion

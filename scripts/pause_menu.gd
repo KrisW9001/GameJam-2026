@@ -114,10 +114,11 @@ func _on_menu_btn_focus_entered() -> void:
 func _on_menu_btn_pressed() -> void:
 	if can_select and GlobalVariables.menumode and GlobalVariables.menutype == "Pause":
 		can_select = false
+	SaveLoad._save()
 	audio_player.stream = select_sfx
 	audio_player.play()
 	TheCamera.transition_on()
-	MusicController.music_fadeout_slow()
+	MusicController.music_fadeout_fast()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().call_group("Player", "respawn")
 	get_tree().call_group("enemies", "respawn")

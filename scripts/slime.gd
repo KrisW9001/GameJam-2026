@@ -132,7 +132,7 @@ func _on_box_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player") and body.dead == false and !dealtdamage:
 		print("you took damage from a slime")
 		dealtdamage = true
-		body.hurt_player(damage, position.x, position.y, dist_x, dist_y)
+		body.hurt_player(damage, position.x, position.y)
 		state = "recoil"
 		
 	else:

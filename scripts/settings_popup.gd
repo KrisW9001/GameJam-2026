@@ -16,21 +16,25 @@ func _ready() -> void:
 
 func _on_master_vol_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0, value)
+	SaveLoad.SaveFileData.master_volume = value
 	MusicController.test_music_stop()
 	audio_player.stream = select_sfx
 	audio_player.play()
 
 func _on_music_vol_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(1, value)
+	SaveLoad.SaveFileData.music_volume = value
 	MusicController.test_music_settings()
 
 func _on_sfx_vol_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(2, value)
+	SaveLoad.SaveFileData.sfx_volume = value
 	MusicController.test_music_stop()
 	audio_player.stream = select_sfx
 	audio_player.play()
 
 #hide window when close button is pressed
 func _on_close_requested() -> void:
+	SaveLoad._save()
 	hide()
 	MusicController.test_music_stop()

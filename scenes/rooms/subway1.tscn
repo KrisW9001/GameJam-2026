@@ -29,6 +29,7 @@
 [ext_resource type="Resource" uid="uid://cyd05xkhtg604" path="res://dialogue/inspect_door_2.dialogue" id="25_wdgas"]
 [ext_resource type="Resource" uid="uid://dx80rq3dtl5d3" path="res://dialogue/inspect_door_3.dialogue" id="26_ci7ql"]
 [ext_resource type="Script" uid="uid://cutedvyp1kh0h" path="res://scripts/inspect_w_room.gd" id="26_ojbmm"]
+[ext_resource type="PackedScene" uid="uid://dbbknbkndue" path="res://scenes/room_trigger.tscn" id="29_4bws3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u56q5"]
 texture = ExtResource("6_m6abf")
@@ -2600,6 +2601,9 @@ size = Vector2(107, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojbmm"]
 size = Vector2(79, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpgtg"]
+size = Vector2(154, 115.5)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lt4wf"]
 shader = ExtResource("25_q6wdc")
 shader_parameter/speed = 0.3
@@ -2613,7 +2617,7 @@ shader_parameter/color_low = Color(0.026499996, 0, 0.03, 1)
 shader_parameter/color_mid = Color(0.0019999982, 0.04820005, 0.2, 1)
 shader_parameter/color_high = Color(1, 0.04000002, 0.47199982, 1)
 
-[node name="TestMap" type="Node2D" unique_id=2115800801]
+[node name="Subway1" type="Node2D" unique_id=2115800801]
 
 [node name="BreakableWalls" type="TileMapLayer" parent="." unique_id=902518604 groups=["breakable_wall"]]
 z_index = 1
@@ -2794,6 +2798,17 @@ offset_bottom = 2036.0
 text = "3"
 label_settings = SubResource("LabelSettings_4w7n8")
 
+[node name="Label7" type="Label" parent="testing visuals" unique_id=1933352684]
+z_index = 1
+texture_filter = 1
+offset_left = 3492.0
+offset_top = 2924.0
+offset_right = 3532.0
+offset_bottom = 2958.0
+text = "4
+"
+label_settings = SubResource("LabelSettings_4w7n8")
+
 [node name="triggers" type="Node" parent="." unique_id=1169745774]
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("15_05owi")]
@@ -2877,6 +2892,15 @@ debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 [node name="AudioTrigger2" parent="triggers" unique_id=1631955775 instance=ExtResource("15_05owi")]
 position = Vector2(1511.0001, 2160)
 scale = Vector2(8.286077, 8.161382)
+
+[node name="RoomTrigger" parent="triggers" unique_id=1487844617 instance=ExtResource("29_4bws3")]
+position = Vector2(3638, -204)
+whichroom = "res://scenes/rooms/subway1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RoomTrigger" unique_id=1480544601]
+position = Vector2(1, 146.75)
+shape = SubResource("RectangleShape2D_mpgtg")
+debug_color = Color(0.8813839, 0.3376081, 0, 0.41960785)
 
 [node name="environment" type="Node" parent="." unique_id=1198483496]
 

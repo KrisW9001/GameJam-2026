@@ -12,7 +12,7 @@ var damage_sfx = preload("res://audio/sfx/Explosion Sharp.wav")
 #when an object is thrown into this area, reduce the health of the breakable wall
 func _on_body_entered(_body: CharacterBody2D) -> void:
 	if _body.is_in_group("Objects") and _body.get_child(2).flying:
-		breakable_walls.damage(_body.throw_damage, whodoibreak)
+		breakable_walls.damage(_body.throw_damage)
 		print("the starting walls have been hit")
 		particles.emitting = true
 		TheCamera.shake()

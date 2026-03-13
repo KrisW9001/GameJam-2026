@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bx3u0rk4nwyky"
+path="res://.godot/imported/vagabond_subway_dismiss.dialogue-b06dbe66696d07e8f71dc47d0d263220.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_subway_dismiss.dialogue"
+dest_files=["res://.godot/imported/vagabond_subway_dismiss.dialogue-b06dbe66696d07e8f71dc47d0d263220.tres"]
+
+[params]
+
+defaults=true

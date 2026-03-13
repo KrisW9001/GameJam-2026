@@ -25,6 +25,10 @@ func invis() -> void:
 	anim_sprite.visible = false
 	set_collision_layer_value(1, false)
 
+func appear() -> void:
+	anim_sprite.visible = true
+	set_collision_layer_value(1, true)
+
 func idle_r() -> void:
 	anim_sprite.play("idle")
 	anim_sprite.flip_h = true
@@ -63,6 +67,8 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 			#check event flags for which dialogue to play when interacted with outside of a cutscene
 			if !GlobalVariables.beatfirstboss:
 				TalkScenes.vagabond_talk.dialogue_resource = preload("res://dialogue/vagabond_subway.dialogue")
+			else:
+				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_subway_dismiss.dialogue")
 			body.inspect_prompt.visible = true
 			body.can_talk_v = true
 			print("showing inspect prompt")

@@ -1,29 +1,33 @@
 ~ start
 ...
-[speed=0.5]...My insides are burning.
 do MusicController.music_fadein()
 do MusicController.play_memory_music()
+[speed=0.5]...My insides are burning.
 [speed=0.5]As I finished them off, I felt a rush of blood.
 [speed=0.5]And with that rush, a burning pain. Shooting through every nerve and every vein.
 [speed=0.5]My vision blurred as I desperately tried to cling to life. Then I realized I wasn't dying.
 [speed=0.5]I looked down at my hands, and saw the veins. I hadn't seen it before, maybe it hadn't started.
-[speed=0.5]A dark purple. Pulsating. Writhing. And seeing it assaulted my mind with a memory I never had.
-do TheCamera.memory_on()
+[speed=0.5]A dark purple. Pulsating. Writhing. Being pumped through every inch of my body.
+set TheCamera.memory_on()
+[speed=0.5]Then, I suddenly recalled a memory that I couldn't before.
 [speed=0.5]I'm confined. Staring at my arms and legs. On the other side, there's people watching. Taking notes.
-[speed=0.5]I don't know them, but I know why they're here.
+[speed=0.5]I don't know them, at least not by name. but I know why they're here.
 [speed=0.5]They want to see what it does to me.
 [speed=0.5]A man approaches the group. They move out of the way so he can see me clearly.
 [speed=0.5]He smiles. And the writhing starts again.
-[speed=0.5]I pick up my bed from behind me and throw it at him. Metallic screeching rings in my ears.
+[speed=0.5]I pick up my bed from behind me and throw it at him. Metallic screeching rings in my ears from the bolts being ripped out of the floor.
 [speed=0.5]The walls stop it, obviously. They knew what I could do. The group laughs, they like what they see.
 [speed=0.5]But he doesn't. For the first time, I see his expression change.
-[speed=0.5]The grin is gone. Instead, hes confused. He doesn't understand why I feel this way.
-[speed=0.5]He doesn't know why it hasn't taken over.
-...
-do TheCamera.memory_off()
+[speed=0.5]The grin is gone. Instead, he's confused. He doesn't understand why I feel this way.
+[speed=0.5]He doesn't understand why it hasn't taken over.
 do get_tree().call_group("Player", "recover")
+do TheCamera.memory_off()
+do MusicController.music_fadeout_slow()
+...
+[speed=0.5]Everything else is a haze. The memory fades back into my mind where it supposedly belongs.
 [speed=0.5]My vision returns to normal. I'm back in the subway.
-[speed=0.5]It's calmed down. But I can still feel it.
-[speed=0.5]I can still feel it.
+[speed=0.5]It's calmed down. But I can still feel it, just under my skin.
+[speed=0.5]I can always feel it.
+set GlobalVariables.beatfirstboss = true
 do CutsceneManager.endcutscene()
 => END

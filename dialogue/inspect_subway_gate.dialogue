@@ -1,12 +1,13 @@
 ~ start
-if GlobalVariables.beatfirstboss == false:
+if GlobalVariables.haspass == false:
 	set GlobalVariables.menutype = "Dialogue"
 	 It's a ticket scanner. "Please present Subway Pass. Entering the subway without a valid Subway Pass is a state offense punishable by a fine."
 	...There's a sticker under the touchscreen. "Lost your Pass? Pass checker malfunctioning? Speak with the Pass office in tunnel 4."
 	Guess that's where I'm heading.
 	set GlobalVariables.cutscenemode = false
-elif GlobalVariables.beatfirstboss == true:
+elif GlobalVariables.haspass == true:
 	set GlobalVariables.menumode = "Dialogue"
-	The scanner accepted my pass.
+	do sfx_success()
+	The scanner accepted my pass. Time to get out of here.
 	set GlobalVariables.cutscenemode = false
 => END

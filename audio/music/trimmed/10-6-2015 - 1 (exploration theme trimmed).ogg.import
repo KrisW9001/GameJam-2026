@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cyfhkonkeqg25"
+path="res://.godot/imported/10-6-2015 - 1 (exploration theme trimmed).ogg-51a4de098dd70c37b70afcb8657f3809.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/trimmed/10-6-2015 - 1 (exploration theme trimmed).ogg"
+dest_files=["res://.godot/imported/10-6-2015 - 1 (exploration theme trimmed).ogg-51a4de098dd70c37b70afcb8657f3809.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,4 @@
+~ start
+Vagabond: I'll be right behind you. Just give me a moment.
+do CutsceneManager.endcutscene()
+=> END

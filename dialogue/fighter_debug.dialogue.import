@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cuaosvhew2yyd"
+path="res://.godot/imported/fighter_debug.dialogue-17f692ae1676ad39ed0044d9bf577fd9.tres"
+
+[deps]
+
+source_file="res://dialogue/fighter_debug.dialogue"
+dest_files=["res://.godot/imported/fighter_debug.dialogue-17f692ae1676ad39ed0044d9bf577fd9.tres"]
+
+[params]
+
+defaults=true

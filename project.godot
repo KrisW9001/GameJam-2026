@@ -36,6 +36,7 @@ SettingsPopup="*uid://cvbba0aml7aep"
 DialogueManager="*uid://c3rodes2l3gxb"
 CutsceneManager="*uid://mvim6xmmukaa"
 TalkScenes="*uid://bwd5flueasuej"
+SaveLoad="*uid://tdqm0x7o8txp"
 
 [dialogue_manager]
 
@@ -156,7 +157,7 @@ run={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/untitled.dialogue", "res://dialogue/test_stuff.dialogue", "res://dialogue/inspect_run_button.dialogue", "res://dialogue/test1.dialogue", "res://dialogue/vagabondintro.dialogue", "res://dialogue/inspect_health_tutorial.dialogue", "res://dialogue/inspect_input_visual.dialogue", "res://dialogue/inspect_swings.dialogue", "res://dialogue/inspect_file_line.dialogue", "res://dialogue/inspect_facing_label.dialogue", "res://dialogue/vagabond_subway.dialogue", "res://dialogue/inspect_poster.dialogue", "res://dialogue/inspect_subway_gate.dialogue", "res://dialogue/inspect_kiosk_1.dialogue", "res://dialogue/inspect_door_1.dialogue", "res://dialogue/inspect_door_2.dialogue", "res://dialogue/inspect_door_3.dialogue", "res://dialogue/subway_pass_inspect.dialogue", "res://dialogue/fighter_intro.dialogue", "res://dialogue/fighter_defeated.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/untitled.dialogue", "res://dialogue/test_stuff.dialogue", "res://dialogue/inspect_run_button.dialogue", "res://dialogue/test1.dialogue", "res://dialogue/vagabondintro.dialogue", "res://dialogue/inspect_health_tutorial.dialogue", "res://dialogue/inspect_input_visual.dialogue", "res://dialogue/inspect_swings.dialogue", "res://dialogue/inspect_file_line.dialogue", "res://dialogue/inspect_facing_label.dialogue", "res://dialogue/vagabond_subway.dialogue", "res://dialogue/inspect_poster.dialogue", "res://dialogue/inspect_subway_gate.dialogue", "res://dialogue/inspect_kiosk_1.dialogue", "res://dialogue/inspect_door_1.dialogue", "res://dialogue/inspect_door_2.dialogue", "res://dialogue/inspect_door_3.dialogue", "res://dialogue/subway_pass_inspect.dialogue", "res://dialogue/fighter_intro.dialogue", "res://dialogue/fighter_defeated.dialogue", "res://dialogue/fighter_debug.dialogue", "res://dialogue/vagabond_post_fighter.dialogue", "res://dialogue/subway_warp.dialogue", "res://dialogue/vagabond_subway_dismiss.dialogue", "res://dialogue/vagabond_post_fighter_2.dialogue")
 
 [rendering]
 

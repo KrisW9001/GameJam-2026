@@ -1,0 +1,15 @@
+~ start
+Vagabond: Well, now that you've obtained the means of escaping these tunnels, I can regroup with Zulie.
+Vagabond: I'll take a moment to tend to my equipment, so feel free to advance without me.
+- Let's meet up later.
+	Vagabond: Of course. It's likely that our paths will cross again, but I'll still look forward to it.
+- See you around, Red.
+	Vagabond: I see you've chosen a moniker for me. It happens to be the same one chosen for me by Zulie, not that I mind.
+	Vagabond: Hopefully you can meet her soon.
+Vagabond: ...
+- It's Marcus, by the way.
+	Vagabond: ...Well, It's been a pleasure to meet you, Marcus.
+Vagabond: Be safe, and take care.
+do MusicController.music_fadeout_slow()
+do CutsceneManager.endcutscene()
+=> END

@@ -1,5 +1,5 @@
 extends Node
-class_name ObjectLogic1
+class_name ObjectLogic
 
 #shoutouts to Mostly Mad Productions
 

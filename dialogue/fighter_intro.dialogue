@@ -10,7 +10,7 @@ do get_tree().call_group("boss", "jump_in")
 	???: ...What do you mean, "Who are you?" Ugh, another new idiot. How many of you are there, anyways?!
 	???: [shake rate=20 level=10]Fiiiiiine[/shake], I guess I'll do the speech without the whole group.
 - What was that for?!
-	???: What do you mean, "What was that for?" Buddy, [shake rate=20 level=10]you already know why I'm here[/shake].
+	???: What do you mean, "What was that for"? Buddy, [shake rate=20 level=10]you already know why I'm here[/shake].
 	- Do I?
 		???: [shake rate=20 level=10]D- "DO I"?!?!?![/shake] Do you think this is funny, jack@$$?!?! [shake rate=20 level=10]I'M HERE TO KILL YOU!!![/shake]
 		???: Grrrrrr... Fine, you're probably new anyways. I'd remember someone who looked like they were trying to be edgy with linework like that.

@@ -1736,7 +1736,11 @@ sources/1 = SubResource("TileSetAtlasSource_5nfov")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmnbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjm8e"]
-size = Vector2(193, 200)
+size = Vector2(123.5, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq0ir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rabjs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_havrc"]
 radius = 55.00909
@@ -4222,17 +4226,24 @@ visible = false
 position = Vector2(179, -275)
 scale = Vector2(0.67999864, 23.48)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/CutsceneTrigger" unique_id=1137037504]
+shape = SubResource("RectangleShape2D_fq0ir")
+
 [node name="CutsceneTrigger2" parent="triggers" unique_id=984240237 instance=ExtResource("22_uv76m")]
 position = Vector2(94.999985, 1228.9999)
 scale = Vector2(0.67999864, 23.48)
 whichcutscene = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/CutsceneTrigger2" unique_id=883093831]
+shape = SubResource("RectangleShape2D_rabjs")
+debug_color = Color(0, 0.6452576, 0.2705238, 0.41960785)
 
 [node name="InspectArea2" parent="triggers" unique_id=1056103056 instance=ExtResource("20_pmkf2")]
 position = Vector2(-913, 585)
 whichdialogue = ExtResource("25_7qive")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea2" unique_id=578908472]
-position = Vector2(345, -431)
+position = Vector2(310.25, -413)
 shape = SubResource("RectangleShape2D_pjm8e")
 debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
@@ -4328,9 +4339,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="im just for testing floor textures" type="ColorRect" parent="Parallax2D" unique_id=2015849705]
 z_index = -4
-offset_left = -462.0
-offset_top = -1300.0
-offset_right = 5691.0
-offset_bottom = 4853.0
+offset_left = -1144.0
+offset_top = -1808.0
+offset_right = 5009.0
+offset_bottom = 4345.0
 color = Color(1, 0.26, 0.6916664, 1)
 metadata/_edit_use_anchors_ = true

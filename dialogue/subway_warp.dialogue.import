@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ci1ies1wlfus0"
+path="res://.godot/imported/subway_warp.dialogue-ed951ebb0a297a0f70c7c930530d649a.tres"
+
+[deps]
+
+source_file="res://dialogue/subway_warp.dialogue"
+dest_files=["res://.godot/imported/subway_warp.dialogue-ed951ebb0a297a0f70c7c930530d649a.tres"]
+
+[params]
+
+defaults=true

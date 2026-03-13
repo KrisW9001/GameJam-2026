@@ -216,7 +216,7 @@ sprite_frames = SubResource("SpriteFrames_v5bx4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1056240227]
 shape = SubResource("RectangleShape2D_brady")
 
-[node name="ObjectLogic1" type="Node" parent="." unique_id=1532955289]
+[node name="ObjectLogic" type="Node" parent="." unique_id=1532955289]
 script = ExtResource("2_1qfhr")
 metadata/_custom_type_script = "uid://jtq2hvmq7ti6"
 

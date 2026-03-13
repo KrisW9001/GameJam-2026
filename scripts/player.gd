@@ -61,8 +61,6 @@ var health: int = 3
 var damage: int = 1
 var enemy_pos_x: float
 var enemy_pos_y: float
-var dist_diff_x: float
-var dist_diff_y: float
 #used for displaying values on labels in the first area to tutorialize certain mechanics
 var fuckassvariable = 0
 var fuckassdisplay = str(fuckassvariable)
@@ -220,7 +218,7 @@ func _physics_process(delta: float) -> void:
 				var object = object_hovering[0]
 				#pick up an object
 				held_object = object
-				object.get_node("ObjectLogic1").pickup(self)
+				object.get_node("ObjectLogic").pickup(self)
 				grabbing = false
 			elif held_object:
 				#drop the object you're holding, and play the appropriate dropping animation
@@ -242,17 +240,17 @@ func _physics_process(delta: float) -> void:
 						x_drop = 25
 						y_drop = 0
 						anim_sprite.play("drop_right")
-				held_object.get_node("ObjectLogic1").drop(global_position,x_drop,y_drop)
+				held_object.get_node("ObjectLogic").drop(global_position,x_drop,y_drop)
 				box_control.play("RESET")
-				held_object.get_node("ObjectLogic1").cooldown()
+				held_object.get_node("ObjectLogic").cooldown()
 				held_object = null
 				can_throw = false
 		
 		#drop whatever you're holding when entering a cutscene
 		if held_object and GlobalVariables.cutscenemode:
-			held_object.get_node("ObjectLogic1").drop(global_position,x_drop,y_drop)
+			held_object.get_node("ObjectLogic").drop(global_position,x_drop,y_drop)
 			box_control.play("RESET")
-			held_object.get_node("ObjectLogic1").cooldown()
+			held_object.get_node("ObjectLogic").cooldown()
 			held_object = null
 			can_throw = false
 		
@@ -376,7 +374,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("throw_up")
 						var throw_x = 0
 						var throw_y = throw_strength
-						held_object.get_node("ObjectLogic1").throw(throw_x,throw_y)
+						held_object.get_node("ObjectLogic").throw(throw_x,throw_y)
 						held_object = null
 						audio_player.stream = throw_sfx
 						audio_player.play()
@@ -387,7 +385,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("throw_down")
 						var throw_x = 0
 						var throw_y = throw_strength * -1
-						held_object.get_node("ObjectLogic1").throw(throw_x,throw_y)
+						held_object.get_node("ObjectLogic").throw(throw_x,throw_y)
 						held_object = null
 						audio_player.stream = throw_sfx
 						audio_player.play()
@@ -398,7 +396,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("throw_left")
 						var throw_x = throw_strength
 						var throw_y = 0
-						held_object.get_node("ObjectLogic1").throw(throw_x,throw_y)
+						held_object.get_node("ObjectLogic").throw(throw_x,throw_y)
 						held_object = null
 						audio_player.stream = throw_sfx
 						audio_player.play()
@@ -409,7 +407,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("throw_right")
 						var throw_x = throw_strength * -1
 						var throw_y = 0
-						held_object.get_node("ObjectLogic1").throw(throw_x,throw_y)
+						held_object.get_node("ObjectLogic").throw(throw_x,throw_y)
 						held_object = null
 						audio_player.stream = throw_sfx
 						audio_player.play()
@@ -464,7 +462,7 @@ func _input(_event: InputEvent) -> void:
 			print("pausing")
 			PauseMenu.create()
 		
-		#debug mode
+		##debug mode - DO NOT LEAVE THIS ACTIVE WHEN EXPORTING
 		if Input.is_action_just_pressed("enhance") and !debug_mode:
 			print("debug mode on")
 			sprint_speed = 600
@@ -472,6 +470,8 @@ func _input(_event: InputEvent) -> void:
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(1, false)
 			debug_mode = true
+			#GlobalVariables.beatfirstboss = true
+			GlobalVariables.metvagabond = true
 		elif Input.is_action_just_pressed("enhance") and debug_mode:
 			print("debug mode off")
 			sprint_speed = 350
@@ -496,6 +496,8 @@ func _input(_event: InputEvent) -> void:
 				inspect_prompt.visible = false
 				GlobalVariables.cutscenemode = true
 				TalkScenes.protag_talk.start()
+				if GlobalVariables.haspass:
+					get_tree().call_group("breakable_wall", "killwalls")
 				print("starting dialogue")
 			elif can_talk_v and !GlobalVariables.menumode and !dead and !can_inspect:
 				velocity = Vector2.ZERO
@@ -540,7 +542,7 @@ func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.is_in_group("can_pickup"):
 		object_hovering.erase(body)
 
-func hurt_player(damage: int, enemy_x: float, enemy_y: float, dist_x: float, dist_y: float) -> void:
+func hurt_player(damage: int, enemy_x: float, enemy_y: float) -> void:
 	match health:
 		3:
 			dmg_shader_1.visible = true
@@ -553,8 +555,6 @@ func hurt_player(damage: int, enemy_x: float, enemy_y: float, dist_x: float, dis
 			damaged = true
 			enemy_pos_x = enemy_x
 			enemy_pos_y = enemy_y
-			dist_diff_x = dist_x
-			dist_diff_y = dist_y
 			TheCamera.screentint(1)
 			heal_timer.start()
 			await get_tree().create_timer(0.3).timeout
@@ -571,8 +571,6 @@ func hurt_player(damage: int, enemy_x: float, enemy_y: float, dist_x: float, dis
 			damaged = true
 			enemy_pos_x = enemy_x
 			enemy_pos_y = enemy_y
-			dist_diff_x = dist_x
-			dist_diff_y = dist_y
 			heal_timer.start()
 			await get_tree().create_timer(0.3).timeout
 			can_move = true
@@ -657,6 +655,8 @@ func pause_shaders() -> void:
 #cutscene stuff
 func iliketospin() -> void:
 	anim_sprite.play("spin")
+	audio_player.stream = dmg_sfx
+	audio_player.play()
 
 func item_pose() -> void:
 	anim_sprite.play("item_get")
@@ -668,6 +668,7 @@ func struggle() -> void:
 func recover() -> void:
 	anim_sprite.modulate = Color("ffffffff")
 	anim_sprite.play("idle_down")
+	deathscreen.visible = false
 
 func kill_freeze() -> void:
 	anim_sprite.modulate = Color("000000ff")

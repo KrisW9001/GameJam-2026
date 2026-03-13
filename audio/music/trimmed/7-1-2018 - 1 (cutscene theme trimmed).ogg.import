@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://xticne7vbk50"
+path="res://.godot/imported/7-1-2018 - 1 (cutscene theme trimmed).ogg-2ee15c08dbf1db289ff3f7a06694dead.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/trimmed/7-1-2018 - 1 (cutscene theme trimmed).ogg"
+dest_files=["res://.godot/imported/7-1-2018 - 1 (cutscene theme trimmed).ogg-2ee15c08dbf1db289ff3f7a06694dead.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

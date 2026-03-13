@@ -26,6 +26,10 @@ func _process(delta: float) -> void:
 		else:
 			incut1 = false
 			endcutscene()
+	
+	#start part 2 of cutscene 4
+	if GlobalVariables.beatfirstboss and !part2:
+		pass
 
 #after recieving a signal from a cutscene trigger, check which cutscene is being called and reference that with global variables to determine whether or not to play a cutscene.
 func checkscene(scenenumber: int) -> void:
@@ -33,14 +37,18 @@ func checkscene(scenenumber: int) -> void:
 		0:
 				pass
 		1:
+			#vagabond introduction
 			if !GlobalVariables.seenfirstcut and !incut1:
 				cutscene1()
-		#2: if !GlobalVariables.beatfirstboss:
-				#cutscene2()
+		2: 
+			#post-fighter fight
+			if GlobalVariables.beatfirstboss:
+				cutscene4()
 
 func endcutscene() -> void:
 	print("ending cutscene")
 	part2 = false
+	SaveLoad._save()
 	GlobalVariables.player_goto_active = false
 	GlobalVariables.cutscenemode = false
 	GlobalVariables.player_goto_coords = Vector2.ZERO
@@ -52,6 +60,8 @@ func new_room(whichroom: String) -> void:
 	TheCamera.transition_on()
 	await get_tree().create_timer(.5).timeout
 	get_tree().change_scene_to_file(whichroom)
+	GlobalVariables.cont_scene = whichroom
+	SaveLoad._save()
 	TheCamera.reset()
 	TheCamera.transition_off()
 	await get_tree().create_timer(.5).timeout
@@ -110,6 +120,7 @@ func boss_kill() -> void:
 
 #cutscene introducing the fighter before their boss fight
 func cutscene2() -> void:
+	GlobalVariables.cutscenemode = true
 	get_tree().call_group("explosion", "play")
 	get_tree().call_group("Player", "struggle")
 	TheCamera.shake()
@@ -123,3 +134,38 @@ func cutscene3() -> void:
 	get_tree().call_group("Player", "struggle")
 	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/fighter_defeated.dialogue")
 	TalkScenes.protag_talk.start()
+
+#approaching door after beating the fighter
+func cutscene4() -> void:
+	GlobalVariables.cutscenemode = true
+	get_tree().call_group("Player", "stop_moving")
+	get_tree().call_group("Player", "emote_exclaim")
+	await get_tree().create_timer(0.5).timeout
+	get_tree().call_group("Player", "iliketospin")
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(400, 400)
+	get_tree().call_group("VagabondActor", "appear")
+	GlobalVariables.vagabond_goto = true
+	GlobalVariables.vagabond_coords = Vector2(700, 350)
+	await get_tree().create_timer(0.5).timeout
+	get_tree().call_group("VagabondActor", "walk_r")
+	TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_post_fighter.dialogue")
+	TalkScenes.vagabond_talk.start()
+
+#warp to intro of subway 1 after fighter boss
+func subway_warp() -> void:
+	TheCamera.transition_on()
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://scenes/rooms/subway1.tscn")
+	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/subway_warp.dialogue")
+	TalkScenes.protag_talk.start()
+	TheCamera.reset()
+	GlobalVariables.player_goto_coords = Vector2(2500, 450)
+
+#part 2 of vagabond's post-fighter cutscene
+func cutscene4_part2() -> void:
+	TheCamera.transition_off()
+	get_tree().call_group("Player", "idle_r")
+	await get_tree().create_timer(.5).timeout
+	TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_post_fighter_2.dialogue")
+	TalkScenes.vagabond_talk.start()

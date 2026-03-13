@@ -1,0 +1,151 @@
+~ start
+do get_tree().call_group("Player", "idle_r")
+do get_tree().call_group("VagabondActor", "idle_l")
+set GlobalVariables.vagabond_goto = false
+#conditional dialogue if the player talked to the vagabond earlier
+if GlobalVariables.metvagabond == true
+	Vagabond: I came as soon as I heard the commotion! Were you attacked by those fiends? [shake rate=20 level=10]Where are they?![/shake]
+	Vagabond: ...you look disturbed, friend. What occured here?
+	- I took care of it.
+		Vagabond: I...I beg your pardon? I thought I heard one of the False Heroes' voices.
+		Vagabond: ...
+		Vagabond: ...You...defeated them. Alone.
+		Vagabond: Well, it seems I had misjudged you! Anyone capable of holding their own against those scoundrels is a worthy ally!
+		Vagabond: Are you conflicted by the matter? Do not fret, I too have wished that the circumstances could be different. If only they could listen to reason.
+		Vagabond: But alas, they will not. They have lost their minds, and for swearing death on those they deem unworthy we will respond in kind. => question
+	- ...We can leave now.
+		Vagabond: Is that so? You've found the means of returning to the east? Now you have both my admiration and my thanks!
+		Vagabond: Pray tell, how did you obtain it? I heard a commotion and feared the worst.
+		Vagabond: ...
+		Vagabond: So you were forced to do battle with one of those fiends. I should have come to your aid sooner, but I am grateful for your victory.
+		Vagabond: Do not let their drivel distract you. They have lost their minds and their ability to reason with it. => question
+	~ question
+	Vagabond: ...Something seems to trouble you. Please, speak your mind.
+	- You keep saying they used to be different.
+		Vagabond: Mmm. They were. But only so much.
+		Vagabond: 'Tis a shame, that it should come to this. But such is the nature of wishing what could have been.
+		Vagabond: ...Your expression defies the silence. I suppose you deserve to know, so you can avoid repeating the past. => explain
+	- I had a vision of a memory.
+		Vagabond: That is good news, friend. Although, may I ask how and when it occured to you?
+		Vagabond: ...
+		Vagabond: Defeating one of the False Heroes is impressive...but this vision you had is of much greater importance, in my opinion.
+		Vagabond: You do not yet have the full picture, so please...proceed with caution.
+		- Are you scared?
+			Vagabond: ...
+			Vagabond: What you have recounted brings to mind the anger and violence enacted by the False Heroes. I dare to wish you will not be as senseless as them.
+			Vagabond: So by a particular definition...I am fearful, yes. I wish the best for our kind.
+			- Tell me about the heroes.
+				Vagabond: ...
+				- I want to know what mistakes to avoid.
+					Vagabond: ...As you wish. You deserve this knowledge regardless of the circumstance. => explain
+		- I don't understand any of it.
+			Vagabond: Indeed...The memories we piece together will tend to be vague. What we do with such knowledge is crucial to our fulfilment...and our survival.
+			Vagabond: Your case seems to be unique. Of all those I have met in these wastelands, what you have recalled stands out as...peculiar.
+			Vagabond: Do you feel well? The ailment you described may inhibit your ability to survive.
+			- If I can fight, I'm fine.
+				Vagabond: Very well. Your battle with that Hero must have left you exhausted, let us take a moment of respite.
+				Vagabond: After all...I believe I know what your burning question is. Your shrouded face does little to hide your expression.
+				Vagabond: The nature of the False Heroes.
+				- You read my mind. => explain
+				- ...I need to catch my breath anyways. => explain
+		- Does it really matter?
+			Vagabond: I believe so. Prior to fully understanding myself and the situation at hand, I was rather irritable.
+			Vagabond: Your destiny is still unclear, so please...refrain from making decisions you will come to regret.
+			- I'm not a psycho.
+				Vagabond: I do not believe you were psychotic. This is a warning, more than anything else.
+				The False Heroes once made similar reassurances of sanity...and then they became what they are. => explain
+			- ...Like the Heroes did.
+				Vagabond: Indeed. I would curse myself for the rest of my existence if you repeated their descent into cruelty. => explain
+	~ explain
+	do MusicController.play_moody_music()
+	Vagabond: They were once simply fellow castaways. Another band of misfits mong a sea of their like.
+	Vagabond: Many of our kind were made by the Creator, created with a specific role in mind that we would play...they were not. Drifters, some called them.
+	Vagabond: In essence, their role is to assist in giving worlds their solid foundation. The bedrock on which all else is built upon...A starting point.
+	Vagabond: I cannot say for certain when or why...but they came to the conclusion that this was no longer the case. They believed themselves superior by transcending The Creator's will.
+	Vagabond: At one moment they were comerades, rough around the edges but still allies...The next, [shake rate=20 level=10]they killed on sight and gloated[/shake].
+	Vagabond: They are loathsome, all four of them. Our situation is already dire in this limbo of existence, and they decide to add to the challenge of survival tenfold.
+	Vagabond: I will never forgive them for their betrayal. They gain nothing from this charade and benefit noone. There is only suffering.
+	Vagabond: ...And unless the False Heroes are stopped, soon there will be noone left to suffer but themselves.
+	- They're as good as dead.
+		Vagabond: I appreciate your enthusiasm, but do not forget my warnings lest they become wasted breath.
+		Vagabond: Powerful allies in such troubling times is greatly appreciated. For your sake, [shake rate=20 level=10]do not let them become your enemies.[/shake]
+		Vagabond: ...But we have spoken for long enough. You wished to leave these tunnels and travel east. Let us return.
+		do CutsceneManager.subway_warp()
+		=> END
+	- Say no more. I'm on your side.
+		Vagabond: It may be taboo from its frequency, but I give you my thanks yet again.
+		Vagabond: May these words give you the strength to do good rather than harm.
+		Vagabond: Now then, let us leave this horrid place.
+		do CutsceneManager.subway_warp()
+		=> END
+	- ...
+		Vagabond: I understand this weighs heavy on the mind. All I wish is for you to remain on the path towards good.
+		Vagabond: Remain strong and keep evil at arm's length...and the future will come, as bright and brilliant as it should.
+		Vagabond: But enough prose and preaching. You fought hard for the means to exit these tunnels.
+		do CutsceneManager.subway_warp()
+		=> END
+if GlobalVariables.metvagabond == false
+	???: [shake rate=20 level=10]You vile fiend, no longer shall we suffer at your hand![/shake]
+	???: Hm? How strange...I could have sworn I heard the voice of one of the False Heroes.
+	???: Well met, fellow wanderer. I wish we had the opportunity to speak earlier, but you seemed determined to continue on your path.
+	- Sorry about that.
+		???: No need to apologize, my friend. I simply feared for the worst when I heard a certain voice coming from this direction. Did you...meet anyone on your way here?
+		???: ...
+		???: ...I find it difficult to believe. But with how far your battle could be heard, there's no doubting what you have achieved.
+		- Who even was that?
+			???: One of the four self-proclaimed "Heroes". They have sworn to destroy anything that they believe have been tainted by The Creator.
+			???: If you weren't aware of their existence though...you must have only arrived recently to these lands. I can do my best to answer your questions.
+			- Sure.
+				Vagabond: Excellent. My name may have been lost to time, but you may refer to me by my title of Vagabond. Now then... => ask
+			- No thanks.
+				Vagabond: Very well. If you ever need anything, call for the Vagabond or look for my red armor.
+				Vagabond: Now then, you mentioned obtaining a means to escape these tunnels? Let us both be rid of this place.
+				set GlobalVariables.metvagabond = true
+				do CutsceneManager.subway_warp()
+				=> END
+	- I just want to get out of here.
+		???: As do I. I was trapped in this peninsula while evading those fiends, and I have been unable to regroup with my friend.
+		Vagabond: You may refer to me as the Vagabond. Unfortunately, it seems we are both barred access to the eastern regions of these wastelands.
+		Vagabond: ...Hm? You obtained a means of escaping these tunnels? This is great news!
+		Vagabond: Let us journey together, to make our return trip easier for the both of us.
+		set GlobalVariables.metvagabond = true
+		do CutsceneManager.subway_warp() 
+		=> END
+~ ask
+Vagabond: What would you like to know?
+- Where we are?
+	Vagabond: If you mean our location in the grander scheme of these wastes, we are currently on the outskirts of the western region I usually reside in.
+	Vagabond: As for our current location...I'm sure you've noticed, but the two of us are crafted for vastly different time periods.
+	Vagabond: It brings to mind images of nobles gathering before boarding a carriage, but these tunnels are ultimately foreign to me.
+	- Well, these are called "subways"...
+		Vagabond: I see...is that so?...incredible...
+		Vagabond: Thank you for indulging my curiosity. Explaining things that would otherwise be common knowledge to one such as me must be an infuriating chore...
+		Vagabond: But I greatly appreciate that you went through the effort. An exchange of knowledge is one of my greatest pleasures. And on that note... => ask
+	- Should I be telling you about future technology?
+		Vagabond: Ah yes, my younger friend shared a similar hesitation when we first met.
+		Vagabond: Remember that we are likened to actors, so any worry of sharing such information is moot. => ask
+- False Heroes?
+	Vagabond: Have I yet to elaborate on them? Perhaps I should have started by warning you of them.
+	Vagabond: Well...my allusion to stage plays does little to explain them...But their intentions are unmistakable.
+	Vagabond: Those four "Heroes" have become blinded by delusion, preaching of [wave amp=25 freq=5]"truth"[/wave] and [wave amp=25 freq=5]"higher existence"[/wave] exhibited only by them, untainted by The Creator's failings.
+	Vagabond: And of course, their delusions have led them to believe the eradication of any and all who do not allign with their impossible standards is just.
+	Vagabond: They were not always this violent...[shake rate=20 level=10]but their actions are unforgivable[/shake]. Avoid them if you are able to, and I will assist you whenever possible. => ask
+- Who are you?
+	Vagabond: There's not much to be said. My destiny is still unclear, but from what I have been able to recall...
+	Vagabond: I was the soldier of a land that fell into darkness, and awoke years later as an undead to swear revenge on that darkness.
+	Vagabond: That drive for justice and truth is what keeps me motivated to resist the False Heroes and their crusade, and I hope you will do the same. => ask
+- I had a weird vision...
+	Vagabond: Ah, a memory returned to you. It is a glimpse into the destiny you would have fulfilled, had The Creator finished their work. May I inquire the details?
+	- Sure, I'll tell you.
+		Vagabond: ...Hm...
+		Vagabond: Interesting. Sometimes our visions will be less than ideal, but they shape us nonetheless even in these wastelands.
+		Vagabond: I pray that whatever you learn won't put you on a path towards destruction like the False Heroes have. => ask
+	- I don't really want to.
+		Vagabond: Very well. I respect your privacy, but I do hope that whatever you learned hasn't put you on a dark path.
+		Vagabond: We are all suffering at the hands of the False Heroes, fighting amongst ourselves would only benefit them.
+- I'm good for now.
+	Vagabond: In that case, let us return to the tunnel we entered into. You found a means of escape, yes?
+	Vagabond: If we can exit to the east, I can reunite with my friend. Come, let us join forces for the trip back.
+	set GlobalVariables.metvagabond = true
+	do CutsceneManager.subway_warp()
+	=> END

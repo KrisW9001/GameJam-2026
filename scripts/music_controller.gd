@@ -14,6 +14,9 @@ var death_music = preload("res://audio/music/trimmed/5-16-2018 - 1 (death theme 
 var fight1_intro_music = load("res://audio/music/trimmed/11-21-2015 - 1 (fight 1 intro).ogg")
 var fight1_music = load("res://audio/music/trimmed/11-21-2015 - 1 (fight 1 loop).ogg")
 var memory_music = load("res://audio/music/trimmed/Damaged Mind (memory cutscene).ogg")
+var moody_cutscene = load("res://audio/music/trimmed/12-4-2018 - 2 (moody guitar).ogg")
+var level2_music = load("res://audio/music/trimmed/10-6-2015 - 1 (exploration theme trimmed).ogg")
+var zulie_theme = load("res://audio/music/trimmed/7-1-2018 - 1 (cutscene theme trimmed).ogg")
 
 func ready() -> void:
 	is_playing = false
@@ -52,6 +55,12 @@ func play_level1_music() -> void:
 		bgm_player.play()
 		is_playing = true
 
+func play_level2_music() -> void:
+	if !is_playing:
+		bgm_player.stream = level2_music
+		bgm_player.play()
+		is_playing = true
+
 func play_death_music() -> void:
 	if !is_playing:
 		bgm_player.stream = death_music
@@ -75,6 +84,18 @@ func play_fight1_music() -> void:
 func play_memory_music() -> void:
 	if !is_playing:
 		bgm_player.stream = memory_music
+		bgm_player.play()
+		is_playing = true
+
+func play_moody_music() -> void:
+	if !is_playing:
+		bgm_player.stream = moody_cutscene
+		bgm_player.play()
+		is_playing = true
+
+func play_zulie_theme() -> void:
+	if !is_playing:
+		bgm_player.stream = zulie_theme
 		bgm_player.play()
 		is_playing = true
 

@@ -1,0 +1,16 @@
+~ start
+if GlobalVariables.dismissive == false
+	We made our way back to the first tunnel of the subway.
+	The slimes weren't an issue with both of us side by side.
+	The Vagabond kept talking about how impressive it was that I beat The Fighter.
+	I just can't help but wonder what they were like before their crusade. If we just had a little more time, if they were willing to listen...
+	...Why did killing them make me remember all that? How is it at all related?
+	No. I can't get fixated on that. I'm not going to get any answers stressing over something so vague.
+if GlobalVariables.dismissive == true
+	...After he left, the silence set in.
+	Some random person called me ugly and tried to kill me. I remember next to nothing, only to suddenly have a memory like [shake rate=20 level=10]that[/shake].
+	I gripped the subway pass tight in my hands. If I'm going to get any answers, I won't get them here.
+	After collecting my thoughts, I went back the way I came.
+	I flipped the pass around in my hand, trying to distract myself from the writhing under my skin.
+do CutsceneManager.cutscene4_part2()
+=> END

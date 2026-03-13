@@ -13,7 +13,7 @@ var cutscenecameracoords: Vector2
 
 #gameplay variables
 var cur_respawn: Vector2
-var cont_scene: String
+var cont_scene: String = "null"
 @onready var player_position: Vector2
 #used to force characters to certain coordinates during a cutscene
 var player_goto_coords: Vector2
@@ -29,4 +29,3 @@ var seenfirstcut: bool = false #set after seeing the cutscene outside the subway
 var metvagabond: bool = false #set after talking to the vagabond for the 1st time
 var beatfirstboss : bool = false #set after defeating the first boss
 var haspass: bool = false #determines whether or not the player has the Subway Pass
-var subgate: bool = true #determines whether or not the subway gate is active

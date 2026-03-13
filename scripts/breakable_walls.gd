@@ -6,13 +6,11 @@ extends TileMapLayer
 func ready() -> void:
 	cur_hp = 3
 
-func damage(damage: int, whodoibreak: int) -> void:
-	if whichwall == whodoibreak:
-		cur_hp = cur_hp - damage
-		print(cur_hp)
+func damage(damage: int) -> void:
+	cur_hp = cur_hp - damage
+	print(cur_hp)
 	if cur_hp == 0:
-		killwalls(whichwall)
+		killwalls()
 
-func killwalls(whodoibreak: int) -> void:
-	if whichwall == whodoibreak:
-		queue_free()
+func killwalls() -> void:
+	queue_free()
