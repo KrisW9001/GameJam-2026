@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://be8pvf2i4sp43"
+path="res://.godot/imported/subway_denial.dialogue-65f20e107b95e71aabb5ad80fc4788a1.tres"
+
+[deps]
+
+source_file="res://dialogue/subway_denial.dialogue"
+dest_files=["res://.godot/imported/subway_denial.dialogue-65f20e107b95e71aabb5ad80fc4788a1.tres"]
+
+[params]
+
+defaults=true

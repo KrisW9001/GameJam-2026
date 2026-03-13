@@ -28,4 +28,4 @@ var fighter_goto: bool = false
 var seenfirstcut: bool = false #set after seeing the cutscene outside the subway
 var metvagabond: bool = false #set after talking to the vagabond for the 1st time
 var beatfirstboss : bool = false #set after defeating the first boss
-var haspass: bool = false #determines whether or not the player has the Subway Pass
+var haspass: bool = false #determines whether or not the player has the pickup needed to progress

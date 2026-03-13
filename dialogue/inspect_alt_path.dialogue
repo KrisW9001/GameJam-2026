@@ -1,0 +1,7 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+It looks like there's another path over there. Its barely intact, but still intact.
+...I'm not exactly what someone would call "agile". I can't get over there, or have any hope of getting across that.
+I wonder if Red is a good jumper, even with all that armor.
+set GlobalVariables.cutscenemode = false
+=> END

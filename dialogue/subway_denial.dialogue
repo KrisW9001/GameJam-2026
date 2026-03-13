@@ -1,0 +1,6 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+No reason to go back down there. Plus it reeks of slimes.
+...Nope, it's me. The smell stuck to me.
+set GlobalVariables.cutscenemode = false
+=> END

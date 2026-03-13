@@ -1,0 +1,11 @@
+~ start
+if GlobalVariables.haspass == false
+	There's a row of shields blocking the way. They're forming a magic barrier I can't pass.
+	Some weird writing is on all of them that I dont recognize. They won't budge at all.
+	Maybe there's something around here I can use to break them?
+	do CutsceneManager.endcutscene()
+if GlobalVariables.haspass == true
+	do sfx_success()
+	I held the key out towards the shields, and they both dissapeared.
+	do CutsceneManager.endcutscene()
+=> END

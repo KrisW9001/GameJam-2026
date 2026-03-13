@@ -1,0 +1,7 @@
+~ start
+do get_tree().call_group("key", "despawn")
+do get_tree().call_group("Player", "item_pose")
+I got a key! It has some weird writing on it that I don't recognize.
+set GlobalVariables.haspass = true
+do CutsceneManager.endcutscene()
+=> END

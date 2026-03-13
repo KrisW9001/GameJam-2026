@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cmv42mnww2ora"
+path="res://.godot/imported/inspect_alt_path.dialogue-6a447200b51795d846bea88d228ec514.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_alt_path.dialogue"
+dest_files=["res://.godot/imported/inspect_alt_path.dialogue-6a447200b51795d846bea88d228ec514.tres"]
+
+[params]
+
+defaults=true
