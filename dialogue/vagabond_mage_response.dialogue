@@ -1,0 +1,8 @@
+~ start
+do get_tree().call_group("VagabondActor", "block_l")
+do get_tree().call_group("Zulie", "stance_l")
+do get_tree().call_group("Player", "idle_l")
+Vagabond: [shake rate=20 level=10]..Surrounded. Of course.[/shake]
+set TalkScenes.mage_talk.dialogue_resource = load("res://dialogue/mage_intro_2.dialogue")
+do TalkScenes.mage_talk.start()
+=> END

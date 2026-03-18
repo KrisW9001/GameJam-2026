@@ -1,0 +1,5 @@
+~ start
+Zulie: [shake rate=20 level=10]Marcus! Get out of here![/shake]
+set TalkScenes.mage_talk.dialogue_resource = load("res://dialogue/mage_battle_end_2.dialogue")
+do TalkScenes.mage_talk.start()
+=> END

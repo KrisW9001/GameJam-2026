@@ -1,0 +1,7 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+A huge pumpkin. It's somehow growing sideways on these structures.
+I get that this is supposed to be a world that I'm viewing from the wrong perspective, but it still sticks out to me. I don't know why.
+I could try to get the pumpkin off, but I'd probably just end up breaking it on accident.
+set GlobalVariables.cutscenemode = false
+=> END

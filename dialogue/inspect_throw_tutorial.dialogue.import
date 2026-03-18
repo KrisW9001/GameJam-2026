@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://xtxhavntntfp"
+path="res://.godot/imported/inspect_throw_tutorial.dialogue-dce738b772d722c016ae4dad27ae2945.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_throw_tutorial.dialogue"
+dest_files=["res://.godot/imported/inspect_throw_tutorial.dialogue-dce738b772d722c016ae4dad27ae2945.tres"]
+
+[params]
+
+defaults=true

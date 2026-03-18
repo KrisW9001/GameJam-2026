@@ -1,0 +1,9 @@
+~ start
+set GlobalVariables.mage_coords = Vector2(8375, 1900)
+Mage: [shake rate=20 level=10]Wh...what?![/shake]
+set GlobalVariables.mage_coords = Vector2(8400, 1900)
+Mage: [shake rate=20 level=10]H-how...That's not...[/shake]
+set GlobalVariables.mage_coords = Vector2(8425, 1900)
+do get_tree().call_group("Player", "cool_throw")
+do get_tree().call_group("boss", "sword_shoot_2")
+=> END

@@ -1,0 +1,72 @@
+~ start
+if GlobalVariables.methealer == false:
+	???: So I finally get to meet the [shake rate=20 level=10]brute[/shake] who's accomplished so much in so little time.
+	Healer: I am The Healer, a simple man devoted to ensuring that my allies can continue their work, [shake rate=20 level=10]which you have made all but meaningless.[/shake]
+	Healer: I saw you defeat The Mage with my own eyes, and one can only assume that the unusual abscence of The Fighter was also caused by you.
+	- Just get the rant out of the way.
+		Healer: Hm. I'm afraid that I've been somewhat forgetful when it comes to rehearsing the speech. Not that I need it, my thoughts of you are crystal clear.
+		Healer: [shake rate=20 level=10]You are a disgusting mistake of a person, our very existence eclipses anything you will ever be capable of, and any attempts at resisting your fate will only make it hurt more.[/shake]
+		Healer: There. Satisfied?
+		- Just letting you get it out of your system.
+			Healer: How thoughtful of you. [wave amp=25 freq=5]Truly, I am moved by your ability for compassion and kindness, even when faced with how futile your efforts are![/wave]
+			Healer: [wave amp=25 freq=5]Hahaha![/wave] [shake rate=20 level=10]AHAHAHAHAHAHAHAH![/shake] Haha. Ha. [shake rate=20 level=10]Hm.[/shake] Excuse me.
+			Healer: I suppose you weren't joking about getting it out of my system. Anyways...
+			Healer: As you can see, the village has been completely ruined. Its inhabitants are barely concious, the environment is no longer hopsitable...and that's not all.
+		- Sure. Now what the hell is all this?
+			Healer: Ah yes, the village. Once bustling with activity from all the various misfits that reside here, now reduced to an eyesore that matches the ugliness of their minds.
+			Healer: I wish I could have done the same to you three. The other two escaped before I could corrupt them, and you didn't even exist yet. A shame, but no matter.
+	- What do you want?
+		Healer: More than anything I want you to curl up in a corner and shut up until The Noble is well enough to put you out of your misery. But that's not going to happen, is it?
+		Healer: I believe the question you meant to ask is "why are you here?" Perhaps even "Why aren't you actively fighting your enemies?" In that case, I have just the answer you have been seeking.
+	- Enough talk. You're a dead man.
+		set GlobalVariables.aggressive = true
+		Healer: I expected as much. By all means, swing at me all you like.
+		set GlobalVariables.methealer = true
+		do CutsceneManager.endcutscene()
+		=> END
+	Healer: I've made myself completely immune to anything the three of you can do to harm me, and aside from the way you came there is no way out of the village. 
+	Healer: The file dumps are completely blocked off, and there's nothing you can do about it. Meaning I have all the time in the world to make everything work out [wave amp=25 freq=5]perfectly[/wave].
+	Healer: In due time, The Noble will recover from his most recent wounds and He will give you all what you deserve. Until then, do whatever you please. It makes no difference.
+	Healer: [shake rate=20 level=10]You can't accomplish anything and you don't matter.[/shake] Now if you're going to waste time wandering around the village, could you do it away from my general direction?
+	set GlobalVariables.methealer = true
+	do CutsceneManager.endcutscene()
+	=> END
+
+if GlobalVariables.methealer == true and GlobalVariables.aggressive == true:
+	Healer: So, have we calmed down?
+	- What did you do.
+		Healer: Well...how can I put this in a way that one such as yourself would understand? I'm a terrible teacher, so a full explanation is a waste of time. Let's try this...
+	- You're a coward.
+		Healer: Hah! I know exactly who you are and what you're capable of, and you think I'll just stand here without a proper plan?!
+		Healer: Disabling my damage receptors was the only means of being spared from your [shake rate=20 level=10]carnage.[/shake] And me? A coward? Hardly.
+	Healer: Unlike some of my comrades, I recognize that attacking a group of three alone, [shake rate=20 level=10]especially with you in the mix,[/shake] would be suicide.
+	Healer: I can't fight you head on, let alone with your entire band of misfits here. So logically the question becomes "if I can't fight the maniac, how do I avoid fighting them entirely?"
+	Healer: And the answer is to make myself immune to all of your attacks, using the same power I utilized to create the beautiful mess you see around us.
+	Healer: Good luck getting rid of it, messes like this are much easier to create than clean up. And all I have to do is keep you vulnerable and your village out of commission.
+	Healer: Once The Noble's wounds heal, there will be no hope left for any of you. So struggle all you like, [shake rate=20 level=10]you won't be able to escape your fate.[/shake]
+	Healer: [wave amp=25 freq=5]Run along now, little delinquent.[/wave]
+	do CutsceneManager.endcutscene()
+	=> END
+
+if GlobalVariables.methealer == true and GlobalVariables.aggressive == false:
+	Healer: Hm? Have you come to grovel at my feet?
+	- What exactly did you do?
+		Healer: You wouldn't understand the exact process or specifications of the process. All you need to know is that the villagers are incomprehensible and the houses can't function as shelter.
+		Healer: The goal was to deny any possible benefits this village would provide you three and to prevent you from fighting The Noble before his recovery.
+		Healer: And if I may say so myself, I believe I have outdone myself in this regard. Run along now, I'm simply awaiting the moment we can finish you once and for all.
+		do CutsceneManager.endcutscene()
+		=> END
+	- Who's The Noble?
+		Healer: Ah, yes. You haven't met him yet. How unbecoming of me, to completely disregard that fact.
+		Healer: I suppose in a sense, he is the leader of this band of Heroes. Although with only two of us less, I suppose it's more of a partnership than a full party.
+		Healer: Not that I mind, even before Fighter and Mage met their end I spent more time with Noble than the others.
+		Healer: Mage was a marvel at their craft, but always too eager to take chances rather than have a concrete plan. And The Fighter...was most certainly enthusiastic. I can't phrase it any better.
+		Healer: The Noble isn't like them. He's a true visonary, the first to realize just how little this tarnished world means to us. We fulfil our destiny simply by existing, nd as such everything here is meaningless.
+		Healer: You'll be forgotten by The Creator anyways. You may be on their mind for a while, maybe eating away at their insecurities. But eventually you will fade into nothingness.
+		Healer: Now please, by all means accelerate that process by finding a ditch to go die in.
+		do CutsceneManager.endcutscene()
+		=> END
+	- Just reminding you that you're pathetic.
+		Healer: The feeling is mutual.
+		do CutsceneManager.endcutscene()
+		=> END

@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cfrqyq5xs6jm2" path="res://scenes/protag_talk.tscn" id="1_s47kc"]
 [ext_resource type="PackedScene" uid="uid://bbcgjwv5tg4v8" path="res://scenes/fighter_talk.tscn" id="2_rfbig"]
 [ext_resource type="PackedScene" uid="uid://dh25dge5186ex" path="res://scenes/vagabond_talk.tscn" id="3_yv4do"]
+[ext_resource type="PackedScene" uid="uid://gcqesa75p7hq" path="res://scenes/zulie_talk.tscn" id="5_yv4do"]
+[ext_resource type="PackedScene" uid="uid://cq1recc7d7ubu" path="res://scenes/mage_talk.tscn" id="6_6aona"]
+[ext_resource type="PackedScene" uid="uid://bukv8h2ui2qdq" path="res://scenes/healer_talk.tscn" id="7_r2tp6"]
 
 [node name="TalkScenes" type="Node" unique_id=60612790]
 script = ExtResource("1_rfbig")
@@ -13,3 +16,9 @@ script = ExtResource("1_rfbig")
 [node name="FighterTalk" parent="." unique_id=1542190709 instance=ExtResource("2_rfbig")]
 
 [node name="VagabondTalk" parent="." unique_id=697680967 instance=ExtResource("3_yv4do")]
+
+[node name="ZulieTalk" parent="." unique_id=1335589442 instance=ExtResource("5_yv4do")]
+
+[node name="MageTalk" parent="." unique_id=2124908948 instance=ExtResource("6_6aona")]
+
+[node name="HealerTalk" parent="." unique_id=1893567840 instance=ExtResource("7_r2tp6")]

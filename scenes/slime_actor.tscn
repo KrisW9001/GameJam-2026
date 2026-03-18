@@ -216,7 +216,7 @@ texture_filter = 1
 position = Vector2(0, -5)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_srws1")
-animation = &"die"
+animation = &"move"
 script = ExtResource("2_3scvf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1215973104]

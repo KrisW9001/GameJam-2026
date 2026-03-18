@@ -1,7 +1,10 @@
 ~ start
 set GlobalVariables.menutype = "Dialogue"
-"Pass Office - Unless your matter is urgent, please wait until you can be served."
-...This is the place.
+if GlobalVariables.seenreader == true:
+	"Pass Office - Unless your matter is urgent, please wait until you can be served."
+	This is the place. Hopefully I can still get my hands on a pass.
+elif GlobalVariables.seenreader == false:
+	"Pass Office - Unless your matter is urgent, please wait until you can be served." The door is unlocked.
 - Go in
 	do get_tree().call_group("inspect_w_room", "new_room")
 	do MusicController.music_fadeout_fast()

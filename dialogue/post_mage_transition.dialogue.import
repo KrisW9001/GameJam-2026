@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://i6qisxhbrwdc"
+path="res://.godot/imported/post_mage_transition.dialogue-e5756ee4a2a1a79e2a7ed60de72daa09.tres"
+
+[deps]
+
+source_file="res://dialogue/post_mage_transition.dialogue"
+dest_files=["res://.godot/imported/post_mage_transition.dialogue-e5756ee4a2a1a79e2a7ed60de72daa09.tres"]
+
+[params]
+
+defaults=true

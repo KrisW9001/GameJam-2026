@@ -1,0 +1,12 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+if GlobalVariables.metzulie == false:
+	Some swords are laying around, along with a map that looks like the areas I just went through.
+	The subway tunnels and the City I started in aren't on here, though. Didn't The Vagabond say he hadn't been there before?
+	I guess this is where he lives. If you can call it that...Though, it's not a bad place to bunker down.
+if GlobalVariables.metzulie == true:
+	Some swords and a map. Some of these swords aren't in great condition though. Zulie probably uses something other than her main sword for practice.
+	The map has two different types of handwriting on it. One of them is pretty small, sticking in comments about the terrain and what usually inhabits those areas.
+	The other type of handwriting is completely unreadable. It's not bad writing, it's that goofy writing style with all the loops and curvy lines. I can't even try to understand what it says.
+do CutsceneManager.endcutscene()
+=> END

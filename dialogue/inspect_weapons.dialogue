@@ -1,0 +1,6 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+There's some weapons laying on the ground. A dagger, and...what looks like a magic staff with some crystals forming on it.
+No matter how hard I try, I cant pick them up. My hands phase right through them.
+set GlobalVariables.cutscenemode = false
+=> END

@@ -1,0 +1,6 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+Oh, this sign is absolutely messed up. 
+"W8lnOm3 l0 oo4 tO2n" ...The rest is really small print and just as messed up as the rest.
+do CutsceneManager.endcutscene()
+=> END

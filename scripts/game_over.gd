@@ -70,6 +70,7 @@ func _on_retry_pressed() -> void:
 	if can_select and GlobalVariables.menumode and GlobalVariables.menutype == "Death":
 		can_select = false
 	MusicController.music_fadeout_slow()
+	TheCamera.screentint(0)
 	audio_player.stream = select_sfx
 	audio_player.play()
 	anim_player.play("select_retry")
@@ -80,6 +81,10 @@ func _on_retry_pressed() -> void:
 	get_tree().call_group("Player", "respawn")
 	get_tree().call_group("enemies", "respawn")
 	get_tree().call_group("Objects", "respawn")
+	get_tree().call_group("earthspike", "deactivate")
+	get_tree().call_group("breakable_wall", "respawn")
+	get_tree().call_group("Zulie", "respawn")
+	get_tree().call_group("VagabondActor", "respawn")
 	await get_tree().create_timer(0.5).timeout
 	GlobalVariables.menumode = false
 	TheCamera.transition_off()

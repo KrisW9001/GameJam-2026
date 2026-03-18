@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var metal_gear_meme: AnimatedSprite2D = $"metal gear meme"
 @onready var box: Area2D = $box
 @onready var hitbox: CollisionShape2D = $box/CollisionShape2D
+@onready var hurt: Area2D = $hurt
 @onready var slimezone: CollisionShape2D = $detector/slimezone
 @onready var particles: GPUParticles2D = $GPUParticles2D
 @onready var shader: ColorRect = $ColorRect
@@ -13,9 +14,8 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 
 #variables for sfx
-var is_playing: bool = false
-var detect_sfx = preload("res://audio/sfx/Metal High.wav")
-var die_sfx = preload("res://audio/sfx/Door Close Big.wav")
+var detect_sfx = load("res://audio/sfx/Metal High.wav")
+var die_sfx = load("res://audio/sfx/Door Close Big.wav")
 
 #general stats
 const speed: int = 120
@@ -110,6 +110,7 @@ func _physics_process(delta: float) -> void:
 			await get_tree().create_timer(0.3).timeout
 			slimebody.visible = false
 			shader.visible = false
+			position = Vector2(5000,5000)
 	move_and_slide()
 
 #if player enters the slime zone, put slime in detect state
@@ -134,24 +135,27 @@ func _on_box_body_entered(body: CharacterBody2D) -> void:
 		dealtdamage = true
 		body.hurt_player(damage, position.x, position.y)
 		state = "recoil"
-		
-	else:
-		pass
+
 	#when an object is thrown at the slime, play animations and kill them
-	if body.is_in_group("Objects") and body.get_child(2).flying:
+func _on_hurt_body_entered(body: CharacterBody2D) -> void:
+	if body.is_in_group("Objects") and body.get_child(2).flying and !self.dead:
 		audio_player.stream = die_sfx
 		audio_player.play()
+		self.dead = true
 		state = "die"
 
 #upon taking damage from the player, kill the slime
 func hurt_enemy(player_damage: float):
-	audio_player.stream = die_sfx
-	audio_player.play()
-	state = "die"
+	if !self.dead:
+		audio_player.stream = die_sfx
+		audio_player.play()
+		self.dead = true
+		state = "die"
 
 func respawn() -> void:
 	state = "idle"
 	hitbox.disabled = false
+	self.dead = false
 	box.set_collision_mask_value(2, true)
 	slimezone.disabled = false
 	slimebody.visible = true

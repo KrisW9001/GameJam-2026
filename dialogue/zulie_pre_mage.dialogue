@@ -1,0 +1,16 @@
+~ start
+Zulie: I meant it when I said things would get hectic fast. The Mage is constantly on guard duty, or at least it feels like they are.
+Zulie: The moment I take this barrier down, there's a good chance we'll immediately have to deal with their spells.
+Zulie: Be prepared for anything.
+- I'm ready.
+	Zulie: Alright, I'll take down the barrier.
+	do get_tree().call_group("breakable_wall", "killwalls")
+	do get_tree().call_group("Zulie", "stance_r")
+	do get_tree().call_group("Zulie", "open_gate")
+	do get_tree().call_group("VagabondActor", "idle_r")
+	Zulie: Stay on your guard, they'll be on to us at an-
+	do CutsceneManager.cutscene6()
+	=> END
+- Not yet.
+	do CutsceneManager.endcutscene()
+	=> END

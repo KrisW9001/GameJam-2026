@@ -6,7 +6,6 @@ var is_playing: bool = false
 #basic actor that does a single thing in a cutscene
 func _ready() -> void:
 	play("move")
-	flip_h = true
 
 func die() -> void:
 	play("die")

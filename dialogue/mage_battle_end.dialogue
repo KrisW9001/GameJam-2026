@@ -1,0 +1,13 @@
+~ start
+Mage: [shake rate=20 level=10]Finally![/shake] All that time spent waiting, making sure to account for every single one of your techniques... [shake rate=20 level=10]I finally have you right where I want you.[/shake]
+Mage: Just when I was getting tired of waiting, tired of this stalemate we found ourselves in, tired of watching as you continue to writhe right under my nose...
+Mage: You went and made the worst possible decision you could have made. And for what? Because you had a new friend? [shake rate=20 level=10]How quaint.[/shake]
+Mage: The Vagabond is easy enough, that undead abomination couldn't outrun a turtle. But you? You're the crown jewel. Getting rid of you means getting the worst out of the way.
+Mage: This game of cat and mouse has been fun, miss ninja. but at the end of it all, you couldn't protect your town, and now you can't even protect yourself. [shake rate=20 level=10]A disgrace like you has no reason to exist![/shake]
+Mage: ...Hm?
+do get_tree().call_group("boss", "idle_l")
+set GlobalVariables.player_goto_active = true
+set GlobalVariables.player_goto_coords = Vector2(8000, 1900)
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_mage_end_response.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

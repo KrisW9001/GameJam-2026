@@ -1,0 +1,6 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+There's a bunch of those magic shields around here. They aren't blocking the way though.
+It even looks like...someone made a gap in them to pass through. Did someone move them? Are they being placed intentionally?
+do CutsceneManager.endcutscene()
+=> END

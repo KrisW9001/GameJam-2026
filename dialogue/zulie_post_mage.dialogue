@@ -1,0 +1,10 @@
+~ start
+set GlobalVariables.player_goto_coords = Vector2(8500, 1700)
+do get_tree().call_group("Player", "walk_r")
+Zulie: [shake rate=20 level=10]I can't believe it...[/shake]
+do get_tree().call_group("Player", "idle_r")
+do get_tree().call_group("Zulie", "upright_l")
+Zulie: ...Thanks. I...I'm at a loss for words.
+set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_post_mage.dialogue")
+do TalkScenes.vagabond_talk.start()
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ba3wc5yasu2co"
+path="res://.godot/imported/zulie_mage_end_response.dialogue-2ef17ca52188e4ef2452f16e7d063335.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_mage_end_response.dialogue"
+dest_files=["res://.godot/imported/zulie_mage_end_response.dialogue-2ef17ca52188e4ef2452f16e7d063335.tres"]
+
+[params]
+
+defaults=true

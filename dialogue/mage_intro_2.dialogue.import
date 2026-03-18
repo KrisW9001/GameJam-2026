@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c8f31n3epne5v"
+path="res://.godot/imported/mage_intro_2.dialogue-23b69bc7c99a645a96a7337d964a23fb.tres"
+
+[deps]
+
+source_file="res://dialogue/mage_intro_2.dialogue"
+dest_files=["res://.godot/imported/mage_intro_2.dialogue-23b69bc7c99a645a96a7337d964a23fb.tres"]
+
+[params]
+
+defaults=true

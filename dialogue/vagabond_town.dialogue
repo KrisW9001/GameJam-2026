@@ -1,0 +1,25 @@
+~ start
+Vagabond: What a truly awful thing to have done. Harassing me and Zulie for as long as they did is vile enough, [shake rate=20 level=10]but this was absolutely unnecessary.[/shake]
+Vagabond: At least we won't have to worry about fighting for our lives. Are you here to converse?
+~ ask
+- Why are you all the way over here?
+	Vagabond: I reside in this building, at least when there isn't a crisis such as this occuring. It's become quite cozy over time.
+	Vagabond: You've probably noticed that I'm too tall for most of the doorways here. When I arrived they offered me this until something else was built.
+	Vagabond: That never happened, and then it simply became permanent. Not that I mind, I told the villagers that I was content.
+	Vagabond: Of course, as you can see the entrance is currently blocked. And only the entrance, it seems. Just my luck.
+	=> ask
+- What's Zulie up to?
+	Vagabond: Last I saw her, she was trying to enter her home. Her residence fared worse than mine unfortunately, so anything she was keeping that could have been of use is inaccessible.
+	Vagabond: She also mentioned that she would try to find Damien since he could be of help, but...even before the Heroes revolted, he was rarely seen.
+	Vagabond: I can imagine he might have been capable of assisting us in this manner, but I highly doubt he was spared from The Healer's foul magic.
+	=> ask
+- What's this place usually like?
+	Vagabond: Fairly quiet, actually. The community that formed is rather charming, offering a welcome sense of belonging in this harsh wasteland.
+	Vagabond: When the Heroes were still living alongside us, the most eventful days were when The Fighter and Zulie trained together. I despised the racket their bickering would cause.
+	Vagabond: But now I long for those days to return. If only they could...
+	=> ask
+- Just checking in.
+	Vagabond: Thank you, Marcus. I'll be alright, though I doubt I'll be of much use in this unfortunate scenario we have been placed in, what with my feeble body.
+	Vagabond: I reccomend searching the village as much as you can, to see if there's anything useful.
+	do CutsceneManager.endcutscene()
+	=> END

@@ -13,4 +13,9 @@ func damage(damage: int) -> void:
 		killwalls()
 
 func killwalls() -> void:
-	queue_free()
+	position.x -= 50000
+	position.y -= 50000
+
+func respawn() -> void:
+	position.x += 50000
+	position.y += 50000

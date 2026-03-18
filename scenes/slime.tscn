@@ -150,6 +150,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_371uh"]
 size = Vector2(10, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2gj0"]
 radius = 64.005
 
@@ -266,7 +268,6 @@ shader_parameter/shake_color_rate = 0.01
 process_mode = 1
 scale = Vector2(2.5, 2.5)
 collision_layer = 16
-collision_mask = 9
 script = ExtResource("1_n6pvg")
 
 [node name="slimebody" type="AnimatedSprite2D" parent="." unique_id=289324005]
@@ -287,6 +288,14 @@ collision_mask = 10
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_371uh")
 debug_color = Color(0.9404463, 9.337366e-06, 0.61714995, 0.41960785)
+
+[node name="hurt" type="Area2D" parent="." unique_id=836438568]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt" unique_id=1249467190]
+shape = SubResource("RectangleShape2D_pjw23")
 
 [node name="detector" type="Area2D" parent="." unique_id=2037805598]
 collision_layer = 16
@@ -311,7 +320,7 @@ texture = ExtResource("4_pjw23")
 lifetime = 0.5
 one_shot = true
 speed_scale = 1.75
-explosiveness = 1.0
+explosiveness = 0.5
 randomness = 0.12
 process_material = SubResource("ParticleProcessMaterial_pjw23")
 
@@ -341,6 +350,7 @@ wait_time = 0.05
 one_shot = true
 
 [connection signal="body_entered" from="box" to="." method="_on_box_body_entered"]
+[connection signal="body_entered" from="hurt" to="." method="_on_hurt_body_entered"]
 [connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="detector" to="." method="_on_detector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

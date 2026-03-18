@@ -113,8 +113,10 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=908561942]
 volume_db = -20.0
+bus = &"Sound Effects"
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="item_selected" from="WindowButton" to="." method="_on_window_button_item_selected"]
 [connection signal="value_changed" from="MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
 [connection signal="value_changed" from="SfxVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]

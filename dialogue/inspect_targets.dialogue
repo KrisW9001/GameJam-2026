@@ -1,0 +1,14 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+if GlobalVariables.metzulie == false:
+	Some training targets. They look like they've been used a lot, judging by all the holes in the target face.
+	Gotta say though, Red doesn't strike me as the kinda guy to use shurikens. All that armor would make it hard to throw them properly.
+	Maybe he does this just for fun. Either way, whoever's been practicing with these has some pretty good aim. Supposedly. I don't know how far away they were throwing them.
+if GlobalVariables.metzulie == true:
+	Some training targets. Now that I've met Zulie, I can safely say these must be hers. She probably has enough dignity to practice from a good distance away.
+	So is this where she's been living for the past month? It's not great, but when you don't have much I guess it can be pretty cozy. The floors are intact, so that's a plus.
+	...I'm still imagining Red trying to throw a shuriken. If being undead affected his mobility, he probably doesn't have the finesse for it. Or anywhere to reliably store them.
+	...Heh. I can imagine him trying it out and throwing so hard his zombie arm falls off. He would probably find that pretty funny. If it wouldn't be painful. Do zombies feel pain?
+	...I've been getting too distracted.
+do CutsceneManager.endcutscene()
+=> END

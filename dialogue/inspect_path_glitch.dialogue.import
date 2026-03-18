@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://do0fwfftf0o75"
+path="res://.godot/imported/inspect_path_glitch.dialogue-c5e3fb4f6b227c55a450b87f3164bb2d.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_path_glitch.dialogue"
+dest_files=["res://.godot/imported/inspect_path_glitch.dialogue-c5e3fb4f6b227c55a450b87f3164bb2d.tres"]
+
+[params]
+
+defaults=true

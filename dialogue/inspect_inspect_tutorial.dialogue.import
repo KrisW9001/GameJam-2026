@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://fobw4su15gb8"
+path="res://.godot/imported/inspect_inspect_tutorial.dialogue-10799c14b2f11adb7536a89357b06bac.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_inspect_tutorial.dialogue"
+dest_files=["res://.godot/imported/inspect_inspect_tutorial.dialogue-10799c14b2f11adb7536a89357b06bac.tres"]
+
+[params]
+
+defaults=true

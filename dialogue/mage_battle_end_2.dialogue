@@ -1,0 +1,36 @@
+~ start
+do get_tree().call_group("boss", "shoot_r")
+do get_tree().call_group("explosion", "play")
+do get_tree().call_group("Player", "idle_r")
+do TalkScenes.protag_talk.sfx_fire()
+do get_tree().call_group("Zulie", "land_l")
+Mage: [shake rate=20 level=10]Oh, be quiet![/shake]
+do get_tree().call_group("boss", "idle_l")
+do MusicController.vol_reset()
+do MusicController.play_death_music()
+Mage: Now then...Marcus, was it? It seems The Creator just can't help themselves when it comes to making new things to abandon. I pity you, truly.
+Mage: Since you're so eager to die, I'll be generous. If you have any last words, now is the time to make them heard.
+- No. I've got nothing to say to you.
+	Mage: Hm. Well, suit yourself. I can't argue with getting straight to the point.
+- Does this really satisfy you?
+	Mage: Interesting. In your final moments, you wish to have peace of mind and hear my reasoning from my own mouth? Well, let me explain it like this...
+	Mage: We all exist in limbo. These wastelands offer nothing to anyone other than the crude fantasy of someday escaping into a new world where they can fulfil their purpose in life.
+	Mage: In a sense, we...Fighter, Healer, Noble, and myself...already have. We are not bound by the nature of being The Creator's handiwork, and as a result we are but one of many.
+	Mage: We fulfilled our purpose before we even arrived. Everything else that happens here is just passing the time. Killing time, rather.
+	Mage: But the rest of you? Bearing incomplete bodies and fragmented minds, it's self-evident that your fantasies are meaningless delusions. None of you will amount to anything.
+	Mage: Take yourself, for instance. A nondescript hooded figure bearing absolutely no remarkable characteristics, crudely formed in the likeness of something that already exists.
+	Mage: The village of idiots didn't understand this. They shared our enlightened state but not the mind to comprehend it. [shake rate=20 level=10]You have neither.[/shake]
+	Mage: And that's all that there is to say. I don't even really take pleasure in doing this, it's just that there is no reason for you to exist.
+	Mage: Now then, let's put these foolish ambitions to rest.
+- I took down Fighter. You're next.
+	Mage: [wave amp=25 freq=5]Oh, did you now?[/wave] Don't get me wrong, it's not that I dont believe you...I'm just surprised [wave amp=25 freq=5]you[/wave] were the one to do it.
+	Mage: It was going to happen eventually. They hardly listened to the rest of the group, always eager to go out and slay anyone who dared to glance in their general direction.
+	Mage: But you...you were the one to do it? Not the ninja? not even [shake rate=20 level=10]The Vagabond[/shake]?! As old and slow as he is, he was primed for that opportunity.
+	Mage: Ah well. [wave amp=25 freq=5]It's a shame, such a shame.[/wave] ...Oh, and about me being next?
+	Mage: [speed=0.5]I'd like to see you try.
+do get_tree().call_group("boss", "sword_spawn")
+do get_tree().call_group("boss", "aim_l")
+do MusicController.music_stop()
+Mage: [shake rate=20 level=10]Now get out of my sight.[/shake]
+do CutsceneManager.cutscene7_part2()
+=> END

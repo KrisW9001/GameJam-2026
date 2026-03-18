@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdhnvrleobq4k" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://c6vdd56y286ls" path="res://assets/temp/protag v1 WIP4.png" id="2_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://hycr2ve6u7qp" path="res://assets/UI/xbox buttons up.png" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cpl35fo7andx4" path="res://assets/UI/prompt up.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cuhk2k8fol53t" path="res://assets/effects/emotes no bg.png" id="3_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://d6s1xn51g7kv" path="res://audio/sfx/Sword 2.wav" id="5_qlg0r"]
 
@@ -126,6 +126,26 @@ region = Rect2(384, 960, 192, 192)
 [sub_resource type="AtlasTexture" id="AtlasTexture_lw0jh"]
 atlas = ExtResource("2_qhqgy")
 region = Rect2(576, 960, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(1152, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4otl"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 1344, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(1152, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc3p3"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(960, 1152, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irpag"]
 atlas = ExtResource("2_qhqgy")
@@ -467,6 +487,36 @@ animations = [{
 }],
 "loop": true,
 "name": &"carry_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md1ol")
+}],
+"loop": true,
+"name": &"catch_r",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_hax0n")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_t4otl")
+}],
+"loop": false,
+"name": &"cool_throw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_jc3p3")
+}],
+"loop": false,
+"name": &"cool_toss",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1345,6 +1395,67 @@ shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 10.0
 shader_parameter/shake_color_rate = 0.01200000057
 
+[sub_resource type="Animation" id="Animation_d2wvv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3v2ag"]
+resource_name = "flash_1"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.39599994, 0, 0.66, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(8, 0), Vector2(-8, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(-2, 0), Vector2(2, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jej6c"]
+_data = {
+&"RESET": SubResource("Animation_d2wvv"),
+&"flash_1": SubResource("Animation_3v2ag")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=1720193695 groups=["Player"]]
 process_mode = 1
 z_index = 2
@@ -1374,7 +1485,9 @@ frame_progress = 0.4868495
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
-animation = &"idle_down"
+animation = &"cool_throw"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=66438373]
 shape = SubResource("RectangleShape2D_dqkch")
@@ -1432,6 +1545,9 @@ color = Color(0.32, 0, 0, 1)
 
 [node name="HealTimer" type="Timer" parent="." unique_id=629184720]
 wait_time = 10.0
+
+[node name="purpleflash" type="AnimationPlayer" parent="." unique_id=1347673166]
+libraries/ = SubResource("AnimationLibrary_jej6c")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,28 @@
+~ start
+Zulie: ...And we're probably not going to get an opportunity better than this. It's weird that it's happening so suddenly...
+Zulie: But I agree, it's now or never. So Marcus, the deal is simple. You help us fight the Heroes and save the village, and we'll do what we can to help you realize your destiny.
+Zulie: Not that we'll take no for an answer. They need to pay for what they've done.
+- I Wasn't going to refuse anyways.
+	Zulie: Good. I know you're probably just trying to get by, but we appreciate your help.
+- Sounds like a deal.
+	Zulie: Then it's settled. They won't know what hit 'em.
+- What, right now? 
+	Zulie: Well, not immediately. Mentally prepare yourself, patch up any injuries, the usual.
+Zulie: I set up a barrier to the west to keep the Mage out. Once they realize we're making an advance, It's going to get hectic fast.
+set GlobalVariables.vagabond_goto = true
+set GlobalVariables.vagabond_coords = Vector2(2760, 1575)
+do get_tree().call_group("VagabondActor", "walk_r")
+do MusicController.music_stop()
+Zulie: Once you're ready to go, let us know and I'll take it down.
+do MusicController.music_fadein()
+do MusicController.play_level2_music()
+set GlobalVariables.zulie_goto = true
+#set GlobalVariables.vagabond_coords = Vector2(3500, 1950)
+#set GlobalVariables.zulie_coords = Vector2(3500, 2200)
+set GlobalVariables.zulie_coords = Vector2(2760, 1575)
+do get_tree().call_group("Zulie", "walk_r")
+do CutsceneManager.pair_togate()
+set CutsceneManager.incut5 = false
+set GlobalVariables.metzulie = true
+set GlobalVariables.cameralock = false
+=> END

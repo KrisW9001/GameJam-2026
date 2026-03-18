@@ -1,0 +1,7 @@
+~ start
+Vagabond: ...
+Vagabond: Marcus...what's been done to you is inconceivable. To think that your destiny would require such immense needless suffering...
+Vagabond: I don't understand. Is The Creator just as cruel as the fiends that attempt to eradicate us...?
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_post_mage_3.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

@@ -1,0 +1,6 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+"Up button or C = Inspect".
+Is...Is this supposed to be something I can do? What button? What "C"?
+do CutsceneManager.endcutscene()
+=> END

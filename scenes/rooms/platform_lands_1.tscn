@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://didcrpha66idp"]
 
 [ext_resource type="PackedScene" uid="uid://cp6pe32ujtxgf" path="res://scenes/player.tscn" id="1_agnkg"]
+[ext_resource type="Script" uid="uid://ddtbt6tr6movj" path="res://scripts/platform_lands.gd" id="1_c2feb"]
 [ext_resource type="PackedScene" uid="uid://d15fdufr1dj2o" path="res://scenes/camera_2d.tscn" id="2_kh44j"]
 [ext_resource type="Texture2D" uid="uid://c664nxmute2ba" path="res://assets/tilemaps/godot collision shape tileset.png" id="3_5dcyb"]
 [ext_resource type="Texture2D" uid="uid://ueysblfpaenl" path="res://assets/GB city asset pack stuff/buildings edit v2.png" id="3_atshk"]
@@ -28,10 +29,14 @@
 [ext_resource type="Resource" uid="uid://cmv42mnww2ora" path="res://dialogue/inspect_alt_path.dialogue" id="25_a6boh"]
 [ext_resource type="PackedScene" uid="uid://iv7m3djtreti" path="res://scenes/cone.tscn" id="25_vo262"]
 [ext_resource type="Resource" uid="uid://be8pvf2i4sp43" path="res://dialogue/subway_denial.dialogue" id="26_ylj0l"]
+[ext_resource type="Resource" uid="uid://cup2fbqhgac6x" path="res://dialogue/inspect_weapons.dialogue" id="27_5be8d"]
 [ext_resource type="PackedScene" uid="uid://cug2jfyf0lw5i" path="res://scenes/extinguisher.tscn" id="27_a6boh"]
+[ext_resource type="Texture2D" uid="uid://nbvuutaqdw25" path="res://assets/temp/deadlydagger.png" id="28_c2feb"]
 [ext_resource type="PackedScene" uid="uid://d4a1wldbqalpm" path="res://scenes/test_object.tscn" id="28_ylj0l"]
+[ext_resource type="Texture2D" uid="uid://s3wdkbbywt87" path="res://assets/temp/slicerstaff.png" id="29_i4trv"]
+[ext_resource type="PackedScene" uid="uid://dbbknbkndue" path="res://scenes/room_trigger.tscn" id="31_i4trv"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n82iv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2feb"]
 texture = ExtResource("3_xthma")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -178,7 +183,7 @@ texture = ExtResource("3_xthma")
 0:5/0 = 0
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vo262"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4trv"]
 texture = ExtResource("3_5dcyb")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -201,7 +206,7 @@ texture = ExtResource("3_5dcyb")
 2:3/0 = 0
 3:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylj0l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1aadt"]
 texture = ExtResource("4_ktpgo")
 0:0/0 = 0
 1:0/0 = 0
@@ -523,7 +528,7 @@ texture = ExtResource("4_ktpgo")
 6:19/0 = 0
 7:19/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28upq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uc5se"]
 texture = ExtResource("6_kjpnq")
 0:0/0 = 0
 1:0/0 = 0
@@ -641,12 +646,12 @@ texture = ExtResource("6_kjpnq")
 [sub_resource type="TileSet" id="TileSet_5t4yq"]
 physics_layer_0/collision_layer = 9
 physics_layer_0/collision_mask = 10
-sources/0 = SubResource("TileSetAtlasSource_n82iv")
-sources/1 = SubResource("TileSetAtlasSource_vo262")
-sources/2 = SubResource("TileSetAtlasSource_ylj0l")
-sources/3 = SubResource("TileSetAtlasSource_28upq")
+sources/0 = SubResource("TileSetAtlasSource_c2feb")
+sources/1 = SubResource("TileSetAtlasSource_i4trv")
+sources/2 = SubResource("TileSetAtlasSource_1aadt")
+sources/3 = SubResource("TileSetAtlasSource_uc5se")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mtw3l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv2x2"]
 texture = ExtResource("3_5dcyb")
 0:0/0 = 0
 1:0/0 = 0
@@ -665,7 +670,7 @@ texture = ExtResource("3_5dcyb")
 2:3/0 = 0
 3:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3gdo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aj1ea"]
 texture = ExtResource("4_ktpgo")
 0:0/0 = 0
 1:0/0 = 0
@@ -986,7 +991,7 @@ texture = ExtResource("4_ktpgo")
 10:15/0 = 0
 10:16/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ropym"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqur7"]
 texture = ExtResource("3_atshk")
 0:0/0 = 0
 1:0/0 = 0
@@ -1149,7 +1154,7 @@ texture = ExtResource("3_atshk")
 18:7/0 = 0
 19:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nr1en"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dde7u"]
 texture = ExtResource("6_dcbik")
 0:0/0 = 0
 1:0/0 = 0
@@ -1158,7 +1163,7 @@ texture = ExtResource("6_dcbik")
 2:1/0 = 0
 3:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lu82m"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqilp"]
 texture = ExtResource("7_265ce")
 5:0/0 = 0
 6:0/0 = 0
@@ -1311,7 +1316,7 @@ texture = ExtResource("7_265ce")
 0:7/0 = 0
 0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bx2u8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rlms"]
 texture = ExtResource("8_on5ld")
 0:0/0 = 0
 1:0/0 = 0
@@ -1383,14 +1388,14 @@ texture = ExtResource("8_on5ld")
 
 [sub_resource type="TileSet" id="TileSet_n82iv"]
 physics_layer_0/collision_layer = 1
-sources/4 = SubResource("TileSetAtlasSource_nr1en")
-sources/5 = SubResource("TileSetAtlasSource_lu82m")
-sources/6 = SubResource("TileSetAtlasSource_bx2u8")
-sources/1 = SubResource("TileSetAtlasSource_mtw3l")
-sources/2 = SubResource("TileSetAtlasSource_x3gdo")
-sources/3 = SubResource("TileSetAtlasSource_ropym")
+sources/4 = SubResource("TileSetAtlasSource_dde7u")
+sources/5 = SubResource("TileSetAtlasSource_gqilp")
+sources/6 = SubResource("TileSetAtlasSource_3rlms")
+sources/1 = SubResource("TileSetAtlasSource_cv2x2")
+sources/2 = SubResource("TileSetAtlasSource_aj1ea")
+sources/3 = SubResource("TileSetAtlasSource_vqur7")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_265ce"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qm6l"]
 texture = ExtResource("9_dcbik")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1639,7 +1644,7 @@ texture = ExtResource("9_dcbik")
 8:12/0 = 0
 8:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7l8t"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46q53"]
 texture = ExtResource("3_atshk")
 0:0/0 = 0
 1:0/0 = 0
@@ -1876,7 +1881,7 @@ texture = ExtResource("3_atshk")
 19:7/0 = 0
 19:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qolek"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_65olg"]
 texture = ExtResource("9_xthma")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.17985916, 8, 0, 8, 8, -8, 8)
@@ -1957,7 +1962,7 @@ texture = ExtResource("9_xthma")
 9:5/0 = 0
 9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwxmg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g77s7"]
 texture = ExtResource("3_5dcyb")
 0:0/0 = 0
 1:0/0 = 0
@@ -1976,7 +1981,7 @@ texture = ExtResource("3_5dcyb")
 2:3/0 = 0
 3:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dp8vo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grnra"]
 texture = ExtResource("4_ktpgo")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -2493,13 +2498,13 @@ texture = ExtResource("4_ktpgo")
 
 [sub_resource type="TileSet" id="TileSet_vo262"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_v7l8t")
-sources/2 = SubResource("TileSetAtlasSource_qolek")
-sources/4 = SubResource("TileSetAtlasSource_uwxmg")
-sources/5 = SubResource("TileSetAtlasSource_dp8vo")
-sources/0 = SubResource("TileSetAtlasSource_265ce")
+sources/1 = SubResource("TileSetAtlasSource_46q53")
+sources/2 = SubResource("TileSetAtlasSource_65olg")
+sources/4 = SubResource("TileSetAtlasSource_g77s7")
+sources/5 = SubResource("TileSetAtlasSource_grnra")
+sources/0 = SubResource("TileSetAtlasSource_8qm6l")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6boh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lsq8b"]
 texture = ExtResource("5_mq5og")
 0:0/0 = 0
 1:0/0 = 0
@@ -2942,7 +2947,7 @@ texture = ExtResource("5_mq5og")
 
 [sub_resource type="TileSet" id="TileSet_ylj0l"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_a6boh")
+sources/0 = SubResource("TileSetAtlasSource_lsq8b")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3gdo"]
 size = Vector2(5.8668528, 13.306747)
@@ -2953,14 +2958,20 @@ size = Vector2(639, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28upq"]
 size = Vector2(102, 140)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx2u8"]
-size = Vector2(230, 31)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4trv"]
+size = Vector2(362, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5t4yq"]
 size = Vector2(5.8668528, 13.306747)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5be8d"]
 size = Vector2(131, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx2u8"]
+size = Vector2(88, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aadt"]
+size = Vector2(577, 115.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_28upq"]
 shader = ExtResource("11_kjpnq")
@@ -2976,8 +2987,10 @@ shader_parameter/color_mid = Color(0.0019999982, 0.04820005, 0.2, 1)
 shader_parameter/color_high = Color(1, 0.04000002, 0.47199982, 1)
 
 [node name="PlatformLands1" type="Node2D" unique_id=1867616685]
+script = ExtResource("1_c2feb")
 
 [node name="Player" parent="." unique_id=1720193695 instance=ExtResource("1_agnkg")]
+position = Vector2(54, 101)
 
 [node name="Camera2D" parent="." unique_id=793479075 instance=ExtResource("2_kh44j")]
 
@@ -3084,11 +3097,11 @@ texture = ExtResource("21_n82iv")
 whichdialogue = ExtResource("22_n82iv")
 
 [node name="InspectArea2" parent="triggers" unique_id=34190423 instance=ExtResource("18_nr1en")]
-position = Vector2(1966, -537)
+position = Vector2(2015, -598)
 whichdialogue = ExtResource("24_vo262")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea2" unique_id=1453137094]
-position = Vector2(50, -21)
+position = Vector2(-25, 45)
 shape = SubResource("RectangleShape2D_28upq")
 debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
@@ -3097,14 +3110,14 @@ position = Vector2(1184, -209)
 whichdialogue = ExtResource("25_a6boh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea3" unique_id=1204190231]
-position = Vector2(135, -7.5)
-shape = SubResource("RectangleShape2D_bx2u8")
+position = Vector2(79, -7.5)
+shape = SubResource("RectangleShape2D_i4trv")
 debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
 [node name="RespawnAnchor3" parent="triggers" unique_id=870630631 instance=ExtResource("16_mtw3l")]
-position = Vector2(4659, -255)
+position = Vector2(4656, -195)
 scale = Vector2(25.056019, 19.163206)
-location = Vector2(116, -358)
+location = Vector2(4656, -195)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RespawnAnchor3" unique_id=1645657660]
 position = Vector2(-0.4390149, -0.31309998)
@@ -3119,6 +3132,40 @@ whichdialogue = ExtResource("26_ylj0l")
 position = Vector2(6.5, -5.5)
 shape = SubResource("RectangleShape2D_5be8d")
 debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
+
+[node name="AudioTrigger2" parent="triggers" unique_id=1971659583 instance=ExtResource("17_x3gdo")]
+position = Vector2(4635, -313.00003)
+scale = Vector2(8.286077, 8.161382)
+whattotrigger = 3
+
+[node name="InspectArea5" parent="triggers" unique_id=128750674 instance=ExtResource("18_nr1en")]
+position = Vector2(2130, -536)
+whichdialogue = ExtResource("27_5be8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea5" unique_id=2096294984]
+position = Vector2(64, -37)
+shape = SubResource("RectangleShape2D_bx2u8")
+debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="triggers/InspectArea5" unique_id=34086576]
+texture_filter = 1
+position = Vector2(76, -12)
+texture = ExtResource("28_c2feb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="triggers/InspectArea5" unique_id=293580039]
+texture_filter = 1
+position = Vector2(56, -51)
+rotation = -1.2568145
+texture = ExtResource("29_i4trv")
+
+[node name="RoomTrigger" parent="triggers" unique_id=1487844617 instance=ExtResource("31_i4trv")]
+position = Vector2(5115, -1495)
+whichroom = "res://scenes/rooms/platform_lands_2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RoomTrigger" unique_id=1044806287]
+position = Vector2(39.5, 257)
+shape = SubResource("RectangleShape2D_1aadt")
+debug_color = Color(0.8813839, 0.3376081, 0, 0.41960785)
 
 [node name="objects" type="Node" parent="." unique_id=1941737786]
 

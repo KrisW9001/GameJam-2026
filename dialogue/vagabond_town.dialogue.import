@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://chyewxf7123r"
+path="res://.godot/imported/vagabond_town.dialogue-0b34885f73b79e3d067fd8177b2056a4.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_town.dialogue"
+dest_files=["res://.godot/imported/vagabond_town.dialogue-0b34885f73b79e3d067fd8177b2056a4.tres"]
+
+[params]
+
+defaults=true

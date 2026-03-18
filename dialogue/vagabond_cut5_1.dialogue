@@ -1,0 +1,6 @@
+~ start
+Vagabond: Apologies for the wait, The wizards proved to be just as infuriating as usual.
+Vagabond: How did you fare against the Fighter? Better than I, most likely.
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_cut5_2.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

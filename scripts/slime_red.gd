@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var slimebody: AnimatedSprite2D = $slimebody
 @onready var metal_gear_meme: AnimatedSprite2D = $"metal gear meme"
 @onready var box: Area2D = $box
+@onready var hurt: Area2D = $hurt
 @onready var detector: Area2D = $detector
 @onready var hitbox: CollisionShape2D = $box/CollisionShape2D
 @onready var slimezone: CollisionShape2D = $detector/slimezone
@@ -129,6 +130,7 @@ func _physics_process(delta: float) -> void:
 			await get_tree().create_timer(0.3).timeout
 			slimebody.visible = false
 			shader.visible = false
+			position = Vector2(5000,5000)
 	move_and_slide()
 
 #if player enters the slime zone, put slime in detect state
@@ -151,17 +153,15 @@ func _on_box_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player") and body.dead == false and !dealtdamage:
 		print("you took damage from a slime")
 		dealtdamage = true
-		body.hurt_player(damage, position.x, position.y, dist_x, dist_y)
+		body.hurt_player(damage, position.x, position.y)
 		state = "recoil"
-		
-	else:
-		pass
+
 	#when an object is thrown at the slime, play animations and kill them
+func _on_hurt_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Objects") and body.get_child(2).flying:
 		audio_player.stream = die_sfx
 		audio_player.play()
 		state = "die"
-		#hurt_enemy(1)
 
 #upon taking damage from the player, kill the slime
 func hurt_enemy(player_damage: float):

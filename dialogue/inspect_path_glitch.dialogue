@@ -1,0 +1,6 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+[shake rate=20 level=10]Oh come on!! This again?![/shake]
+[shake rate=20 level=10]Greaaaaat.[/shake] Am I gonna have to balance on walkways while getting pelted by slimes again?
+do CutsceneManager.endcutscene()
+=> END

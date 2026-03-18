@@ -1,0 +1,32 @@
+~ start
+...
+do MusicController.music_fadein()
+do MusicController.play_memory_music()
+set GlobalVariables.vagabond_coords = Vector2(7600, 1900)
+[speed=0.5]I was able to throw that sword around like it weighed nothing. And each time I did, I felt It giving me strength.
+[speed=0.5]While I handled the sword, It felt less like writhing and more like a concentrated flow. Deliberate ebbs and flows.
+[speed=0.5]It felt like the motions were practiced. The motions of tossing the hunk of metal around made me remember something.
+set TheCamera.memory_on()
+[speed=0.5]I'm in that damned place again. In a large room with some objects laying around. A big tractor tire, bags of sand, a girder. Heavy objects.
+[speed=0.5]In the room with me is five men. Combat armor. their faces completely obscured. All of their weapons are trained on me. They bark orders. Pick up the bags of sand, move the girder over there, roll the tire across the room.
+[speed=0.5]Up high there's a window. People in lab coats gather around, clipboards in hand. Constantly monitoring the scene and taking notes.
+[speed=0.5]He's here too. He hasn't had that awful smile since the day I threw the bed. There's two men beside him, wearing full camoflauge uniforms and asking him questions. Military. They aren't impressed.
+[speed=0.5]The taller one turns to him and says something. I can't hear it, but He doesn't know what to say to them. His eyes are locked on mine.
+[speed=0.5]In the corner of my eye, the men in the room with me notice the conversation upstairs. They turn their heads towards the window. I make sure He can see when I mimic his smile.
+[speed=0.5]I was carrying the girder in both hands to show my strength. Turning all five gunmen into pulp just by throwing it leaves a more meaningful impression.
+[speed=0.5]Sirens blare. The room upstairs is in a panic. More guards enter the room, but none of them can stop me from punching holes in their comrades. The military guys are horrified.
+[speed=0.5]He has something resembling a scowl. He keeps His face turned up, He refuses to tilt his face directly at me. He says something to one of the labcoats as I continue to show him how dumb his smile looked.
+[speed=0.5]The metal door slams shut before I can leave. It doesn't stop me. They wanted an unstoppable force, and that's what they'll get.
+[speed=0.5]It writhes as I get ready for what comes next. He had the world's greatest weapon and put it in a man that hates them. They'll learn the hard way that I'm the wielder, not It.
+[speed=0.5]They will learn to fear Blackout.
+...
+do get_tree().call_group("Player", "recover")
+do TheCamera.memory_off()
+do MusicController.music_fadeout_slow()
+[speed=0.5]The memory fades. There's still so many questions, but I'm close.
+[speed=0.5]That one pivotal moment that's just out of reach. The answer to everything.
+[speed=0.5]The reason I fight.
+set GlobalVariables.beatsecondboss = true
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_post_mage.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

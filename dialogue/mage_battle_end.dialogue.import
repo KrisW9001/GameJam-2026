@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ic64ncgkfh3w"
+path="res://.godot/imported/mage_battle_end.dialogue-841bf319932b4c1d5474b6b6e7a68516.tres"
+
+[deps]
+
+source_file="res://dialogue/mage_battle_end.dialogue"
+dest_files=["res://.godot/imported/mage_battle_end.dialogue-841bf319932b4c1d5474b6b6e7a68516.tres"]
+
+[params]
+
+defaults=true

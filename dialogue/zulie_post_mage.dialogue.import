@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ktwpuys71os4"
+path="res://.godot/imported/zulie_post_mage.dialogue-af87ccc0d0bd6e96cc114536f3660cb0.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_post_mage.dialogue"
+dest_files=["res://.godot/imported/zulie_post_mage.dialogue-af87ccc0d0bd6e96cc114536f3660cb0.tres"]
+
+[params]
+
+defaults=true

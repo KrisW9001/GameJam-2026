@@ -69,14 +69,14 @@ func _on_exit_focus_entered() -> void:
 func _on_newgame_pressed() -> void:
 	SaveLoad.clear_save()
 	SaveLoad._save()
-	#if can_select and GlobalVariables.menumode and GlobalVariables.menutype == "Main":
-		#OS.alert("This Godot Project has been abandoned.
-#
-#Some aspects of the game may not function as intended, or at all.
-#
-#Please be aware that any inconsistencies or errors in gameplay or scripting is the result of ameteur coding and is not fully representative of The Creator's vision.
-#
-#Player discretion is advised.", "Game Quality Warning")
+	if can_select and GlobalVariables.menumode and GlobalVariables.menutype == "Main":
+		OS.alert("This Godot Project has been abandoned.
+
+Some aspects of the game may not function as intended, or at all.
+
+Please be aware that any inconsistencies or errors in gameplay or scripting is the result of ameteur coding and is not fully representative of The Creator's vision.
+
+Player discretion is advised.", "Game Quality Warning")
 	audio_player.stream = select_sfx
 	audio_player.play()
 	GlobalVariables.menumode = false

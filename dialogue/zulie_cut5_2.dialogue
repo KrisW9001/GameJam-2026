@@ -1,0 +1,6 @@
+~ start
+Zulie: Well since you asked, they got so upset from failing to catch me that they decided to "let the mooks sort me out".
+Zulie: Obviously, that didn't happen. Looks like you managed to slip past them on your way back, though.
+set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_cut5_2.dialogue")
+do TalkScenes.vagabond_talk.start()
+=> END

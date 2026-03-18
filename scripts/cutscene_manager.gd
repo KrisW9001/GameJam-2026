@@ -10,6 +10,8 @@ var player_at_coords: bool = false
 
 #used to determine if a cutscene is currently running. used to transition between phases of a cutscene
 var incut1: bool = false
+var incut5: bool = false
+var incut6: bool = false
 var part2: bool = false
 
 func _process(delta: float) -> void:
@@ -25,11 +27,24 @@ func _process(delta: float) -> void:
 			cutscene1_part2()
 		else:
 			incut1 = false
-			endcutscene()
 	
-	#start part 2 of cutscene 4
-	if GlobalVariables.beatfirstboss and !part2:
-		pass
+	#if zulie finishes divekick in start of cutscene 5, start dialogue
+	if GlobalVariables.zulie_position == GlobalVariables.zulie_coords and incut5 and !GlobalVariables.metzulie:
+		get_tree().call_group("slime_actor", "die")
+		get_tree().call_group("Zulie", "land_l")
+		MusicController.music_stop()
+		get_tree().call_group("meme_text", "invis")
+		GlobalVariables.zulie_goto = false
+		GlobalVariables.metzulie = true
+		await get_tree().create_timer(1).timeout
+		TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_intro.dialogue")
+		TalkScenes.zulie_talk.start()
+	
+	if GlobalVariables.vagabond_position == GlobalVariables.vagabond_coords and incut5 and !GlobalVariables.beatsecondboss:
+		get_tree().call_group("VagabondActor", "idle_l")
+	
+	if GlobalVariables.mage_position == GlobalVariables.mage_coords and incut6:
+		get_tree().call_group("boss", "idle_l")
 
 #after recieving a signal from a cutscene trigger, check which cutscene is being called and reference that with global variables to determine whether or not to play a cutscene.
 func checkscene(scenenumber: int) -> void:
@@ -44,9 +59,20 @@ func checkscene(scenenumber: int) -> void:
 			#post-fighter fight
 			if GlobalVariables.beatfirstboss:
 				cutscene4()
+		3:
+			#zulie introduction
+			if !GlobalVariables.metzulie:
+				cutscene5()
+		4:
+			#end of mage gauntlet
+			if !GlobalVariables.beatsecondboss:
+				cutscene7()
 
 func endcutscene() -> void:
 	print("ending cutscene")
+	incut1 = false
+	incut5 = false
+	incut6 = false
 	part2 = false
 	SaveLoad._save()
 	GlobalVariables.player_goto_active = false
@@ -169,3 +195,110 @@ func cutscene4_part2() -> void:
 	await get_tree().create_timer(.5).timeout
 	TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_post_fighter_2.dialogue")
 	TalkScenes.vagabond_talk.start()
+
+#giant slime gag, plus introductory cutscene for zulie
+func cutscene5() -> void:
+	GlobalVariables.cutscenemode = true
+	get_tree().call_group("Player", "walk_l")
+	incut5 = true
+	MusicController.music_stop()
+	get_tree().call_group("meme_text", "visible")
+	MusicController.play_fight1_intro()
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(1890, 1550)
+	await get_tree().create_timer(3).timeout
+	get_tree().call_group("Player", "idle_l")
+	print("zulie divekick")
+	get_tree().call_group("Zulie", "appear")
+	GlobalVariables.zulie_goto = true
+	GlobalVariables.zulie_coords = Vector2(1650, 1575)
+	get_tree().call_group("Zulie", "divekick_l")
+
+#after cutscene 5, get zulie and vagabond to stand outside the gate to the 2nd boss
+func pair_togate() -> void:
+	await get_tree().create_timer(2).timeout
+	get_tree().call_group("Zulie", "upright_l")
+	get_tree().call_group("VagabondActor", "idle_l")
+	GlobalVariables.zulie_coords = Vector2(3500, 2200)
+	GlobalVariables.vagabond_coords = Vector2(3500, 1950)
+	endcutscene()
+
+#introductory cutscene for the asset mage, before their boss fight
+func cutscene6() -> void:
+	GlobalVariables.cutscenemode = true
+	incut6 = true
+	MusicController.music_stop()
+	get_tree().call_group("explosion", "play")
+	get_tree().call_group("Player", "emote_exclaim")
+	get_tree().call_group("Player", "idle_r")
+	TalkScenes.protag_talk.sfx_fire()
+	GlobalVariables.zulie_coords = Vector2(3400, 2200)
+	GlobalVariables.vagabond_coords = Vector2(3400, 1950)
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(3400, 2100)
+	await get_tree().create_timer(1).timeout
+	get_tree().call_group("boss", "walk_l")
+	get_tree().call_group("boss", "tele_in")
+	GlobalVariables.mage_goto = true
+	GlobalVariables.mage_coords = Vector2(3700, 2100)
+	TalkScenes.mage_talk.dialogue_resource = load("res://dialogue/mage_intro.dialogue")
+	TalkScenes.mage_talk.start()
+
+func cutscene6_part2() -> void:
+	get_tree().call_group("boss", "tele_out")
+	get_tree().call_group("Zulie", "slash_r")
+	GlobalVariables.zulie_coords = Vector2(3800, 2100)
+	await get_tree().create_timer(1).timeout
+	get_tree().call_group("Zulie", "dash_r")
+	GlobalVariables.zulie_coords = Vector2(8500, 1800)
+	TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_boss2_start.dialogue")
+	TalkScenes.vagabond_talk.start()
+
+func cutscene6_end() -> void:
+	GlobalVariables.cameralock = false
+	GlobalVariables.vagabond_coords = Vector2(3100, 1900)
+	get_tree().call_group("VagabondActor", "walk_l")
+	GlobalVariables.player_goto_coords = Vector2(3800, 2200)
+	GlobalVariables.mage_coords = Vector2(8350, 1900)
+	get_tree().call_group("Player", "walk_r")
+	await get_tree().create_timer(1.5).timeout
+	get_tree().call_group("earthspike", "activate")
+	get_tree().call_group("enemy_projectiles", "activate")
+	endcutscene()
+
+#finale cutscene for mage gauntlet sequence
+func cutscene7() -> void:
+	GlobalVariables.cutscenemode = true
+	get_tree().call_group("boss", "visible")
+	get_tree().call_group("boss", "idle_r")
+	MusicController.music_fadeout_fast()
+	get_tree().call_group("enemy_projectiles", "deactivate")
+	GlobalVariables.cameralock = true
+	GlobalVariables.lock_pos = Vector2(8250, 1850)
+	get_tree().call_group("Zulie", "stance_l")
+	await get_tree().create_timer(1).timeout
+	get_tree().call_group("boss", "shoot_r")
+	get_tree().call_group("Zulie", "crouch_l")
+	get_tree().call_group("explosion", "play")
+	TalkScenes.protag_talk.sfx_fire()
+	GlobalVariables.zulie_coords = Vector2(8550, 1700)
+	await get_tree().create_timer(1).timeout
+	TalkScenes.mage_talk.dialogue_resource = load("res://dialogue/mage_battle_end.dialogue")
+	TalkScenes.mage_talk.start()
+
+#sword catching sequence of mage end-of-gauntlet cutscene
+func cutscene7_part2() -> void:
+	get_tree().call_group("boss", "shoot_l")
+	get_tree().call_group("boss", "sword_shoot_1")
+	await get_tree().create_timer(0.2).timeout
+	get_tree().call_group("sword", "stop_moving")
+	get_tree().call_group("Player", "catch_r")
+	await get_tree().create_timer(3).timeout
+	get_tree().call_group("boss", "scared_l")
+	get_tree().call_group("Player", "cool_toss")
+	get_tree().call_group("boss", "sword_spin")
+
+#memory cutscene for mage boss
+func cutscene7_part3() -> void:
+	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/mage_defeated.dialogue")
+	TalkScenes.protag_talk.start()

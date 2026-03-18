@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bwbeiqsksa858"]
+
+[ext_resource type="Texture2D" uid="uid://d2iytagka4wqr" path="res://assets/temp/wizard v1.png" id="1_03gvf"]
+[ext_resource type="Script" uid="uid://ra7og8pm66ct" path="res://scripts/wizard_actor.gd" id="2_jrikh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrikh"]
+atlas = ExtResource("1_03gvf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmwpp"]
+atlas = ExtResource("1_03gvf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nae74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrikh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmwpp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_03gvf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jrikh"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gmwpp"]
+resource_name = "tele_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.27499998, 0.25, 1, 0), Color(0.32333332, 0.3, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nae74"]
+_data = {
+&"RESET": SubResource("Animation_03gvf"),
+&"invis": SubResource("Animation_jrikh"),
+&"tele_in": SubResource("Animation_gmwpp")
+}
+
+[node name="Wizard Actor" type="AnimatedSprite2D" unique_id=1429344948 groups=["enemies"]]
+texture_filter = 1
+position = Vector2(-1, -2)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nae74")
+autoplay = "default"
+frame_progress = 0.49149987
+script = ExtResource("2_jrikh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=459650478]
+libraries/ = SubResource("AnimationLibrary_nae74")

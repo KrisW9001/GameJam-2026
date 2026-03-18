@@ -1,0 +1,24 @@
+~ start
+do get_tree().call_group("VagabondActor", "walk_r")
+set GlobalVariables.vagabond_coords = Vector2(8100, 1900)
+Vagabond: Then allow me to speak in your place.
+do get_tree().call_group("VagabondActor", "idle_r")
+do get_tree().call_group("Player", "idle_l")
+do MusicController.vol_reset()
+do MusicController.play_moody_music()
+Vagabond: The victory we have seized today is worthy of celebration, but this feat of strength we have witnessed...The awful energy that flowed through you...
+Vagabond: I'm sorry Marcus, but there is much reason for concern. I fear the worst may yet come to pass should I allow this to pass unchecked.
+Vagabond: For that reason...I ask you not from a stance of suspicion or doubt, but of concern for an ally that I wish to place my trust in safely.
+Vagabond: What was this power you just exhibited?
+- I was forced to take it.
+	Vagabond: Forced upon you? I see...how much do you recall of its nature?
+- It's not magic, if that's what you're expecting.
+	Vagabond: It isn't? It appeared as if a dark force was taking hold of your body. How can it possibly be anything else?
+	Vagabond: ...within your body...? How sickening! A mad doctor experimented on you?!
+- I'm not really sure how to describe it.
+	Vagabond: [shake rate=20 level=10]An attempt to do so would be preferable.[/shake]
+	Vagabond: ...What...?
+	Vagabond: I...Well, now there are two of us at a loss for words.
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_post_mage_2.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

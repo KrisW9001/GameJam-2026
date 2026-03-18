@@ -381,11 +381,11 @@ script = ExtResource("1_oa1go")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1589565258]
 texture_filter = 1
-offset_left = 446.0
+offset_left = 417.0
 offset_top = 448.0
-offset_right = 1057.0
+offset_right = 1068.0
 offset_bottom = 471.0
-text = "A game about Unfinished Business"
+text = "A game about Escaping Mental Cages"
 label_settings = SubResource("LabelSettings_oa1go")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1624173175]

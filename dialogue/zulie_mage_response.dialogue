@@ -1,0 +1,5 @@
+~ start
+Zulie: [shake rate=20 level=10]How dare you!![/shake]
+do MusicController.play_fight2_intro()
+do CutsceneManager.cutscene6_part2()
+=> END

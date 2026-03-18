@@ -1,0 +1,5 @@
+~ start
+Vagabond: Worrying for my condition, are you? I'm doing much better than when we first met, thank you very much.
+Vagabond: If you've prepared yourself, inform her. I'm not familiar with how these barriers work.
+do CutsceneManager.endcutscene()
+=> END

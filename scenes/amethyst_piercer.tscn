@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://2waowip61kq3"]
+
+[ext_resource type="Script" uid="uid://w3pt1dby6i3g" path="res://scripts/amethyst_piercer.gd" id="1_jxwds"]
+[ext_resource type="Texture2D" uid="uid://c1tnvikwf5573" path="res://assets/effects/amethystpiercer3.png" id="1_nt6qd"]
+[ext_resource type="Texture2D" uid="uid://btcej8e1kssfx" path="res://assets/effects/20250314darkWaveFX-Sheet.png" id="3_7au73"]
+[ext_resource type="Texture2D" uid="uid://o0i6ggkojgyq" path="res://assets/effects/damage_particle.png" id="4_ng156"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng156"]
+atlas = ExtResource("3_7au73")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tiw5"]
+atlas = ExtResource("3_7au73")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oqj6"]
+atlas = ExtResource("3_7au73")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mlkq"]
+atlas = ExtResource("3_7au73")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt6wr"]
+atlas = ExtResource("3_7au73")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcchp"]
+atlas = ExtResource("3_7au73")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8opw"]
+atlas = ExtResource("3_7au73")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b56sq"]
+atlas = ExtResource("3_7au73")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnopl"]
+atlas = ExtResource("3_7au73")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyv4h"]
+atlas = ExtResource("3_7au73")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e21y8"]
+atlas = ExtResource("3_7au73")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd41c"]
+atlas = ExtResource("3_7au73")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnfd5"]
+atlas = ExtResource("3_7au73")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkr3s"]
+atlas = ExtResource("3_7au73")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkx3g"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ng156")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_7tiw5")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_0oqj6")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_7mlkq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_nt6wr")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_bcchp")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_y8opw")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_b56sq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_hnopl")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_pyv4h")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_e21y8")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_nd41c")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_vnfd5")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_kkr3s")
+}, {
+"duration": 0.5,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxwds"]
+radius = 11.0
+
+[sub_resource type="Animation" id="Animation_7au73"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ng156"]
+resource_name = "invis"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7tiw5"]
+resource_name = "spawn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0oqj6"]
+_data = {
+&"RESET": SubResource("Animation_7au73"),
+&"invis": SubResource("Animation_ng156"),
+&"spawn": SubResource("Animation_7tiw5")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7tiw5"]
+particle_flag_disable_z = true
+initial_velocity_min = 25.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+
+[node name="Amethyst Piercer" type="CharacterBody2D" unique_id=404903092 groups=["enemy_projectiles"]]
+z_index = 3
+script = ExtResource("1_jxwds")
+damage = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1634800027]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_nt6qd")
+flip_h = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924325406]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tkx3g")
+frame = 4
+frame_progress = 0.58944666
+
+[node name="Area2D" type="Area2D" parent="." unique_id=33752653]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1970483963]
+shape = SubResource("CircleShape2D_jxwds")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=843440871]
+volume_db = -30.0
+pitch_scale = 2.0
+bus = &"Sound Effects"
+
+[node name="Timer" type="Timer" parent="." unique_id=1145673219]
+wait_time = 1.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1710212654]
+libraries/ = SubResource("AnimationLibrary_0oqj6")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=811127126]
+texture_filter = 1
+emitting = false
+texture = ExtResource("4_ng156")
+process_material = SubResource("ParticleProcessMaterial_7tiw5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

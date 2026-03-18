@@ -1,10 +1,14 @@
 ~ start
 if GlobalVariables.haspass == false:
-	set GlobalVariables.menutype = "Dialogue"
-	 It's a ticket scanner. "Please present Subway Pass. Entering the subway without a valid Subway Pass is a state offense punishable by a fine."
-	...There's a sticker under the touchscreen. "Lost your Pass? Pass checker malfunctioning? Speak with the Pass office in tunnel 4."
-	Guess that's where I'm heading.
-	set GlobalVariables.cutscenemode = false
+	if GlobalVariables.seenreader == false:
+		set GlobalVariables.menutype = "Dialogue"
+		 It's a ticket scanner. "Please present Subway Pass. Entering the subway without a valid Subway Pass is a state offense punishable by a fine."
+		...There's a sticker next to the touchscreen. "Lost your Pass? Pass checker malfunctioning? Speak with the Pass office in tunnel 4."
+		Guess that's where I'm heading.
+		set GlobalVariables.seenreader
+		set GlobalVariables.cutscenemode = false
+	elif GlobalVariables.seenreader == true:
+		It's the ticket scanner. I can't do anything here unless I have a Subway Pass. Apparently I can get one in tunnel 4.
 elif GlobalVariables.haspass == true:
 	set GlobalVariables.menumode = "Dialogue"
 	do sfx_success()

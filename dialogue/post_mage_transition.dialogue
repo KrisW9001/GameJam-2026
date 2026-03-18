@@ -1,0 +1,19 @@
+~ start
+do TheCamera.transition_on()
+So I told them everything. From being trapped in that cell being observed until I began my breakout.
+set GlobalVariables.player_goto_coords = Vector2(8250, 1850)
+set GlobalVariables.zulie_coords = Vector2(8350, 1900)
+do get_tree().call_group("Player", "idle_down")
+do get_tree().call_group("Zulie", "crouch_l")
+do get_tree().call_group("VagabondActor", "crouch_r")
+Explaining it all out loud felt weird. Like I was confessing my crimes. But something in the back of my mind keeps me from breaking down and feeling sorry for myself.
+The people that confined me were absolutely terrible people. Disgusting in every way regardless of what excuse they had for being there. Especially Him.
+I didn't want this power. They forced it onto me. I hated it. 
+I didn't know everything, but I know for a fact I hate having It in me. All I want is to prove that I'm not the brainless monster I was supposed to become.
+I have no real way to prove it. But I'm on their side. I want the Heroes gone because they keep reminding me of Him. There's no excuse for what they've done.
+There's no innocence in their actions. No uninformed decisions. No mistakes. Just cruelty. That's what It's responding to. I'm sure of it.
+do TheCamera.transition_off()
+set GlobalVariables.beatsecondboss = true
+set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_post_mage_2.dialogue")
+do TalkScenes.vagabond_talk.start()
+=> END

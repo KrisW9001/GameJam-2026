@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 	if GlobalVariables.vagabond_goto:
 		position.x = move_toward(position.x, GlobalVariables.vagabond_coords.x, 300 * delta)
 		position.y = move_toward(position.y, GlobalVariables.vagabond_coords.y, 300 * delta)
-		pass
 
 func coll_off() -> void:
 	set_collision_layer_value(1, false)
@@ -61,17 +60,38 @@ func walk_l() -> void:
 	anim_sprite.play("walk")
 	anim_sprite.flip_h = false
 
+func block_l() -> void:
+	anim_sprite.play("block_l")
+	anim_sprite.flip_h = false
+
+func crouch_r() -> void:
+	anim_sprite.play("crouch")
+	anim_sprite.flip_h = true
+
+func crouch_l() -> void:
+	anim_sprite.play("crouch")
+	anim_sprite.flip_h = false
+
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if anim_sprite.visible:
-		if body.is_in_group("Player"):
+		if body.is_in_group("Player") and !GlobalVariables.cutscenemode:
 			#check event flags for which dialogue to play when interacted with outside of a cutscene
 			if !GlobalVariables.beatfirstboss:
 				TalkScenes.vagabond_talk.dialogue_resource = preload("res://dialogue/vagabond_subway.dialogue")
-			else:
+			if GlobalVariables.beatfirstboss and !GlobalVariables.metzulie:
 				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_subway_dismiss.dialogue")
+			if GlobalVariables.metzulie and !GlobalVariables.beatsecondboss: 
+				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_pre_mage.dialogue")
+			if GlobalVariables.beatsecondboss:
+				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_town.dialogue")
 			body.inspect_prompt.visible = true
 			body.can_talk_v = true
 			print("showing inspect prompt")
+
+func respawn() -> void:
+	if !GlobalVariables.beatsecondboss:
+		GlobalVariables.vagabond_coords = Vector2(3500, 1950)
+		idle_l()
 
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):

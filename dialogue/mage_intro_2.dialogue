@@ -1,0 +1,9 @@
+~ start
+do get_tree().call_group("VagabondActor", "idle_r")
+do get_tree().call_group("Zulie", "stance_r")
+do get_tree().call_group("Player", "idle_r")
+Mage: Now that we've finally decided to stop hiding behind our little walls, shall we get to the main event?
+Mage: Let's see...How about I start with the ninja who [shake rate=20 level=10]can't fulfill the one purpose she has in life?[/shake]~
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_mage_response.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

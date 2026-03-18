@@ -1,0 +1,21 @@
+~ start
+do get_tree().call_group("VagabondActor", "idle_r")
+Vagabond: ...You're right. Thank you for giving me my own advice.
+do get_tree().call_group("Zulie", "walk_r")
+set GlobalVariables.zulie_coords = Vector2(9000, 1900)
+do get_tree().call_group("Player", "idle_l")
+Vagabond: Leave it to Zulie to take initiative when I cannot! Despite what I've said about our differences, she is truly in a class all of her own when it comes to coordination.
+do MusicController.music_fadeout_slow()
+Vagabond: Well then, I suppose escorting you won't be neccesary! With what you've displayed you outclass my strength tenfold, no doubt about that.
+- Yeah, I'll be fine on my own.
+	Vagabond: As you wish, my friend. I doubt you'll have any dificulty making your way to the village from here, but don't hesitate to shout if you need assistance.
+- What about you?
+	Vagabond: Myself? I may not share your incredible abilities, but I am more than capable of defending myself. Don't let the insults of the Heroes convince you that this lich is immobile!
+	Vagabond: I'll go on ahead and clear out any minor threats there may be. If you need assistance, even if I doubt you would need it I will come to your aid in a heartbeat.
+set GlobalVariables.vagabond_coords = Vector2(9000, 1900)
+do get_tree().call_group("VagabondActor", "walk_r")
+Vagabond: Until we meet again, Marcus the Herculean! May your strength never wane! [wave amp=25 freq=5]Hahaha![/wave]
+do get_tree().call_group("VagabondActor", "invis")
+do get_tree().call_group("Zulie", "invis")
+do CutsceneManager.endcutscene()
+=> END

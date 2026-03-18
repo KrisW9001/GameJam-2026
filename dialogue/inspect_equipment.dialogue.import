@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dj4pqtl4ajq5l"
+path="res://.godot/imported/inspect_equipment.dialogue-b3ec3fe6cea1011ab5a74dd39a8589ed.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_equipment.dialogue"
+dest_files=["res://.godot/imported/inspect_equipment.dialogue-b3ec3fe6cea1011ab5a74dd39a8589ed.tres"]
+
+[params]
+
+defaults=true

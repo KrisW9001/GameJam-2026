@@ -5,13 +5,12 @@
 [ext_resource type="Script" uid="uid://jtq2hvmq7ti6" path="res://scripts/object_logic_1.gd" id="3_slgs2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iemwe"]
-size = Vector2(40, 36)
+size = Vector2(40, 42)
 
 [node name="Extinguisher" type="CharacterBody2D" unique_id=1777513809 groups=["Objects"]]
 process_mode = 1
 z_index = 2
 collision_layer = 8
-collision_mask = 9
 script = ExtResource("1_r1pr6")
 coll_type = "stop"
 throw_damage = 1
@@ -30,11 +29,11 @@ script = ExtResource("3_slgs2")
 metadata/_custom_type_script = "uid://jtq2hvmq7ti6"
 
 [node name="ray_up" type="RayCast2D" parent="." unique_id=1450580310]
-position = Vector2(0, -18)
+position = Vector2(0, -21)
 target_position = Vector2(0, -11)
 
 [node name="ray_down" type="RayCast2D" parent="." unique_id=667966300]
-position = Vector2(0, 18)
+position = Vector2(0, 21)
 target_position = Vector2(0, 11)
 
 [node name="ray_left" type="RayCast2D" parent="." unique_id=812895959]

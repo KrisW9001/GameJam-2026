@@ -1,0 +1,7 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+The image shows a guy throwing the box he picked up.
+...There's...pink shards around it. As if the box on this drawing is breaking something.
+Where did these pink shards come from? Did something happen here?
+do CutsceneManager.endcutscene()
+=> END

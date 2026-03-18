@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dfkixdnj6jesg" path="res://assets/GB city asset pack stuff/soft-export.png" id="5_i136w"]
 [ext_resource type="PackedScene" uid="uid://baqul0jawvapr" path="res://scenes/cam_lock_zone.tscn" id="6_asmpw"]
 [ext_resource type="PackedScene" uid="uid://b2mtafu6nbd51" path="res://scenes/pickup.tscn" id="7_njk4r"]
-[ext_resource type="Resource" uid="uid://bcouda6u1gm8h" path="res://dialogue/subway_pass_inspect.dialogue" id="8_o4m6x"]
 [ext_resource type="Shader" uid="uid://du3eknkuhyjmw" path="res://shaders/background_shader.gdshader" id="9_2s341"]
 [ext_resource type="Texture2D" uid="uid://87l2ubdl66qc" path="res://assets/effects/vfx-flame.png" id="9_aeir7"]
 [ext_resource type="Texture2D" uid="uid://bxc5kuhpwbjoj" path="res://assets/UI/dpad up.png" id="10_o46qx"]
@@ -1406,7 +1405,6 @@ lock_coord = Vector2(578, 325)
 [node name="PassPickup" parent="Triggers" unique_id=72920538 groups=["subway_pass"] instance=ExtResource("7_njk4r")]
 position = Vector2(134, 121.00001)
 rotation = -1.8659136
-whichdialogue = ExtResource("8_o4m6x")
 
 [node name="explosion" type="AnimatedSprite2D" parent="Triggers" unique_id=228171688 groups=["explosion"]]
 texture_filter = 1

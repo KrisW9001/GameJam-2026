@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cx8ndkd0t8kau"
+path="res://.godot/imported/vagabond_pre_mage.dialogue-8fe9dbc5cff0104db25bc150de9b0b1b.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_pre_mage.dialogue"
+dest_files=["res://.godot/imported/vagabond_pre_mage.dialogue-8fe9dbc5cff0104db25bc150de9b0b1b.tres"]
+
+[params]
+
+defaults=true

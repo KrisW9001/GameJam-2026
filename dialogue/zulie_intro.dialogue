@@ -1,0 +1,46 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+set GlobalVariables.lock_pos = Vector2(1856, 1649)
+do get_tree().call_group("Player", "idle_l")
+???: [shake rate=20 level=10]Hmph[/shake]...That should be most of them.
+???: What a cruel joke, first the Heroes decide to cause problems again, and now a slime infestation...I should probably close the shelter and go help Red...
+do get_tree().call_group("Zulie", "idle_r")
+do MusicController.play_zulie_theme()
+???: ...And you are?
+- I'm looking for Zulie.
+	Zulie: Well, you've found me. What do you need?
+	Zulie: Hm? The Vagabond?...
+	Zulie: Good, he should be on his way back. The slimes and wizards shouldn't be an issue for him.
+	Zulie: The slime infestation seems to have calmed down, so since you're here...
+- ...Huh.
+	???: [shake rate=20 level=10]What's that face for?! Spit it out, so you can get what you deserve!![/shake]
+	- u-uh...
+		???: [shake rate=20 level=10]Grrrr...[/shake]
+		???: ...Hmph. I'll let you off with a warning. No matter how [shake rate=20 level=10]unusual[/shake] I might look to you, it's who I am.
+		Zulie: I am Zulie, the greatest ninja you'll ever meet. [shake rate=20 level=10]And I don't take lightly to your attitude so far.[/shake] Now...
+	- I was expecting something medieval.
+		???: Oh. The Vagabond must not have done a good job of describing me, then. He tends to leave out details.
+		Zulie: I'm Zulie, a ninja by trade. As I'm sure you can tell. Now...
+Zulie: Since we have a minute, what's your story?
+- I'm new here. The name's Marcus.
+	Zulie: Someone new that isn't trying to kill us. Finally, some good news for a change.
+- I don't remember much, but...
+	Zulie: ...I get it. I can't help you with it, but I hope you get some answers soon, Marcus.
+Zulie: Now, as much as I'd love to help you get settled, I need to regroup with The Vagabond. Head back to my shelter and I'll put the barriers up.
+- I'm fine. I solod one of the Heroes.
+	Zulie: Tch- [wave amp=25 freq=5]Yeah, I'm sure you did, O Marcus the Almighty.[/wave] Do I look like I was born yesterday?
+- Actually, I'm gonna keep going.
+	Zulie: [shake rate=20 level=10]Absolutely not.[/shake] I don't care what Red told you, I'm not taking any more chances.
+Zulie: I've seen more than enough people get slaughtered by the Heroes for thinking they could take them on. [shake rate=20 level=10]You're getting in the shelter and you're going to[/shake]-
+Zulie: ...Hold that thought.
+set GlobalVariables.player_goto_active = true
+set GlobalVariables.player_goto_coords = Vector2(1890, 1400)
+do get_tree().call_group("Player", "idle_down")
+do get_tree().call_group("VagabondActor", "appear")
+do get_tree().call_group("VagabondActor", "walk_l")
+set GlobalVariables.vagabond_goto = true
+set GlobalVariables.vagabond_coords = Vector2(1950, 1575)
+Zulie: So the Zombie finally crawled out of its grave, huh? For someone always telling me not to worry, you had me worried.
+set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_cut5_1.dialogue")
+do TalkScenes.vagabond_talk.start()
+=> END

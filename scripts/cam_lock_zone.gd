@@ -17,11 +17,3 @@ func _on_body_exited(_body: CharacterBody2D) -> void:
 	if _body.is_in_group("Player"):
 		print("unlocking camera")
 		GlobalVariables.cameralock = false
-
-#func disable() -> void:
-	#disabled = true
-	#pass
-	#
-#func enable() -> void:
-	#disabled = false
-	#pass

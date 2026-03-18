@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dnh6p56m3sqfm"
+path="res://.godot/imported/vagabond_post_mage.dialogue-e5ac5fd5833d121de37c820522812be2.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_post_mage.dialogue"
+dest_files=["res://.godot/imported/vagabond_post_mage.dialogue-e5ac5fd5833d121de37c820522812be2.tres"]
+
+[params]
+
+defaults=true

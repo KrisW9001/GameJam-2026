@@ -54,12 +54,13 @@ if GlobalVariables.metvagabond == true
 			- I'm not a psycho.
 				Vagabond: I do not believe you were psychotic. This is a warning, more than anything else.
 				The False Heroes once made similar reassurances of sanity...and then they became what they are. => explain
-			- ...Like the Heroes did.
-				Vagabond: Indeed. I would curse myself for the rest of my existence if you repeated their descent into cruelty. => explain
+			- What do you mean?
+				Vagabond: I refer to the decisions that led to the corruption of the poor, lost soul you just encountered. Desicions that wound the ego and taint the mind. => explain
 	~ explain
+	do MusicController.vol_reset()
 	do MusicController.play_moody_music()
 	Vagabond: They were once simply fellow castaways. Another band of misfits mong a sea of their like.
-	Vagabond: Many of our kind were made by the Creator, created with a specific role in mind that we would play...they were not. Drifters, some called them.
+	Vagabond: Many of our kind were made by The Creator, created with a specific role in mind that we would play...they were not. Drifters, some called them.
 	Vagabond: In essence, their role is to assist in giving worlds their solid foundation. The bedrock on which all else is built upon...A starting point.
 	Vagabond: I cannot say for certain when or why...but they came to the conclusion that this was no longer the case. They believed themselves superior by transcending The Creator's will.
 	Vagabond: At one moment they were comerades, rough around the edges but still allies...The next, [shake rate=20 level=10]they killed on sight and gloated[/shake].

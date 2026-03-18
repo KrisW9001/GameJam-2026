@@ -21,9 +21,7 @@ if GlobalVariables.metvagabond == false
 	???: Ah, but I have yet to introduce myself. In these dark times, comraderie is a comfort most welcome.
 	Vagabond: My name has been lost to time, but my title has not. I am a vagabond, traveling wherever fate may carry me. Or in lieu of fate, my own whims.
 	Vagabond: Or, if you are anything like my young friend, just about any moniker you can imagine for a man in red armor would suffice. And you are...?
-	- I...
-	- Uh...
-	- ...Oh $#!%.
+	- ...
 		Vagabond: ...I see. Do not fret, this is normal for those who have only recently come to these lands.
 	Vagabond: On that subject, I believe an explanation is in order. This revelation may be somewhat heavy handed, but it is crucial that you understand it.
 	Vagabond: Imagine a play, with everything that it would require. Actors, a script, a setting, the effects...you understand what a play is, I presume?
@@ -53,7 +51,7 @@ if GlobalVariables.metvagabond == false
 		Vagabond: Yes, but there is no need to worry. Over time as who I was destined to become was made clearer, I learned that this is simply my identity.
 		Vagabond: In a vision spurred by self-reflection, The Creator's will enlightened me on what my story was meant to be. A forgotten soldier, unable to save his land from destruction...
 		Vagabond: ...Returning as an undead, and swearing revenge on the blight that destroyed his home, and which now rules over its remains.
-		- That sounds cool as hell.
+		- That sounds pretty cool.
 			Vagabond: Indeed! And so long as The Creator breathes, the elements of the tale can still be given their final form.
 			Vagabond: Someday...in some form...I'm certain of it. => branch
 		- A...vision? Yeah right.

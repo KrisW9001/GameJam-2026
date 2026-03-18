@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d3yswwaa17q8u"
+path="res://.godot/imported/zulie_town.dialogue-9965487a3c98e19a3b7c66f792151b69.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_town.dialogue"
+dest_files=["res://.godot/imported/zulie_town.dialogue-9965487a3c98e19a3b7c66f792151b69.tres"]
+
+[params]
+
+defaults=true

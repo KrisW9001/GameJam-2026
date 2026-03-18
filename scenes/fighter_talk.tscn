@@ -64,7 +64,7 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkmqt"]
 content_margin_left = 150.0
-bg_color = Color(0.47, 0, 0.24283344, 0.9411765)
+bg_color = Color(0.47, 0, 0.24283344, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -89,8 +89,10 @@ MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
 [sub_resource type="SystemFont" id="SystemFont_2m41x"]
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_dcnuk"]
+subpixel_positioning = 0
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001

@@ -1,0 +1,4 @@
+~ start
+Vagabond: [shake rate=20 level=10]I'll take care of the minions, focus on taking down The Mage![/shake]
+do CutsceneManager.cutscene6_end()
+=> END

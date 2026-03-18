@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtupub7qfect8"
+path="res://.godot/imported/zulie_pre_mage.dialogue-c757f7d7703c29d680a97d0d892d1326.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_pre_mage.dialogue"
+dest_files=["res://.godot/imported/zulie_pre_mage.dialogue-c757f7d7703c29d680a97d0d892d1326.tres"]
+
+[params]
+
+defaults=true

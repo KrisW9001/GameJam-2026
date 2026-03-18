@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cup2fbqhgac6x"
+path="res://.godot/imported/inspect_weapons.dialogue-92e28431817e8eff3bbe251506c99d05.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_weapons.dialogue"
+dest_files=["res://.godot/imported/inspect_weapons.dialogue-92e28431817e8eff3bbe251506c99d05.tres"]
+
+[params]
+
+defaults=true

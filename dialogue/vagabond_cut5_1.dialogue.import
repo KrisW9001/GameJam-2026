@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dfxnh0b10hyn4"
+path="res://.godot/imported/vagabond_cut5_1.dialogue-d12b3adf716adc2410517c94564e9090.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_cut5_1.dialogue"
+dest_files=["res://.godot/imported/vagabond_cut5_1.dialogue-d12b3adf716adc2410517c94564e9090.tres"]
+
+[params]
+
+defaults=true

@@ -1,16 +1,30 @@
 Created by ThunderSpark
 
-Special thanks to CutieMonica for getting me to take a risk and make something, regardless of how good it would be.
-
 Special thanks to Adam from GodotGameLab. I doubt you even remember me, and I'm sorry to say I never finished that project, but going so far out of your way to help me with bugs meant a lot to me. Thank you for your help, even if the project it was for didn't work out.
 
 Special thanks to Mom and Dad, for teaching me that I shouldn't be ashamed of my interests and hobbies.
 
+Special thanks to CutieMonica for getting me to take a risk and make something, regardless of how good it would be.
+
+Special thanks to you for playing. I know you hear that a lot, but I genuinely mean it.
+
 All Original Characters by ThunderSpark
-All """Original""" Spritework by ThunderSpark
+Any Original Sprites by ThunderSpark and CutieMonica
+(no, this doesn't mean I'm taking credit for edits made to asset packs.)
+
+Coding Help from CutieMonica
+
+-Playtesting-
+LightningSizzle
+CutieMonica
+FoxxArie
 
 Assets Used
-Tiny RPG - Battle Kit I by Gabriel "tiopalada" Lima
+Tiny RPG - Multiple asset packs by Gabriel "tiopalada" Lima
+Battle Kit 1 & 2
+Nearby Village
+
+Kenney Game Assets (version 42) and Tiny Town by KenneyNL
 
 GB Studio packs by Reakain
 -GB Studio Trains Asset Pack
@@ -26,6 +40,8 @@ Ambient Puzzle Music/SFX Pack by chrislsound
 
 Text & Dialogue SFX Pack by chrislsound
 
+Sci-Fi SFX Pack by chrislsound
+
 Multi Platformer Tileset by Shackhal
 
 Deck Builder Tutorial Season 1 starter project by Adam Gulasci (GodotGameLab)
@@ -39,3 +55,14 @@ _Credits for Brackeys Platformer Assets Pack_
 CompassGold Typeface
 
 PixelOperator8 Typeface
+
+pixel_rpg Typeface
+
+PixelBasel Font by GGBotNet
+
+-Godot Shaders-
+'Dark Noise Vignette' by Silver637
+
+'Warped Fractal Noise' by Gerardo LCDF
+
+'Glitch Effect' by Yui Kinimoto

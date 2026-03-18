@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bqax7jvayrek4"
+path="res://.godot/imported/zulie_cut5_4.dialogue-6386b6bb24f36a56c3ca69160a233a83.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_cut5_4.dialogue"
+dest_files=["res://.godot/imported/zulie_cut5_4.dialogue-6386b6bb24f36a56c3ca69160a233a83.tres"]
+
+[params]
+
+defaults=true

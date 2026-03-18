@@ -4,8 +4,8 @@ extends CharacterBody2D
 #roll movement stats are for when the player uses their dodge roll
 #attack movement stats are for when a small movement is made for visual flair, or as an integral part to how the attack works
 const accel: int = 20
-const max_speed: int = 215
-var sprint_speed: int = 350
+const max_speed: int = 235
+var sprint_speed: int = 365
 var sprint_accel: int = 5
 const atk1_max_spd: int = 7
 const roll_max_spd: int = 220
@@ -42,6 +42,7 @@ var y_drop: float = 0
 @onready var dmg_shader_2: ColorRect = $damage2
 @onready var deathscreen: ColorRect = $deathscreen
 @onready var heal_timer: Timer = $HealTimer
+@onready var purpleflash: AnimationPlayer = $purpleflash
 
 #variables to control whether or not the player input has influence over stuff (IE: removing the ability to move the player character during cutscenes)
 var debug_mode: bool = false
@@ -54,6 +55,8 @@ var damaged: bool = false
 var dead: bool = false
 var can_inspect: bool = false
 var can_talk_v: bool = false
+var can_talk_z: bool = false
+var can_talk_h: bool = false
 
 #defining variables to be used when calculating damage taken
 var max_health: int = 3
@@ -394,6 +397,7 @@ func _input(_event: InputEvent) -> void:
 						can_move = true
 					2:
 						anim_sprite.play("throw_left")
+						held_object.position.y += 25
 						var throw_x = throw_strength
 						var throw_y = 0
 						held_object.get_node("ObjectLogic").throw(throw_x,throw_y)
@@ -405,6 +409,7 @@ func _input(_event: InputEvent) -> void:
 						can_move = true
 					3:
 						anim_sprite.play("throw_right")
+						held_object.position.y += 25
 						var throw_x = throw_strength * -1
 						var throw_y = 0
 						held_object.get_node("ObjectLogic").throw(throw_x,throw_y)
@@ -463,22 +468,38 @@ func _input(_event: InputEvent) -> void:
 			PauseMenu.create()
 		
 		##debug mode - DO NOT LEAVE THIS ACTIVE WHEN EXPORTING
-		if Input.is_action_just_pressed("enhance") and !debug_mode:
+		if Input.is_key_pressed(KEY_1) and !debug_mode:
 			print("debug mode on")
 			sprint_speed = 600
 			sprint_accel = 100
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(1, false)
 			debug_mode = true
-			#GlobalVariables.beatfirstboss = true
-			GlobalVariables.metvagabond = true
-		elif Input.is_action_just_pressed("enhance") and debug_mode:
+		elif Input.is_key_pressed(KEY_2) and debug_mode:
 			print("debug mode off")
 			sprint_speed = 350
 			sprint_accel = 5
 			set_collision_layer_value(2, true)
 			set_collision_mask_value(1, true)
 			debug_mode = false
+		
+		#debug tool to reset save data variables
+		if Input.is_key_pressed(KEY_0):
+			print("wiping save data")
+			GlobalVariables.seenfirstcut = false
+			GlobalVariables.metvagabond = false
+			GlobalVariables.beatfirstboss = false
+			GlobalVariables.haspass = false
+			GlobalVariables.metzulie = false
+			GlobalVariables.beatsecondboss = false
+		
+		if Input.is_key_pressed(KEY_5):
+			get_tree().call_group("Zulie", "appear")
+			get_tree().call_group("VagabondActor", "appear")
+			GlobalVariables.metzulie = true
+			GlobalVariables.zulie_goto = true
+			GlobalVariables.vagabond_goto = true
+			CutsceneManager.pair_togate()
 		
 		#trigger inspect dialogue if inside an inspect area
 		if Input.is_action_just_pressed("interact"):
@@ -513,8 +534,34 @@ func _input(_event: InputEvent) -> void:
 				inspect_prompt.visible = false
 				GlobalVariables.cutscenemode = true
 				TalkScenes.vagabond_talk.start()
-				pass
-		
+			elif can_talk_z and !GlobalVariables.menumode and !dead and !can_inspect:
+				velocity = Vector2.ZERO
+				match facing:
+					0:
+						anim_sprite.play("idle_up")
+					1:
+						anim_sprite.play("idle_down")
+					2:
+						anim_sprite.play("idle_left")
+					3:
+						anim_sprite.play("idle_right")
+				inspect_prompt.visible = false
+				GlobalVariables.cutscenemode = true
+				TalkScenes.zulie_talk.start()
+			elif can_talk_h and !GlobalVariables.menumode and !dead and !can_inspect:
+				velocity = Vector2.ZERO
+				match facing:
+					0:
+						anim_sprite.play("idle_up")
+					1:
+						anim_sprite.play("idle_down")
+					2:
+						anim_sprite.play("idle_left")
+					3:
+						anim_sprite.play("idle_right")
+				inspect_prompt.visible = false
+				GlobalVariables.cutscenemode = true
+				TalkScenes.healer_talk.start()
 		#debug function
 		#if Input.is_action_just_pressed("enhance"):
 			#GlobalVariables.player_goto_coords = Vector2(100,-200)
@@ -588,6 +635,7 @@ func hurt_player(damage: int, enemy_x: float, enemy_y: float) -> void:
 			audio_player.play()
 			box_control.play("RESET")
 			anim_sprite.play("die")
+			get_tree().call_group("enemy_projectiles", "deactivate")
 			can_move = false
 			attacking = false
 			grabbing = false
@@ -637,7 +685,8 @@ func respawn() -> void:
 	deathscreen.visible = false
 	anim_sprite.play("idle_down")
 	health = 3
-	await get_tree().create_timer(1).timeout
+	set_collision_layer_value(2, true)
+	await get_tree().create_timer(1.5).timeout
 	dead = false
 	can_move = true
 	col_box.disabled = false
@@ -691,8 +740,32 @@ func emote_question() -> void:
 func walk_r() -> void:
 	anim_sprite.play("walk_right")
 
+func walk_l() -> void:
+	anim_sprite.play("walk_left")
+
 func idle_r() -> void:
 	anim_sprite.play("idle_right")
+
+func idle_l() -> void:
+	anim_sprite.play("idle_left")
+
+func idle_down() -> void:
+	anim_sprite.play("idle_down")
+
+func catch_r() -> void:
+	anim_sprite.play("catch_r")
+	purpleflash.play("flash_1")
+	audio_player.stream = dmg_sfx
+	audio_player.play()
+
+func cool_toss() -> void:
+	anim_sprite.play("cool_toss")
+	purpleflash.play("flash_1")
+
+func cool_throw() -> void:
+	anim_sprite.play("cool_throw")
+	audio_player.stream = throw_sfx
+	audio_player.play()
 
 #stop moving instantly.
 func stop_moving() -> void:
@@ -703,5 +776,6 @@ func end_anim() -> void:
 	#GlobalVariables.player_goto_active = false
 	print("ending animation")
 	facing = 1
-	anim_sprite.play("idle_down")
 	can_move = true
+
+#you might think this is a really inconvenient way of coding animations during cutscenes. But theres a few things you need to consider about videogames: 1. Most people will never see the code. 2. Making the code functional is the number one priority. Monica reminded me of this.

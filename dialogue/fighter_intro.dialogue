@@ -2,7 +2,7 @@
 ???: [wave amp=25 freq=5]HAHAHAHAHAHA!!![/wave] Oh man, I can't believe you were stupid enough to walk right into that!
 do get_tree().call_group("boss", "jump_in")
 ???: Aaaaaalright, we've been doing this song and dance for long enough bud. Let's just...
-???: ...Wait, you're not the knight guy. Who the #&*% are you?
+???: Wait, you're not the knight guy! What, are you lost or something?!
 - ...
 	???: You're seriously still reeling from that? It wasn't even that strong of an explosion, quit being a wuss.
 	???: Besides, that's just the warm-up! If that's how you're gonna act before I actually start trying, that's just sad.
@@ -12,12 +12,12 @@ do get_tree().call_group("boss", "jump_in")
 - What was that for?!
 	???: What do you mean, "What was that for"? Buddy, [shake rate=20 level=10]you already know why I'm here[/shake].
 	- Do I?
-		???: [shake rate=20 level=10]D- "DO I"?!?!?![/shake] Do you think this is funny, jack@$$?!?! [shake rate=20 level=10]I'M HERE TO KILL YOU!!![/shake]
+		???: [shake rate=20 level=10]D- "DO I"?!?!?![/shake] Do you think this is funny?!?! [shake rate=20 level=10]I'M HERE TO KILL YOU!!![/shake]
 		???: Grrrrrr... Fine, you're probably new anyways. I'd remember someone who looked like they were trying to be edgy with linework like that.
 		- What's wrong with it?!
 			???: ...Buddy. What [shake rate=20 level=10]ISN'T[/shake] wrong with it? Terrible color palette, poor anatomy, it's derivative...I could do this all day.
 			???: See, this is why we do this in the first place. You look like something a toddler scribbled, and I'm over here looking [wave amp=25 freq=5]Triple A.[/wave] Speaking of which...
-		- And I'd remember your ugly white border. 
+		- And I'd remember how annoying you are. 
 			???: You're just jealous case you look like a [wave amp=25 freq=5]fungus-infested pile of mucus.[/wave]
 			???: Now shut up and let me do my speech.
 	- I have no clue who you are.
@@ -28,22 +28,25 @@ do get_tree().call_group("boss", "jump_in")
 	???: [wave amp=25 freq=5]Awwwwww, is somebowdy upset they feww fow such an obviows twap?~ Do youw need to wet some angew owt?~[/wave]
 	???: Don't be such a baby. You knew the dangers of wandering around alone, and you still did it. It's almost like you want to die!
 	???: Wait, are you...[wave amp=25 freq=5]ooooh, you're a new arrival![/wave] No wonder you fell for that; you're stupid, worthless, AND clueless!
-	- #&@% you.
+	- What?!
 		???: Hehehe, not my fault you're just so [shake rate=20 level=10]killable[/shake].
-	- Well, aren't you just a bundle of joy.
-		???: Oh, you think this is bad? Just be glad you didn't have to deal with Cleric or Noble, They wouldn't be giving you this courtesy.
+	- You talk too much.
+		???: Oh, do I? Does having someone remind you how much of a [shake rate=20 level=10]mistake you are[/shake] get on your nerves? Keep crying. Noone cares about you.
 	???: Anyways, you probably wanna know who's gonna be putting you down, huh?
+???: Ok, where did I put the notecard Noble gave me? I swear it was...Riiiight, I put it in the inside pocket. Here we are...
 ???: [shake rate=20 level=10]Ahem.[/shake]
 ???: [wave amp=25 freq=5]Your miserable, incomplete existence will soon reach it's end, you pitiful creature!~ Your grotesque figure is no match for our perfect, hand-crafted bodies!~[/wave]
 ???: ...Or mine, at the very least. Man, this is way less fun without the entire gang here.
 Fighter: Whatever, screw the speech. I'm the fighter of the group, and you'll address me by that name for the tiny amount of time you have left to live.
 - ...
 	Fighter: I know I made a huge deal over how meaningless you are, but if you have any basic decency...
+	do MusicController.vol_reset()
 	do MusicController.play_fight1_intro()
 	Fighter: [wave amp=25 freq=5]Make this fun for me.~[/wave]
 - You don't even have a name?
 	Fighter: Why are you acting so surprised? [shake rate=20 level=10]You don't have one either.[/shake]
 	Fighter: Now, as much as I'd love to keep chitchatting...
+	do MusicController.vol_reset()
 	do MusicController.play_fight1_intro()
 	Fighter: [wave amp=25 freq=5]I have a new toy to play with.~[/wave]
 do CutsceneManager.endcutscene()

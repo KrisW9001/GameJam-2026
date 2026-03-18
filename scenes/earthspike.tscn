@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cwocoy1hrrpaa"]
+
+[ext_resource type="Texture2D" uid="uid://c0lhblj08vc2v" path="res://assets/effects/earth spike v1.png" id="1_3jefk"]
+[ext_resource type="Script" uid="uid://dbuy7dyoypyw7" path="res://scripts/earthspike.gd" id="1_eoml3"]
+[ext_resource type="AudioStream" uid="uid://coq4mk8236ywm" path="res://audio/sfx/Rock Break 1.wav" id="3_srseb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoml3"]
+atlas = ExtResource("1_3jefk")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srseb"]
+atlas = ExtResource("1_3jefk")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sjxq"]
+atlas = ExtResource("1_3jefk")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ojf3"]
+atlas = ExtResource("1_3jefk")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqpb1"]
+atlas = ExtResource("1_3jefk")
+region = Rect2(0, 80, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3mqh"]
+atlas = ExtResource("1_3jefk")
+region = Rect2(64, 80, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mrq8"]
+animations = [{
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_eoml3")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_srseb")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_7sjxq")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_4ojf3")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_pqpb1")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_i3mqh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jefk"]
+size = Vector2(20, 53)
+
+[node name="earthspike" type="CharacterBody2D" unique_id=1274550588 groups=["earthspike"]]
+scale = Vector2(3, 3)
+collision_mask = 2
+script = ExtResource("1_eoml3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1269268440]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7mrq8")
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1662122325]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_3jefk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1680577007]
+stream = ExtResource("3_srseb")
+volume_db = -20.0
+bus = &"Sound Effects"

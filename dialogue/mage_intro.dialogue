@@ -1,0 +1,15 @@
+~ start
+Mage: [wave amp=25 freq=5]Well, well, well.[/wave] It seems like you've forgotten why you're hiding behind those shields in the first place. What a shame.
+Mage: ...And who's this hooded fellow? Either my detection field needs fine-tuning, or someone is sticking their nose in places it shouldn't be.
+- ...
+	Mage: The silent type, I see. Always trying to hide how scared they are, all for them to beg for mercy just like the rest when the time comes.
+	Mage: As pleased as I am to meet you, I'm afraid your little party of misfits is about to be cut down a few members.
+- Enough talking.
+	Mage: [wave amp=25 freq=5]Ooooooh, so forthcoming![/wave] I like that.
+	Mage: I'm sure you're just [shake rate=20 level=10]dying[/shake] for the opportunity to get blasted into kingdom come, but I'm afraid your friends are a much higher priority for me.
+	Mage: But since you asked so [wave amp=25 freq=5]nicely[/wave], let's skip the formalities!
+do get_tree().call_group("enemies", "tele_in")
+do get_tree().call_group("boss", "tele_sound")
+set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_mage_response.dialogue")
+do TalkScenes.vagabond_talk.start()
+=> END

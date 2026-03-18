@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cls0n6w5f4hur"
+path="res://.godot/imported/mage_defeated.dialogue-ab4686e2728bcd5ca33b3e63b3f76df3.tres"
+
+[deps]
+
+source_file="res://dialogue/mage_defeated.dialogue"
+dest_files=["res://.godot/imported/mage_defeated.dialogue-ab4686e2728bcd5ca33b3e63b3f76df3.tres"]
+
+[params]
+
+defaults=true

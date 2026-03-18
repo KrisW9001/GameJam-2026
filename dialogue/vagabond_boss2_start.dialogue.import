@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://qr7k8t83660u"
+path="res://.godot/imported/vagabond_boss2_start.dialogue-a581360e34bd20f701bbd7108307a65e.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_boss2_start.dialogue"
+dest_files=["res://.godot/imported/vagabond_boss2_start.dialogue-a581360e34bd20f701bbd7108307a65e.tres"]
+
+[params]
+
+defaults=true

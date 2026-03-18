@@ -1,0 +1,7 @@
+~ start
+Vagabond: Not quite. I was trapped in some tunnels that were modern and unfamiliar to me, on an uncharted peninsula.
+Vagabond: The Fighter had laid an ambush in the hopes that I would attempt to escape in my exhausted state, and a trap most devious at that...
+Vagabond: ...But fortunately for me there was an unexpected variable in their plan that put their nefarious deeds to an end. And I see you've already met them.
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_cut5_3.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

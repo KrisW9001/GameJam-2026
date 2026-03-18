@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cic10rftovf8k"
+path="res://.godot/imported/zulie_mage_response.dialogue-55866aae5742cacae77b371feda96dce.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_mage_response.dialogue"
+dest_files=["res://.godot/imported/zulie_mage_response.dialogue-55866aae5742cacae77b371feda96dce.tres"]
+
+[params]
+
+defaults=true

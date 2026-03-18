@@ -9,14 +9,19 @@ var oneshot: bool = false
 
 #declaring all music
 var test_music = preload("res://audio/music/3-28-2019 (edm fight theme).wav")
-var level1_music = preload("res://audio/music/12-4-2016 - 1 (exploration theme).wav")
+var level1_music = load("res://audio/music/12-4-2016 - 1 (exploration theme).wav")
 var death_music = preload("res://audio/music/trimmed/5-16-2018 - 1 (death theme trimmed).ogg")
 var fight1_intro_music = load("res://audio/music/trimmed/11-21-2015 - 1 (fight 1 intro).ogg")
 var fight1_music = load("res://audio/music/trimmed/11-21-2015 - 1 (fight 1 loop).ogg")
 var memory_music = load("res://audio/music/trimmed/Damaged Mind (memory cutscene).ogg")
-var moody_cutscene = load("res://audio/music/trimmed/12-4-2018 - 2 (moody guitar).ogg")
+var moody_cutscene = preload("res://audio/music/trimmed/12-4-2018 - 2 (moody guitar).ogg")
 var level2_music = load("res://audio/music/trimmed/10-6-2015 - 1 (exploration theme trimmed).ogg")
 var zulie_theme = load("res://audio/music/trimmed/7-1-2018 - 1 (cutscene theme trimmed).ogg")
+var fight2_intro_music = load("res://audio/music/trimmed/3-3-2017 - 1 (fight 2 intro).ogg")
+var fight2_music = load("res://audio/music/trimmed/3-3-2017 - 1 (fight 2 loop).ogg")
+var bass_swell = load("res://audio/music/Misc_BassSynthSwell.wav")
+var corrupt_town_music = load("res://audio/music/Retro Mystic (warped v2).ogg")
+var town_music = load("res://audio/music/Retro Mystic.ogg")
 
 func ready() -> void:
 	is_playing = false
@@ -30,6 +35,9 @@ func test_music_stop() -> void:
 		bgm_player.stop()
 		is_playing = false
 		testing_music = false
+
+func vol_reset() -> void:
+	animation_player.play("RESET")
 
 func music_fadein() -> void:
 	animation_player.play("fade_in")
@@ -99,10 +107,47 @@ func play_zulie_theme() -> void:
 		bgm_player.play()
 		is_playing = true
 
+func play_fight2_intro() -> void:
+	if !is_playing:
+		bgm_player.stream = fight2_intro_music
+		bgm_player.play()
+		is_playing = true
+
+func play_fight2_music() -> void:
+	if !is_playing:
+		bgm_player.stream = fight2_music
+		bgm_player.play()
+		is_playing = true
+	else:
+		bgm_player.stream = fight2_music
+
+func play_bass_swell() -> void:
+	if !is_playing:
+		bgm_player.stream = bass_swell
+		bgm_player.play()
+		is_playing = true
+
+func play_corrupt_town_music() -> void:
+	if !is_playing:
+		bgm_player.stream = corrupt_town_music
+		bgm_player.play()
+		is_playing = true
+
+func play_town_music() -> void:
+	if !is_playing:
+		bgm_player.stream = town_music
+		bgm_player.play()
+		is_playing = true
+
 func _on_audio_stream_player_finished() -> void:
 	if !oneshot:
-		if bgm_player.stream == fight1_intro_music:
-			play_fight1_music()
+		#if bgm_player.stream == fight1_intro_music:
+			#play_fight1_music()
+		match bgm_player.stream:
+			fight1_intro_music:
+				play_fight1_music()
+			fight2_intro_music:
+				play_fight2_music()
 		bgm_player.play()
 
 #stops music after a timeout
