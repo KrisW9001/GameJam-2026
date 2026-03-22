@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://btq72repaoels"
+path="res://.godot/imported/inspect_zulie_diary.dialogue-37d43edbdd910bd865dd782224ab3381.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_zulie_diary.dialogue"
+dest_files=["res://.godot/imported/inspect_zulie_diary.dialogue-37d43edbdd910bd865dd782224ab3381.tres"]
+
+[params]
+
+defaults=true

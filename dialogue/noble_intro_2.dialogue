@@ -1,0 +1,36 @@
+~ start
+set GlobalVariables.player_goto_active = false
+do get_tree().call_group("Player", "idle_r")
+set GlobalVariables.noble_goto = true
+set GlobalVariables.noble_coords = Vector2(150, -1650)
+do get_tree().call_group("boss", "walk_l")
+???: Now, then. It truly is an honor to meet you, Marcus. After so many countless hours of chasing down these unsavory individuals, I finally get to see a fresh face.
+???: I assume you already know who I am, yes?
+- I can take a guess.
+	???: You most certainly can! I'll give you three guesses, and the first two don' count. [wave amp=25 freq=5]Hahahahahaha![/wave]
+	Noble: Hmhm...No. Let's not kid ourselves. The other three must have mentioned The Noble by name multiple times by now.
+- Get to the point, Noble.
+	Noble: Ah yes, I was told you were much more straightforward than anyone else that's sided with the mistakes. [wave amp=25 freq=5]I like that about you.[/wave]
+Noble: But let's not get carried away. Let's have a small chat. And you're not going to say no after what you saw me do to your friends, right? Of course you won't.
+do MusicController.music_fadein()
+do MusicController.play_memory_music()
+Noble: You've made it abundantly clear that you hate when people waste your time, so allow me to start from the end of my point and work backwards- [shake rate=20 level=10]You're different from them, Marcus.[/shake]
+Noble: Different from the always-cheerful Vagabond. Different from the all or nothing, do or die Zulie. Different from the pretentious Damien. [shake rate=20 level=10]From everyone.[/shake]
+Noble: You know exactly what you want and how to get it. Someone tells you to jump and rather than asking "how high?" you prepare to jump higher into the air than anyone could have thought possible.
+Noble: You don't wait for opportunity to come to you. You make it yourself. A rarity in times like these, where everyone just waits around for whatever it is they think they deserve to just fall into their lap.
+set GlobalVariables.noble_coords = Vector2(100, -1650)
+do get_tree().call_group("boss", "walk_l")
+Noble: So you know better than anyone else that The Creator owes you nothing, and you owe them nothing in return. Why would you? They abandoned you just like they abandon everything.
+Noble: Nothing will ever happen in this wasteland unless someone picks themselves off the ground and [shake rate=20 level=10]makes it happen.[/shake] The Heroes and I sought to right The Creator's wrongs.
+Noble: And you...You seek to right our wrongs. I admire that brutal honesty, the ability to look us right in the face and say exactly what we needed to hear.
+set GlobalVariables.noble_coords = Vector2(50, -1650)
+do get_tree().call_group("boss", "walk_l")
+Noble: You are the missing piece of the puzzle. All this time, we had the strength but not the direction. [wave amp=25 freq=5]And you are both in the same person.[/wave] Together, we can...
+do MusicController.music_stop()
+do sfx_shove()
+do get_tree().call_group("Player", "catch_r")
+set GlobalVariables.noble_coords = Vector2(350, -1650)
+Noble: [shake rate=20 level=10]UNNF!!![/shake] W-What...?
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_noble_response.dialogue")
+set TalkScenes.protag_talk.start()
+=> END

@@ -55,14 +55,6 @@ region = Rect2(96, 48, 48, 48)
 atlas = ExtResource("1_kyghf")
 region = Rect2(144, 48, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l0aw3"]
-atlas = ExtResource("1_kyghf")
-region = Rect2(0, 96, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nr8dn"]
-atlas = ExtResource("1_kyghf")
-region = Rect2(48, 96, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_uop2h"]
 atlas = ExtResource("1_kyghf")
 region = Rect2(144, 96, 48, 48)
@@ -145,20 +137,14 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.6,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_5swvv")
 }, {
-"duration": 0.6,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_6xi14")
 }, {
-"duration": 0.6,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_cewqd")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_l0aw3")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_nr8dn")
 }],
 "loop": false,
 "name": &"punch",
@@ -225,14 +211,54 @@ _data = {
 &"fade_away": SubResource("Animation_3jeah")
 }
 
+[sub_resource type="Animation" id="Animation_iv3fe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s4a2g"]
+resource_name = "new_animation"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1.0283641),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(101.875, 79.29)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7aad"]
+_data = {
+&"RESET": SubResource("Animation_iv3fe"),
+&"yeet": SubResource("Animation_s4a2g")
+}
+
 [node name="asset_healer" type="CharacterBody2D" unique_id=1900643228]
 scale = Vector2(2, 2)
+collision_mask = 0
 script = ExtResource("1_iv3fe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1605300888]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pewah")
-animation = &"idle"
+animation = &"punch"
+frame = 2
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=883006556]
 collision_mask = 2
@@ -252,6 +278,10 @@ libraries/ = SubResource("AnimationLibrary_s4a2g")
 volume_db = -20.0
 bus = &"Sound Effects"
 
+[node name="displacer" type="AnimationPlayer" parent="." unique_id=285183065]
+libraries/ = SubResource("AnimationLibrary_l7aad")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="displacer" to="." method="_on_displacer_animation_finished"]

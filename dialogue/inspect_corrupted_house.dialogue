@@ -1,0 +1,19 @@
+~ start
+if GlobalVariables.hasbook == false:
+	This house looks like it's gotten the worst treatment by far. It's completely messed up.
+	...Hey wait, this is just like the subway and the city. The "corruption" looks pretty much identical.
+	Did The Heroes mess everything up just for fun or is this something that just, happens over time around here? Maybe it's both.
+if GlobalVariables.hasbook == true:
+	This is the place. This house had it way worse than any other, so it definitely looks like it would be the source of the corruption spell.
+	Well, I've got the book. Nothing else to do but give it a shot.
+	- Cast the spell
+		do get_tree().call_group("Player", "item_pose")
+		do get_tree().call_group("Player", "book_visible")
+		do get_tree().call_group("Player", "purple_2")
+		I hold the book over my head and start to focus on drawing out the strength of Blackout. I can feel something happening...!
+		set TalkScenes.healer_talk.dialogue_resource = load("res://dialogue/healer_end_1.dialogue")
+		set TalkScenes.healer_talk.start()
+		=> END
+	- Not yet
+		do CutsceneManager.endcutscene()
+		=> END

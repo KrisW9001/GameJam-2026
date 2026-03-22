@@ -116,8 +116,12 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 			#check event flags for which dialogue to play when interacted with outside of a cutscene
 			if GlobalVariables.metzulie and !GlobalVariables.beatsecondboss:
 				TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_pre_mage.dialogue")
-			if GlobalVariables.beatsecondboss:
+			if GlobalVariables.beatsecondboss and !GlobalVariables.hasbook:
 				TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_town.dialogue")
+			if GlobalVariables.hasbook and !GlobalVariables.seennoblecut:
+				TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_post_book.dialogue")
+			if GlobalVariables.seennoblecut:
+				TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_final_dismiss.dialogue")
 			body.inspect_prompt.visible = true
 			body.can_talk_z = true
 			print("showing inspect prompt")

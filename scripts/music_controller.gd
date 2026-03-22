@@ -19,9 +19,11 @@ var level2_music = load("res://audio/music/trimmed/10-6-2015 - 1 (exploration th
 var zulie_theme = load("res://audio/music/trimmed/7-1-2018 - 1 (cutscene theme trimmed).ogg")
 var fight2_intro_music = load("res://audio/music/trimmed/3-3-2017 - 1 (fight 2 intro).ogg")
 var fight2_music = load("res://audio/music/trimmed/3-3-2017 - 1 (fight 2 loop).ogg")
-var bass_swell = load("res://audio/music/Misc_BassSynthSwell.wav")
+var bass_swell = load("res://audio/music/BassSwellLoud.ogg")
 var corrupt_town_music = load("res://audio/music/Retro Mystic (warped v2).ogg")
 var town_music = load("res://audio/music/Retro Mystic.ogg")
+var damien_theme = load("res://audio/music/Indecision.ogg")
+var level3_music = load("res://audio/music/12-4-2016 - 1 (final area theme).ogg")
 
 func ready() -> void:
 	is_playing = false
@@ -136,6 +138,18 @@ func play_corrupt_town_music() -> void:
 func play_town_music() -> void:
 	if !is_playing:
 		bgm_player.stream = town_music
+		bgm_player.play()
+		is_playing = true
+
+func play_damien_theme() -> void:
+	if !is_playing:
+		bgm_player.stream = damien_theme
+		bgm_player.play()
+		is_playing = true
+
+func play_level3_music() -> void:
+	if !is_playing:
+		bgm_player.stream = level3_music
 		bgm_player.play()
 		is_playing = true
 

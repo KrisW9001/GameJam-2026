@@ -17,7 +17,16 @@ func _save():
 	SaveFileData.metzulie = GlobalVariables.metzulie
 	SaveFileData.beatsecondboss = GlobalVariables.beatsecondboss
 	SaveFileData.aggressive = GlobalVariables.aggressive
+	SaveFileData.mushroomquest = GlobalVariables.mushroomquest
+	SaveFileData.hasmushroom = GlobalVariables.hasmushroom
+	SaveFileData.hasshovel = GlobalVariables.hasshovel
+	SaveFileData.openedpassage = GlobalVariables.openedpassage
+	SaveFileData.haskey = GlobalVariables.haskey
+	SaveFileData.metdamien = GlobalVariables.metdamien
+	SaveFileData.hasbook = GlobalVariables.hasbook
 	SaveFileData.cont_scene = GlobalVariables.cont_scene
+	SaveFileData.town_room = GlobalVariables.town_room
+	SaveFileData.beatthirdboss = GlobalVariables.beatthirdboss
 	ResourceSaver.save(SaveFileData, save_location)
 	print("saving")
 
@@ -33,11 +42,15 @@ func _load():
 		GlobalVariables.metzulie = SaveFileData.metzulie
 		GlobalVariables.beatsecondboss = SaveFileData.beatsecondboss
 		GlobalVariables.aggressive = SaveFileData.aggressive
+		GlobalVariables.mushroomquest = SaveFileData.mushroomquest
 		GlobalVariables.hasmushroom = SaveFileData.hasmushroom
 		GlobalVariables.hasshovel = SaveFileData.hasshovel
 		GlobalVariables.openedpassage = SaveFileData.openedpassage
 		GlobalVariables.haskey = SaveFileData.haskey
 		GlobalVariables.metdamien = SaveFileData.metdamien
+		GlobalVariables.hasbook = SaveFileData.hasbook
+		GlobalVariables.town_room = SaveFileData.town_room
+		GlobalVariables.beatthirdboss = SaveFileData.beatthirdboss
 		GlobalVariables.cont_scene = SaveFileData.cont_scene
 
 #reset save data
@@ -50,11 +63,15 @@ func clear_save() -> void:
 	SaveFileData.metzulie = false
 	SaveFileData.beatsecondboss = false
 	SaveFileData.aggressive = false
+	SaveFileData.mushroomquest = false
 	SaveFileData.hasmushroom = false
 	SaveFileData.hasshovel = false
 	SaveFileData.openedpassage = false
 	SaveFileData.haskey = false
 	SaveFileData.metdamien = false
+	SaveFileData.hasbook = false
+	SaveFileData.town_room = "null"
+	SaveFileData.beatthirdboss = false
 	SaveFileData.cont_scene = "null"
 	GlobalVariables.seenfirstcut = false
 	GlobalVariables.metvagabond = false
@@ -64,9 +81,13 @@ func clear_save() -> void:
 	GlobalVariables.metzulie = false
 	GlobalVariables.beatsecondboss = false
 	GlobalVariables.aggressive = false
+	GlobalVariables.mushroomquest = false
 	GlobalVariables.hasmushroom = false
 	GlobalVariables.hasshovel = false
 	GlobalVariables.openedpassage = false
 	GlobalVariables.haskey = false
 	GlobalVariables.metdamien = false
+	GlobalVariables.hasbook = false
+	GlobalVariables.town_room = "null"
+	GlobalVariables.beatthirdboss = false
 	GlobalVariables.cont_scene = "null"

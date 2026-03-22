@@ -1,0 +1,6 @@
+~ start
+Zulie: You're taking it a lot better than you would if you weren't. Don't put too much strain on it.
+Zulie: ...So you're really going to do this, Marcus? Take on the worst of the worst on their own terms?
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_post_noble_2.dialogue")
+set TalkScenes.protag_talk.start()
+=> END

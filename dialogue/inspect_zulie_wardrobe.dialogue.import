@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://beilfnv35r4wx"
+path="res://.godot/imported/inspect_zulie_wardrobe.dialogue-0bdf5113a44ce226b9ed6a47d647666d.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_zulie_wardrobe.dialogue"
+dest_files=["res://.godot/imported/inspect_zulie_wardrobe.dialogue-0bdf5113a44ce226b9ed6a47d647666d.tres"]
+
+[params]
+
+defaults=true

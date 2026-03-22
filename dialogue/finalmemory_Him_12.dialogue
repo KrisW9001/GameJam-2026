@@ -1,0 +1,6 @@
+~ start
+[speed=0.5][shake rate=20 level=10]W-wait![/shake] Y-you can't do this! Without me, n-noone will be left who understands Blackout!
+[speed=0.5]Y-you'll never be able to get it removed!
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_12.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

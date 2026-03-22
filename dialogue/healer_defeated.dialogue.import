@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://wtnt58xuk4u7"
+path="res://.godot/imported/healer_defeated.dialogue-0d94ce4b06d3ea572a0cc022e8656f98.tres"
+
+[deps]
+
+source_file="res://dialogue/healer_defeated.dialogue"
+dest_files=["res://.godot/imported/healer_defeated.dialogue-0d94ce4b06d3ea572a0cc022e8656f98.tres"]
+
+[params]
+
+defaults=true

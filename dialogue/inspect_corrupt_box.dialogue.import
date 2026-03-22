@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b0lu1o5gphg33"
+path="res://.godot/imported/inspect_corrupt_box.dialogue-5d9fc1b29fabdb904069bb547e233722.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_corrupt_box.dialogue"
+dest_files=["res://.godot/imported/inspect_corrupt_box.dialogue-5d9fc1b29fabdb904069bb547e233722.tres"]
+
+[params]
+
+defaults=true

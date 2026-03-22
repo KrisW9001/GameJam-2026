@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cxos6cuaeyhna"
+path="res://.godot/imported/inspect_zulie_pile.dialogue-5dd92a180d5e6f426243cd0ce4bdf7d1.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_zulie_pile.dialogue"
+dest_files=["res://.godot/imported/inspect_zulie_pile.dialogue-5dd92a180d5e6f426243cd0ce4bdf7d1.tres"]
+
+[params]
+
+defaults=true

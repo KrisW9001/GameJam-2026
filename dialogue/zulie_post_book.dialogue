@@ -1,0 +1,24 @@
+~ start
+if GlobalVariables.metdamien == true and GlobalVariables.hasbook == true:
+	Zulie: Hey. I gave up trying to get into my house, so now I'm joining the search for Damien.
+	Zulie: But apparently I need to add Red to the list of people I'm looking for. Have you seen him? => ask
+~ ask
+- The Vagabond is missing?
+	Zulie: Apparently. Just a few minutes ago he was right here in front of the storeroom where he stays, now I can't find him anywhere. I even backtracked to the old shelter.
+	Zulie: I'm sure he's just trying to do his part and help get the village back to normal, but wandering off on his own for no reason is pretty out of character for him.
+	Zulie: Or maybe he got into a corrupted house and got stuck. That's also a possibility. => ask
+- I found Damien, and...
+	Zulie: [shake rate=20 level=10]You did?! What did he say?![/shake]
+	Zulie: ...
+	Zulie: Well, what are you doing talking to me, then?! [shake rate=20 level=10]Go cast it![/shake]
+	set GlobalVariables.zulie_goto = true
+	set GlobalVariables.zulie_coords = Vector2(1275, 151)
+	do get_tree().call_group("Zulie", "dash_l")
+	Zulie: I'm gonna prep for The Noble! The Healer's the weakest of them, you can deal with him! [shake rate=20 level=10]I'm counting on you!!![/shake]
+	do get_tree().call_group("Zulie", "invis") 
+	do CutsceneManager.endcutscene() 
+	=> END
+- Gotta go.
+	Zulie: Sure.
+	do CutsceneManager.endcutscene() 
+	=> END

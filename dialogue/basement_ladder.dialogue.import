@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://pjy4yncnvbi7"
+path="res://.godot/imported/basement_ladder.dialogue-1f69f658e087265273fff7d953f1da7f.tres"
+
+[deps]
+
+source_file="res://dialogue/basement_ladder.dialogue"
+dest_files=["res://.godot/imported/basement_ladder.dialogue-1f69f658e087265273fff7d953f1da7f.tres"]
+
+[params]
+
+defaults=true

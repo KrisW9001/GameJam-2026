@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjjhnpab7up7i"
+path="res://.godot/imported/12-4-2016 - 1 (final area theme).ogg-d34f84dfd3ecf1a009132f3daeee20cf.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/12-4-2016 - 1 (final area theme).ogg"
+dest_files=["res://.godot/imported/12-4-2016 - 1 (final area theme).ogg-d34f84dfd3ecf1a009132f3daeee20cf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

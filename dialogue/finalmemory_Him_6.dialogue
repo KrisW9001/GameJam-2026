@@ -1,0 +1,6 @@
+~ start
+[speed=0.5]...
+[speed=0.5]I want to make you understand. More than anything, I want you to see that I've given you a gift.
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_6.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

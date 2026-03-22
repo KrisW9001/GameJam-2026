@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://mpl6mo3sigim"
+path="res://.godot/imported/basement_transition.dialogue-a5016b16297d012f01d00586c52627f1.tres"
+
+[deps]
+
+source_file="res://dialogue/basement_transition.dialogue"
+dest_files=["res://.godot/imported/basement_transition.dialogue-a5016b16297d012f01d00586c52627f1.tres"]
+
+[params]
+
+defaults=true

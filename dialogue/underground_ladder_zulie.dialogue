@@ -1,0 +1,3 @@
+~ start
+do CutsceneManager.new_room("res://scenes/rooms/zulie_house.tscn")
+=> END

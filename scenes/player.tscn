@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdhnvrleobq4k" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://c6vdd56y286ls" path="res://assets/temp/protag v1 WIP4.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cpl35fo7andx4" path="res://assets/UI/prompt up.png" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://40hmwxf5rpxv" path="res://assets/temp/masterydiamond.png" id="3_fjrip"]
 [ext_resource type="Texture2D" uid="uid://cuhk2k8fol53t" path="res://assets/effects/emotes no bg.png" id="3_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://d6s1xn51g7kv" path="res://audio/sfx/Sword 2.wav" id="5_qlg0r"]
 
@@ -126,6 +127,10 @@ region = Rect2(384, 960, 192, 192)
 [sub_resource type="AtlasTexture" id="AtlasTexture_lw0jh"]
 atlas = ExtResource("2_qhqgy")
 region = Rect2(576, 960, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2b1d"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(576, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
 atlas = ExtResource("2_qhqgy")
@@ -491,6 +496,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_j2b1d")
+}],
+"loop": true,
+"name": &"catch_l",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_md1ol")
 }],
 "loop": true,
@@ -498,10 +511,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.7,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_hax0n")
 }, {
-"duration": 0.7,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_t4otl")
 }],
 "loop": false,
@@ -1450,10 +1463,28 @@ tracks/1/keys = {
 "values": [Vector2(8, 0), Vector2(-8, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(-2, 0), Vector2(2, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_jej6c"]
+resource_name = "flash_2"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.3959999, 0, 0.66, 1), Color(1, 1, 1, 1), Color(0.39607844, 0, 0.65882355, 1), Color(1, 1, 1, 1), Color(0.39607844, 0, 0.65882355, 1), Color(0.964, 0.90999997, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jej6c"]
 _data = {
 &"RESET": SubResource("Animation_d2wvv"),
-&"flash_1": SubResource("Animation_3v2ag")
+&"flash_1": SubResource("Animation_3v2ag"),
+&"flash_2": SubResource("Animation_jej6c")
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1720193695 groups=["Player"]]
@@ -1471,6 +1502,12 @@ texture_filter = 1
 position = Vector2(0, -44)
 texture = ExtResource("2_qlg0r")
 
+[node name="book" type="Sprite2D" parent="." unique_id=2007383980]
+visible = false
+texture_filter = 1
+position = Vector2(14, -30)
+texture = ExtResource("3_fjrip")
+
 [node name="emote" type="AnimatedSprite2D" parent="." unique_id=1325825520]
 visible = false
 texture_filter = 1
@@ -1486,8 +1523,6 @@ texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
 animation = &"cool_throw"
-frame = 1
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=66438373]
 shape = SubResource("RectangleShape2D_dqkch")

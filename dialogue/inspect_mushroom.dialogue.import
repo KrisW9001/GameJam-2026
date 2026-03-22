@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d22vyoi6j0eg2"
+path="res://.godot/imported/inspect_mushroom.dialogue-938e75d956597be6072bb1869fec8a5a.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_mushroom.dialogue"
+dest_files=["res://.godot/imported/inspect_mushroom.dialogue-938e75d956597be6072bb1869fec8a5a.tres"]
+
+[params]
+
+defaults=true

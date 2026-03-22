@@ -1,0 +1,7 @@
+~ start
+[speed=0.5]You think I'm gonna run my mouth to the presses after this? You're missing the point.
+[speed=0.5]You can lie all you want about how great my life is gonna be or how many years you're gonna push the world forward. But you made one fatal mistake.
+[speed=0.5]You thought, after all of that...it would be a great idea to give me the power to say no to whoever I want.
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_12.dialogue")
+do TalkScenes.him_talk.start()
+=> END

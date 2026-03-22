@@ -43,6 +43,7 @@ var y_drop: float = 0
 @onready var deathscreen: ColorRect = $deathscreen
 @onready var heal_timer: Timer = $HealTimer
 @onready var purpleflash: AnimationPlayer = $purpleflash
+@onready var book: Sprite2D = $book
 
 #variables to control whether or not the player input has influence over stuff (IE: removing the ability to move the player character during cutscenes)
 var debug_mode: bool = false
@@ -57,6 +58,8 @@ var can_inspect: bool = false
 var can_talk_v: bool = false
 var can_talk_z: bool = false
 var can_talk_h: bool = false
+var can_talk_n: bool = false
+var can_talk_d: bool = false
 
 #defining variables to be used when calculating damage taken
 var max_health: int = 3
@@ -91,7 +94,9 @@ func ready() -> void:
 	can_move = true
 	col_box.disabled = false
 	z_index = 2
-	#GlobalVariables.menumode = false
+	
+	if GlobalVariables.player_newroom_coords != Vector2.ZERO:
+		position = GlobalVariables.player_newroom_coords
 
 func _physics_process(delta: float) -> void:
 #interpret movement binds as character movement
@@ -483,7 +488,7 @@ func _input(_event: InputEvent) -> void:
 			set_collision_mask_value(1, true)
 			debug_mode = false
 		
-		#debug tool to reset save data variables
+		##debug tools to manipulate save data variables
 		if Input.is_key_pressed(KEY_0):
 			print("wiping save data")
 			GlobalVariables.seenfirstcut = false
@@ -492,6 +497,15 @@ func _input(_event: InputEvent) -> void:
 			GlobalVariables.haspass = false
 			GlobalVariables.metzulie = false
 			GlobalVariables.beatsecondboss = false
+			GlobalVariables.mushroomquest = false
+			GlobalVariables.hasmushroom = false
+			GlobalVariables.hasshovel = false
+			GlobalVariables.haskey = false
+			GlobalVariables.openedpassage = false
+			GlobalVariables.metdamien = false
+			GlobalVariables.hasbook = false
+			GlobalVariables.seennoblecut = false
+			GlobalVariables.town_room = "null"
 		
 		if Input.is_key_pressed(KEY_5):
 			get_tree().call_group("Zulie", "appear")
@@ -500,6 +514,11 @@ func _input(_event: InputEvent) -> void:
 			GlobalVariables.zulie_goto = true
 			GlobalVariables.vagabond_goto = true
 			CutsceneManager.pair_togate()
+		
+		if Input.is_key_pressed(KEY_6):
+			print("setting mage defeat conditions")
+			GlobalVariables.beatsecondboss = true
+			GlobalVariables.metzulie = true
 		
 		#trigger inspect dialogue if inside an inspect area
 		if Input.is_action_just_pressed("interact"):
@@ -562,6 +581,34 @@ func _input(_event: InputEvent) -> void:
 				inspect_prompt.visible = false
 				GlobalVariables.cutscenemode = true
 				TalkScenes.healer_talk.start()
+			elif can_talk_n and !GlobalVariables.menumode and !dead and !can_inspect:
+				velocity = Vector2.ZERO
+				match facing:
+					0:
+						anim_sprite.play("idle_up")
+					1:
+						anim_sprite.play("idle_down")
+					2:
+						anim_sprite.play("idle_left")
+					3:
+						anim_sprite.play("idle_right")
+				inspect_prompt.visible = false
+				GlobalVariables.cutscenemode = true
+				TalkScenes.npc_talk.start()
+			elif can_talk_d and !GlobalVariables.menumode and !dead and !can_inspect:
+				velocity = Vector2.ZERO
+				match facing:
+					0:
+						anim_sprite.play("idle_up")
+					1:
+						anim_sprite.play("idle_down")
+					2:
+						anim_sprite.play("idle_left")
+					3:
+						anim_sprite.play("idle_right")
+				inspect_prompt.visible = false
+				GlobalVariables.cutscenemode = true
+				TalkScenes.damien_talk.start()
 		#debug function
 		#if Input.is_action_just_pressed("enhance"):
 			#GlobalVariables.player_goto_coords = Vector2(100,-200)
@@ -710,6 +757,21 @@ func iliketospin() -> void:
 func item_pose() -> void:
 	anim_sprite.play("item_get")
 
+func hold_book() -> void:
+	anim_sprite.play("item_get")
+
+func book_visible() -> void:
+	book.visible = true
+
+func book_invis() -> void:
+	book.visible = false
+
+func purple_2() -> void:
+	purpleflash.play("flash_2")
+
+func reset_purple() -> void:
+	purpleflash.play("RESET")
+
 #the next two are used in memory cutscenes
 func struggle() -> void:
 	anim_sprite.play("struggle")
@@ -743,6 +805,9 @@ func walk_r() -> void:
 func walk_l() -> void:
 	anim_sprite.play("walk_left")
 
+func walk_up() -> void:
+	anim_sprite.play("walk_up")
+
 func idle_r() -> void:
 	anim_sprite.play("idle_right")
 
@@ -752,10 +817,19 @@ func idle_l() -> void:
 func idle_down() -> void:
 	anim_sprite.play("idle_down")
 
+func idle_up() -> void:
+	anim_sprite.play("idle_up")
+
 func catch_r() -> void:
 	anim_sprite.play("catch_r")
 	purpleflash.play("flash_1")
 	audio_player.stream = dmg_sfx
+	audio_player.play()
+
+func catch_l() -> void:
+	anim_sprite.play("catch_l")
+	purpleflash.play("flash_1")
+	audio_player.stream = grab_sfx
 	audio_player.play()
 
 func cool_toss() -> void:

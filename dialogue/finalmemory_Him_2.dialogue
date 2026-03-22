@@ -1,0 +1,5 @@
+~ start
+[speed=0.5]You have no right to lecture me on having a conscience! Just look at yourself! Do you see what you've become?
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_2.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

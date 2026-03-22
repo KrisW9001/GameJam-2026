@@ -1,0 +1,10 @@
+~ start
+if GlobalVariables.haskey == false:
+	The door is locked. I tried shoving the door and see if I can use Blackout to break in, but it doesn't budge. I can't get in.
+if GlobalVariables.haskey == true:
+	do sfx_success()
+	The key I got from the roof of the storeroom fits perfectly! I can get in here now.
+	set GlobalVariables.town_room = "door"
+	do CutsceneManager.new_room("res://scenes/rooms/town_tavern.tscn")
+do CutsceneManager.endcutscene()
+=> END

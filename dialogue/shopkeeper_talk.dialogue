@@ -1,0 +1,28 @@
+~ start
+if GlobalVariables.mushroomquest == false and GlobalVariables.beatthirdboss == false:
+	9l#@se, 70u m\/$t #3l9 \/s! 8r|n9 m3 @ m\/$#40om @4d |l7 9|\/3 y0u m7 $h0\/3l!
+	- ...What???
+		9l#@se, j\/$% 8r|n9 m3 @ m\/$#40om!!
+		set GlobalVariables.mushroomquest = true
+		do CutsceneManager.endcutscene()
+		=> END
+	- Uhh...sure?
+		7h@n% 70u 7o\/n9 m@4! | n3e0 @ 43d m\/$#40om!
+		set GlobalVariables.mushroomquest = true
+		do CutsceneManager.endcutscene()
+		=> END
+if GlobalVariables.mushroomquest == true and GlobalVariables.hasmushroom == false and GlobalVariables.beatthirdboss == false:
+	8r|n9 m3 @ m\/$#40om @4d |l7 9|\/3 y0u m7 $h0\/3l!
+	do CutsceneManager.endcutscene()
+	=> END
+if GlobalVariables.mushroomquest == true and GlobalVariables.hasmushroom == true and GlobalVariables.beatthirdboss == false:
+	do sfx_success()
+	7#s! 7h@n% 70u 7o\/n9 m@4! 70u 5@n 7@%e m7 $h0\/3l!
+	do CutsceneManager.endcutscene()
+	=> END
+if GlobalVariables.beatthirdboss == true:
+	Thank you for all your hard work young man! You're getting a 50% discount for the rest of your life!
+	...No need? If you say so! You probably wanted to know why I wanted that mushroom though, right?
+	I was hungry! After getting corrupted it felt like I hadn't eaten in years! And yes, they're safe to eat. Try it sometime!
+	do CutsceneManager.endcutscene()
+	=> END

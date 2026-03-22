@@ -1,0 +1,4 @@
+~ start
+set GlobalVariables.town_room = "storeroom"
+do CutsceneManager.new_room("res://scenes/rooms/town_underground.tscn")
+=> END

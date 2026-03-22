@@ -25,3 +25,6 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 				4:
 					MusicController.music_fadein()
 					MusicController.play_corrupt_town_music()
+				5:
+					MusicController.music_fadein()
+					MusicController.play_level3_music()

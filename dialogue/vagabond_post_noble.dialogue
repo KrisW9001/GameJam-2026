@@ -1,0 +1,6 @@
+~ start
+Vagabond: [shake rate=20 level=10]Nnnnnghhhh...[/shake] The fiend broke it.
+Vagabond: ...One...one would think being undead...would make this hurt less. Ha...haha...
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_post_noble.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

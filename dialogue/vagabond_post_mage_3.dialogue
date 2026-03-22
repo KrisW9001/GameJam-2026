@@ -17,5 +17,6 @@ do get_tree().call_group("VagabondActor", "walk_r")
 Vagabond: Until we meet again, Marcus the Herculean! May your strength never wane! [wave amp=25 freq=5]Hahaha![/wave]
 do get_tree().call_group("VagabondActor", "invis")
 do get_tree().call_group("Zulie", "invis")
+set GlobalVariables.cameralock = false
 do CutsceneManager.endcutscene()
 => END

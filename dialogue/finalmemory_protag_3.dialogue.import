@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d04yuj11vkgjh"
+path="res://.godot/imported/finalmemory_protag_3.dialogue-0dc34a2e488ad6325f95222cbb3cf9bd.tres"
+
+[deps]
+
+source_file="res://dialogue/finalmemory_protag_3.dialogue"
+dest_files=["res://.godot/imported/finalmemory_protag_3.dialogue-0dc34a2e488ad6325f95222cbb3cf9bd.tres"]
+
+[params]
+
+defaults=true

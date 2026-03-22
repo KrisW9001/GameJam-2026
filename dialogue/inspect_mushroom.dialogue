@@ -1,0 +1,16 @@
+~ start
+if GlobalVariables.mushroomquest == false and GlobalVariables.hasmushroom == false:
+	At least there's some parts of the town that aren't messed up. Not that this mushroom is much of a consolation.
+	do CutsceneManager.endcutscene()
+	=> END
+if GlobalVariables.mushroomquest == true and GlobalVariables.hasmushroom == false:
+	...Maybe this is what the guy in the shop wants? I swear one of the words I heard sounded like "mushroom".
+	I made sure to get as much of the mushroom as I can without ruining it. It's actually pretty firm, so Blackout was useful for getting it. I have a mushroom now, I guess.
+	do sfx_success()
+	set GlobalVariables.hasmushroom = true
+	do CutsceneManager.endcutscene()
+	=> END
+if GlobalVariables.hasmushroom == true:
+	I am not getting another mushroom.
+	do CutsceneManager.endcutscene()
+	=> END

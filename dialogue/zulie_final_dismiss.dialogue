@@ -1,0 +1,6 @@
+~ start
+Zulie: I've always got plenty of emergency first aid on me. Don't worry about us.
+Zulie: Besides, doing first aid on him is way easier than doing it on someone who's alive.
+Zulie: ...More alive than undead. You know what I mean.
+do CutsceneManager.endcutscene()
+=> END

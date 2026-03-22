@@ -1,0 +1,5 @@
+~ start
+do MusicController.music_stop()
+set GlobalVariables.town_room = "ladder"
+do CutsceneManager.new_room("res://scenes/rooms/town_tavern.tscn")
+=> END

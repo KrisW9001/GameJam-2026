@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cihk0esgfokqf"
+path="res://.godot/imported/zulie_post_noble_2.dialogue-3702277de4475bc469a40795fc44db00.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_post_noble_2.dialogue"
+dest_files=["res://.godot/imported/zulie_post_noble_2.dialogue-3702277de4475bc469a40795fc44db00.tres"]
+
+[params]
+
+defaults=true

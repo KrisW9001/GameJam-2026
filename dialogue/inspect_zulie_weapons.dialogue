@@ -1,0 +1,4 @@
+~ start
+A spellbook and a sword are on the table. The sword is identical to the one Zulie uses, must be her spare.
+do CutsceneManager.endcutscene()
+=> END

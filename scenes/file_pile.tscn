@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cnwg83dbkh6ob"]
+
+[ext_resource type="Script" uid="uid://yvramx0pf1cx" path="res://scripts/file_pile_inspect.gd" id="1_sliy6"]
+[ext_resource type="Texture2D" uid="uid://c8aay5eg6gs25" path="res://assets/temp/file pile.png" id="2_sliy6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5of8"]
+size = Vector2(100, 98)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a0v0v"]
+radius = 92.26592
+
+[node name="file_pile" type="CharacterBody2D" unique_id=661015397 groups=["villager"]]
+collision_mask = 2
+script = ExtResource("1_sliy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=594709619]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_sliy6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853503564]
+position = Vector2(2, 31)
+shape = SubResource("RectangleShape2D_d5of8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=433682341]
+position = Vector2(0, 89)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1438270636]
+position = Vector2(0, -37)
+shape = SubResource("CircleShape2D_a0v0v")
+debug_color = Color(0.26259223, 0.6339758, 1.92523e-07, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

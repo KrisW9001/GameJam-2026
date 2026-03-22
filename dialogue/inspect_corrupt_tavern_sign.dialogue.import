@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtt7nkl84t4ch"
+path="res://.godot/imported/inspect_corrupt_tavern_sign.dialogue-fe137e22aa3ae29c92dc3452c7afd933.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_corrupt_tavern_sign.dialogue"
+dest_files=["res://.godot/imported/inspect_corrupt_tavern_sign.dialogue-fe137e22aa3ae29c92dc3452c7afd933.tres"]
+
+[params]
+
+defaults=true

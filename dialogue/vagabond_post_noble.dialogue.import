@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cp1i8y70xdxru"
+path="res://.godot/imported/vagabond_post_noble.dialogue-44df347c633829f3688167f7fdfeac0b.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_post_noble.dialogue"
+dest_files=["res://.godot/imported/vagabond_post_noble.dialogue-44df347c633829f3688167f7fdfeac0b.tres"]
+
+[params]
+
+defaults=true

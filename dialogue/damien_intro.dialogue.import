@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cceorcvw30aah"
+path="res://.godot/imported/damien_intro.dialogue-ef55b4ee6cdf016612700f519f70959f.tres"
+
+[deps]
+
+source_file="res://dialogue/damien_intro.dialogue"
+dest_files=["res://.godot/imported/damien_intro.dialogue-ef55b4ee6cdf016612700f519f70959f.tres"]
+
+[params]
+
+defaults=true

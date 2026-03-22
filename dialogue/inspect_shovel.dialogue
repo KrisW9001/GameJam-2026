@@ -1,0 +1,17 @@
+~ start
+if GlobalVariables.hasmushroom == false:
+	This shovel looks like it could be useful, but I feel like I shouldn't take it when the shopkeeper is like...that.
+	do CutsceneManager.endcutscene()
+	=> END
+if GlobalVariables.hasmushroom == true and GlobalVariables.hasshovel == false:
+	do get_tree().call_group("Player", "item_pose")
+	do sfx_success()
+	I guess I did what the shopkeep wanted? Well, at the very least I can take this without him giving me that look. I got a shovel!
+	do CutsceneManager.endcutscene()
+	set GlobalVariables.hasshovel = true
+	do get_tree().call_group("shovel", "invis")
+	=> END
+if GlobalVariables.hasshovel == true and GlobalVariables.hasmushroom == true:
+	I don't think I can use anything else here. I don't know how to use a bow and I don't need a scythe when I can punch my problems away.
+	do CutsceneManager.endcutscene()
+	=> END

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dh63786ydoawu"]
+
+[ext_resource type="Shader" uid="uid://du3eknkuhyjmw" path="res://shaders/background_shader.gdshader" id="1_k4emt"]
+[ext_resource type="Texture2D" uid="uid://bestkg4aabtxg" path="res://assets/UI/from_nothing_title.png" id="2_il80t"]
+[ext_resource type="FontFile" uid="uid://bveubh61dirkp" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_il80t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lstx3"]
+shader = ExtResource("1_k4emt")
+shader_parameter/speed = 0.3
+shader_parameter/pixelation = 5.0
+shader_parameter/zoom = 1.5
+shader_parameter/gradient_pixelation = 0.0010000000475
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_low_threshold = 0.2130000101175
+shader_parameter/color_mid_threshold = 0.3370000160075
+shader_parameter/color_low = Color(0.02745098, 0, 0.03137255, 1)
+shader_parameter/color_mid = Color(0.0019999982, 0.04820005, 0.2, 1)
+shader_parameter/color_high = Color(1, 0.04000002, 0.47199982, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lstx3"]
+font = ExtResource("3_il80t")
+font_size = 21
+
+[node name="Node2D" type="Node2D" unique_id=960420425]
+position = Vector2(-555, -266)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1689454268]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(129, 84)
+repeat_size = Vector2(1, 1)
+repeat_times = 3
+
+[node name="shader" type="ColorRect" parent="Parallax2D" unique_id=2042332088]
+z_index = -2
+material = SubResource("ShaderMaterial_lstx3")
+offset_left = 555.0
+offset_top = 267.0
+offset_right = 1799.0
+offset_bottom = 1511.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Parallax2D" unique_id=1198682176]
+z_index = -3
+offset_left = 554.0
+offset_top = 264.0
+offset_right = 1804.0
+offset_bottom = 1514.0
+color = Color(0.015999999, 0, 0.03, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="im just for testing floor textures" type="ColorRect" parent="Parallax2D" unique_id=1804293227]
+visible = false
+z_index = -4
+offset_left = -1144.0
+offset_top = -1808.0
+offset_right = 5009.0
+offset_bottom = 4345.0
+color = Color(1, 0.26, 0.6916664, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=420450486]
+visible = false
+texture_filter = 1
+position = Vector2(563, 271)
+scale = Vector2(5, 5)
+texture = ExtResource("2_il80t")
+
+[node name="Label" type="Label" parent="." unique_id=400875591]
+visible = false
+texture_filter = 1
+offset_left = 239.0
+offset_top = 442.0
+offset_right = 890.0
+offset_bottom = 465.0
+text = "A game about Escaping Mental Cages"
+label_settings = SubResource("LabelSettings_lstx3")

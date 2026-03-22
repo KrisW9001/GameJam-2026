@@ -1,0 +1,5 @@
+~ start
+Zulie: [shake rate=20 level=10]G-Gahh!! Dammit!![/shake] You and your stupid teleports...
+set TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_intro.dialogue")
+do TalkScenes.noble_talk.start()
+=> END

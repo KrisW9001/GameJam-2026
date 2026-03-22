@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ckdq05g0rlbbf"
+path="res://.godot/imported/inspect_damiens_book.dialogue-d00d2597959ef78620e4eaec063cfcd1.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_damiens_book.dialogue"
+dest_files=["res://.godot/imported/inspect_damiens_book.dialogue-d00d2597959ef78620e4eaec063cfcd1.tres"]
+
+[params]
+
+defaults=true

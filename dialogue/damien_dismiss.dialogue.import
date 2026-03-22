@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://busqubckl7eau"
+path="res://.godot/imported/damien_dismiss.dialogue-ed1e1390791493c7a546a9719ce9f8c1.tres"
+
+[deps]
+
+source_file="res://dialogue/damien_dismiss.dialogue"
+dest_files=["res://.godot/imported/damien_dismiss.dialogue-ed1e1390791493c7a546a9719ce9f8c1.tres"]
+
+[params]
+
+defaults=true

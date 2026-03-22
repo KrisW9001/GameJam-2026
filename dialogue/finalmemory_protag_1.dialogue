@@ -1,0 +1,5 @@
+~ start
+[speed=0.5]Not the best time to grow a conscience.
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_2.dialogue")
+do TalkScenes.him_talk.start()
+=> END

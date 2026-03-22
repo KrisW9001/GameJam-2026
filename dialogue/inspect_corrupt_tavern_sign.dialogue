@@ -1,0 +1,6 @@
+~ start
+I can't even begin to make out what this one says.
+Though it looks like there's...some kind of logo. A couple of people sitting at a bar, maybe? It's hard to tell when its upside down and scrambled around.
+I guess this was a bar. Or I guess a "Tavern", or whatever old timey word that they would use for it.
+do CutsceneManager.endcutscene()
+=> END

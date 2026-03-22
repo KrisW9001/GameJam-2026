@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://8r8v7f4rx0yv"
+path="res://.godot/imported/underground_storeroom_ladder.dialogue-e052f9b7d24f6b2b724decf3d034d00e.tres"
+
+[deps]
+
+source_file="res://dialogue/underground_storeroom_ladder.dialogue"
+dest_files=["res://.godot/imported/underground_storeroom_ladder.dialogue-e052f9b7d24f6b2b724decf3d034d00e.tres"]
+
+[params]
+
+defaults=true

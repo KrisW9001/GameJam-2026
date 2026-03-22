@@ -1,0 +1,6 @@
+~ start
+???: [wave amp=25 freq=5]Hmph.[/wave] You've always been the biggest nuisance of the bunch, Zulie. The most arrogant, too. Always preaching about something greater, as if you weren't doomed from conception.
+???: But I have bigger fish to fry now. Don't worry, you won't end up like your undead friend over there. You did a great job of warming me up for the main event.
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_noble_response.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

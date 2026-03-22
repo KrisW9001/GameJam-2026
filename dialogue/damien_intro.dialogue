@@ -1,0 +1,56 @@
+~ start
+do MusicController.music_fadeout_fast()
+???: First and foremost, I have no ill intent when I say you are not the one I was expecting to see. In times like these, I don't have the luxury of being picky.
+- Huh?
+- Who are you?
+???: Either way, I'm surprised it took this long. The integrity of the passage was comprimised by The Healer's spell, but I suppose his hubris kept him from being thorough.
+do MusicController.music_fadein()
+do MusicController.play_damien_theme()
+???: You came here at the perfect time, don't let my musing make you think otherwise. I may have a solution to the current predicament.
+- Are you gonna look at me, or...?
+	do get_tree().call_group("Damien", "idle_down")
+	???: Apologies. Being sociable isn't my strong suit. My work comes first.
+	Damien: You may have heard the name Damien from the two that were able to escape the village. It's a pleasure to make your acquaintance.
+- ...Are you Damien? 
+	do get_tree().call_group("Damien", "idle_down")
+	Damien: Yes. You must have been told to come find me for the very reason I've been down here.
+- Awesome. What do I need to do?
+	???: Don't be so hasty. It's not as simple as you think.
+	do get_tree().call_group("Damien", "idle_down")
+	Damien: I assume one of the others told you to find Damien. You've succeeded.
+set GlobalVariables.damien_goto = true
+set GlobalVariables.damien_coords = Vector2(250, -1528)
+do get_tree().call_group("Damien", "idle_left")
+Damien: Come look at this.
+do get_tree().call_group("Damien", "idle_up")
+set GlobalVariables.player_goto_active = true
+set GlobalVariables.player_goto_coords = Vector2(150, -1528)
+do get_tree().call_group("Player", "idle_up")
+Damien: Thanks to The Healer's carelessness, I've been able to develop this right under his nose.
+Damien: Do you know what this is?
+- A...magic book?
+- I dunno.
+- No, tell me.
+- Are you gonna explain it no matter what I say?
+Damien: Incribed into this tome is a warding spell powerful enough to return the village to normal. It's only just now been completed.
+Damien: However, there's been a complication. While developing it, I came to the conclusion that one of two detrimental effects must take place.
+do get_tree().call_group("Damien", "idle_left")
+Damien: Either the spell lacks the required potency to completely reverse The Healer's spell...or it must use the caster for additional mana.
+- Ok...?
+- I don't get how the second one is bad.
+- ...
+do get_tree().call_group("Damien", "idle_up")
+Damien: My form of mystic arts uses sigils and inscribed powers to achieve their effects. You may have noticed the cards on the tables behind us.
+Damien: Drawing upon the user's innate powers is a rarity in my practice. It tends to be painful, if not outright lethal. Such is the predicament we have here.
+Damien: Either the spell will not be as powerful as it ideally should be, or we choose someone to put their life at risk.
+Damien: Vagabond would most likely be insufficient. Being undead reduces his innate mana. Zulie would most likely have enough, but would severely injure her.
+do get_tree().call_group("Damien", "idle_left")
+Damien: The original plan was for me to do it if I was unable to convince Zulie not to. But now we have another element to consider.
+- You mean me.
+- ...wait, what?!
+do get_tree().call_group("Player", "idle_r")
+Damien: I'm not implying that you're automatically the new candidate. I just need a moment to evaluate your innate mana.
+Damien: Take a seat on the bed. This will only take a minute.
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/basement_transition.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

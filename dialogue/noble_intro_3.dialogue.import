@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cx4s81nkfhiau"
+path="res://.godot/imported/noble_intro_3.dialogue-f379b95d6286db09c1f74f1878aaa50b.tres"
+
+[deps]
+
+source_file="res://dialogue/noble_intro_3.dialogue"
+dest_files=["res://.godot/imported/noble_intro_3.dialogue-f379b95d6286db09c1f74f1878aaa50b.tres"]
+
+[params]
+
+defaults=true

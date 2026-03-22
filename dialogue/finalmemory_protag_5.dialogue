@@ -1,0 +1,6 @@
+~ start
+[speed=0.5]How the hell is giving random people superpowers and forcing them to do manual labor gonna make the world a better place?!
+[speed=0.5]Ever considered that maybe the reason noone understands it is because it [shake rate=20 level=10]doesn't make any sense?![/shake]
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_6.dialogue")
+do TalkScenes.him_talk.start()
+=> END

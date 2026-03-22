@@ -1,0 +1,4 @@
+~ start
+Damien: Give them what they deserve.
+do CutsceneManager.endcutscene()
+=> END

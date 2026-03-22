@@ -29,6 +29,9 @@ func _process(delta: float) -> void:
 func reset() -> void:
 	position = Vector2.ZERO
 
+func snap(snap_pos: Vector2) -> void:
+	position = snap_pos
+
 func shake() -> void:
 	anim_player.play("shake")
 
@@ -62,3 +65,13 @@ func memory_on() -> void:
 
 func memory_off() -> void:
 	anim_player.play("memory_off")
+
+func spell_flash_on() -> void:
+	anim_player.play("spell_flash_on")
+
+func spell_flash_off() -> void:
+	anim_player.play("spell_flash_off")
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "spell_flash_on":
+		CutsceneManager.cutscene9()

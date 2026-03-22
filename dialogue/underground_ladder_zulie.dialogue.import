@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cf480kn62m4es"
+path="res://.godot/imported/underground_ladder_zulie.dialogue-f6d17575f917eb67c78c4d7731bdd8df.tres"
+
+[deps]
+
+source_file="res://dialogue/underground_ladder_zulie.dialogue"
+dest_files=["res://.godot/imported/underground_ladder_zulie.dialogue-f6d17575f917eb67c78c4d7731bdd8df.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,9 @@
+~ start
+if GlobalVariables.beatthirdboss == false:
+	D@m|3n %n0\/s #0w t0 f|# t#|$! 7o\/ n3e0 7o #|nd #|m!
+if GlobalVariables.beatthirdboss == true:
+	Thank you for saving us! Though I guess I should be thanking Damien, too!
+	What's that? Why's there so few of us? Well, you can thank the False Heroes for that!
+	Good riddance to them! They were rude, anyways.
+do CutsceneManager.endcutscene()
+=> END

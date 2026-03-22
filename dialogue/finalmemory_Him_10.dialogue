@@ -1,0 +1,5 @@
+~ start
+[speed=0.5]Then you never should have come here.
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_10.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

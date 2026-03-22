@@ -1,0 +1,6 @@
+~ start
+[speed=0.5]Took it from you?! You had nothing! You were noone!
+[speed=0.5]All you had to do was follow orders and you would make history! You would push civilization forward by [shake rate=20 level=10]centuries![/shake]
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_3.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

@@ -1,0 +1,7 @@
+~ start
+[speed=0.5]And you need to do a better job of noticing what I'm doing!
+do sfx_crunch()
+[speed=0.5][shake rate=20 level=10]AAAAAAAAAUUUUUGGGGHHH!![/shake]
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_7.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

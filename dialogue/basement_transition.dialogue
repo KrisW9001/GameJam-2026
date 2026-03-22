@@ -1,0 +1,14 @@
+~ start
+do TheCamera.transition_on()
+I sat on the bed and let him do...whatever it is he was doing.
+do get_tree().call_group("Player", "idle_down")
+do get_tree().call_group("Damien", "idle_right")
+set GlobalVariables.damien_coords = Vector2(350, -1475)
+set GlobalVariables.player_goto_coords = Vector2(450, -1475)
+He kept talking to himself the entire time as he poked and prodded me with random metal instruments. Part of me hated it. It reminded me too much of the memories I was getting back.
+But at the same time, he was patient. Even though he talked like the most antisocial person I've ever met, he didn't act the same way as the labcoats from my memories.
+During his tests, he saw my veins. Even with the weird yellow mask on, he couldn't hide his expression. It looked like he found what he was looking for.
+do TheCamera.transition_off()
+set TalkScenes.damien_talk.dialogue_resource = load("res://dialogue/damien_intro_2.dialogue")
+do TalkScenes.damien_talk.start()
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dkvctqf86cwna"
+path="res://.godot/imported/zulie_final_dismiss.dialogue-c50deccc7828f9213352ee1e9e24eb3f.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_final_dismiss.dialogue"
+dest_files=["res://.godot/imported/zulie_final_dismiss.dialogue-c50deccc7828f9213352ee1e9e24eb3f.tres"]
+
+[params]
+
+defaults=true

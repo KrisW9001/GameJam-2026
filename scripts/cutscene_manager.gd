@@ -12,6 +12,7 @@ var player_at_coords: bool = false
 var incut1: bool = false
 var incut5: bool = false
 var incut6: bool = false
+var incut10: bool = false
 var part2: bool = false
 
 func _process(delta: float) -> void:
@@ -27,6 +28,10 @@ func _process(delta: float) -> void:
 			cutscene1_part2()
 		else:
 			incut1 = false
+	
+	if player_at_coords and !incut10 and GlobalVariables.player_goto_active == true:
+		get_tree().call_group("Player", "idle_up")
+	
 	
 	#if zulie finishes divekick in start of cutscene 5, start dialogue
 	if GlobalVariables.zulie_position == GlobalVariables.zulie_coords and incut5 and !GlobalVariables.metzulie:
@@ -67,6 +72,10 @@ func checkscene(scenenumber: int) -> void:
 			#end of mage gauntlet
 			if !GlobalVariables.beatsecondboss:
 				cutscene7()
+		5: 
+			#noble introduction
+			if !GlobalVariables.seennoblecut:
+				cutscene10()
 
 func endcutscene() -> void:
 	print("ending cutscene")
@@ -301,4 +310,84 @@ func cutscene7_part2() -> void:
 #memory cutscene for mage boss
 func cutscene7_part3() -> void:
 	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/mage_defeated.dialogue")
+	TalkScenes.protag_talk.start()
+
+#ending cutscene for corrupted town sequence where healer dies
+func cutscene8() -> void:
+	GlobalVariables.cutscenemode = true
+	GlobalVariables.player_goto_active = false
+	get_tree().call_group("boss", "punch")
+	get_tree().call_group("Player", "catch_l")
+	await get_tree().create_timer(2).timeout
+	GlobalVariables.healer_coords = Vector2(2300, -355)
+	get_tree().call_group("boss", "flinch")
+	get_tree().call_group("Player", "item_pose")
+	await get_tree().create_timer(2).timeout
+	get_tree().call_group("Player", "cool_throw")
+	get_tree().call_group("boss", "die")
+
+#restoring the town
+func cutscene9() -> void:
+	get_tree().change_scene_to_file("res://scenes/rooms/town_restored.tscn")
+	get_tree().call_group("npcs", "fixed")
+	TheCamera.spell_flash_off()
+	await get_tree().create_timer(3)
+	get_tree().call_group("Player", "idle_down")
+	TalkScenes.npc_talk.dialogue_resource = load("res://dialogue/villagers_thanks.dialogue")
+	TalkScenes.npc_talk.start()
+
+#introductory cutscene for noble
+func cutscene10() -> void:
+	GlobalVariables.cutscenemode = true
+	get_tree().call_group("Zulie", "stance_l")
+	get_tree().call_group("VagabondActor", "crouch_noweapon_r")
+	MusicController.music_fadeout_slow()
+	GlobalVariables.player_goto_active = true
+	get_tree().call_group("Player", "move_up")
+	GlobalVariables.player_goto_coords = Vector2(0, -1475)
+	GlobalVariables.cameralock = true
+	GlobalVariables.lock_pos = Vector2(0,-1927)
+	await get_tree().create_timer(1.7).timeout
+	get_tree().call_group("Zulie", "slash_l")
+	await get_tree().create_timer(.3).timeout
+	get_tree().call_group("boss", "cutscene_damage")
+	GlobalVariables.noble_goto = true
+	GlobalVariables.noble_coords = Vector2(-150, -1927)
+	await get_tree().create_timer(1).timeout
+	get_tree().call_group("boss", "shoot_r")
+	get_tree().call_group("earthspike", "activate")
+	get_tree().call_group("Zulie", "jump_up_l")
+	GlobalVariables.zulie_goto = true
+	GlobalVariables.zulie_coords = Vector2(0, -2200)
+	await get_tree().create_timer(.3).timeout
+	get_tree().call_group("Zulie", "divekick_l")
+	GlobalVariables.zulie_coords = Vector2(-150, -1927)
+	await get_tree().create_timer(0.3).timeout
+	get_tree().call_group("Zulie", "crouch_l")
+	GlobalVariables.noble_goto = false
+	GlobalVariables.noble_coords = Vector2(300, -1927)
+	get_tree().call_group("boss", "warp")
+	get_tree().call_group("boss", "idle_l")
+	await get_tree().create_timer(0.5).timeout
+	get_tree().call_group("boss", "shoot_l")
+	get_tree().call_group("enemy_projectiles", "strike")
+	await get_tree().create_timer(0.3).timeout
+	GlobalVariables.zulie_coords = Vector2(-200, -1875)
+	get_tree().call_group("Zulie", "land_r")
+	GlobalVariables.noble_goto = true
+	TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_noble_intro.dialogue")
+	TalkScenes.zulie_talk.start()
+
+#hotfix for cutscene 10 where noble and marcus don't m
+func move_noble() -> void:
+	pass
+
+#dialogue scene with vagabond and zulie after meeting noble
+func cutscene10_part2() -> void:
+	get_tree().call_group("Player", "walk_up")
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(-200, -2075)
+	GlobalVariables.lock_pos = Vector2(-200,-2100)
+	await get_tree().create_timer(1.75).timeout
+	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_post_noble.dialogue")
 	TalkScenes.protag_talk.start()

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bqimpd701kbnv"
+path="res://.godot/imported/vagabond_final_dismiss.dialogue-cee90f7eff6985cd4638e4362a51f9e9.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_final_dismiss.dialogue"
+dest_files=["res://.godot/imported/vagabond_final_dismiss.dialogue-cee90f7eff6985cd4638e4362a51f9e9.tres"]
+
+[params]
+
+defaults=true

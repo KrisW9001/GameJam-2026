@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ptddj12jxp58"
+path="res://.godot/imported/inspect_marcus_pile.dialogue-9bc7f0893ed625ff0ca287083f2a9cae.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_marcus_pile.dialogue"
+dest_files=["res://.godot/imported/inspect_marcus_pile.dialogue-9bc7f0893ed625ff0ca287083f2a9cae.tres"]
+
+[params]
+
+defaults=true

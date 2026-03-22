@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cu58qs1lx1nc4"
+path="res://.godot/imported/inspect_storeroom_boxes.dialogue-affab2ca4f5de9ba8cf00f3860a5b5c7.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_storeroom_boxes.dialogue"
+dest_files=["res://.godot/imported/inspect_storeroom_boxes.dialogue-affab2ca4f5de9ba8cf00f3860a5b5c7.tres"]
+
+[params]
+
+defaults=true

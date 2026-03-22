@@ -6,3 +6,7 @@ extends Node
 @onready var zulie_talk: DialogueManagerZulieBalloon = $ZulieTalk
 @onready var mage_talk: DialogueManagerMageBalloon = $MageTalk
 @onready var healer_talk: DialogueManagerHealerBalloon = $HealerTalk
+@onready var npc_talk: DialogueManagerNPCBalloon = $NPCTalk
+@onready var damien_talk: DialogueManagerDamienBalloon = $DamienTalk
+@onready var him_talk: DialogueManagerHisBalloon = $HimTalk
+@onready var noble_talk: DialogueManagerNobleBalloon = $NobleTalk

@@ -1,0 +1,4 @@
+~ start
+The box is too messed up for me to do anything with it. Probably not gonna be useful.
+do CutsceneManager.endcutscene()
+=> END

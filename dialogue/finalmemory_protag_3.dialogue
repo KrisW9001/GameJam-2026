@@ -1,0 +1,5 @@
+~ start
+[speed=0.5]How does being a modern day frankenstein improve anyone's life?
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_4.dialogue")
+do TalkScenes.him_talk.start()
+=> END

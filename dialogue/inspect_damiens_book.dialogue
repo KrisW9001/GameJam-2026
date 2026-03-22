@@ -1,0 +1,7 @@
+~ start
+if GlobalVariables.metdamien == true:
+	do sfx_success()
+	I got Damien's spellbook. Just by holding it in my hands, I can feel what he meant by using Blackout to cast it. I guess Blackout has some sort of magical component.
+	set GlobalVariables.hasbook = true
+do CutsceneManager.endcutscene()
+=> END

@@ -1,0 +1,7 @@
+~ start
+Vagabond: ...I still remember our first encounter. A poor, lost soul struggling to understand where they have found themselves. But no longer.
+Vagabond: I hope you do not think less of me for being wary of your power, but I see now there was no reason to be. You have proven your virtue.
+Vagabond: You may not view yourself in this way, but you bear the resolve of a true hero. Reserve any preconception of that compliment...I speak these words with reason.
+Vagabond: Teach evil to fear your might. When this nightmare finally comes to an end...we shall immortalize your deeds.
+do CutsceneManager.endcutscene()
+=> END

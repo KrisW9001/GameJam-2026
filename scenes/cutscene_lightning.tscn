@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://vm6k1wutvvb7"]
+
+[ext_resource type="Texture2D" uid="uid://tw1kl81dmrn2" path="res://assets/effects/lightning v1.png" id="1_0oy7h"]
+[ext_resource type="Script" uid="uid://d1axos2mkrh4w" path="res://scripts/cutscene_lightning.gd" id="1_rn68l"]
+[ext_resource type="AudioStream" uid="uid://djculp70u1yry" path="res://audio/sfx/EnergyBlastRise.ogg" id="3_vsje7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spnoi"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1km7"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpet1"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbiwg"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv476"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oigee"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubiml"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(0, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulb85"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(64, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx3kd"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(128, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hwc6"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(192, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyrc2"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(0, 192, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hprga"]
+atlas = ExtResource("1_0oy7h")
+region = Rect2(64, 192, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgftm"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_spnoi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_t1km7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_spnoi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_t1km7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_spnoi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_t1km7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_spnoi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_t1km7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_spnoi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_t1km7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_spnoi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_t1km7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_spnoi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_t1km7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_spnoi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_t1km7")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_wpet1")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_tbiwg")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_vv476")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_oigee")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_ubiml")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_ulb85")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_kx3kd")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6hwc6")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_vyrc2")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_hprga")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"strike",
+"speed": 5.0
+}]
+
+[node name="CutsceneLightning" type="CharacterBody2D" unique_id=589462071]
+script = ExtResource("1_rn68l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1806321590]
+texture_filter = 1
+position = Vector2(0, -92)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_vgftm")
+animation = &"strike"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=273989887]
+stream = ExtResource("3_vsje7")
+volume_db = -20.0
+bus = &"Sound Effects"

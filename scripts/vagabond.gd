@@ -72,6 +72,14 @@ func crouch_l() -> void:
 	anim_sprite.play("crouch")
 	anim_sprite.flip_h = false
 
+func crouch_noweapon_l() -> void:
+	anim_sprite.play("crouch_noweapon")
+	anim_sprite.flip_h = false
+
+func crouch_noweapon_r() -> void:
+	anim_sprite.play("crouch_noweapon")
+	anim_sprite.flip_h = true
+
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if anim_sprite.visible:
 		if body.is_in_group("Player") and !GlobalVariables.cutscenemode:
@@ -82,8 +90,10 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_subway_dismiss.dialogue")
 			if GlobalVariables.metzulie and !GlobalVariables.beatsecondboss: 
 				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_pre_mage.dialogue")
-			if GlobalVariables.beatsecondboss:
+			if GlobalVariables.beatsecondboss and !GlobalVariables.seennoblecut:
 				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_town.dialogue")
+			if GlobalVariables.seennoblecut:
+				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_final_dismiss.dialogue")
 			body.inspect_prompt.visible = true
 			body.can_talk_v = true
 			print("showing inspect prompt")

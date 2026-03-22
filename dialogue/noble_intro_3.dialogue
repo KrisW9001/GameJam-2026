@@ -1,0 +1,11 @@
+~ start
+Noble: Ah...haha...[wave amp=25 freq=5]hahahahaha![/wave] Of course, I should have expected as much. Like I said, you hate when people don't get to the point!
+Noble: Luckily for you, I accounted for this possibility. I've set up a little arena just past this point, where The Heroes used to gather.
+set GlobalVariables.zulie_coords = Vector2(-175, -2150)
+do get_tree().call_group("Zulie", "crouch_l")
+Noble: There's no need for a gathering place now, so I made it into something much more useful! Take all the time you need...[wave amp=25 freq=5]but don't be too long, now.[/wave]
+set GlobalVariables.noble_coords = Vector2(-100, -4000)
+do get_tree().call_group("boss", "walk_l")
+do MusicController.play_moody_music()
+do CutsceneManager.cutscene10_part2()
+=> END

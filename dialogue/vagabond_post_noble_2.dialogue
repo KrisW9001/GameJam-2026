@@ -1,0 +1,8 @@
+~ start
+Vagabond: ...That look in your eye. You have gone through much change since your first encounter with The Heroes.
+Vagabond: Go. This may not be your true destiny...but you've come far enough to make that irrelevant.
+set GlobalVariables.seennoblecut = true
+set CutsceneManager.incut10 = false
+set GlobalVariables.cameralock = false
+do CutsceneManager.endcutscene()
+=> END

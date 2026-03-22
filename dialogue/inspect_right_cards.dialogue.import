@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bf2q2wgc20gn1"
+path="res://.godot/imported/inspect_right_cards.dialogue-c6a2359c9ad2164c59403ea25969de0a.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_right_cards.dialogue"
+dest_files=["res://.godot/imported/inspect_right_cards.dialogue-c6a2359c9ad2164c59403ea25969de0a.tres"]
+
+[params]
+
+defaults=true

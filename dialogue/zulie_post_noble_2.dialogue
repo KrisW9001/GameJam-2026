@@ -1,0 +1,6 @@
+~ start
+Zulie: ...Alright. After what I've seen you do I'm not gonna argue with that.
+Zulie: Give 'em hell, Marcus.
+set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_post_noble_2.dialogue")
+do TalkScenes.vagabond_talk.start()
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://blsm413q55c1y"
+path="res://.godot/imported/inspect_underground_blockage.dialogue-1b9aab71b9856e62fa9fb76d36c36b87.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_underground_blockage.dialogue"
+dest_files=["res://.godot/imported/inspect_underground_blockage.dialogue-1b9aab71b9856e62fa9fb76d36c36b87.tres"]
+
+[params]
+
+defaults=true

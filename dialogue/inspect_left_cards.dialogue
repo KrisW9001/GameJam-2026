@@ -1,0 +1,5 @@
+~ start
+A bunch of playing cards are spread out next to these spellbooks. The design on the back is pretty fancy, it's got that thing that some cards have where it looks shiny. I think I saw a game once that called it "gloss", but that doesn't sound like a real term.
+The corners of the card show the different suits, and the center has images of a top hat with the words "Nam amor ludum". No clue what that means.
+do CutsceneManager.endcutscene()
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dd7hd0w0yc3g"
+path="res://.godot/imported/inspect_behind_counter.dialogue-f24be053b35ee3523d1141c7db179bca.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_behind_counter.dialogue"
+dest_files=["res://.godot/imported/inspect_behind_counter.dialogue-f24be053b35ee3523d1141c7db179bca.tres"]
+
+[params]
+
+defaults=true

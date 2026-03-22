@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://gcqesa75p7hq" path="res://scenes/zulie_talk.tscn" id="5_yv4do"]
 [ext_resource type="PackedScene" uid="uid://cq1recc7d7ubu" path="res://scenes/mage_talk.tscn" id="6_6aona"]
 [ext_resource type="PackedScene" uid="uid://bukv8h2ui2qdq" path="res://scenes/healer_talk.tscn" id="7_r2tp6"]
+[ext_resource type="PackedScene" uid="uid://wwnha04pawvn" path="res://scenes/npc_talk.tscn" id="8_emupo"]
+[ext_resource type="PackedScene" uid="uid://coxbb4hxhxc5c" path="res://scenes/damien_talk.tscn" id="9_dw4d3"]
+[ext_resource type="PackedScene" uid="uid://bb2x5gq7vn8d7" path="res://scenes/him_talk.tscn" id="10_yx4il"]
+[ext_resource type="PackedScene" uid="uid://bbiqnglchm32m" path="res://scenes/noble_talk.tscn" id="11_0d65g"]
 
 [node name="TalkScenes" type="Node" unique_id=60612790]
 script = ExtResource("1_rfbig")
@@ -22,3 +26,11 @@ script = ExtResource("1_rfbig")
 [node name="MageTalk" parent="." unique_id=2124908948 instance=ExtResource("6_6aona")]
 
 [node name="HealerTalk" parent="." unique_id=1893567840 instance=ExtResource("7_r2tp6")]
+
+[node name="NPCTalk" parent="." unique_id=1149041718 instance=ExtResource("8_emupo")]
+
+[node name="DamienTalk" parent="." unique_id=1032623285 instance=ExtResource("9_dw4d3")]
+
+[node name="HimTalk" parent="." unique_id=275392263 instance=ExtResource("10_yx4il")]
+
+[node name="NobleTalk" parent="." unique_id=1860672741 instance=ExtResource("11_0d65g")]

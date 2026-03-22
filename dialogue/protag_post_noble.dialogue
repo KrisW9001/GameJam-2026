@@ -1,0 +1,6 @@
+~ start
+do get_tree().call_group("Player", "idle_up")
+Marcus: You two alright? I couldn't help but notice Red's leg.
+set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_post_noble.dialogue")
+do TalkScenes.vagabond_talk.start()
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://3bhr78sti3c8"
+path="res://.godot/imported/storeroom_up_ladder.dialogue-67f127115574060e0cdc4b1710e6b0b6.tres"
+
+[deps]
+
+source_file="res://dialogue/storeroom_up_ladder.dialogue"
+dest_files=["res://.godot/imported/storeroom_up_ladder.dialogue-67f127115574060e0cdc4b1710e6b0b6.tres"]
+
+[params]
+
+defaults=true

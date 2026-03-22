@@ -1,0 +1,7 @@
+~ start
+[speed=0.5]...
+[speed=0.5]You know, I've noticed something. I've been through this before.
+[speed=0.5]A man promised me he could fix all of my problems, and all I had to do was some 'clinical trials'.
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_9.dialogue")
+do TalkScenes.him_talk.start()
+=> END

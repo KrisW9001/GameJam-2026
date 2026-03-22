@@ -24,6 +24,8 @@ Tiny RPG - Multiple asset packs by Gabriel "tiopalada" Lima
 Battle Kit 1 & 2
 Nearby Village
 
+Bladebounce Grass tileset by Cutiemonica
+
 Kenney Game Assets (version 42) and Tiny Town by KenneyNL
 
 GB Studio packs by Reakain

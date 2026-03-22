@@ -1,0 +1,5 @@
+~ start
+[speed=0.5]...Use your imagination. Curing disease, empowering the weak, reducing the physical deterioration caused by manual labor!
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_5.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

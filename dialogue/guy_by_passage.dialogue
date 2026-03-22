@@ -1,0 +1,11 @@
+~ start
+if GlobalVariables.hasshovel == false and GlobalVariables.beatthirdboss == false:
+	T#e Un03>g40\/nD 9@$sa6e |s 8|oc%3D! 70u N3#d @ $h0\/3l #o C1#a4 |t!
+if GlobalVariables.hasshovel == true and GlobalVariables.beatthirdboss == false:
+	70u 6o# Th3 $h0\/3l! N0\/ 70u 5@n 6o Un02>g40\/nD!
+if GlobalVariables.beatthirdboss == true:
+	Thank you for saving us! We're forever grateful to you!
+	Huh? Where's Zulie and Vagabond? I don't know, I haven't seen them since you fixed the town.
+	Maybe you should check the File Dumps. I heard that's where The Noble is.
+do CutsceneManager.endcutscene()
+=> END

@@ -1,0 +1,4 @@
+~ start
+What, does The Vagabond not even get his own bed? Just a hammock? He really needs to look into something better after this is over.
+do CutsceneManager.endcutscene()
+=> END

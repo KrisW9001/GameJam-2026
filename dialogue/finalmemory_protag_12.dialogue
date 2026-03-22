@@ -1,0 +1,5 @@
+~ start
+[speed=0.5]And noone will be left who can put it in someone else.
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_13.dialogue")
+do TalkScenes.him_talk.start()
+=> END

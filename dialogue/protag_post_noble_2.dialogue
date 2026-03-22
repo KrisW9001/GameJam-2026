@@ -1,0 +1,8 @@
+~ start
+Marcus: Don't get me wrong, I'm not saying you two are incapable of doing anything. He looked like he was at a lot less than peak performance.
+Marcus: ...But we all know that I'm the strongest one here by far. Don't worry about coming to help, right now you guys need to rest.
+Marcus: Best case scenario, you softening him up will just make this go by faster. In the worst case...I'll make it easier to finish the job.
+Marcus: Don't worry about me. He doesn't have a clue what I can do to him.
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_post_noble_2.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

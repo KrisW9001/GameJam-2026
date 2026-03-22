@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://diraqi5rppu0g"
+path="res://.godot/imported/zulie_house_ladder.dialogue-309108451777d8e5793c590eb46f393b.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_house_ladder.dialogue"
+dest_files=["res://.godot/imported/zulie_house_ladder.dialogue-309108451777d8e5793c590eb46f393b.tres"]
+
+[params]
+
+defaults=true

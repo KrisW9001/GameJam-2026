@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c1o7ujy06y4r4"
+path="res://.godot/imported/inspect_moa_pile_3.dialogue-83c96ccb6f976b2608c620d18908c17f.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_moa_pile_3.dialogue"
+dest_files=["res://.godot/imported/inspect_moa_pile_3.dialogue-83c96ccb6f976b2608c620d18908c17f.tres"]
+
+[params]
+
+defaults=true

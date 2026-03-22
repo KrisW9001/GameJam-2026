@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bjkhfcb23lis3"
+path="res://.godot/imported/finalmemory_Him_7.dialogue-66c314646151c66842736d725e52192d.tres"
+
+[deps]
+
+source_file="res://dialogue/finalmemory_Him_7.dialogue"
+dest_files=["res://.godot/imported/finalmemory_Him_7.dialogue-66c314646151c66842736d725e52192d.tres"]
+
+[params]
+
+defaults=true

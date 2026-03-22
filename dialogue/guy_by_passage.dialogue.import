@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ck1g5k0ry8wfo"
+path="res://.godot/imported/guy_by_passage.dialogue-1bb926ac5d1d24576f664abd19ee2750.tres"
+
+[deps]
+
+source_file="res://dialogue/guy_by_passage.dialogue"
+dest_files=["res://.godot/imported/guy_by_passage.dialogue-1bb926ac5d1d24576f664abd19ee2750.tres"]
+
+[params]
+
+defaults=true

@@ -71,6 +71,18 @@ region = Rect2(73, 240, 73, 40)
 atlas = ExtResource("1_hkwe1")
 region = Rect2(146, 240, 73, 40)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh4co"]
+atlas = ExtResource("1_hkwe1")
+region = Rect2(219, 240, 73, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpgft"]
+atlas = ExtResource("1_hkwe1")
+region = Rect2(292, 240, 73, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfssm"]
+atlas = ExtResource("1_hkwe1")
+region = Rect2(365, 240, 73, 40)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_775xt"]
 atlas = ExtResource("1_hkwe1")
 region = Rect2(0, 80, 73, 40)
@@ -232,6 +244,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_uh4co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpgft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfssm")
+}],
+"loop": true,
+"name": &"crouch_noweapon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_775xt")
 }, {
 "duration": 1.0,
@@ -325,7 +351,7 @@ texture_filter = 1
 position = Vector2(-1.8249989, 0.99999905)
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_0jtx0")
-animation = &"crouch"
+animation = &"crouch_noweapon"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1893015988]
 position = Vector2(0, 1)

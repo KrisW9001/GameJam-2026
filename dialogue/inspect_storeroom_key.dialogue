@@ -1,0 +1,9 @@
+~ start
+if GlobalVariables.haskey == false: 
+	do get_tree().call_group("Player", "item_pose")
+	do sfx_success()
+	I got a key! It's unlabeled though, I dunno what it goes to. I guess I'll just have to try anything with a functional keyhole.
+	do get_tree().call_group("key", "invis")
+	set GlobalVariables.haskey = true
+do CutsceneManager.endcutscene()
+=> END

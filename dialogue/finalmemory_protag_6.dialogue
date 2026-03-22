@@ -1,0 +1,5 @@
+~ start
+[speed=0.5]You're doing a terrible job of it.
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_7.dialogue")
+do TalkScenes.him_talk.start()
+=> END

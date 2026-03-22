@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://js3bjsnaa2bd"
+path="res://.godot/imported/storeroom_roof_ladder.dialogue-5c915fce88703e3ece914e32077ef882.tres"
+
+[deps]
+
+source_file="res://dialogue/storeroom_roof_ladder.dialogue"
+dest_files=["res://.godot/imported/storeroom_roof_ladder.dialogue-5c915fce88703e3ece914e32077ef882.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,4 @@
+~ start
+set GlobalVariables.town_room = "Passage"
+do CutsceneManager.new_room("res://scenes/rooms/corrupt_town.tscn")
+=> END

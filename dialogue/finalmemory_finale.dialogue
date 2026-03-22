@@ -1,0 +1,31 @@
+~ start
+do TheCamera.memory_off()
+do get_tree().call_group("Player", "struggle")
+[speed=0.5]...
+do MusicController.music_stop()
+[speed=0.5]The closure feels bittersweet.
+[speed=0.5]I achieved my goal and stopped their plans...but the damage was already done.
+[speed=0.5]What's the point after that? I just live alone as a monster. How am I supposed to do any good now that this was unleashed on the world?
+[speed=0.5]Why even bother trying?
+[speed=0.5]...
+[speed=0.5]And then I feel It writhing again.
+do MusicController.play_moody_music()
+[speed=0.5]The memory of Him is stuck in my head. I don't remember his name and I barely remember his face, but it doesn't matter.
+[speed=0.5]That cruelty. That complete disregard for everyone around him. The smug attitude and his incredible ability to be so dumb when he's supposedly smarter than me.
+do get_tree().call_group("Player", "idle_down")
+[speed=0.5]The hopelessness he tried to make me feel. Every single day I was in that cell.
+[speed=0.5]The hopelessness they want you to feel as they give you a fake smile and tell you that there's nothing you can do to stop their carelessness. Nothing to stop them from infecting every single aspect of who you are.
+[speed=0.5]That hopelessness is their greatest weapon. The ability to get under your skin and in your head, to convince you that you've lost before you've even tried.
+[speed=0.5]But now...Now they can't tell me no. With my own two hands, I can do anything.
+[speed=0.5]With that little push, a little help from a place I never thought I'd get it from, I can make my dreams into reality. And I dream of freedom from tyranny.
+[speed=0.5]...Maybe I can't make my destiny come true. My story doesn't exist, the world made for it hasn't been built. But I can still fight the tyranny I've seen here.
+[speed=0.5]It has a different face, a different name...but they act the same. Smile as wide as they can when they have what they want, throw insults at you when they don't.
+[speed=0.5]The cage I cornered myself into is gone. I know exactly who I am, what I'm capable of, and why I should do it.
+do get_tree().call_group("Player", "item_pose")
+do get_tree().call_group("Player", "book_visible")
+[speed=0.2]And I'm gonna make it mean something.
+do sfx_spell
+do TheCamera.spell_flash_on()
+do sfx_spell()
+set GlobalVariables.beatthirdboss = true
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://jaaxcfex2rrv"
+path="res://.godot/imported/protag_post_noble.dialogue-330a1d641506db932c211f0399cf5657.tres"
+
+[deps]
+
+source_file="res://dialogue/protag_post_noble.dialogue"
+dest_files=["res://.godot/imported/protag_post_noble.dialogue-330a1d641506db932c211f0399cf5657.tres"]
+
+[params]
+
+defaults=true

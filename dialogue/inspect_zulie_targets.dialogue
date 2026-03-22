@@ -1,0 +1,5 @@
+~ start
+Does Zulie do target practice inside her home?! There's a target outside, is that not good enough for her?!
+...Actually, these look like they haven't been used. Maybe these are new and she replaces the one outside. That makes more sense.
+do CutsceneManager.endcutscene()
+=> END

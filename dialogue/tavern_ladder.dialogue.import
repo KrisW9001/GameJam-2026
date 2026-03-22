@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c5g5711je5qe0"
+path="res://.godot/imported/tavern_ladder.dialogue-ff5e7fb11e1e00ab132a76ce3c22b709.tres"
+
+[deps]
+
+source_file="res://dialogue/tavern_ladder.dialogue"
+dest_files=["res://.godot/imported/tavern_ladder.dialogue-ff5e7fb11e1e00ab132a76ce3c22b709.tres"]
+
+[params]
+
+defaults=true

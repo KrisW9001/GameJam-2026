@@ -1,0 +1,5 @@
+~ start
+[speed=0.5]I didn't choose to be this. I never got to decide any of this. You took that from me.
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_3.dialogue")
+do TalkScenes.him_talk.start()
+=> END

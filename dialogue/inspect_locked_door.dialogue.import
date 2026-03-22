@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dkymf50sca1dc"
+path="res://.godot/imported/inspect_locked_door.dialogue-458252622aff478e81af480657108416.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_locked_door.dialogue"
+dest_files=["res://.godot/imported/inspect_locked_door.dialogue-458252622aff478e81af480657108416.tres"]
+
+[params]
+
+defaults=true

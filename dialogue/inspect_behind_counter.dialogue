@@ -1,0 +1,5 @@
+~ start
+Let's see if there's anything behind the counter that could be useful. Reciept paper...cash register...more reciept paper...
+Nope, nothing out of the ordinary.
+do CutsceneManager.endcutscene()
+=> END

@@ -1,0 +1,22 @@
+~ start
+do MusicController.play_town_music()
+Guy: Marcus! You did it! You saved us all!
+Woman: You're my hero! No...OUR hero! You're amazing!
+Shopkeeper: Marcus, was it? We can't even begin to express how thankful we are! Is there anything we can do to repay you?
+- ...Where's Zulie?
+	Woman: Zulie? I thought she was with you, helping you fix the town. Maybe she went to go find Damien?
+	Guy: No, I heard her shouting before Marcus fixed the town. She said something like "I'm gonna prep for The Noble!"
+	Shopkeeper: She's not planning on fighting The Noble alone, is she?!
+	Woman: She's not stupid! She's just getting ready to face him now that the other three are gone.
+	Guy: Well, with Marcus on their side there's no way they can lose! The Noble should be at the File Dumps, to the north!
+	Shopkeeper: Take as much time as you need to get ready, it's gonna be a tough one!
+	Woman: [shake rate=20 level=10]KICK HIS BUTT!!!![/shake]
+- Where can I find the Noble?
+	Shopkeeper: The Noble? You wanna get the last one out of the way right now, huh?
+	Guy: I think The Healer said that their head honcho was in the File Dumps.
+	Woman: He's the strongest of the False Heroes...but we believe in you, Marcus!
+	Shopkeeper: Take all the time you need to get ready!
+	Guy: You got this, Marcus!
+	Woman: [shake rate=20 level=10]GIVE EM WHAT FOR!!!![/shake]
+do CutsceneManager.endcutscene()
+=> END

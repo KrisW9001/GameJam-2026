@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://di6ug47oobgxc"
+path="res://.godot/imported/inspect_passage_ladder.dialogue-0d7927dd00f0a9ff5ce964111c2f5db4.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_passage_ladder.dialogue"
+dest_files=["res://.godot/imported/inspect_passage_ladder.dialogue-0d7927dd00f0a9ff5ce964111c2f5db4.tres"]
+
+[params]
+
+defaults=true

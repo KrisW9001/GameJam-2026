@@ -1,0 +1,6 @@
+~ start
+...This pile's got a bunch of stuff about me. Specifically about stuff I would be able to do. Let's see...
+Originally I was gonna be able to do stuff like rip stop signs out of the ground and hurl them like spears. Or pick up entire vending machines and throw them around.
+It also says some of these would be balanced out by the fact that some enemies I would face could do the same. Maybe I was originally meant to fight some weaker Blackout subjects.
+do CutsceneManager.endcutscene()
+=> END

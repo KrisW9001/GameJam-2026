@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://breexqsm4evuk"
+path="res://.godot/imported/healer_end_2.dialogue-d1a1e4a27b0dfe13efbb94e35927db6b.tres"
+
+[deps]
+
+source_file="res://dialogue/healer_end_2.dialogue"
+dest_files=["res://.godot/imported/healer_end_2.dialogue-d1a1e4a27b0dfe13efbb94e35927db6b.tres"]
+
+[params]
+
+defaults=true

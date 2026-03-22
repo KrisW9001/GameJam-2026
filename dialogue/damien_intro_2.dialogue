@@ -1,0 +1,21 @@
+~ start
+Damien: ...I'm not sure how to put this. You are exceptional in ways I have never seen.
+do get_tree().call_group("Player", "idle_l")
+Damien: I'll put it bluntly. You have the greatest amount of inherent mana that I have ever seen capable for a single individual.
+- Must be because of Blackout.
+	Damien: Yes. This...Blackout, as you call it...has given you abilities I never thought possible. Its effects on your physical strength are self-evident, but this is incredible.
+- So I can cast the spell without dying?
+	Damien: ...Yes.
+Damien: I have absolutely no doubt in my mind that you can cast the spell safely. We are truly fortunate for your presence.
+Damien: However you channel its power normally, try to replicate that and the casting process should come naturally to you.
+Damien: I believe the building west of this one was the epicenter of The Healer's spell. Cast it there.
+set GlobalVariables.damien_coords = Vector2(-80, -1200)
+do get_tree().call_group("Damien", "walk_left")
+do get_tree().call_group("Player", "idle_l")
+do MusicController.music_fadeout_fast()
+Damien: Take the spellbook with you as you leave. I need to prepare my contingencies in the rare event that I will have to face the Heroes afterwards.
+do get_tree().call_group("Damien", "idle_left")
+Damien: Give them what they deserve.
+set GlobalVariables.metdamien = true
+do CutsceneManager.endcutscene()
+=> END

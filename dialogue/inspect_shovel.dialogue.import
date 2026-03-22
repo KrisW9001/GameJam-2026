@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://vumxubdgrbfc"
+path="res://.godot/imported/inspect_shovel.dialogue-1ee5dd249c9076b6132e93e8e508fd40.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_shovel.dialogue"
+dest_files=["res://.godot/imported/inspect_shovel.dialogue-1ee5dd249c9076b6132e93e8e508fd40.tres"]
+
+[params]
+
+defaults=true

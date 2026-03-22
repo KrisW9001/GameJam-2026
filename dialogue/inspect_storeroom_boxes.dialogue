@@ -1,0 +1,5 @@
+~ start
+Alright, let's see what we've got here...some weird looking rocks, probably used for sharpening stuff...a bunch of armor polish, sure do wonder who that's for...
+...So either Red is into ping-pong or they just didn't have any better place to put this.
+do CutsceneManager.endcutscene()
+=> END

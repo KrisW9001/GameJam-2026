@@ -1,0 +1,6 @@
+~ start
+[speed=0.5]And that's the thing. I realized that too. And do you know what He said to me when I wanted to back out of it?
+[speed=0.5]"I'm afraid I can't take no for an answer."
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_11.dialogue")
+do TalkScenes.him_talk.start()
+=> END

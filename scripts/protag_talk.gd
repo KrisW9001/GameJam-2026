@@ -23,6 +23,7 @@ class_name DialogueManagerProtagBalloon extends CanvasLayer
 var next_sfx = load("res://audio/sfx/Menu Navigate 2.wav")
 var fire_sfx = load("res://audio/sfx/Explosion Sharp.wav")
 var success_sfx = load("res://audio/sfx/Coin 6.wav")
+var spell_sfx = load("res://audio/sfx/Transport Up.wav")
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -218,5 +219,9 @@ func sfx_fire() -> void:
 
 func sfx_success() -> void:
 	audio_stream_player.stream = success_sfx
+	audio_stream_player.play()
+
+func sfx_spell() -> void:
+	audio_stream_player.stream = spell_sfx
 	audio_stream_player.play()
 #endregion

@@ -1,0 +1,13 @@
+~ start
+Healer: [shake rate=20 level=10]W-wait!! Y-you can't do this to me![/shake]
+Healer: [shake rate=20 level=10]S-stop this! Y-You don't have the right![/shake]
+- Say hi to Fighter for me.
+	Healer: [shake rate=20 level=10]W-WHAT?! T-THEY'RE...?![/shake]
+	do get_tree().call_group("Player", "cool_toss")
+	do get_tree().call_group("boss", "die")
+	=> END
+- Hopefully Noble doesn't talk as much as you.
+	Healer: [shake rate=20 level=10]D-damn you, you brute!![/shake]
+	do get_tree().call_group("Player", "cool_toss")
+	do get_tree().call_group("boss", "die")
+	=> END

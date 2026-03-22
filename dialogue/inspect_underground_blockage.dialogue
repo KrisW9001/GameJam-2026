@@ -1,0 +1,13 @@
+~ start
+if GlobalVariables.hasshovel == false:
+	I'm getting some insane deja vu from this. It's similar to the walls of the box I woke up in, but not really.
+	When I reach out to touch it, for some reason it feels like dirt. I try to push it aside so I can reach the ladder underneath, but it feels like it won't clear out completely.
+	Am I missing something here? There has to be a way to take that ladder, I can see it just underneath this pink stuff.
+if GlobalVariables.hasshovel == true and GlobalVariables.openedpassage == false:
+	I take out my shovel and get ready to start digging...but as soon as it touches the pink "dirt", It just starts to dissapear. Sure, why the hell not.
+	Either way, it's gone now and I can use the ladder.
+	do sfx_success()
+	do get_tree().call_group("breakable_wall", "killwalls")
+	set GlobalVariables.openedpassage = true
+do CutsceneManager.endcutscene()
+=> END

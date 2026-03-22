@@ -1,0 +1,8 @@
+~ start
+A bunch of different cards are laid out. They look like they were hand-painted.
+One has "Ability" written at the top and has a metal box theme I think? The rest of it is blank though.
+Up second is a normal playing card without the number or symbols in the center. I don't remember a pink star suit in any deck of cards I've seen though.
+The other has a rainbow pattern with "UM?!" written on it in big letters. Even the card doesn't know what it's about!
+The last one just says "Mortgage value" under a white line and nothing else. I guess it's unfinished, like the rest.
+do CutsceneManager.endcutscene()
+=> END

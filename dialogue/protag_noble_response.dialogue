@@ -1,0 +1,11 @@
+~ start
+do get_tree().call_group("Player", "idle_r")
+Marcus: You don't know the first thing about me, punk.
+Marcus: You clearly don't know how to get to the point, either. So how about I do the talking for once?
+Marcus: You want all of us dead. All this talk about how I'm "not like the others"? That's gonna be gone the second I stop being useful to you.
+Marcus: So let's cut the crap and I'll make a deal with you. Leave Zulie and Vagabond alone, and we can settle this personally.
+Marcus: No tricks, no outside help, nothing. You wanna prove that you're more than just big words and fancy magic? Wanna prove that the rest of us just can't compare to how [wave amp=25 freq=5]amazing[/wave] you are?
+Marcus: Then shut up and get yourself ready for the fight of your life. Go back to your little man-cave and get whatever you want, and then you can try to kill me with nothing holding us back.
+set TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_intro_3.dialogue")
+do TalkScenes.noble_talk.start()
+=> END

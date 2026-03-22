@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhpg44rns8j5p"
+path="res://.godot/imported/zulie_post_book.dialogue-e2a3a4d2d787373e41b58569e237b261.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_post_book.dialogue"
+dest_files=["res://.godot/imported/zulie_post_book.dialogue-e2a3a4d2d787373e41b58569e237b261.tres"]
+
+[params]
+
+defaults=true

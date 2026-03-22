@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://deu877mutfoo3"
+path="res://.godot/imported/zulie_noble_response.dialogue-0bb6fbda4a2ca165f621548f8a312133.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_noble_response.dialogue"
+dest_files=["res://.godot/imported/zulie_noble_response.dialogue-0bb6fbda4a2ca165f621548f8a312133.tres"]
+
+[params]
+
+defaults=true

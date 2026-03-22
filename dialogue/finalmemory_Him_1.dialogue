@@ -1,0 +1,9 @@
+~ start
+do MusicController.music_fadein()
+do MusicController.play_memory_music()
+[speed=0.5]Are you satisfied with yourself?
+[speed=0.5]Countless people are either dead or dying by your hand. [shake rate=20 level=10]Innocent people![/shake]
+do TheCamera.memory_on()
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_1.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

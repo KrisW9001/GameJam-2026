@@ -1,0 +1,6 @@
+~ start
+There's a pretty big variety of books here. A lot of them look like combat technique manuals and spellbooks, usual stuff like cookbooks and whatever...
+Some fiction novels, makes sense...And tucked in here sitting on top of some bigger books is a pocketbook.
+"Flame Clan Rules of Operations - American Branch, 27th Edition". It's in good condition, but covered in dust. 
+do CutsceneManager.endcutscene()
+=> END

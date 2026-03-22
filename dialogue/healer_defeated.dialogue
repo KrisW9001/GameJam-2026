@@ -1,0 +1,5 @@
+~ start
+...
+set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_1.dialogue")
+do TalkScenes.him_talk.start()
+=> END

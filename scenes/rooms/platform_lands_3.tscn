@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://c6tm48hgaxx1f" path="res://scenes/respawn_anchor.tscn" id="15_2dbs3"]
 [ext_resource type="PackedScene" uid="uid://brihu5bdvef4f" path="res://scenes/audio_trigger.tscn" id="16_qy3yr"]
 [ext_resource type="PackedScene" uid="uid://b0j76qqfmovrw" path="res://scenes/cutscene_trigger.tscn" id="17_7chve"]
+[ext_resource type="PackedScene" uid="uid://dbbknbkndue" path="res://scenes/room_trigger.tscn" id="21_0iwuq"]
 [ext_resource type="PackedScene" uid="uid://c0tw70ld5teil" path="res://scenes/zulie.tscn" id="21_whjlb"]
 [ext_resource type="PackedScene" uid="uid://b8nkkwxq2ot3u" path="res://scenes/asset_mage.tscn" id="22_l8jqd"]
 [ext_resource type="PackedScene" uid="uid://q7vmif7362ux" path="res://scenes/vagabond.tscn" id="22_pqw08"]
@@ -748,6 +749,9 @@ size = Vector2(10.376748, 33.373547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncqwi"]
 size = Vector2(37.941162, 6.771721)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rb1g"]
+size = Vector2(126, 815)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o46qx"]
 atlas = ExtResource("23_lebxw")
@@ -3208,6 +3212,15 @@ position = Vector2(8.971191, -1.2138062)
 scale = Vector2(1, 0.9999999)
 shape = SubResource("RectangleShape2D_ncqwi")
 debug_color = Color(0, 0.6452576, 0.2705238, 0.41960785)
+
+[node name="RoomTrigger" parent="triggers" unique_id=1487844617 instance=ExtResource("21_0iwuq")]
+position = Vector2(9364, 1957)
+whichroom = "res://scenes/rooms/corrupt_town.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RoomTrigger" unique_id=844215853]
+position = Vector2(53, -19.5)
+shape = SubResource("RectangleShape2D_2rb1g")
+debug_color = Color(0.9935898, 0, 0.24218386, 0.41960785)
 
 [node name="enemies" type="Node" parent="." unique_id=1794971467]
 

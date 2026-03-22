@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ifyl44xcrv0w"
+path="res://.godot/imported/protag_noble_response.dialogue-271692b3e34e7d58b1c936ea44c167ec.tres"
+
+[deps]
+
+source_file="res://dialogue/protag_noble_response.dialogue"
+dest_files=["res://.godot/imported/protag_noble_response.dialogue-271692b3e34e7d58b1c936ea44c167ec.tres"]
+
+[params]
+
+defaults=true

@@ -12,9 +12,13 @@ class_name SaveDataResource
 @export var metzulie: bool = false
 @export var beatsecondboss: bool = false
 @export var aggressive: bool = false
+@export var mushroomquest: bool = false
 @export var hasmushroom: bool = false
 @export var hasshovel: bool = false
 @export var openedpassage: bool = false
 @export var haskey: bool = false
 @export var metdamien: bool = false
+@export var hasbook: bool = false
+@export var town_room: String
+@export var beatthirdboss: bool = false
 @export var cont_scene: String

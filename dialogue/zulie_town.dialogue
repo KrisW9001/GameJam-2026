@@ -3,7 +3,7 @@ if GlobalVariables.methealer == false:
 	Zulie: [shake rate=20 level=10]Grrr...[/shake] Just, give me a minute. I'm trying to get into my house.
 	Zulie: If you want an explanation for all this, go one house over and let [shake rate=20 level=10]him[/shake] do it.
 	do CutsceneManager.endcutscene()
-=> END
+	=> END
 
 if GlobalVariables.methealer == true:
 	Zulie: ...[shake rate=20 level=10]Aaargh! Dammit![/shake]
@@ -11,4 +11,4 @@ if GlobalVariables.methealer == true:
 	Zulie: Marcus, I'm going to keep trying this. If we're lucky there's a man with a yellow mask that can help us. See if he's avoided getting corrupted.
 	Zulie: ...Seriously?! [shake rate=20 level=10]What's going on with this lock?![/shake] I do NOT want to attempt the windows again...
 	do CutsceneManager.endcutscene()
-=> END
+	=> END
