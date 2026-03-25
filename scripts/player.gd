@@ -526,6 +526,9 @@ func _input(_event: InputEvent) -> void:
 			GlobalVariables.cutscenemode = true
 			CutsceneManager.cutscene13_part2()
 		
+		if Input.is_key_pressed(KEY_8):
+			TheCamera.memory_on()
+		
 		if Input.is_action_just_pressed("enhance"):
 			get_tree().call_group("boss", "fight_end")
 		

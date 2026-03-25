@@ -33,7 +33,7 @@ do get_tree().call_group("boss", "jump_in")
 	- You talk too much.
 		???: Oh, do I? Does having someone remind you how much of a [shake rate=20 level=10]mistake you are[/shake] get on your nerves? Keep crying. Noone cares about you.
 	???: Anyways, you probably wanna know who's gonna be putting you down, huh?
-???: Ok, where did I put the notecard Noble gave me? I swear it was...Riiiight, I put it in the inside pocket. Here we are...
+???: Ok, where did I put the notecard Healer gave me? I swear it was...Riiiight, I put it in the inside pocket. Here we are...
 ???: [shake rate=20 level=10]Ahem.[/shake]
 ???: [wave amp=25 freq=5]Your miserable, incomplete existence will soon reach it's end, you pitiful creature!~ Your grotesque figure is no match for our perfect, hand-crafted bodies!~[/wave]
 ???: ...Or mine, at the very least. Man, this is way less fun without the entire gang here.
@@ -49,6 +49,7 @@ Fighter: Whatever, screw the speech. I'm the fighter of the group, and you'll ad
 	do MusicController.vol_reset()
 	do MusicController.play_fight1_intro()
 	Fighter: [wave amp=25 freq=5]I have a new toy to play with.~[/wave]
+set GlobalVariables.metfighter = true
 do get_tree().call_group("boss", "start_fight")
 do CutsceneManager.endcutscene()
 => END

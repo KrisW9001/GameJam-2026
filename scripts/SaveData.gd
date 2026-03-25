@@ -9,6 +9,7 @@ class_name SaveDataResource
 @export var beatfirstboss : bool = false 
 @export var seenreader: bool = false
 @export var haspass: bool = false 
+@export var metfighter: bool = false
 @export var metzulie: bool = false
 @export var beatsecondboss: bool = false
 @export var aggressive: bool = false

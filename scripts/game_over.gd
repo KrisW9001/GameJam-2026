@@ -92,6 +92,9 @@ func _on_retry_pressed() -> void:
 	get_tree().call_group("VagabondActor", "respawn")
 	await get_tree().create_timer(0.5).timeout
 	GlobalVariables.menumode = false
+	GlobalVariables.haspass = false
+	get_tree().call_group("subway_pass", "appear")
+	get_tree().call_group("key", "appear")
 	TheCamera.transition_off()
 	invis()
 

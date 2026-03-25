@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cxabma0pcxmke" path="res://assets/photos/dumps_fc_badge.jpg" id="22_wikio"]
 [ext_resource type="Texture2D" uid="uid://csmt6cht4nqj8" path="res://assets/photos/dumps_r_unarmed.jpg" id="23_wikio"]
 [ext_resource type="Texture2D" uid="uid://djiyxqmg0sm03" path="res://assets/photos/dumps_r_sns_moves.jpg" id="24_7435d"]
+[ext_resource type="Texture2D" uid="uid://c7pphq5e0l342" path="res://icon.svg" id="24_tqh5u"]
 [ext_resource type="Texture2D" uid="uid://pd3yv1j7fv8w" path="res://assets/photos/dumps_zulie_dive.jpg" id="26_37i1f"]
 [ext_resource type="Texture2D" uid="uid://bl0k8ap7r32qo" path="res://assets/photos/dumps_aroma.jpg" id="29_tf2wk"]
 [ext_resource type="PackedScene" uid="uid://bp6xk1k8p6sdl" path="res://scenes/slime_red.tscn" id="30_l3jf2"]
@@ -1677,6 +1678,11 @@ position = Vector2(-255.00003, -3129.9998)
 rotation = -0.1263189
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("21_grdht")
+
+[node name="Sprite2D2" type="Sprite2D" parent="photos" unique_id=1360738197]
+position = Vector2(965, -4911)
+rotation = 0.81965655
+texture = ExtResource("24_tqh5u")
 
 [node name="enemies" type="Node" parent="." unique_id=1598430580]
 

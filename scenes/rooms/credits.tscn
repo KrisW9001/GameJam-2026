@@ -343,7 +343,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 87),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-575, 100), Vector2(-575, -8230.976)]
+"values": [Vector2(-575, 20), Vector2(-575, -9650.976)]
 }
 
 [sub_resource type="Animation" id="Animation_47g4r"]
@@ -464,7 +464,7 @@ texture_filter = 1
 offset_left = -575.0
 offset_top = 318.0
 offset_right = 574.0
-offset_bottom = 8618.0
+offset_bottom = 9953.0
 theme_override_fonts/normal_font = ExtResource("5_5h102")
 theme_override_font_sizes/normal_font_size = 30
 text = "Created by Thunderspark,
@@ -560,6 +560,14 @@ Shackhal
 
 
 
+-Kenney Game Assets 1-
+
+Kenney
+
+
+
+
+
 
 -SKYETUNES-
 
@@ -630,6 +638,44 @@ Jayvee Enaguas
 HarvettFox96
 
 
+
+
+
+
+
+/Deck Builder Tutorial Credits\\
+
+
+
+
+
+<Original Project Creator>
+
+Ben from Heartbeast
+(heartgamedev.com)
+
+
+<Tutorial Organizer>
+
+Gulacsi Adam
+(GodotGameLabs)
+
+
+<Sprites>
+
+Kenney
+
+
+<Sounds>
+
+StarNinjas
+Pixabay
+artisticdude
+
+
+<Music>
+
+Tadon
 
 
 

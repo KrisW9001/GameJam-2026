@@ -164,6 +164,7 @@ func respawn() -> void:
 	charging = false
 	attacking = false
 	get_tree().call_group("enemy_projectiles", "dissapear")
+	GlobalVariables.fighter_goto = false
 	position = Vector2(-62, 370)
 
 #damage the boss
@@ -220,56 +221,68 @@ func _on_hurtbox_body_entered(body: CharacterBody2D) -> void:
 
 #declaring animations
 func idle_l() -> void:
-	anim_sprite.play("idle_l")
+	if !dead:
+		anim_sprite.play("idle_l")
 
 func idle_r() -> void:
-	anim_sprite.play("idle_r")
+	if !dead:
+		anim_sprite.play("idle_r")
 
 func backstep_l() -> void:
 	#this is a backstep moving right and facing left
-	anim_sprite.play("backstep_l")
+	if !dead:
+		anim_sprite.play("backstep_l")
 
 func backstep_r() -> void:
 	#this is a backstep moving left and facing right
-	anim_sprite.play("backstep_r")
+	if !dead:
+		anim_sprite.play("backstep_r")
 
 func charge_l() -> void:
-	anim_player.play("charge")
-	anim_sprite.play("charge_l")
+	if !dead:
+		anim_player.play("charge")
+		anim_sprite.play("charge_l")
 
 func charge_r() -> void:
-	anim_player.play("charge")
-	anim_sprite.play("charge_r")
+	if !dead:
+		anim_player.play("charge")
+		anim_sprite.play("charge_r")
 
 func throw_l() -> void:
-	anim_player.play("RESET")
-	anim_sprite.play("toss_forward_l")
-	audio_player.stream = throw_sfx
-	audio_player.play()
+	if !dead:
+		anim_player.play("RESET")
+		anim_sprite.play("toss_forward_l")
+		audio_player.stream = throw_sfx
+		audio_player.play()
 
 func throw_r() -> void:
-	anim_player.play("RESET")
-	anim_sprite.play("toss_forward_r")
-	audio_player.stream = throw_sfx
-	audio_player.play()
+	if !dead:
+		anim_player.play("RESET")
+		anim_sprite.play("toss_forward_r")
+		audio_player.stream = throw_sfx
+		audio_player.play()
 
 func punch_l() -> void:
-	anim_sprite.play("melee_l")
-	melee.disabled = false
+	if !dead:
+		anim_sprite.play("melee_l")
+		melee.disabled = false
 
 func punch_r() -> void:
-	anim_sprite.play("melee_r")
-	melee.disabled = false
+	if !dead:
+		anim_sprite.play("melee_r")
+		melee.disabled = false
 
 func ready_melee_l() -> void:
-	anim_sprite.play("ready_melee_l")
-	audio_player.stream = shing_sfx
-	audio_player.play()
+	if !dead:
+		anim_sprite.play("ready_melee_l")
+		audio_player.stream = shing_sfx
+		audio_player.play()
 
 func ready_melee_r() -> void:
-	anim_sprite.play("ready_melee_r")
-	audio_player.stream = shing_sfx
-	audio_player.play()
+	if !dead:
+		anim_sprite.play("ready_melee_r")
+		audio_player.stream = shing_sfx
+		audio_player.play()
 
 func die_anim() -> void:
 	anim_sprite.play("die")

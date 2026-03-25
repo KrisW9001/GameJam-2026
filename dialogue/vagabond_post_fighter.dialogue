@@ -5,7 +5,7 @@ set GlobalVariables.vagabond_goto = false
 #conditional dialogue if the player talked to the vagabond earlier
 if GlobalVariables.metvagabond == true
 	Vagabond: I came as soon as I heard the commotion! Were you attacked by those fiends? [shake rate=20 level=10]Where are they?![/shake]
-	Vagabond: ...you look disturbed, friend. What occured here?
+	Vagabond: ...You look disturbed, friend. What occured here?
 	- I took care of it.
 		Vagabond: I...I beg your pardon? I thought I heard one of the False Heroes' voices.
 		Vagabond: ...

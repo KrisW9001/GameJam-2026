@@ -5,6 +5,7 @@ const SPEED = 400.0
 @onready var anim_sprite: AnimatedSprite2D = $AnimSprite
 @onready var anim_player: AnimationPlayer = $AnimPlayer
 @onready var particles: CPUParticles2D = $CPUParticles2D
+@onready var timer: Timer = $Timer
 
 var thrown: bool = false
 var target: Vector2
@@ -36,6 +37,7 @@ func throw() -> void:
 	target = GlobalVariables.player_position
 	thrown = true
 	anim_player.play("spin")
+	timer.start()
 
 func dissapear() -> void:
 	normal_color()
@@ -57,3 +59,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.hurt_player(1, position.x, position.y)
 		dealtdamage = true
 		dissapear()
+
+#despawn axe after one second. the time it takes for the fighter to start a new attack is longer than the axe stays active.
+func _on_timer_timeout() -> void:
+	dissapear()

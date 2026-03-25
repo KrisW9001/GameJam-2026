@@ -44,6 +44,7 @@ var metvagabond: bool = false #set after talking to the vagabond for the 1st tim
 var beatfirstboss : bool = false #set after defeating the first boss
 var seenreader: bool = false #set after inspecting the pass reader in the subway
 var haspass: bool = false #determines whether or not the player has the pickup needed to progress
+var metfighter: bool = false #set after fighter cutscene, used to stop cutscene early when retrying boss
 var metzulie: bool = false #set after zulie's first cutscene
 var beatsecondboss: bool = false #set after defeating the second boss
 var methealer: bool = false #set after talking to healer in the corrupted village

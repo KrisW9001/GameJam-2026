@@ -5,7 +5,7 @@ Zulie: ...You're joking.
 	Zulie: I wouldn't recommend making a habit out of picking fights with them alone. They're not invincible, but there's a reason we try to avoid them.
 - Wasn't all that hard, either.
 	Zulie: You have a good point, actually. They've proven to be much more of a threat when they're working together or planning ahead, and The Fighter usually does neither.
-	Zulie: But even if you turn out to be one of he strongest fighters out of the three of us, taking them on would be a pain in the @$$. Try to be cautious.
+	Zulie: But even if you turn out to be one of he strongest fighters out of the three of us, taking them on would be a pain. Try to be cautious.
 Zulie: Well, you wanted to keep going forward, right? Find out more about yourself, see more of the wastes, maybe take a shot at another one of the Heroes?
 Zulie: It's not going to be that easy. We've been holed up here for about a month, and theres one big problem preventing us from making any progress.
 set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_cut5_3.dialogue")

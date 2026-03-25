@@ -14,6 +14,7 @@ func _save():
 	SaveFileData.beatfirstboss = GlobalVariables.beatfirstboss
 	SaveFileData.seenreader = GlobalVariables.seenreader
 	SaveFileData.haspass = GlobalVariables.haspass
+	SaveFileData.metfighter = GlobalVariables.metfighter
 	SaveFileData.metzulie = GlobalVariables.metzulie
 	SaveFileData.beatsecondboss = GlobalVariables.beatsecondboss
 	SaveFileData.aggressive = GlobalVariables.aggressive
@@ -41,6 +42,7 @@ func _load():
 		GlobalVariables.beatfirstboss = SaveFileData.beatfirstboss
 		GlobalVariables.seenreader = SaveFileData.seenreader
 		GlobalVariables.haspass = SaveFileData.haspass
+		GlobalVariables.metfighter = SaveFileData.metfighter
 		GlobalVariables.metzulie = SaveFileData.metzulie
 		GlobalVariables.beatsecondboss = SaveFileData.beatsecondboss
 		GlobalVariables.aggressive = SaveFileData.aggressive
@@ -64,6 +66,7 @@ func clear_save() -> void:
 	SaveFileData.beatfirstboss = false
 	SaveFileData.seenreader = false
 	SaveFileData.haspass = false
+	SaveFileData.metfighter = false
 	SaveFileData.metzulie = false
 	SaveFileData.beatsecondboss = false
 	SaveFileData.aggressive = false
@@ -84,6 +87,7 @@ func clear_save() -> void:
 	GlobalVariables.beatfirstboss = false
 	GlobalVariables.seenreader = false
 	GlobalVariables.haspass = false
+	GlobalVariables.metfighter = false
 	GlobalVariables.metzulie = false
 	GlobalVariables.beatsecondboss = false
 	GlobalVariables.aggressive = false

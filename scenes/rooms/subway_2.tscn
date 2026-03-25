@@ -1369,7 +1369,7 @@ script = ExtResource("1_asmpw")
 
 [node name="Player" parent="." unique_id=1720193695 instance=ExtResource("1_l5nwq")]
 position = Vector2(576, 567)
-collision_mask = 7
+collision_mask = 133
 
 [node name="Asset Fighter" parent="." unique_id=688522503 instance=ExtResource("11_djuod")]
 position = Vector2(-62, 370)

@@ -671,7 +671,7 @@ radius = 13.038404
 size = Vector2(61, 78)
 
 [node name="asset_noble" type="CharacterBody2D" unique_id=2078524834 groups=["boss"]]
-collision_layer = 17
+collision_layer = 144
 collision_mask = 2
 script = ExtResource("1_3oqcb")
 

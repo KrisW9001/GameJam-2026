@@ -164,15 +164,30 @@ func boss_kill() -> void:
 
 #cutscene introducing the fighter before their boss fight
 func cutscene2() -> void:
-	GlobalVariables.cutscenemode = true
-	get_tree().call_group("explosion", "play")
-	get_tree().call_group("Player", "struggle")
-	TheCamera.shake()
-	GlobalVariables.player_goto_active = true
-	GlobalVariables.player_goto_coords = Vector2(275, 250)
-	await get_tree().create_timer(0.5).timeout
-	TalkScenes.fighter_talk.dialogue_resource = load("res://dialogue/fighter_debug.dialogue")
-	TalkScenes.fighter_talk.start()
+	if GlobalVariables.metfighter == false:
+		GlobalVariables.cutscenemode = true
+		get_tree().call_group("explosion", "play")
+		get_tree().call_group("Player", "struggle")
+		TheCamera.shake()
+		GlobalVariables.player_goto_active = true
+		GlobalVariables.player_goto_coords = Vector2(275, 250)
+		await get_tree().create_timer(0.5).timeout
+		TalkScenes.fighter_talk.dialogue_resource = load("res://dialogue/fighter_intro.dialogue")
+		TalkScenes.fighter_talk.start()
+	elif GlobalVariables.metfighter == true:
+		GlobalVariables.cutscenemode = true
+		get_tree().call_group("explosion", "play")
+		get_tree().call_group("Player", "struggle")
+		TheCamera.shake()
+		GlobalVariables.player_goto_active = true
+		GlobalVariables.player_goto_coords = Vector2(275, 250)
+		await get_tree().create_timer(0.5).timeout
+		get_tree().call_group("boss", "jump_in")
+		await get_tree().create_timer(2).timeout
+		MusicController.vol_reset()
+		MusicController.play_fight1_intro()
+		get_tree().call_group("boss", "start_fight")
+		CutsceneManager.endcutscene()
 
 #post-fight memory cutscene after defeating the fighter
 func cutscene3() -> void:
