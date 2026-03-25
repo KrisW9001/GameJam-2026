@@ -461,7 +461,14 @@ func cutscene13_part2() -> void:
 func cutscene14() -> void:
 	TheCamera.transition_on()
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/rooms/town_restored.tscn")
-	get_tree().call_group("Zulie", "crouch_r")
-	get_tree().call_group("VagabondActor", "crouch_noweapon_l")
-	TheCamera.snap(Vector2())
+	get_tree().change_scene_to_file("res://scenes/rooms/town_cutscene.tscn")
+	GlobalVariables.cutscenemode = true
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(1727, -1000)
+	TheCamera.snap(Vector2(1537.0, -602.0))
+	#GlobalVariables.cameralock = true
+	#GlobalVariables.lock_pos = Vector2(1537.0, -602.0)
+	TheCamera.transition_off()
+	await get_tree().create_timer(0.5).timeout
+	TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_precredits.dialogue")
+	TalkScenes.vagabond_talk.start()

@@ -98,6 +98,8 @@ func _on_continue_pressed() -> void:
 		get_tree().change_scene_to_file(GlobalVariables.cont_scene)
 		PauseMenu.invis()
 		TheCamera.transition_off()
+		GlobalVariables.cutscenemode = false
+		GlobalVariables.player_goto_active = false
 
 func _on_settings_pressed() -> void:
 	SettingsPopup.show()

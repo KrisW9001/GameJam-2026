@@ -1,0 +1,12 @@
+~ start
+Zulie: Don't be such a baby. We need to be prepared for the absolute worst scenario. Just stay still, I'm almost done...
+do get_tree().call_group("Zulie", "idle_r")
+Zulie: [shake rate=20 level=10]Someone's coming.[/shake] Don't push yourself, I'll...
+do get_tree().call_group("Zulie", "upright_r")
+do get_tree().call_group("VagabondActor", "crouch_noweapon_r")
+do get_tree().call_group("Player", "walk_down")
+set GlobalVariables.player_goto_coords = Vector2(1725, -675)
+Zulie: ...Marcus?
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_precredits.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

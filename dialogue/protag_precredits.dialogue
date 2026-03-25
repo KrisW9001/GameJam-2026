@@ -1,0 +1,7 @@
+~ start
+do get_tree().call_group("Player", "idle_l")
+Marcus: Sorry for the delay, He took a bit of effort.
+Marcus: Probably goes without saying since I came back and not him...but it's over. We're in the clear.
+set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_precredits_2.dialogue")
+do TalkScenes.vagabond_talk.start()
+=> END

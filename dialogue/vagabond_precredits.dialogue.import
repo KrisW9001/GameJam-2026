@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dooisrvit6k2n"
+path="res://.godot/imported/vagabond_precredits.dialogue-d6e0c133d4bc5e8113e0643fe84aa01d.tres"
+
+[deps]
+
+source_file="res://dialogue/vagabond_precredits.dialogue"
+dest_files=["res://.godot/imported/vagabond_precredits.dialogue-d6e0c133d4bc5e8113e0643fe84aa01d.tres"]
+
+[params]
+
+defaults=true

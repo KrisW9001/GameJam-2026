@@ -1,0 +1,5 @@
+~ start
+Vagabond: Oh, this is great news! And here we were, tending to my wounds as if the battle was not already won! Well, at least we can go about this with less urgency now...
+set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_precredits_2.dialogue")
+do TalkScenes.zulie_talk.start()
+=> END

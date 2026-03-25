@@ -1,0 +1,8 @@
+~ start
+set GlobalVariables.zulie_goto = true
+set GlobalVariables.zulie_coords = Vector2(1525, -650)
+Zulie: ...Hey, what's with the book? That doesn't look like Damien's handiwork.
+Zulie: Actually...did you pick that up in the File Dumps?
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_precredits_2.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

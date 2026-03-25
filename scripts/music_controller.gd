@@ -46,6 +46,7 @@ func test_music_stop() -> void:
 func vol_reset() -> void:
 	animation_player.play("RESET")
 	oneshot = false
+	is_playing = false
 
 func music_fadein() -> void:
 	animation_player.play("fade_in")

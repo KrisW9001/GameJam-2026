@@ -1,0 +1,11 @@
+~ start
+set GlobalVariables.player_goto_coords = Vector2(1600, -650)
+do MusicController.music_stop()
+Marcus: Yeah...about that.
+Marcus: I found this laying outside the place I fought The Noble and uh...I don't really know how to say this.
+do get_tree().call_group("message", "appear")
+Marcus: Take a look for yourself.
+do get_tree().call_group("Zulie", "crouch_r")
+set TalkScenes.creator_talk.dialogue_resource = load("res://dialogue/creator_speech_1.dialogue")
+do TalkScenes.creator_talk.start()
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dxe4a7m22h6gx"
+path="res://.godot/imported/zulie_precredits_2.dialogue-ea1fda1fb421be01b919746a41c0948e.tres"
+
+[deps]
+
+source_file="res://dialogue/zulie_precredits_2.dialogue"
+dest_files=["res://.godot/imported/zulie_precredits_2.dialogue-ea1fda1fb421be01b919746a41c0948e.tres"]
+
+[params]
+
+defaults=true
