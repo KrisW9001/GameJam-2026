@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://86pmvbycbsbd" path="res://dialogue/inspect_pot.dialogue" id="16_x721v"]
 [ext_resource type="Resource" uid="uid://b4jhjwdlvjyrx" path="res://dialogue/storeroom_down_ladder.dialogue" id="17_u1o3c"]
 [ext_resource type="Resource" uid="uid://3bhr78sti3c8" path="res://dialogue/storeroom_up_ladder.dialogue" id="19_pbdu1"]
+[ext_resource type="Resource" uid="uid://bwwtbjdnbxx5p" path="res://dialogue/inspect_vagabond_bookcase.dialogue" id="20_gvjja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfhx7"]
 texture = ExtResource("3_onnfm")
@@ -4137,7 +4138,7 @@ size = Vector2(1144, 616)
 size = Vector2(218, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1o3c"]
-size = Vector2(132, 167)
+size = Vector2(140, 167)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfhx7"]
 size = Vector2(122, 113)
@@ -4147,6 +4148,9 @@ size = Vector2(79, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvjja"]
 size = Vector2(76, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl6gh"]
+size = Vector2(223, 80)
 
 [node name="Storeroom" type="Node2D" unique_id=563620953]
 script = ExtResource("1_5bp58")
@@ -4192,7 +4196,7 @@ position = Vector2(-262, 193)
 whichdialogue = ExtResource("15_krprf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea2" unique_id=1078128158]
-position = Vector2(24, -150.5)
+position = Vector2(28, -150.5)
 shape = SubResource("RectangleShape2D_u1o3c")
 
 [node name="InspectArea3" parent="triggers" unique_id=1003777583 instance=ExtResource("13_j4mqx")]
@@ -4218,3 +4222,11 @@ whichdialogue = ExtResource("19_pbdu1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea5" unique_id=1903153445]
 position = Vector2(-2, -14.5)
 shape = SubResource("RectangleShape2D_gvjja")
+
+[node name="InspectArea6" parent="triggers" unique_id=1429319969 instance=ExtResource("13_j4mqx")]
+position = Vector2(458, -165)
+whichdialogue = ExtResource("20_gvjja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea6" unique_id=467189386]
+position = Vector2(-216.5, 9)
+shape = SubResource("RectangleShape2D_wl6gh")

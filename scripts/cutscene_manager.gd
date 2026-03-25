@@ -13,14 +13,17 @@ var incut1: bool = false
 var incut5: bool = false
 var incut6: bool = false
 var incut10: bool = false
+var incut13: bool = false
 var part2: bool = false
 
 func _process(delta: float) -> void:
 	if GlobalVariables.player_position == GlobalVariables.player_goto_coords:
 		player_at_coords = true
+	else:
+		player_at_coords = false
 	
-	if player_at_coords and incut1:
-		pass
+	if player_at_coords and incut13:
+		get_tree().call_group("Player", "idle_r")
 	
 	if GlobalVariables.camera_position == GlobalVariables.lock_pos and incut1 and !part2:
 		#play next part of cutscene
@@ -29,8 +32,8 @@ func _process(delta: float) -> void:
 		else:
 			incut1 = false
 	
-	if player_at_coords and !incut10 and GlobalVariables.player_goto_active == true:
-		get_tree().call_group("Player", "idle_up")
+	#if player_at_coords and !incut10 and GlobalVariables.player_goto_active == true:
+		#get_tree().call_group("Player", "idle_up")
 	
 	
 	#if zulie finishes divekick in start of cutscene 5, start dialogue
@@ -76,6 +79,12 @@ func checkscene(scenenumber: int) -> void:
 			#noble introduction
 			if !GlobalVariables.seennoblecut:
 				cutscene10()
+		6: 
+			#noble pre-fight cutscene
+			if !GlobalVariables.nobleprefight and !GlobalVariables.cutscenemode:
+				cutscene11()
+			elif GlobalVariables.nobleprefight and !GlobalVariables.cutscenemode:
+				cutscene12()
 
 func endcutscene() -> void:
 	print("ending cutscene")
@@ -162,6 +171,7 @@ func cutscene2() -> void:
 	GlobalVariables.player_goto_active = true
 	GlobalVariables.player_goto_coords = Vector2(275, 250)
 	await get_tree().create_timer(0.5).timeout
+	TalkScenes.fighter_talk.dialogue_resource = load("res://dialogue/fighter_debug.dialogue")
 	TalkScenes.fighter_talk.start()
 
 #post-fight memory cutscene after defeating the fighter
@@ -192,10 +202,10 @@ func subway_warp() -> void:
 	TheCamera.transition_on()
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://scenes/rooms/subway1.tscn")
+	GlobalVariables.player_goto_coords = Vector2(2500, 450)
 	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/subway_warp.dialogue")
 	TalkScenes.protag_talk.start()
 	TheCamera.reset()
-	GlobalVariables.player_goto_coords = Vector2(2500, 450)
 
 #part 2 of vagabond's post-fighter cutscene
 func cutscene4_part2() -> void:
@@ -320,14 +330,13 @@ func cutscene8() -> void:
 	get_tree().call_group("Player", "catch_l")
 	await get_tree().create_timer(2).timeout
 	GlobalVariables.healer_coords = Vector2(2300, -355)
-	get_tree().call_group("boss", "flinch")
-	get_tree().call_group("Player", "item_pose")
-	await get_tree().create_timer(2).timeout
 	get_tree().call_group("Player", "cool_throw")
 	get_tree().call_group("boss", "die")
 
 #restoring the town
 func cutscene9() -> void:
+	GlobalVariables.cameralock = true
+	GlobalVariables.lock_pos = Vector2(2332,-200)
 	get_tree().change_scene_to_file("res://scenes/rooms/town_restored.tscn")
 	get_tree().call_group("npcs", "fixed")
 	TheCamera.spell_flash_off()
@@ -378,10 +387,6 @@ func cutscene10() -> void:
 	TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_noble_intro.dialogue")
 	TalkScenes.zulie_talk.start()
 
-#hotfix for cutscene 10 where noble and marcus don't m
-func move_noble() -> void:
-	pass
-
 #dialogue scene with vagabond and zulie after meeting noble
 func cutscene10_part2() -> void:
 	get_tree().call_group("Player", "walk_up")
@@ -389,5 +394,74 @@ func cutscene10_part2() -> void:
 	GlobalVariables.player_goto_coords = Vector2(-200, -2075)
 	GlobalVariables.lock_pos = Vector2(-200,-2100)
 	await get_tree().create_timer(1.75).timeout
+	get_tree().call_group("Player", "idle_up")
 	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_post_noble.dialogue")
 	TalkScenes.protag_talk.start()
+
+#cutscene for first time entering the noble boss fight
+func cutscene11() -> void:
+	GlobalVariables.cutscenemode = true
+	get_tree().call_group("Player", "walk_up")
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(0, -2375)
+	await get_tree().create_timer(1).timeout
+	MusicController.music_stop()
+	get_tree().call_group("Player", "idle_down")
+	get_tree().call_group("earthspike", "activate")
+	await get_tree().create_timer(1).timeout
+	get_tree().call_group("Player", "idle_up")
+	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_final_boss_1.dialogue")
+	TalkScenes.protag_talk.start()
+
+#quick-start for the noble boss fight after seeing the cutscene
+func cutscene12() -> void:
+	GlobalVariables.cutscenemode = true
+	MusicController.music_stop()
+	get_tree().call_group("Player", "walk_up")
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(0, -2375)
+	await get_tree().create_timer(1).timeout
+	MusicController.vol_reset()
+	MusicController.play_finalboss_music()
+	get_tree().call_group("earthspike", "activate")
+	get_tree().call_group("boss", "fight_start")
+	endcutscene()
+
+#boss kill cutscene for noble boss fight
+func cutscene13() -> void:
+	incut13 = true
+	get_tree().call_group("earthspike", "deactivate")
+	GlobalVariables.noble_coords = Vector2(100, -2400)
+	GlobalVariables.lock_pos = Vector2(0, -2350)
+	get_tree().call_group("boss", "warp")
+	get_tree().call_group("boss", "weak_l")
+	get_tree().call_group("Player", "recover")
+	await get_tree().create_timer(.5).timeout
+	TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_finale_1.dialogue")
+	TalkScenes.noble_talk.start()
+
+#semi-final cutscene
+func cutscene13_part2() -> void:
+	incut13 = false
+	get_tree().call_group("message", "appear")
+	GlobalVariables.cameralock = false
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(0, -1700)
+	get_tree().call_group("Player", "walk_down")
+	await get_tree().create_timer(3).timeout
+	get_tree().call_group("Player", "idle_up")
+	await get_tree().create_timer(1).timeout
+	get_tree().call_group("Player", "walk_up")
+	GlobalVariables.player_goto_coords = Vector2(-150, -1850)
+	await get_tree().create_timer(.5).timeout
+	TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_finale_4.dialogue")
+	TalkScenes.protag_talk.start()
+
+#town cutscene before credits
+func cutscene14() -> void:
+	TheCamera.transition_on()
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/rooms/town_restored.tscn")
+	get_tree().call_group("Zulie", "crouch_r")
+	get_tree().call_group("VagabondActor", "crouch_noweapon_l")
+	TheCamera.snap(Vector2())

@@ -33,7 +33,7 @@ func invis() -> void:
 
 #play the animation for the death menu, and then activate menu mode
 func death_menu() -> void:
-	message = randi_range(1, 4)
+	message = randi_range(1, 6)
 	match message:
 		1:
 			label.text = "You can do better."
@@ -43,6 +43,10 @@ func death_menu() -> void:
 			label.text = "The future wants to be seen."
 		4:
 			label.text = "You're not done yet."
+		5:
+			label.text = "This isn't the end. Not even close."
+		6:
+			label.text = "Get up."
 	GlobalVariables.menumode = false
 	anim_player.play("create_death_menu")
 	await get_tree().create_timer(3).timeout
@@ -80,6 +84,7 @@ func _on_retry_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 	get_tree().call_group("Player", "respawn")
 	get_tree().call_group("enemies", "respawn")
+	get_tree().call_group("boss", "respawn")
 	get_tree().call_group("Objects", "respawn")
 	get_tree().call_group("earthspike", "deactivate")
 	get_tree().call_group("breakable_wall", "respawn")

@@ -1,4 +1,3 @@
-// Pixelated noise effect based on https://godotshaders.com/shader/warped-fractal-noise/
 //
 // Copyright Gerardo Montaño 2025
 //

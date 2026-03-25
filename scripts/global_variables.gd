@@ -57,3 +57,4 @@ var metdamien: bool = false #part 4 of village sequence, meeting damien and gett
 var hasbook: bool = false #final part of village sequence, obtaining the spellbook
 var beatthirdboss: bool = false #set after beating the healer
 var seennoblecut: bool = false #set after seeing noble's introductory cutscene
+var nobleprefight: bool = false #set after seeing the noble's pre-fight cutscene

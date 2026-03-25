@@ -27,6 +27,8 @@ func _save():
 	SaveFileData.cont_scene = GlobalVariables.cont_scene
 	SaveFileData.town_room = GlobalVariables.town_room
 	SaveFileData.beatthirdboss = GlobalVariables.beatthirdboss
+	SaveFileData.seennoblecut = GlobalVariables.seennoblecut
+	SaveFileData.nobleprefight = GlobalVariables.nobleprefight
 	ResourceSaver.save(SaveFileData, save_location)
 	print("saving")
 
@@ -51,6 +53,8 @@ func _load():
 		GlobalVariables.hasbook = SaveFileData.hasbook
 		GlobalVariables.town_room = SaveFileData.town_room
 		GlobalVariables.beatthirdboss = SaveFileData.beatthirdboss
+		GlobalVariables.seennoblecut = SaveFileData.seennoblecut
+		GlobalVariables.nobleprefight = SaveFileData.nobleprefight
 		GlobalVariables.cont_scene = SaveFileData.cont_scene
 
 #reset save data
@@ -72,6 +76,8 @@ func clear_save() -> void:
 	SaveFileData.hasbook = false
 	SaveFileData.town_room = "null"
 	SaveFileData.beatthirdboss = false
+	SaveFileData.seennoblecut = false
+	SaveFileData.nobleprefight = false
 	SaveFileData.cont_scene = "null"
 	GlobalVariables.seenfirstcut = false
 	GlobalVariables.metvagabond = false
@@ -90,4 +96,6 @@ func clear_save() -> void:
 	GlobalVariables.hasbook = false
 	GlobalVariables.town_room = "null"
 	GlobalVariables.beatthirdboss = false
+	GlobalVariables.seennoblecut = false
+	GlobalVariables.nobleprefight = false
 	GlobalVariables.cont_scene = "null"

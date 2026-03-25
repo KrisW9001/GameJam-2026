@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxxj0vf143kb2" path="res://scripts/npc_talk.gd" id="1_1sg1v"]
 [ext_resource type="FontFile" uid="uid://cgpweuqqtc8dw" path="res://assets/fonts/PixelOperator8.ttf" id="2_r3xk5"]
-[ext_resource type="FontFile" uid="uid://d3omep7os4c0e" path="res://assets/fonts/pixel_rpg.ttf" id="3_1sg1v"]
+[ext_resource type="FontFile" uid="uid://b5t4vmktelcvq" path="res://assets/fonts/CompassGold.ttf" id="3_1sg1v"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_82eav"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="5_60xcb"]
 
@@ -168,7 +168,7 @@ texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("3_1sg1v")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -180,7 +180,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("3_1sg1v")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 35
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1157589818]

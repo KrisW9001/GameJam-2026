@@ -8,7 +8,7 @@ Damien: I'll put it bluntly. You have the greatest amount of inherent mana that 
 	Damien: ...Yes.
 Damien: I have absolutely no doubt in my mind that you can cast the spell safely. We are truly fortunate for your presence.
 Damien: However you channel its power normally, try to replicate that and the casting process should come naturally to you.
-Damien: I believe the building west of this one was the epicenter of The Healer's spell. Cast it there.
+Damien: The building east of this one was where The Healer cast their spell. Go there and begin your casting in front of that house.
 set GlobalVariables.damien_coords = Vector2(-80, -1200)
 do get_tree().call_group("Damien", "walk_left")
 do get_tree().call_group("Player", "idle_l")

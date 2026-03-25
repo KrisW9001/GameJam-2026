@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://vndeslfnvgcv"
+path="res://.godot/imported/creator_speech_1.dialogue-311f653e5f77bdeeb6bba1f54c509001.tres"
+
+[deps]
+
+source_file="res://dialogue/creator_speech_1.dialogue"
+dest_files=["res://.godot/imported/creator_speech_1.dialogue-311f653e5f77bdeeb6bba1f54c509001.tres"]
+
+[params]
+
+defaults=true

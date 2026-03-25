@@ -83,6 +83,7 @@ Player discretion is advised.", "Game Quality Warning")
 	TheCamera.transition_on()
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://scenes/rooms/test_map.tscn")
+	TheCamera.snap(Vector2(0,0))
 	PauseMenu.invis()
 	TheCamera.transition_off()
 

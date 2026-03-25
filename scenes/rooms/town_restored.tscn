@@ -1329,19 +1329,19 @@ sources/7 = SubResource("TileSetAtlasSource_i4wjt")
 sources/1 = SubResource("TileSetAtlasSource_cywxf")
 sources/2 = SubResource("TileSetAtlasSource_q20ar")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb3pg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkae1"]
-size = Vector2(197, 299)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4824"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7blk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pgmg"]
-size = Vector2(241, 80)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv214"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrqvr"]
+size = Vector2(197, 299)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qye1e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cywxf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q20ar"]
+size = Vector2(241, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxr3s"]
 size = Vector2(318, 41)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ao48p"]
@@ -1357,7 +1357,7 @@ shader_parameter/color_low = Color(0.026499996, 0, 0.03, 1)
 shader_parameter/color_mid = Color(0.0019999982, 0.04820005, 0.2, 1)
 shader_parameter/color_high = Color(1, 0.04000002, 0.47199982, 1)
 
-[node name="Corrupt_Town" type="Node2D" unique_id=665173274]
+[node name="restored_town" type="Node2D" unique_id=665173274]
 script = ExtResource("1_sqdf2")
 
 [node name="Player" parent="." unique_id=1720193695 instance=ExtResource("2_xov03")]
@@ -1380,22 +1380,22 @@ tile_set = SubResource("TileSet_ipjcc")
 
 [node name="Triggers" type="Node" parent="." unique_id=1016979726]
 
-[node name="InspectArea" parent="Triggers" unique_id=33334527 instance=ExtResource("12_j3wek")]
+[node name="InspectArea" parent="Triggers" unique_id=580571303 instance=ExtResource("12_j3wek")]
 position = Vector2(633, 71)
 whichdialogue = ExtResource("18_salhr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea" unique_id=264312144]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea" unique_id=411415504]
 position = Vector2(303, -17)
-shape = SubResource("RectangleShape2D_yb3pg")
+shape = SubResource("RectangleShape2D_mv214")
 debug_color = Color(1.0588765e-06, 0.6505686, 0.10330597, 0.41960785)
 
 [node name="RespawnAnchor" parent="Triggers" unique_id=1057853141 instance=ExtResource("19_0c4sx")]
 position = Vector2(597, 75)
 location = Vector2(597, 75)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/RespawnAnchor" unique_id=768229046]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/RespawnAnchor" unique_id=1546738586]
 position = Vector2(5, 5)
-shape = SubResource("RectangleShape2D_dkae1")
+shape = SubResource("RectangleShape2D_qrqvr")
 debug_color = Color(0.6443247, 0.52313304, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="Triggers" unique_id=1633030172 instance=ExtResource("20_uo0bn")]
@@ -1404,50 +1404,50 @@ rotation = -1.5653175
 scale = Vector2(1.688813, 17.491028)
 whattotrigger = 1
 
-[node name="InspectArea3" parent="Triggers" unique_id=589303387 instance=ExtResource("12_j3wek")]
+[node name="InspectArea3" parent="Triggers" unique_id=2064779766 instance=ExtResource("12_j3wek")]
 position = Vector2(1418, -718)
 whichdialogue = ExtResource("22_7ud6h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea3" unique_id=2022688224]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea3" unique_id=2049481648]
 position = Vector2(-3, 6)
-shape = SubResource("RectangleShape2D_d4824")
+shape = SubResource("RectangleShape2D_qye1e")
 debug_color = Color(1.0588765e-06, 0.6505686, 0.10330597, 0.41960785)
 
-[node name="InspectArea4" parent="Triggers" unique_id=1284574275 instance=ExtResource("12_j3wek")]
+[node name="InspectArea4" parent="Triggers" unique_id=1096028183 instance=ExtResource("12_j3wek")]
 position = Vector2(1418, -718)
 whichdialogue = ExtResource("23_ipkgi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea4" unique_id=584953728]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea4" unique_id=361004455]
 position = Vector2(477, 439)
-shape = SubResource("RectangleShape2D_o7blk")
+shape = SubResource("RectangleShape2D_cywxf")
 debug_color = Color(1.0588765e-06, 0.6505686, 0.10330597, 0.41960785)
 
-[node name="RespawnAnchor2" parent="Triggers" unique_id=1807171393 instance=ExtResource("19_0c4sx")]
+[node name="RespawnAnchor2" parent="Triggers" unique_id=1194304589 instance=ExtResource("19_0c4sx")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/RespawnAnchor2" unique_id=1119075868]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/RespawnAnchor2" unique_id=285359438]
 position = Vector2(2328.5, -298)
-shape = SubResource("RectangleShape2D_1pgmg")
+shape = SubResource("RectangleShape2D_q20ar")
 debug_color = Color(0.55581087, 0.56200475, 1.92523e-07, 0.41960785)
 
 [node name="RoomTrigger" parent="Triggers" unique_id=1487844617 instance=ExtResource("16_mv214")]
 whichroom = "res://scenes/rooms/file_dumps.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/RoomTrigger" unique_id=2111649830]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/RoomTrigger" unique_id=1292026360]
 position = Vector2(1727, -1117)
-shape = SubResource("RectangleShape2D_qrqvr")
+shape = SubResource("RectangleShape2D_gxr3s")
 debug_color = Color(0.9977123, 0, 0.17001125, 0.41960785)
 
 [node name="Npcs" type="Node" parent="." unique_id=1091450708]
 
 [node name="CorruptVillager1" parent="Npcs" unique_id=661015397 groups=["npcs"] instance=ExtResource("33_er8xn")]
-position = Vector2(2200, -170)
+position = Vector2(2174, -270)
 speech = ExtResource("34_dxkq1")
 
 [node name="CorruptVillager3" parent="Npcs" unique_id=307666094 groups=["npcs"] instance=ExtResource("35_quydv")]
-position = Vector2(2311, -81)
+position = Vector2(2322, -197)
 
 [node name="CorruptVillager2" parent="Npcs" unique_id=1662708054 instance=ExtResource("18_1pgmg")]
-position = Vector2(2507, -173)
+position = Vector2(2510, -266)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1239167951]
 z_index = -3

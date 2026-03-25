@@ -519,6 +519,15 @@ func _input(_event: InputEvent) -> void:
 			print("setting mage defeat conditions")
 			GlobalVariables.beatsecondboss = true
 			GlobalVariables.metzulie = true
+			GlobalVariables.hasbook = true
+		
+		if Input.is_key_pressed(KEY_7):
+			print("playing credits cutscene")
+			GlobalVariables.cutscenemode = true
+			CutsceneManager.cutscene13_part2()
+		
+		if Input.is_action_just_pressed("enhance"):
+			get_tree().call_group("boss", "fight_end")
 		
 		#trigger inspect dialogue if inside an inspect area
 		if Input.is_action_just_pressed("interact"):
@@ -609,9 +618,6 @@ func _input(_event: InputEvent) -> void:
 				inspect_prompt.visible = false
 				GlobalVariables.cutscenemode = true
 				TalkScenes.damien_talk.start()
-		#debug function
-		#if Input.is_action_just_pressed("enhance"):
-			#GlobalVariables.player_goto_coords = Vector2(100,-200)
 
 #pick up objects when grabbox is active, deal damage when attack box is active
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
@@ -637,6 +643,8 @@ func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 		object_hovering.erase(body)
 
 func hurt_player(damage: int, enemy_x: float, enemy_y: float) -> void:
+	TalkScenes.protag_talk.hide()
+	CutsceneManager.endcutscene()
 	match health:
 		3:
 			dmg_shader_1.visible = true
@@ -683,6 +691,7 @@ func hurt_player(damage: int, enemy_x: float, enemy_y: float) -> void:
 			box_control.play("RESET")
 			anim_sprite.play("die")
 			get_tree().call_group("enemy_projectiles", "deactivate")
+			get_tree().call_group("boss", "respawn")
 			can_move = false
 			attacking = false
 			grabbing = false
@@ -782,6 +791,9 @@ func recover() -> void:
 	deathscreen.visible = false
 
 func kill_freeze() -> void:
+	health = 3
+	dmg_shader_1. visible = false
+	dmg_shader_2.visible = false
 	anim_sprite.modulate = Color("000000ff")
 	anim_sprite.pause()
 	deathscreen.visible = true
@@ -807,6 +819,9 @@ func walk_l() -> void:
 
 func walk_up() -> void:
 	anim_sprite.play("walk_up")
+
+func walk_down() -> void:
+	anim_sprite.play("walk_down")
 
 func idle_r() -> void:
 	anim_sprite.play("idle_right")

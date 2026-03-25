@@ -1,0 +1,13 @@
+~ start
+Noble: Oh, I'm just making sure that we won't be having any interruptions. Those were the terms we agreed to, after all.
+do MusicController.play_death_music()
+Noble: I wasn't lying when I said you were different from the rest, you know. You're truly a cut above the rest in more ways than one.
+Noble: So many of The Creator's discarded toys are just mishapen husks, pretending to be something they aren't and never will be. [wave amp=25 freq=5]So, so much ugliness...[/wave]
+Noble: But you're the perfect blank slate. A mysterious hooded figure with no past, fighting tooth and nail to preserve the good they see in the world!
+Noble: You remind me of someone who used to live in the village. Young woman, around twenty-two, went by the name of Skye.
+Noble: She was a feisty young lass, much like the fox. When us Heroes began planning our operation, she was the first to find out and the first to take up arms against us.
+Noble: A noble cause, for sure. She would have set an example for the rest, if anyone had the sense to listen to us. I see a lot of her spirit in you.
+Noble: [wave amp=25 freq=5]But alas,[/wave] she refused to listen to reason and so do you. A shame that it comes to this, but when I emerge from this battle, I will...
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_final_boss_2.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

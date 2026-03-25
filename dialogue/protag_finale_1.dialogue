@@ -1,0 +1,5 @@
+~ start
+Marcus: All that big talk and you're no different from the rest. Got anything left to say for yourself?
+set TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_finale_2.dialogue")
+do TalkScenes.noble_talk.start()
+=> END

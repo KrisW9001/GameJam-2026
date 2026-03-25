@@ -1,0 +1,14 @@
+~ start
+Noble: [shake rate=20 level=10]Cough...[/shake] I...I saw your files...
+do MusicController.music_fadein()
+do MusicController.play_memory_music()
+Noble: [shake rate=20 level=10]...And I know what you are.[/shake]
+Noble: It doesn't matter what you do. Whatever good you try to achieve...It's all for nothing. Not just because of Blackout, not because you're unfinished...
+Noble: But because this right here...this brutality...[shake rate=20 level=10]It's all you'll ever amount to.[/shake]
+Noble: None of this means anything. Lives were lost either way, and the emptiness they leave behind where they once were...[shake rate=20 level=10]You can't fill it.[/shake]
+Noble: You don't know how to rebuild anything. You don't know how to be anything more than a [shake rate=20 level=10]violent ne'er-do-well[/shake].
+do MusicController.music_fadeout_fast()
+Noble: So go ahead. Finish me off. [shake rate=20 level=10]It will never fill the void, and Blackout will never be satisfied.[/shake]
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_finale_2.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

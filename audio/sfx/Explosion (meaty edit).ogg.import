@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5s5sghfmnu6y"
+path="res://.godot/imported/Explosion (meaty edit).ogg-0651c1d9e1713e4d849483e9f88726c8.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sfx/Explosion (meaty edit).ogg"
+dest_files=["res://.godot/imported/Explosion (meaty edit).ogg-0651c1d9e1713e4d849483e9f88726c8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

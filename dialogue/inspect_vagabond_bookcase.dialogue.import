@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bwwtbjdnbxx5p"
+path="res://.godot/imported/inspect_vagabond_bookcase.dialogue-f3679310e6924ff449d67001470c2084.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_vagabond_bookcase.dialogue"
+dest_files=["res://.godot/imported/inspect_vagabond_bookcase.dialogue-f3679310e6924ff449d67001470c2084.tres"]
+
+[params]
+
+defaults=true

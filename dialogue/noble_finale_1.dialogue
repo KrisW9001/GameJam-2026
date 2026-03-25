@@ -1,0 +1,8 @@
+~ start
+set GlobalVariables.player_goto_active = true
+set GlobalVariables.player_goto_coords = Vector2(-100, -2400)
+do get_tree().call_group("Player", "walk_r")
+Noble: [shake rate=20 level=10]Huff...Huff...You...I can't...[/shake]
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_finale_1.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

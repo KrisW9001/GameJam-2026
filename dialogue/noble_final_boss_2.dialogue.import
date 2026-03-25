@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c2jh407mkprap"
+path="res://.godot/imported/noble_final_boss_2.dialogue-77f87da24c5c4eca7c585d43b5c41422.tres"
+
+[deps]
+
+source_file="res://dialogue/noble_final_boss_2.dialogue"
+dest_files=["res://.godot/imported/noble_final_boss_2.dialogue-77f87da24c5c4eca7c585d43b5c41422.tres"]
+
+[params]
+
+defaults=true

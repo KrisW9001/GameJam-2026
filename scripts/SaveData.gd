@@ -21,4 +21,6 @@ class_name SaveDataResource
 @export var hasbook: bool = false
 @export var town_room: String
 @export var beatthirdboss: bool = false
+@export var seennoblecut: bool = false
+@export var nobleprefight: bool = false
 @export var cont_scene: String

@@ -1,0 +1,6 @@
+~ start
+do TheCamera.transition_on()
+Noble: [shake rate=20 level=10]H-huh?[/shake]
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_finale_3.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

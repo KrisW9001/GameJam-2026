@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://coggbv7gd7eea"
+path="res://.godot/imported/8-31-2017 - 2 (ending theme part 1).ogg-548926ed6759f31c8008811305f7d5ea.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/trimmed/8-31-2017 - 2 (ending theme part 1).ogg"
+dest_files=["res://.godot/imported/8-31-2017 - 2 (ending theme part 1).ogg-548926ed6759f31c8008811305f7d5ea.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

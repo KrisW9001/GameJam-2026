@@ -5,5 +5,5 @@ memes: you forgot to change the talk scenes dialogue resource
 do MusicController.play_fight1_intro()
 memes: that means u gotta die
 do CutsceneManager.endcutscene()
-do get_tree().call_group("boss", "choose_action")
+do get_tree().call_group("boss", "start_fight")
 => END

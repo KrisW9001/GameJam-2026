@@ -5,6 +5,9 @@ extends Camera2D
 @onready var trans_screen: ColorRect = $CanvasLayer/trans_screen
 @onready var label: Label = $CanvasLayer/Label
 @onready var label_2: Label = $CanvasLayer/Label2
+@onready var finalbosscutscene_1: Sprite2D = $CanvasLayer/finalbosscutscene1
+@onready var finalbosscutscene_2: Sprite2D = $CanvasLayer/finalbosscutscene2
+@onready var finalbosscutscene_3: Sprite2D = $CanvasLayer/finalbosscutscene3
 #setting variables to be used in functions
 var offscreen = false
 
@@ -72,6 +75,24 @@ func spell_flash_on() -> void:
 func spell_flash_off() -> void:
 	anim_player.play("spell_flash_off")
 
+func finalboss_cut_1() -> void:
+	anim_player.play("FB_cut_1_fadein")
+
+func finalboss_cut_2() -> void:
+	finalbosscutscene_2.visible = true
+	finalbosscutscene_2.modulate = Color(0.435, 0.169, 0.529)
+
+func finalboss_cut_3() -> void:
+	anim_player.play("finale_shake")
+	get_tree().call_group("boss", "queue_free")
+
+func transition_off_2() -> void:
+	anim_player.play("trans_off_2")
+
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "spell_flash_on":
 		CutsceneManager.cutscene9()
+	if anim_name == "finale_shake":
+		anim_player.play("finale_transition_off")
+	if anim_name == "finale_transition_off":
+		CutsceneManager.cutscene13_part2()

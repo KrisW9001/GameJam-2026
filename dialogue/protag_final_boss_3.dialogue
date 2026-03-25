@@ -1,0 +1,24 @@
+~ start
+Marcus: Respect for a psycho who murders others just so he can feel better about himself? No, I don't. And I never will.
+do MusicController.play_finalboss_intro_1()
+set GlobalVariables.player_goto_coords = Vector2(0, -2415)
+Marcus: So let me make a few things clear, cause you're just too stupid to figure them out for yourself.
+Marcus: First, I'm not a blank slate. Every time I took care of one of your lackeys, I found out more and more about how this is exactly what I was made for.
+Marcus: Second, all that talk about 'no past' and 'good intentions'? I might be a nobody from nowhere, but I've been through enough to know exactly how your type operates.
+do MusicController.play_finalboss_intro_2()
+set GlobalVariables.player_goto_coords = Vector2(0, -2435)
+Marcus: And I might do bad things for good reasons, but in case putting down all your [shake rate=20 level=10]henchmen[/shake] didn't clue you off, I give you idiots the worst punishment possible because that's what you deserve.
+Marcus: And worst of all, you weren't listening to what I said back there. This isn't some honorable duel or some sort of proving moment. I have nothing to prove to you.
+do TheCamera.transition_on()
+Marcus: So let me jog your memory real quick, [shake rate=20 level=10]so you know what this is about.[/shake]
+do MusicController.music_stop()
+do TheCamera.finalboss_cut_1()
+Marcus: [speed=0.5][shake rate=20 level=10]You can TRY to kill me, with nothing holding us back.[/shake]
+do TheCamera.finalboss_cut_2()
+do sfx_scary()
+Marcus: [speed=0.5][shake rate=20 level=10]You're not leaving this room alive. Not after everything you've done.[/shake]
+do TheCamera.transition_off_2()
+Marcus: I'm sick of hearing you spend entire minutes to say absolutely nothing. If you have any sense at all, you'll just start fighting.
+set TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_final_boss_3.dialogue")
+do TalkScenes.noble_talk.start()
+=> END

@@ -10,3 +10,4 @@ extends Node
 @onready var damien_talk: DialogueManagerDamienBalloon = $DamienTalk
 @onready var him_talk: DialogueManagerHisBalloon = $HimTalk
 @onready var noble_talk: DialogueManagerNobleBalloon = $NobleTalk
+@onready var creator_talk: DialogueManagerCreatorBalloon = $CreatorTalk

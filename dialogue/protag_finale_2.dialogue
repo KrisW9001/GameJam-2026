@@ -1,0 +1,20 @@
+~ start
+Marcus: ...
+Marcus: I dunno, It feels pretty satisfied right about now. Besides, things are gonna get a lot easier from here on.
+do MusicController.vol_reset()
+do MusicController.play_ending_part1()
+set GlobalVariables.player_goto_coords = Vector2(-50, -2400)
+Marcus: Maybe I don't know how to build houses or whatever. But that's pretty much one of the main things Blackout was meant for. I've got plenty of time to learn.
+Marcus: And again, even right now...you don't know me at all. There's nothing I want more right now than to kick back and not have to run around everywhere.
+set CutsceneManager.incut13 = false
+do get_tree().call_group("Player", "idle_down")
+Marcus: Plus I got to meet some folks that care about me, even with everything I've got going on. The one thing I was afraid of...and it's already over and done with.
+set CutsceneManager.incut13 = true
+set GlobalVariables.player_goto_coords = Vector2(50, -2400)
+do get_tree().call_group("Player", "walk_r")
+Marcus: So yeah, some things about me aren't gonna change. That's just how life is, even here in the wastes where we "barely exist" or whatever.
+do MusicController.music_fadeout_fast()
+Marcus: But you know something else, bud? Something about me you never got to see cause of everything you have going on?
+set TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_finale_3.dialogue")
+do TalkScenes.noble_talk.start()
+=> END

@@ -1,0 +1,5 @@
+~ start
+Marcus: What's with the earth spike door? It's not like I'm leaving till I'm done with you.
+set TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_final_boss_1.dialogue")
+do TalkScenes.noble_talk.start()
+=> END

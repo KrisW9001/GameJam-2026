@@ -1,6 +1,9 @@
 ~ start
-I can't even begin to make out what this one says.
-Though it looks like there's...some kind of logo. A couple of people sitting at a bar, maybe? It's hard to tell when its upside down and scrambled around.
-I guess this was a bar. Or I guess a "Tavern", or whatever old timey word that they would use for it.
+if GlobalVariables.beatthirdboss == false:
+	I can't even begin to make out what this one says.
+	Though it looks like there's...some kind of logo. A couple of people sitting at a bar, maybe? It's hard to tell when its upside down and scrambled around.
+	I guess this was a bar. Or I guess a "Tavern", or whatever old timey word that they would use for it.
+if GlobalVariables.beatthirdboss == true:
+	The sign shows a bunch of people sitting together on bar stools. The name of this place is..."The Nameless Tavern". How original.
 do CutsceneManager.endcutscene()
 => END

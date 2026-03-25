@@ -24,6 +24,11 @@ var corrupt_town_music = load("res://audio/music/Retro Mystic (warped v2).ogg")
 var town_music = load("res://audio/music/Retro Mystic.ogg")
 var damien_theme = load("res://audio/music/Indecision.ogg")
 var level3_music = load("res://audio/music/12-4-2016 - 1 (final area theme).ogg")
+var finalboss_intro_1 = load("res://audio/music/trimmed/1-1-2018 - 1 (final boss intro 1).ogg")
+var finalboss_intro_2 = load("res://audio/music/trimmed/1-1-2018 - 1 (final boss intro 2).ogg")
+var finalboss_music = load("res://audio/music/trimmed/1-1-2018 - 1 (final boss loop).ogg")
+var ending_part1 = load("res://audio/music/trimmed/8-31-2017 - 2 (ending theme part 1).ogg")
+var ending_part2 = load("res://audio/music/trimmed/8-31-2017 - 2 (ending theme main).ogg")
 
 func ready() -> void:
 	is_playing = false
@@ -40,6 +45,7 @@ func test_music_stop() -> void:
 
 func vol_reset() -> void:
 	animation_player.play("RESET")
+	oneshot = false
 
 func music_fadein() -> void:
 	animation_player.play("fade_in")
@@ -152,6 +158,36 @@ func play_level3_music() -> void:
 		bgm_player.stream = level3_music
 		bgm_player.play()
 		is_playing = true
+
+func play_finalboss_intro_1() -> void:
+	if !is_playing:
+		bgm_player.stream = finalboss_intro_1
+		bgm_player.play()
+		is_playing = true
+
+func play_finalboss_intro_2() -> void:
+	bgm_player.stop()
+	bgm_player.stream = finalboss_intro_2
+	bgm_player.play()
+
+func play_finalboss_music() -> void:
+	if !is_playing:
+		bgm_player.stream = finalboss_music
+		bgm_player.play()
+		is_playing = true
+
+func play_ending_part1() -> void:
+	if !is_playing:
+		bgm_player.stream = ending_part1
+		bgm_player.play()
+		is_playing = true
+
+func play_ending_part2() -> void:
+	if !is_playing:
+		bgm_player.stream = ending_part2
+		bgm_player.play()
+		is_playing = true
+		oneshot = true
 
 func _on_audio_stream_player_finished() -> void:
 	if !oneshot:

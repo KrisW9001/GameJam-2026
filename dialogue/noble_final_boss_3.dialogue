@@ -1,0 +1,7 @@
+~ start
+Noble: ...[shake rate=20 level=10]So be it.[/shake]
+set GlobalVariables.nobleprefight = true
+do MusicController.play_finalboss_music()
+do get_tree().call_group("boss", "fight_start")
+do CutsceneManager.endcutscene()
+=> END

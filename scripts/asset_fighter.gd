@@ -3,178 +3,168 @@ extends CharacterBody2D
 @onready var hurtbox: Area2D = $hurtbox
 @onready var detector: Area2D = $detector
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
-@onready var damagetimer: Timer = $damagetimer
+@onready var resettimer: Timer = $resettimer
 @onready var waittimer: Timer = $waittimer
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var damageplayer: AnimationPlayer = $damageplayer
-@onready var bow_1: Sprite2D = $"../Boss Positioning/Bow_1"
-@onready var bow_2: Sprite2D = $"../Boss Positioning/Bow_2"
-@onready var bow_3: Sprite2D = $"../Boss Positioning/Bow_3"
-@onready var bow_4: Sprite2D = $"../Boss Positioning/Bow_4"
-@onready var bow_5: Sprite2D = $"../Boss Positioning/Bow_5"
-@onready var bow_6: Sprite2D = $"../Boss Positioning/Bow_6"
-@onready var axe_1: Sprite2D = $"../Boss Positioning/Axe_1"
-@onready var axe_2: Sprite2D = $"../Boss Positioning/Axe_2"
-@onready var axe_3: Sprite2D = $"../Boss Positioning/Axe_3"
-@onready var axe_4: Sprite2D = $"../Boss Positioning/Axe_4"
-@onready var dagger_1: Sprite2D = $"../Boss Positioning/Dagger_1"
-@onready var dagger_2: Sprite2D = $"../Boss Positioning/Dagger_2"
 @onready var offscreen: Sprite2D = $"../Boss Positioning/Offscreen"
 @onready var center: Sprite2D = $"../Boss Positioning/Start"
+@onready var melee: CollisionShape2D = $detector/melee_range
 
 #declaring sfx
-var dmg_sfx = preload("res://audio/sfx/Door Close Big.wav")
-var die_sfx = preload("res://audio/sfx/Explosion.wav")
-var throw_sfx = preload("res://audio/sfx/Laser Shot.wav")
+var dmg_sfx = load("res://audio/sfx/Door Close Big.wav")
+var die_sfx = load("res://audio/sfx/Explosion.wav")
+var throw_sfx = load("res://audio/sfx/Laser Shot.wav")
 var charge_sfx = load("res://audio/sfx/Transport Up.wav")
+var shing_sfx = load("res://audio/sfx/Metal High.wav")
 
 #declaring stats and variables
 var speed: int = 500
 var health: int = 10
-var throw_strength: int = -1100
 var dead: bool = false
-var attacking: bool = false
-var held_object: Node2D = null
+var in_fight: bool = false
 var action: int
-var choosespot: int
-var target: Vector2
-
-var pos_nodes: Dictionary
-#var axe: Node = get_parent().axe
-#variables to control fighter's state
-@export_enum("wait", "bow_atk", "axe_throw", "axe_toss", "move", "cutscene", "die") var state: String
-
-func _ready() -> void:#defining node paths
-	pos_nodes = {
-		1: bow_1,
-		2: bow_2,
-		3: bow_3,
-		4: bow_4,
-		5: bow_5,
-		6: bow_6,
-		7: axe_1,
-		8: axe_2,
-		9: axe_3,
-		10: axe_4,
-		11: dagger_1,
-		12: dagger_2,
-		13: offscreen,
-		14: center
-	}
-	state = "cutscene"
-	idle_r_anim()
-
-func _process(delta: float) -> void:
-	if GlobalVariables.fighter_goto:
-		position.x = move_toward(position.x, GlobalVariables.fighter_coords.x, speed * delta)
-		position.y = move_toward(position.y, GlobalVariables.fighter_coords.y, (speed / 2) * delta)
-		pass
-	
-	#exectute code when fighter reaches their target location
-	if position == GlobalVariables.fighter_coords:
-		if GlobalVariables.cutscenemode:
-			stop_jump_in()
-		else:
-			print("arrived")
-			#for a in 6:
-			if action > 2 and action < 5:
-				if !attacking:
-					axe_throw()
-	
-	#flip sprite to face player
-	if !state == "cutscene" and !state == "move" and !state == "bow_atk":
-		if GlobalVariables.player_position < position:
-			anim_sprite.flip_h = true
-		else:
-			anim_sprite.flip_h = false
-	
-	#match state:
-		#"wait":
-			#attacking = false
-			#waittimer.start()
-		#"die":
-			#pass
-
-func choose_action() -> void:
-	if !attacking:
-		action = randi_range(1, 6)
-		match action:
-			1:
-				print("performing action 1")
-				choose_action()
-			2:
-				print("performing action 2")
-				choose_action()
-			3:
-				print("performing action 3")
-				choosespot = randi_range(1, 2)
-				match choosespot:
-					#1: top left axe throw,  2: bottom left axe throw
-					1:
-						var coord = pos_nodes.get(10).position
-						anim_sprite.play("backstep_r")
-						state = "axe_throw"
-						move(coord)
-					2:
-						var coord = pos_nodes.get(9).position
-						anim_sprite.play("backstep_r")
-						state = "axe_throw"
-						move(coord)
-			4:
-				print("performing action 4")
-				choosespot = randi_range(1, 2)
-				match choosespot:
-					#1: top left axe throw,  2: bottom left axe throw
-					1:
-						var coord = pos_nodes.get(7).position
-						anim_sprite.play("backstep_r")
-						state = "axe_throw"
-						move(coord)
-					2:
-						var coord = pos_nodes.get(8).position
-						anim_sprite.play("backstep_r")
-						state = "axe_throw"
-						move(coord)
-			5:
-				print("performing action 5")
-				choose_action()
-			6:
-				print("performing action 6")
-				choose_action()
+var charging: bool = false
+var attacking: bool = false
+var punch_atk: bool = false
+var punch_target: Vector2
+var throw_pos: String
+var dealtdamage: bool = false
 
 #basic functions to animate the sprite
 func jump_in() -> void:
-	GlobalVariables.fighter_coords = center.position
+	GlobalVariables.fighter_coords = Vector2(623, 370)
 	GlobalVariables.fighter_goto = true
 	anim_player.play("enter")
 	anim_sprite.play("jump_in")
 	print("jumping in")
 
-func stop_jump_in() -> void:
-	state = "wait"
-	idle_r_anim()
-	GlobalVariables.fighter_goto = false
+func _process(delta: float) -> void:
+	if GlobalVariables.fighter_goto == true:
+		if punch_atk == false:
+			position.x = move_toward(position.x, GlobalVariables.fighter_coords.x, speed * delta)
+			position.y = move_toward(position.y, GlobalVariables.fighter_coords.y, (speed * .8) * delta)
+		elif punch_atk == true:
+			position.x = move_toward(position.x, punch_target.x, speed * delta)
+			position.y = move_toward(position.y, punch_target.y, speed * delta)
+	
+	if position == GlobalVariables.fighter_coords and GlobalVariables.cutscenemode:
+		idle_l()
 
-#move to the location of the chosen attack
-func move(coord: Vector2) -> void:
-	GlobalVariables.fighter_coords = coord
-	GlobalVariables.fighter_goto = true
+func start_fight() -> void:
+	in_fight = true
+	action = randi_range(0, 5)
+	choose_action()
 
-##exectute a horizontal axe-throwing attack
-func axe_throw() -> void:
+func choose_action() -> void:
+	attacking = false
+	melee.disabled = true
+	dealtdamage = false
+	get_tree().call_group("enemy_projectiles", "dissapear")
+	if in_fight:
+		match action:
+			0:
+				#top left axe attack
+				top_left_axe()
+			1:
+				#bottom left axe attack
+				bottom_left_axe()
+			2:
+				#punch to the left
+				left_punch()
+			3:
+				#punch to the right
+				right_punch()
+			4:
+				#top right axe attack
+				top_right_axe()
+			5:
+				#bottom right axe attack
+				bottom_right_axe()
+
+func top_left_axe() -> void:
+	backstep_r()
+	GlobalVariables.fighter_coords = Vector2(335, 241)
+	await get_tree().create_timer(1).timeout
+	charging = true
+	charge_r()
+	get_tree().call_group("enemy_projectiles", "spawn")
+	audio_player.stream = charge_sfx
+	audio_player.play()
+	throw_pos = "left"
+	action = randi_range(3, 5)
+	waittimer.start(2)
+
+func bottom_left_axe() -> void:
+	backstep_r()
+	GlobalVariables.fighter_coords = Vector2(335, 431)
+	await get_tree().create_timer(1).timeout
+	charging = true
+	charge_r()
+	get_tree().call_group("enemy_projectiles", "spawn")
+	audio_player.stream = charge_sfx
+	audio_player.play()
+	throw_pos = "left"
+	action = randi_range(3, 5)
+	waittimer.start(2)
+
+func right_punch() -> void:
+	punch_target = GlobalVariables.player_position
+	ready_melee_r()
+	await get_tree().create_timer(.5).timeout
+	punch_atk = true
 	attacking = true
-	get_parent().axe.set_collision_mask_value(2, true)
-	held_object = get_parent().axe
-	get_parent().axe.get_node("ObjectLogic").pickup(self)
-	anim_player.play("charge")
+	punch_r()
+	action = randi_range(4, 5)
+	resettimer.start(1)
 
-func idle_r_anim() -> void:
-	if !dead:
-		anim_sprite.play("idle_r")
+func left_punch() -> void:
+	punch_target = GlobalVariables.player_position
+	ready_melee_l()
+	await get_tree().create_timer(.5).timeout
+	punch_atk = true
+	attacking = true
+	punch_l()
+	action = randi_range(0, 1)
+	resettimer.start(1)
 
-func die_anim() -> void:
-	anim_sprite.play("die")
-	dead = true
+func top_right_axe() -> void:
+	backstep_l()
+	GlobalVariables.fighter_coords = Vector2(816, 241)
+	await get_tree().create_timer(1).timeout
+	charging = true
+	charge_l()
+	get_tree().call_group("enemy_projectiles", "spawn")
+	audio_player.stream = charge_sfx
+	audio_player.play()
+	throw_pos = "right"
+	action = randi_range(0, 2)
+	waittimer.start(2)
+
+func bottom_right_axe() -> void:
+	backstep_l()
+	GlobalVariables.fighter_coords = Vector2(816, 431)
+	await get_tree().create_timer(1).timeout
+	charging = true
+	charge_l()
+	get_tree().call_group("enemy_projectiles", "spawn")
+	audio_player.stream = charge_sfx
+	audio_player.play()
+	throw_pos = "right"
+	action = randi_range(0, 2)
+	waittimer.start(2)
+
+func end_fight() -> void:
+	in_fight = false
+	charging = false
+	attacking = false
+
+func respawn() -> void:
+	in_fight = false
+	charging = false
+	attacking = false
+	get_tree().call_group("enemy_projectiles", "dissapear")
+	position = Vector2(-62, 370)
 
 #damage the boss
 func hurt_boss(damage: int) -> void:
@@ -184,6 +174,7 @@ func hurt_boss(damage: int) -> void:
 		audio_player.stream = dmg_sfx
 		audio_player.play()
 	if health < 1:
+		end_fight()
 		audio_player.stream = die_sfx
 		audio_player.play()
 		anim_sprite.speed_scale = 0.1
@@ -193,42 +184,99 @@ func hurt_boss(damage: int) -> void:
 		die_anim()
 		damageplayer.play("fade_away")
 		CutsceneManager.boss_kill()
-		state = "die"
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	match anim_name:
-		"charge":
-			target = GlobalVariables.player_position
-			get_parent().axe.get_node("ObjectLogic").fighter_throw(target)
-			held_object = null
-			attacking = false
-			anim_sprite.play("toss_forward")
-			anim_player.stop()
-			waittimer.start()
 
 func _on_damageplayer_animation_finished(anim_name: StringName) -> void:
-	match anim_name:
-		"fade_away":
-			print("Playing cutscene")
-			Engine.set("time_scale", 1)
-			CutsceneManager.cutscene3()
-			queue_free()
+	if anim_name == "fade_away":
+		CutsceneManager.cutscene3()
+		queue_free()
 
-#when waittimer finishes, randomly pick a new attack to begin
+#when waittimer finishes, throw the axe
 func _on_waittimer_timeout() -> void:
-	print("choosing action")
-	choose_action()
+	if charging == true:
+		match throw_pos:
+			"left":
+				throw_r()
+				get_tree().call_group("enemy_projectiles", "throw")
+				charging = false
+				attacking = true
+				resettimer.start()
+			"right":
+				throw_l()
+				get_tree().call_group("enemy_projectiles", "throw")
+				charging = false
+				attacking = true
+				resettimer.start()
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	match anim_sprite.animation:
-		#finish throwing attack
-		"toss_forward":
-			print("finishing throw attack")
-			anim_player.play("RESET")
-			anim_sprite.play("idle_r")
-			idle_r_anim()
+func _on_resettimer_timeout() -> void:
+	if attacking == true:
+		punch_atk = false
+		attacking = false
+		choose_action()
 
 #take damage from projectiles
 func _on_hurtbox_body_entered(body: CharacterBody2D) -> void:
-	if body.is_in_group("Objects") and body.get_child(3).flying:
+	if body.is_in_group("Objects") and body.get_child(2).flying:
 		hurt_boss(1)
+
+#declaring animations
+func idle_l() -> void:
+	anim_sprite.play("idle_l")
+
+func idle_r() -> void:
+	anim_sprite.play("idle_r")
+
+func backstep_l() -> void:
+	#this is a backstep moving right and facing left
+	anim_sprite.play("backstep_l")
+
+func backstep_r() -> void:
+	#this is a backstep moving left and facing right
+	anim_sprite.play("backstep_r")
+
+func charge_l() -> void:
+	anim_player.play("charge")
+	anim_sprite.play("charge_l")
+
+func charge_r() -> void:
+	anim_player.play("charge")
+	anim_sprite.play("charge_r")
+
+func throw_l() -> void:
+	anim_player.play("RESET")
+	anim_sprite.play("toss_forward_l")
+	audio_player.stream = throw_sfx
+	audio_player.play()
+
+func throw_r() -> void:
+	anim_player.play("RESET")
+	anim_sprite.play("toss_forward_r")
+	audio_player.stream = throw_sfx
+	audio_player.play()
+
+func punch_l() -> void:
+	anim_sprite.play("melee_l")
+	melee.disabled = false
+
+func punch_r() -> void:
+	anim_sprite.play("melee_r")
+	melee.disabled = false
+
+func ready_melee_l() -> void:
+	anim_sprite.play("ready_melee_l")
+	audio_player.stream = shing_sfx
+	audio_player.play()
+
+func ready_melee_r() -> void:
+	anim_sprite.play("ready_melee_r")
+	audio_player.stream = shing_sfx
+	audio_player.play()
+
+func die_anim() -> void:
+	anim_sprite.play("die")
+	dead = true
+
+func _on_detector_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player") and body.dead == false and !dealtdamage:
+		print("you took damage from a spell")
+		body.hurt_player(1, position.x, position.y)
+		dealtdamage = true

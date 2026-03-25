@@ -18,8 +18,12 @@ Coding Help from CutieMonica
 LightningSizzle
 CutieMonica
 FoxxArie
+Cabl
 
 Assets Used
+
+Dialogue Manager Godot Plugin by Nathan Hoad
+
 Tiny RPG - Multiple asset packs by Gabriel "tiopalada" Lima
 Battle Kit 1 & 2
 Nearby Village
@@ -54,17 +58,15 @@ _Credits for Brackeys Platformer Assets Pack_
 -Music by Brackeys & Sofia Thirslund
 -Fonts by Jayvee Enaguas & HarvettFox96
 
-CompassGold Typeface
+CompassGold Typeface by EeveSomepx
 
-PixelOperator8 Typeface
-
-pixel_rpg Typeface
+PixelOperator8 Typeface by Jayvee Enaguas
 
 PixelBasel Font by GGBotNet
 
 -Godot Shaders-
 'Dark Noise Vignette' by Silver637
 
-'Warped Fractal Noise' by Gerardo LCDF
+'Warped Fractal Noise' by Gerardo Montaño
 
 'Glitch Effect' by Yui Kinimoto

@@ -10,8 +10,12 @@ extends Node2D
 func _ready() -> void:
 	if zulie:
 		zulie.appear()
+		zulie.global_position = Vector2(1275, 151)
+		GlobalVariables.zulie_goto = false
 	if vagabond:
 		vagabond.appear()
+		vagabond.global_position = Vector2(2446, -738)
+		GlobalVariables.vagabond_goto = false
 	zulie.crouch_r()
 	vagabond.idle_l()
 	asset_healer.idle()

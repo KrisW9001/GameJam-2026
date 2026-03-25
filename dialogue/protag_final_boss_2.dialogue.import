@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://65jwdwnp0kfx"
+path="res://.godot/imported/protag_final_boss_2.dialogue-f980e149d47e368e6c7d3f62b8228c8c.tres"
+
+[deps]
+
+source_file="res://dialogue/protag_final_boss_2.dialogue"
+dest_files=["res://.godot/imported/protag_final_boss_2.dialogue-f980e149d47e368e6c7d3f62b8228c8c.tres"]
+
+[params]
+
+defaults=true

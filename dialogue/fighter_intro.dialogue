@@ -49,5 +49,6 @@ Fighter: Whatever, screw the speech. I'm the fighter of the group, and you'll ad
 	do MusicController.vol_reset()
 	do MusicController.play_fight1_intro()
 	Fighter: [wave amp=25 freq=5]I have a new toy to play with.~[/wave]
+do get_tree().call_group("boss", "start_fight")
 do CutsceneManager.endcutscene()
 => END

@@ -1,0 +1,41 @@
+~ start
+I know you have a lot of questions. All of you do. Contacting you directly isn't easy, but this was the most straightforward way of doing it.
+If you're wondering why I haven't done this before...There's a few reasons. Mostly that it's hard to get this in a place where people will see it.
+do TheCamera.transition_on()
+do MusicController.vol_reset()
+do MusicController.play_moody_music()
+But that's not a good enough excuse. I know it isn't. So let me be brutally honest, just so you know the situation that led to all of this.
+do get_tree().change_scene_to_file("res://scenes/rooms/credits.tscn")
+I'm sorry. For the past few years, It's been difficult to even get out of bed. If I had known all this was happening to everyone in here, I would have acted sooner.
+do TheCamera.transition_off()
+do get_tree().call_group("credits", "vagabond_appear")
+I'm sorry to The Vagabond, for being one of the first. I had no idea what I was doing and gave up before I ever really started.
+do get_tree().call_group("credits", "zulie_appear")
+I'm sorry to Zulie, whose stories I was so excited to make into reality, but my insecurities got the best of me and I just couldn't go any further.
+do get_tree().call_group("credits", "marcus_appear")
+And most of all I'm sorry to Marcus. Somehow after all of that I didn't learn to change my ways, and ended up sending yet another one of you to this...place.
+To everyone who's been stuck here because of my inaction, I'm sorry. I had no idea any of this was happening, and it's all my fault.
+For the past few years, It's been a struggle to find the reason to do anything. Especially when I don't have the talent or expertise to give all of you what was promised.
+All these ideas I have...all these aspirations for worlds to bring to life and the impact I want to make on the world...I just couldn't find the courage to make it happen.
+I ended up abandoning so many projects not out of malice or frustration, but out of fear. I was afraid that I wasn't good enough, or that my ideas weren't strong enough to warrant the effort. I'm the only one to blame here.
+do MusicController.music_fadeout_slow()
+...Which means this has been a long time coming. I should have done it sooner, but I just didn't have the confidence, that little push to make it happen. Now I do.
+I've been convinced by someone very close to me to challenge myself. To just make [shake rate=20 level=10]something[/shake]. Even if it isn't exactly how I want it, I'm going to finish what I've started at the very least.
+do MusicController.vol_reset()
+do MusicController.play_ending_part1()
+And It's going to involve all of you. I'm going to fulfill my promise to all of you and give you a story that you can play a part in. It's not what I originally promised...but I hope It's enough to earn your forgiveness.
+do get_tree().call_group("credits", "vagabond_dissapear")
+I want to make a story about staying hopeful even when everything seems like it's the bleakest it will ever be.
+do get_tree().call_group("credits", "zulie_dissapear")
+I want to make a story about the challenges we face at the absolute lowest points in our lives, and how we overcome them and become stronger as a result.
+I want to make a story about staying true to what you believe in and what you've grown to love about the world, and to not be ashamed of it.
+do get_tree().call_group("credits", "marcus_dissapear")
+I want to make a story about finding strength when you need it most.
+Even if this isn't enough to make up for what I've done to all of you, I want to make a genuine effort to at least try to keep my promise.
+Even if it isn't a masterpiece, even if it doesn't get universal praise and kickstart something bigger, I just want to make it. And I hope you'll all be there to help me.
+I'm going to finally pull myself together and create something. Using the bits and pieces of what I didn't finish, I'm going to try and make something meaningful.
+I have basically nothing to my name, so that's what I'll use. After all this time, I finally believe I can do it. I can create something...
+do MusicController.music_stop()
+do MusicController.play_ending_part2()
+do get_tree().call_group("credits", "show_title")
+=> END

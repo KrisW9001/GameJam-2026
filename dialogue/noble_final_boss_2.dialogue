@@ -1,0 +1,5 @@
+~ start
+Noble: [shake rate=20 level=10]Wh...How dare you! Have you no respect for your oppon-[/shake]
+set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/protag_final_boss_3.dialogue")
+do TalkScenes.protag_talk.start()
+=> END

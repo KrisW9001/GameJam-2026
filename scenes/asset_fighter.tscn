@@ -99,6 +99,10 @@ region = Rect2(96, 48, 48, 48)
 atlas = ExtResource("1_43yn7")
 region = Rect2(144, 48, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_an7n4"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(336, 192, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_f26n7"]
 atlas = ExtResource("1_43yn7")
 region = Rect2(96, 192, 48, 48)
@@ -179,6 +183,26 @@ region = Rect2(96, 96, 48, 48)
 atlas = ExtResource("1_43yn7")
 region = Rect2(144, 96, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv2dd"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(336, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjqpq"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(288, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pst66"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(240, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltm7k"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(432, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ybvu"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(384, 288, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_trbuk"]
 atlas = ExtResource("1_43yn7")
 region = Rect2(96, 240, 48, 48)
@@ -210,6 +234,34 @@ region = Rect2(432, 240, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee6ru"]
 atlas = ExtResource("1_43yn7")
 region = Rect2(240, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nvme"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(336, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v1a3"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(96, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow1f5"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(336, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81n51"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(288, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ape7m"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(240, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku7t6"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(432, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywjj7"]
+atlas = ExtResource("1_43yn7")
+region = Rect2(384, 240, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wm848"]
 atlas = ExtResource("1_43yn7")
@@ -362,11 +414,19 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an7n4")
+}],
+"loop": true,
+"name": &"charge_l",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_f26n7")
 }],
 "loop": true,
-"name": &"charge",
+"name": &"charge_r",
 "speed": 5.0
 }, {
 "frames": [{
@@ -466,6 +526,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 0.6,
+"texture": SubResource("AtlasTexture_tv2dd")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_rjqpq")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_pst66")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_ltm7k")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_4ybvu")
+}],
+"loop": false,
+"name": &"melee_l",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_trbuk")
 }, {
 "duration": 0.6,
@@ -481,7 +561,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_g4hhs")
 }],
 "loop": false,
-"name": &"melee",
+"name": &"melee_r",
 "speed": 5.0
 }, {
 "frames": [{
@@ -496,6 +576,42 @@ animations = [{
 }],
 "loop": false,
 "name": &"point_l",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nvme")
+}],
+"loop": true,
+"name": &"ready_melee_l",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v1a3")
+}],
+"loop": true,
+"name": &"ready_melee_r",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_ow1f5")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_81n51")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_ape7m")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_ku7t6")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_ywjj7")
+}],
+"loop": false,
+"name": &"toss_forward_l",
 "speed": 5.0
 }, {
 "frames": [{
@@ -515,7 +631,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4sqay")
 }],
 "loop": false,
-"name": &"toss_forward",
+"name": &"toss_forward_r",
 "speed": 5.0
 }, {
 "frames": [{
@@ -552,7 +668,7 @@ size = Vector2(35, 43)
 size = Vector2(20, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_43yn7"]
-radius = 26.0
+radius = 17.0
 
 [sub_resource type="Animation" id="Animation_vbe0r"]
 length = 0.001
@@ -584,6 +700,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_pmrxg"]
 resource_name = "charge"
 length = 2.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -704,7 +821,7 @@ script = ExtResource("1_vbe0r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1776813161]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wwkwh")
-animation = &"die"
+animation = &"ready_melee_r"
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=787304617]
 collision_layer = 16
@@ -724,17 +841,18 @@ collision_mask = 2
 
 [node name="melee_range" type="CollisionShape2D" parent="detector" unique_id=1791340994]
 shape = SubResource("CircleShape2D_43yn7")
+disabled = true
 debug_color = Color(0.6264713, 0.5318398, 7.70092e-07, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1917920229]
 volume_db = -20.0
 bus = &"Sound Effects"
 
-[node name="damagetimer" type="Timer" parent="." unique_id=1457963452]
+[node name="resettimer" type="Timer" parent="." unique_id=1457963452]
+wait_time = 2.0
 one_shot = true
 
 [node name="waittimer" type="Timer" parent="." unique_id=561689889]
-wait_time = 4.0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2014937073]
@@ -745,6 +863,8 @@ libraries/ = SubResource("AnimationLibrary_qissj")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
+[connection signal="timeout" from="resettimer" to="." method="_on_resettimer_timeout"]
 [connection signal="timeout" from="waittimer" to="." method="_on_waittimer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="damageplayer" to="." method="_on_damageplayer_animation_finished"]

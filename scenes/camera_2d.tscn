@@ -3,6 +3,36 @@
 [ext_resource type="Script" uid="uid://3011ueddeovj" path="res://scripts/camera_2d.gd" id="1_qnfst"]
 [ext_resource type="Shader" uid="uid://bqde24p16vvny" path="res://shaders/tintfordamage.gdshader" id="2_h73wr"]
 [ext_resource type="Shader" uid="uid://b2eoim5h1p8xo" path="res://shaders/memory.gdshader" id="3_oor3b"]
+[ext_resource type="Texture2D" uid="uid://b5prhfw218gfn" path="res://assets/effects/final boss cutscene 1.png" id="4_pq3sa"]
+[ext_resource type="Texture2D" uid="uid://5j1x0slmr8u0" path="res://assets/effects/final boss cutscene 2.png" id="5_85k5n"]
+[ext_resource type="Texture2D" uid="uid://cb2jo2lky1dfm" path="res://assets/effects/final boss cutscene 3.png" id="6_fqqy3"]
+
+[sub_resource type="Animation" id="Animation_f0hb1"]
+resource_name = "FB_cut_1_fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/finalbosscutscene1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.25, 0.25, 0.25, 0), Color(0.2509804, 0.2509804, 0.2509804, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/finalbosscutscene1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_lt4wf"]
 length = 0.001
@@ -138,6 +168,66 @@ tracks/10/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/finalbosscutscene1:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/finalbosscutscene1:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.2509804, 0.2509804, 0.2509804, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/finalbosscutscene2:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.3813333, 0.22, 0.44, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/finalbosscutscene3:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/finalbosscutscene3:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_diphd"]
 resource_name = "dmg_shake"
@@ -153,6 +243,85 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.01396263401595483, -0.01745329251994329, 0.01745329251994329, -0.01396263401595483, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_urtc0"]
+resource_name = "shake"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8000001, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(30, 25), Vector2(-30, -20), Vector2(-30, 25), Vector2(30, -25), Vector2(0, 0), Vector2(30, 25), Vector2(-30, -20), Vector2(-30, 25), Vector2(30, -25), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8000001, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.01396263401595483, -0.01745329251994329, 0.01745329251994329, -0.01396263401595483, 0.0, 0.01396263401595483, -0.01745329251994329, 0.01745329251994329, -0.01396263401595483, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/finalbosscutscene3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1v1uw"]
+resource_name = "finale_transition_off"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/finalbosscutscene3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/finalbosscutscene3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/trans_screen:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_85k5n"]
@@ -359,6 +528,46 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_jr2ee"]
+resource_name = "trans_off"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/trans_screen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/finalbosscutscene2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.43529412, 0.16862746, 0.5294118, 1), Color(0.38039216, 0.21960784, 0.4392157, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/finalbosscutscene1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.2509804, 0.2509804, 0.2509804, 1), Color(0.2509804, 0.2509804, 0.2509804, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_oor3b"]
 resource_name = "trans_on"
 length = 0.5
@@ -377,14 +586,18 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uhu2c"]
 _data = {
+&"FB_cut_1_fadein": SubResource("Animation_f0hb1"),
 &"RESET": SubResource("Animation_lt4wf"),
 &"dmg_shake": SubResource("Animation_diphd"),
+&"finale_shake": SubResource("Animation_urtc0"),
+&"finale_transition_off": SubResource("Animation_1v1uw"),
 &"memory_off": SubResource("Animation_85k5n"),
 &"memory_on": SubResource("Animation_pq3sa"),
 &"shake": SubResource("Animation_i5tuv"),
 &"spell_flash_off": SubResource("Animation_fqqy3"),
 &"spell_flash_on": SubResource("Animation_w01ff"),
 &"trans_off": SubResource("Animation_h73wr"),
+&"trans_off_2": SubResource("Animation_jr2ee"),
 &"trans_on": SubResource("Animation_oor3b")
 }
 
@@ -551,5 +764,31 @@ offset_top = 248.0
 offset_right = 395.0
 offset_bottom = 271.0
 text = "sdfsfdsasfs"
+
+[node name="finalbosscutscene1" type="Sprite2D" parent="CanvasLayer" unique_id=548743974]
+visible = false
+modulate = Color(0.2509804, 0.2509804, 0.2509804, 1)
+z_index = 5
+texture_filter = 1
+position = Vector2(577.99994, 330)
+scale = Vector2(5.1615396, 5.161539)
+texture = ExtResource("4_pq3sa")
+
+[node name="finalbosscutscene2" type="Sprite2D" parent="CanvasLayer" unique_id=633501896]
+visible = false
+modulate = Color(0.3813333, 0.22, 0.44, 1)
+z_index = 5
+texture_filter = 1
+position = Vector2(578, 330)
+scale = Vector2(5.1615396, 5.161539)
+texture = ExtResource("5_85k5n")
+
+[node name="finalbosscutscene3" type="Sprite2D" parent="CanvasLayer" unique_id=1798872704]
+visible = false
+z_index = 5
+texture_filter = 1
+position = Vector2(578, 330)
+scale = Vector2(5.1615396, 5.161539)
+texture = ExtResource("6_fqqy3")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

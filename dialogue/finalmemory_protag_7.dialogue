@@ -1,5 +1,5 @@
 ~ start
-[speed=0.5]Assault weapons couldn't stop me. You think this tiny thing will do anyting?
+[speed=0.5]Assault weapons couldn't stop me. You think this tiny thing will do anything?
 set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_8.dialogue")
 do TalkScenes.him_talk.start()
 => END

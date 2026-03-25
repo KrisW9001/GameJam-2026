@@ -14,8 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://c6tm48hgaxx1f" path="res://scenes/respawn_anchor.tscn" id="10_t33mu"]
 [ext_resource type="PackedScene" uid="uid://3xkc1we7jclj" path="res://scenes/asset_fighter.tscn" id="11_djuod"]
 [ext_resource type="PackedScene" uid="uid://b0j76qqfmovrw" path="res://scenes/cutscene_trigger.tscn" id="12_o4m6x"]
+[ext_resource type="PackedScene" uid="uid://cug2jfyf0lw5i" path="res://scenes/extinguisher.tscn" id="14_t33mu"]
 [ext_resource type="PackedScene" uid="uid://dmevl2kwgliii" path="res://scenes/axe.tscn" id="15_asmpw"]
+[ext_resource type="PackedScene" uid="uid://iv7m3djtreti" path="res://scenes/cone.tscn" id="15_ccqka"]
 [ext_resource type="PackedScene" uid="uid://q7vmif7362ux" path="res://scenes/vagabond.tscn" id="16_njk4r"]
+[ext_resource type="PackedScene" uid="uid://cganmc8dt6wq7" path="res://scenes/axe_2_the_sequel.tscn" id="17_o4m6x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cblhc"]
 texture = ExtResource("3_aeir7")
@@ -1371,6 +1374,10 @@ collision_mask = 7
 [node name="Asset Fighter" parent="." unique_id=688522503 instance=ExtResource("11_djuod")]
 position = Vector2(-62, 370)
 
+[node name="Axe2TheSequel" parent="Asset Fighter" unique_id=665040786 groups=["enemy_projectiles"] instance=ExtResource("17_o4m6x")]
+position = Vector2(281, -223)
+scale = Vector2(0.5, 0.5)
+
 [node name="Camera2D" parent="." unique_id=793479075 instance=ExtResource("2_djuod")]
 position = Vector2(578, 325)
 
@@ -1511,6 +1518,20 @@ z_index = 6
 position = Vector2(623, 370)
 texture = ExtResource("10_o46qx")
 
+[node name="Objects" type="Node" parent="." unique_id=1198128962]
+
+[node name="Extinguisher" parent="Objects" unique_id=1777513809 instance=ExtResource("14_t33mu")]
+position = Vector2(1063, 581)
+spawn_coords = Vector2(1063, 581)
+
+[node name="Cone" parent="Objects" unique_id=38203513 instance=ExtResource("15_ccqka")]
+position = Vector2(384, 85)
+spawn_coords = Vector2(384, 85)
+
+[node name="Cone2" parent="Objects" unique_id=389316411 instance=ExtResource("15_ccqka")]
+position = Vector2(775, 85)
+spawn_coords = Vector2(775, 85)
+
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1082094443]
 z_index = -3
 scroll_scale = Vector2(0.5, 0.5)
@@ -1554,7 +1575,7 @@ position = Vector2(-0.039910614, -2.1917014)
 shape = SubResource("RectangleShape2D_guqap")
 debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 
-[node name="Axe" parent="." unique_id=1777513809 groups=["axe"] instance=ExtResource("15_asmpw")]
+[node name="Axe" parent="." unique_id=2106089057 groups=["axe"] instance=ExtResource("15_asmpw")]
 position = Vector2(555, -76)
 
 [node name="Vagabond" parent="." unique_id=1288462670 instance=ExtResource("16_njk4r")]

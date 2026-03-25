@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://btwjckv2ldv1l"]
+
+[ext_resource type="Texture2D" uid="uid://c8aay5eg6gs25" path="res://assets/temp/file pile.png" id="2_etcvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5of8"]
+size = Vector2(100, 98)
+
+[node name="file_pile" type="CharacterBody2D" unique_id=661015397 groups=["villager"]]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=594709619]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_etcvk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853503564]
+position = Vector2(2, 31)
+shape = SubResource("RectangleShape2D_d5of8")

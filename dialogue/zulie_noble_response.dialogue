@@ -2,6 +2,7 @@
 set CutsceneManager.incut10 = true
 set GlobalVariables.lock_pos = Vector2(0,-1650)
 set GlobalVariables.player_goto_coords = Vector2(0, -1650)
+do get_tree().call_group("Player", "idle_up")
 Zulie: [shake rate=20 level=10]Grrrr...Fine. Have fun getting what you deserve.[/shake]
 set TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_intro_2.dialogue")
 do TalkScenes.noble_talk.start()

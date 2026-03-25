@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cnk17br5pu847"
+path="res://.godot/imported/protag_finale_3.dialogue-11f6d4f6b640fea118df18fd41cc7dcd.tres"
+
+[deps]
+
+source_file="res://dialogue/protag_finale_3.dialogue"
+dest_files=["res://.godot/imported/protag_finale_3.dialogue-11f6d4f6b640fea118df18fd41cc7dcd.tres"]
+
+[params]
+
+defaults=true

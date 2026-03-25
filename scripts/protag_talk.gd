@@ -24,6 +24,8 @@ var next_sfx = load("res://audio/sfx/Menu Navigate 2.wav")
 var fire_sfx = load("res://audio/sfx/Explosion Sharp.wav")
 var success_sfx = load("res://audio/sfx/Coin 6.wav")
 var spell_sfx = load("res://audio/sfx/Transport Up.wav")
+var scary_sfx = load("res://audio/sfx/Magic Dark.wav")
+var die_meaty = load("res://audio/sfx/Explosion (meaty edit).ogg")
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -223,5 +225,13 @@ func sfx_success() -> void:
 
 func sfx_spell() -> void:
 	audio_stream_player.stream = spell_sfx
+	audio_stream_player.play()
+
+func sfx_scary() -> void:
+	audio_stream_player.stream = scary_sfx
+	audio_stream_player.play()
+
+func sfx_meaty_die() -> void:
+	audio_stream_player.stream = die_meaty
 	audio_stream_player.play()
 #endregion

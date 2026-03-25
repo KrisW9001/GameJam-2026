@@ -1,0 +1,8 @@
+~ start
+do get_tree().call_group("Player", "idle_up")
+...That wasn't here before. The cover says "Read me and then show it to everyone else".
+...I flip it open to the first page and take a look.
+#set TalkScenes.creator_talk.dialogue_resource = load("res://dialogue/creator_speech_1.dialogue")
+#do TalkScenes.creator_talk.start()
+#start cutscene
+=> END

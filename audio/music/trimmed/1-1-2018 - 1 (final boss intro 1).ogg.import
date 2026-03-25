@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tubdqenc1ctn"
+path="res://.godot/imported/1-1-2018 - 1 (final boss intro 1).ogg-31d445eb0790f555bc385ff35c8281bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/trimmed/1-1-2018 - 1 (final boss intro 1).ogg"
+dest_files=["res://.godot/imported/1-1-2018 - 1 (final boss intro 1).ogg-31d445eb0790f555bc385ff35c8281bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,7 @@
 ~ start
-"C0m3 t9 G@@4Y>$ F04 @7L YoI4 Da17% Ne#0$!!" ...What?!
+if GlobalVariables.beatthirdboss == false:
+	"C0m3 t9 G@@4Y>$ F04 @7L YoI4 Da17% Ne#0$!!" ...What?!
+if GlobalVariables.beatthirdboss == true:
+	"Come to Garry's for all your daily needs!!"
 do CutsceneManager.endcutscene()
 => END

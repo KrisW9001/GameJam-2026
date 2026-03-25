@@ -57,7 +57,7 @@ size = Vector2(42, 42)
 size = Vector2(64, 65)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3jsmo"]
-radius = 343.02332
+radius = 386.1567
 
 [sub_resource type="Shader" id="Shader_pjw23"]
 code = "/*

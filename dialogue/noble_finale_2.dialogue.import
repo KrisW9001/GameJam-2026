@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d4gd5hxxj8jdx"
+path="res://.godot/imported/noble_finale_2.dialogue-b150b12ce348ca620ae0afba8162d776.tres"
+
+[deps]
+
+source_file="res://dialogue/noble_finale_2.dialogue"
+dest_files=["res://.godot/imported/noble_finale_2.dialogue-b150b12ce348ca620ae0afba8162d776.tres"]
+
+[params]
+
+defaults=true

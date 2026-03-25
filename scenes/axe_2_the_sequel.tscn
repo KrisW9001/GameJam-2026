@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cganmc8dt6wq7"]
+
+[ext_resource type="Script" uid="uid://bcfm30blxkvjc" path="res://scripts/axe_2_the_sequel.gd" id="1_db8wk"]
+[ext_resource type="Texture2D" uid="uid://dbtqpmkch6ggp" path="res://assets/temp/axesheet.png" id="1_pyyhq"]
+[ext_resource type="Texture2D" uid="uid://o0i6ggkojgyq" path="res://assets/effects/damage_particle.png" id="3_3oae6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db8wk"]
+atlas = ExtResource("1_pyyhq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oae6"]
+atlas = ExtResource("1_pyyhq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0xmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db8wk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3oae6")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_be45c"]
+radius = 16.03122
+
+[sub_resource type="Animation" id="Animation_pyyhq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_db8wk"]
+resource_name = "spin"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3oae6"]
+_data = {
+&"RESET": SubResource("Animation_pyyhq"),
+&"spin": SubResource("Animation_db8wk")
+}
+
+[node name="Axe2TheSequel" type="CharacterBody2D" unique_id=665040786]
+script = ExtResource("1_db8wk")
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="." unique_id=57079330]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_d0xmu")
+animation = &"red"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=192142647]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1046012269]
+shape = SubResource("CircleShape2D_be45c")
+disabled = true
+debug_color = Color(0.6519463, 0.5192677, 0, 0.41960785)
+
+[node name="AnimPlayer" type="AnimationPlayer" parent="." unique_id=2014095304]
+libraries/ = SubResource("AnimationLibrary_3oae6")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=413633791]
+texture_filter = 1
+emitting = false
+texture = ExtResource("3_3oae6")
+one_shot = true
+speed_scale = 4.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+angle_max = 360.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
