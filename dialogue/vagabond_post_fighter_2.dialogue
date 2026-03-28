@@ -8,7 +8,7 @@ Vagabond: I'll take a moment to tend to my equipment, so feel free to advance wi
 	Vagabond: Hopefully you can meet her soon.
 Vagabond: ...
 - It's Marcus, by the way.
-	Vagabond: ...Well, It's been a pleasure to meet you, Marcus.
+	Vagabond: ...Well, it's been a pleasure to meet you, Marcus.
 Vagabond: Be safe, and take care.
 do MusicController.music_fadeout_slow()
 do CutsceneManager.endcutscene()

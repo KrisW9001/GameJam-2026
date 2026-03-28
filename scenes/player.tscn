@@ -1549,7 +1549,7 @@ libraries/ = SubResource("AnimationLibrary_qlg0r")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=467559855 groups=["sfx_players"]]
 stream = ExtResource("5_qlg0r")
-volume_db = -20.0
+volume_db = -10.0
 bus = &"Sound Effects"
 
 [node name="damage1" type="ColorRect" parent="." unique_id=1931551810]

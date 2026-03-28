@@ -15,7 +15,7 @@ I'm sorry to Zulie, whose stories I was so excited to make into reality, but my 
 do get_tree().call_group("credits", "marcus_appear")
 And most of all I'm sorry to Marcus. Somehow after all of that I didn't learn to change my ways, and ended up sending yet another one of you to this...place.
 To everyone who's been stuck here because of my inaction, I'm sorry. I had no idea any of this was happening, and it's all my fault.
-For the past few years, It's been a struggle to find the reason to do anything. Especially when I don't have the talent or expertise to give all of you what was promised.
+I convinced myself that I don't have the talent or expertise to give all of you what was promised, and I felt like I failed you.
 All these ideas I have...all these aspirations for worlds to bring to life and the impact I want to make on the world...I just couldn't find the courage to make it happen.
 I ended up abandoning so many projects not out of malice or frustration, but out of fear. I was afraid that I wasn't good enough, or that my ideas weren't strong enough to warrant the effort. I'm the only one to blame here.
 do MusicController.music_fadeout_slow()
@@ -23,7 +23,7 @@ do MusicController.music_fadeout_slow()
 I've been convinced by someone very close to me to challenge myself. To just make [shake rate=20 level=10]something[/shake]. Even if it isn't exactly how I want it, I'm going to finish what I've started at the very least.
 do MusicController.vol_reset()
 do MusicController.play_ending_part1()
-And It's going to involve all of you. I'm going to fulfill my promise to all of you and give you a story that you can play a part in. It's not what I originally promised...but I hope It's enough to earn your forgiveness.
+And It's going to involve all of you. I'm going to fulfill my promise to all of you and give you a story that you can play a part in. It's not what I originally promised...but I hope it's enough to earn your forgiveness.
 do get_tree().call_group("credits", "vagabond_dissapear")
 I want to make a story about staying hopeful even when everything seems like it's the bleakest it will ever be.
 do get_tree().call_group("credits", "zulie_dissapear")

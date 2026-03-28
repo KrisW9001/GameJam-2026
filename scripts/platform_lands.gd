@@ -15,8 +15,10 @@ func _ready() -> void:
 	if GlobalVariables.metzulie == true:
 		#zulie.respawn()
 		#vagabond.respawn()
-		zulie.appear()
-		vagabond.appear()
+		if zulie:
+			zulie.appear()
+		if vagabond:
+			vagabond.appear()
 		GlobalVariables.zulie_goto = true
 		GlobalVariables.vagabond_goto = true
 		CutsceneManager.pair_togate()

@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://clltt38h2kkl8" path="res://scenes/wizard.tscn" id="26_ncqwi"]
 [ext_resource type="PackedScene" uid="uid://d0we2ffc1q1mt" path="res://scenes/cutscene_sword_spell.tscn" id="29_fdeyt"]
 [ext_resource type="Texture2D" uid="uid://b0ft2otqij3wy" path="res://assets/tilemaps/kenney town.png" id="30_qsso8"]
+[ext_resource type="Texture2D" uid="uid://c7pphq5e0l342" path="res://icon.svg" id="31_2rb1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wglm"]
 texture = ExtResource("4_llbyk")
@@ -3324,6 +3325,12 @@ frame_progress = 1.0
 z_index = 2
 position = Vector2(8275, 1900)
 scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="effects" unique_id=897942467]
+position = Vector2(3034.0002, -73.00004)
+rotation = 0.7419323
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("31_2rb1g")
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=1306425470]
 z_index = -2

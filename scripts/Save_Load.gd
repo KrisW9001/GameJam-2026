@@ -22,6 +22,7 @@ func _save():
 	SaveFileData.hasmushroom = GlobalVariables.hasmushroom
 	SaveFileData.hasshovel = GlobalVariables.hasshovel
 	SaveFileData.openedpassage = GlobalVariables.openedpassage
+	SaveFileData.metbrooke = GlobalVariables.metbrooke
 	SaveFileData.haskey = GlobalVariables.haskey
 	SaveFileData.metdamien = GlobalVariables.metdamien
 	SaveFileData.hasbook = GlobalVariables.hasbook
@@ -50,6 +51,7 @@ func _load():
 		GlobalVariables.hasmushroom = SaveFileData.hasmushroom
 		GlobalVariables.hasshovel = SaveFileData.hasshovel
 		GlobalVariables.openedpassage = SaveFileData.openedpassage
+		GlobalVariables.metbrooke = SaveFileData.metbrooke
 		GlobalVariables.haskey = SaveFileData.haskey
 		GlobalVariables.metdamien = SaveFileData.metdamien
 		GlobalVariables.hasbook = SaveFileData.hasbook
@@ -74,6 +76,7 @@ func clear_save() -> void:
 	SaveFileData.hasmushroom = false
 	SaveFileData.hasshovel = false
 	SaveFileData.openedpassage = false
+	SaveFileData.metbrooke = false
 	SaveFileData.haskey = false
 	SaveFileData.metdamien = false
 	SaveFileData.hasbook = false
@@ -95,6 +98,7 @@ func clear_save() -> void:
 	GlobalVariables.hasmushroom = false
 	GlobalVariables.hasshovel = false
 	GlobalVariables.openedpassage = false
+	GlobalVariables.metbrooke = false
 	GlobalVariables.haskey = false
 	GlobalVariables.metdamien = false
 	GlobalVariables.hasbook = false

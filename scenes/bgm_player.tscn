@@ -15,7 +15,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-30.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_tlpki"]
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [-80.0, -50.0, -20.0]
+"values": [-80.0, -30.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_gs5a3"]
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-20.0, -80.0]
+"values": [0.0, -80.0]
 }
 
 [sub_resource type="Animation" id="Animation_i0j14"]
@@ -63,7 +63,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3.5, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [-20.0, -50.0, -80.0]
+"values": [0.0, -40.0, -80.0]
 }
 
 [sub_resource type="Animation" id="Animation_annk1"]
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-20.0]
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_annk1"]
@@ -99,7 +99,6 @@ libraries/ = SubResource("AnimationLibrary_annk1")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=700760971]
 process_mode = 3
 stream = ExtResource("1_nm08u")
-volume_db = -30.0
 bus = &"Music"
 
 [node name="Timer" type="Timer" parent="." unique_id=1528921667]

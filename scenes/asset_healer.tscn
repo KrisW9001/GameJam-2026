@@ -275,7 +275,6 @@ shape = SubResource("RectangleShape2D_iv3fe")
 libraries/ = SubResource("AnimationLibrary_s4a2g")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1680283787]
-volume_db = -20.0
 bus = &"Sound Effects"
 
 [node name="displacer" type="AnimationPlayer" parent="." unique_id=285183065]

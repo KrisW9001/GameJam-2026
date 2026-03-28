@@ -845,7 +845,6 @@ disabled = true
 debug_color = Color(0.6264713, 0.5318398, 7.70092e-07, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1917920229]
-volume_db = -20.0
 bus = &"Sound Effects"
 
 [node name="resettimer" type="Timer" parent="." unique_id=1457963452]

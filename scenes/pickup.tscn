@@ -24,7 +24,6 @@ debug_color = Color(0.6103517, 0.5393024, 1.347661e-06, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1854645766]
 stream = ExtResource("3_gyxxy")
-volume_db = -20.0
 bus = &"Sound Effects"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

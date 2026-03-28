@@ -166,6 +166,8 @@ _data = {
 collision_layer = 16
 collision_mask = 9
 script = ExtResource("1_leome")
+state = null
+spawn_coords = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=370691732]
 texture_filter = 1
@@ -196,7 +198,6 @@ shape = SubResource("CircleShape2D_3jsmo")
 debug_color = Color(0.6518584, 0.5193127, 1.92523e-07, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=755718298]
-volume_db = -30.0
 bus = &"Sound Effects"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1906263766]

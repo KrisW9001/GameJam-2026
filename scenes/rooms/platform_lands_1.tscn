@@ -652,6 +652,9 @@ sources/1 = SubResource("TileSetAtlasSource_i4trv")
 sources/2 = SubResource("TileSetAtlasSource_1aadt")
 sources/3 = SubResource("TileSetAtlasSource_uc5se")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylj0l"]
+size = Vector2(639, 11)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv2x2"]
 texture = ExtResource("3_5dcyb")
 0:0/0 = 0
@@ -2953,9 +2956,6 @@ sources/0 = SubResource("TileSetAtlasSource_lsq8b")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3gdo"]
 size = Vector2(5.8668528, 13.306747)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylj0l"]
-size = Vector2(639, 11)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28upq"]
 size = Vector2(102, 140)
 
@@ -3003,6 +3003,16 @@ tile_map_data = PackedByteArray("AAD8/wIAAQAAAAIAAAD9/wIAAQAAAAMAAAD9/wMAAQAAAAI
 tile_set = SubResource("TileSet_5t4yq")
 script = ExtResource("7_mtw3l")
 cur_hp = 3
+
+[node name="InspectArea" parent="BreakableWalls" unique_id=580571303 instance=ExtResource("18_nr1en")]
+position = Vector2(2041.9999, -405.59998)
+scale = Vector2(0.39999998, 0.39999998)
+whichdialogue = ExtResource("19_nr1en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakableWalls/InspectArea" unique_id=1844309515]
+position = Vector2(48.5, -22.5)
+shape = SubResource("RectangleShape2D_ylj0l")
+debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=266043029]
 z_index = -2
@@ -3082,15 +3092,6 @@ debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 position = Vector2(240.00006, -398.99997)
 scale = Vector2(8.286077, 8.161382)
 whattotrigger = 3
-
-[node name="InspectArea" parent="triggers" unique_id=580571303 instance=ExtResource("18_nr1en")]
-position = Vector2(5105, -1014)
-whichdialogue = ExtResource("19_nr1en")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea" unique_id=1844309515]
-position = Vector2(48.5, -22.5)
-shape = SubResource("RectangleShape2D_ylj0l")
-debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
 [node name="Pickup" parent="triggers" unique_id=520107679 groups=["key"] instance=ExtResource("20_bx2u8")]
 position = Vector2(3550.0002, -428)

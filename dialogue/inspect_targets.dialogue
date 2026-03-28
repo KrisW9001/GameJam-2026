@@ -2,7 +2,7 @@
 set GlobalVariables.menutype = "Dialogue"
 if GlobalVariables.metzulie == false:
 	Some training targets. They look like they've been used a lot, judging by all the holes in the target face.
-	Gotta say though, Red doesn't strike me as the kinda guy to use shurikens. All that armor would make it hard to throw them properly.
+	Gotta say though, Red doesn't strike me as the kinda guy to use shuriken. All that armor would make it hard to throw them properly.
 	Maybe he does this just for fun. Either way, whoever's been practicing with these has some pretty good aim. Supposedly. I don't know how far away they were throwing them.
 if GlobalVariables.metzulie == true:
 	Some training targets. Now that I've met Zulie, I can safely say these must be hers. She probably has enough dignity to practice from a good distance away.

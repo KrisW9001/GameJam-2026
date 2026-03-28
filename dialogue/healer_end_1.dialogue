@@ -13,12 +13,12 @@ set GlobalVariables.player_goto_coords = Vector2(2300, -310)
 Healer: Your attempts to help people that you have no reason to be personally indebted to are understandable, but there's no point to it. You're just wasting your time.
 Healer: Noone in these Wastelands understands this magic like I do. Do yourself a favor and stop before you make a fool of yourself.
 - I didn't ask you.
-	Healer: [wave amp=25 freq=5]And therin lies the root of the problem.[/wave] If you had any sense under that ugly hood of yours, you wouldn't be wasting your energy.
+	Healer: [wave amp=25 freq=5]And therein lies the root of the problem.[/wave] If you had any sense under that ugly hood of yours, you wouldn't be wasting your energy.
 	Healer: Do you even understand how to cast spells from spellbooks? Considering the fact that your friends all have their own distractions, I doubt they had time to teach you.
 - Yeah, about that...
 	Healer: [shake rate=20 level=10]Don't interrupt me, you mindless brute.[/shake] You truly must be as stupid as you appear at a glance.
-	Healer: You don't know what you're doing. You dont know how my magic works. You don't even know what that book does. Do you even have an excuse for yourself?
-	Healer: One who knows nothing can understand nothing. Perhaps you'll get the chance to lern the truth of those words before the end of your pitiful life.
+	Healer: You don't know what you're doing. You don't know how my magic works. You don't even know what that book does. Do you even have an excuse for yourself?
+	Healer: One who knows nothing can understand nothing. Perhaps you'll get the chance to learn the truth of those words before the end of your pitiful life.
 - This was literally made to counter it.
 	Healer: ...Is that your idea of a joke? I'm not as gullible or brash as the other two members of my group that you've met.
 	Healer: [wave amp=25 freq=5]You only arrived to these lands mere hours ago![/wave] You know nothing about spellbooks, let alone the danger it poses to an untrained caster.

@@ -93,6 +93,9 @@ func hurt_boss(damage: int) -> void:
 	animation_player.play("fade_away")
 	CutsceneManager.boss_kill()
 
+func respawn() -> void:
+	position = Vector2(4000, 2105)
+
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_away":
 		Engine.set("time_scale", 1)

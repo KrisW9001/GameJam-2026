@@ -6,23 +6,23 @@ It looks like a spellbook, but after taking a closer look it's actually a journa
 	"Day I - I have no idea where I am. The floor breaks away to show an ominous purple void, and the environment here don't just appear different from home, it looks like an entirely different plane of existence."
 	"I've come to a few conclusions, and soon I will use these hypotheses to formulate a way to get back home. The first and weakest hypothesis is that this is a dream, unlikely since I've been here for a few days already."
 	"Hypothesis two is I've been trapped in an illusion by some spectral entity looking to get revenge on the Clan for our past actions. This feels the most plausible."
-	"Hypothesis three is I've been transported to a pocket dimension. There are old stories of dedicated mages able to do something like that, but noone knows if they're real. Not sure what to do in that situation."
+	"Hypothesis three is I've been transported to a pocket dimension. There are old stories of dedicated mages able to do something like that, but no one knows if they're real. Not sure what to do in that situation."
 	"I'll keep this journal as a means of documenting my progress, or at the very least someone will be able to find this if I can't get back. if you find this book randomly laying around, assume the worst as you read on."
 	- Keep going => part2
 	- Stop reading => finish
 - Nah. => finish
 
 ~ part2
-There's a bunch of pages just describing them running around the wastes trying to survive. I flip to a page that looks more intresting...
+There's a bunch of pages just describing them running around the wastes trying to survive. I flip to a page that looks more interesting...
 "Day XII - I've found a village of non-hostile individuals. The strangest thing about most of them is that they have no fur and instead have very rough and coarse skin on their entire body."
-"I did meet someone more similar in build to myself, though. A feline mage known simply as 'The Mage'. They were somewhat abraisive, but said they enjoyed meeting someone who shared similarities to them."
+"I did meet someone more similar in build to myself, though. A feline mage known simply as 'The Mage'. They were somewhat abrasive, but said they enjoyed meeting someone who shared similarities to them."
 "The species of furless individuals are supposedly called 'Humans'. The Mage was surprised to hear that humans don't exist where I come from, and never have. They said something interesting when I mentioned where I came from, though."
 "They claimed that such a place doesn't exist. In a somewhat mocking tone, they told me that I'll figure it out eventually. I changed the subject and eventually went on my way."
 - Keep going => part3
 - Stop reading => END
 
 ~ part3
-I skip ahead by another few pages since it just decribes her moving in.
+I skip ahead by another few pages since it just describes her moving in.
 "Day XV - More training with The Fighter. My performance was terrible, I couldn't stop thinking about what The Mage was saying to me the past few days. But before I could voice my frustrations, a new threat emerged."
 "A shambling zombie in red armor wandered into the village, muttering about vile magic and attacking the villagers, shouting about freeing them from some kind of spell. They didn't last long when Fighter and I teamed up."
 "With no better place to put it, we tied it up and left it in the storeroom for now. It kept shouting about evil magic, and The Fighter seemed upset by something. They left before I got the chance to ask."
@@ -45,7 +45,7 @@ do MusicController.music_stop()
 	[speed=0.5]"I felt it all coming back. I just wanted to throw it as far as I could and forget everything so I could pretend like I was just another survivor in this wasteland. But he stopped me."
 	[speed=0.5]"And then he asked me to tell him about her."
 	[speed=0.5]"I suppose I didn't remember everything about my life when I arrived here. I had forgotten that real friends were those who would sacrifice their well-being for each other. So I suppose my closest friend is the zombie, now."
-	[speed=0.5]"I haven't given up hope that I'll get out of the wastes someday, but my persective has changed. There's no need to actively attempt to escape anymore, especially not when there are people willing to create communities."
+	[speed=0.5]"I haven't given up hope that I'll get out of the wastes someday, but my perspective has changed. There's no need to actively attempt to escape anymore, especially not when there are people willing to create communities."
 	[speed=0.5]"It'll be strange, though. Rather than returning to a place I already knew, I'll be going there for the first time. Like changing your residence." 
 	[speed=0.5]"Will this knowledge stay with me when I arrive? Are we always actors, always aware that our lives are predetermined?"
 	[speed=0.5]"Or maybe it's just the stories that are predetermined. Maybe we all live our lives as normal until we're given a narrative to act out. Maybe what The Creator crafts is just one day in our lives. I like that thought."
@@ -53,7 +53,7 @@ do MusicController.music_stop()
 	...The rest of the pages are blank. There's a photo tucked in-between the last entry and the blank pages afterwards, though.
 	There's two young fox girls, standing side by side in school uniforms. Button up shirts, skirts, matching backpacks, and apparently their school's dress code required them to tie their hair...fur, back behind their head.
 	One of the girls is unmistakably Zulie. She has a scowl as she looks down at her outfit. She looks like she wants to rip it to shreds.
-	I don't know who the other girl is. She has a slightly lighter fur color and white around her muzzle, unlike zulie's pure orange. They're smiling, they think Zulie's reaction to the uniform is funny. Or at least amusing.
+	I don't know who the other girl is. She has a slightly lighter fur color and white around her muzzle, unlike Zulie's pure orange. They're smiling, they think Zulie's reaction to the uniform is funny. Or at least amusing.
 	I turn the photo over and see something written on the back.
 	[speed=0.2]"Kira & Zulie's first day of 1st grade."
 	... => finish2

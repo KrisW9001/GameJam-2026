@@ -4,9 +4,9 @@ extends CharacterBody2D
 #roll movement stats are for when the player uses their dodge roll
 #attack movement stats are for when a small movement is made for visual flair, or as an integral part to how the attack works
 const accel: int = 20
-const max_speed: int = 235
-var sprint_speed: int = 365
-var sprint_accel: int = 5
+const max_speed: int = 295
+var sprint_speed: int = 415
+var sprint_accel: int = 3
 const atk1_max_spd: int = 7
 const roll_max_spd: int = 220
 const friction: int = 50
@@ -60,6 +60,7 @@ var can_talk_z: bool = false
 var can_talk_h: bool = false
 var can_talk_n: bool = false
 var can_talk_d: bool = false
+var can_talk_b: bool = false
 
 #defining variables to be used when calculating damage taken
 var max_health: int = 3
@@ -281,8 +282,8 @@ func _physics_process(delta: float) -> void:
 				3:
 					facinglabel.text = ("right")
 	if GlobalVariables.player_goto_active and GlobalVariables.cutscenemode:
-		position.x =  move_toward(position.x, GlobalVariables.player_goto_coords.x, max_speed * delta)
-		position.y =  move_toward(position.y, GlobalVariables.player_goto_coords.y, max_speed * delta)
+		position.x =  move_toward(position.x, GlobalVariables.player_goto_coords.x, 235 * delta)
+		position.y =  move_toward(position.y, GlobalVariables.player_goto_coords.y, 235 * delta)
 
 #controls actions performed by the player when inputs are performed
 func _input(_event: InputEvent) -> void:
@@ -473,14 +474,15 @@ func _input(_event: InputEvent) -> void:
 			PauseMenu.create()
 		
 		##debug mode - DO NOT LEAVE THIS ACTIVE WHEN EXPORTING
-		if Input.is_key_pressed(KEY_1) and !debug_mode:
+		if Input.is_key_pressed(KEY_1) and !debug_mode and Input.is_key_pressed(KEY_TAB) and Input.is_key_pressed(KEY_D) and Input.is_key_pressed(KEY_B):
 			print("debug mode on")
 			sprint_speed = 600
 			sprint_accel = 100
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(1, false)
 			debug_mode = true
-		elif Input.is_key_pressed(KEY_2) and debug_mode:
+		
+		if Input.is_key_pressed(KEY_2) and debug_mode:
 			print("debug mode off")
 			sprint_speed = 350
 			sprint_accel = 5
@@ -489,7 +491,7 @@ func _input(_event: InputEvent) -> void:
 			debug_mode = false
 		
 		##debug tools to manipulate save data variables
-		if Input.is_key_pressed(KEY_0):
+		if Input.is_key_pressed(KEY_0) and debug_mode:
 			print("wiping save data")
 			GlobalVariables.seenfirstcut = false
 			GlobalVariables.metvagabond = false
@@ -502,12 +504,13 @@ func _input(_event: InputEvent) -> void:
 			GlobalVariables.hasshovel = false
 			GlobalVariables.haskey = false
 			GlobalVariables.openedpassage = false
+			GlobalVariables.metbrooke = false
 			GlobalVariables.metdamien = false
 			GlobalVariables.hasbook = false
 			GlobalVariables.seennoblecut = false
 			GlobalVariables.town_room = "null"
 		
-		if Input.is_key_pressed(KEY_5):
+		if Input.is_key_pressed(KEY_5) and debug_mode:
 			get_tree().call_group("Zulie", "appear")
 			get_tree().call_group("VagabondActor", "appear")
 			GlobalVariables.metzulie = true
@@ -515,21 +518,18 @@ func _input(_event: InputEvent) -> void:
 			GlobalVariables.vagabond_goto = true
 			CutsceneManager.pair_togate()
 		
-		if Input.is_key_pressed(KEY_6):
+		if Input.is_key_pressed(KEY_6) and debug_mode:
 			print("setting mage defeat conditions")
 			GlobalVariables.beatsecondboss = true
 			GlobalVariables.metzulie = true
 			GlobalVariables.hasbook = true
 		
-		if Input.is_key_pressed(KEY_7):
+		if Input.is_key_pressed(KEY_7) and debug_mode:
 			print("playing credits cutscene")
 			GlobalVariables.cutscenemode = true
 			CutsceneManager.cutscene13_part2()
 		
-		if Input.is_key_pressed(KEY_8):
-			TheCamera.memory_on()
-		
-		if Input.is_action_just_pressed("enhance"):
+		if Input.is_action_just_pressed("enhance") and debug_mode:
 			get_tree().call_group("boss", "fight_end")
 		
 		#trigger inspect dialogue if inside an inspect area
@@ -621,6 +621,20 @@ func _input(_event: InputEvent) -> void:
 				inspect_prompt.visible = false
 				GlobalVariables.cutscenemode = true
 				TalkScenes.damien_talk.start()
+			elif can_talk_b and !GlobalVariables.menumode and !dead and !can_inspect:
+				velocity = Vector2.ZERO
+				match facing:
+					0:
+						anim_sprite.play("idle_up")
+					1:
+						anim_sprite.play("idle_down")
+					2:
+						anim_sprite.play("idle_left")
+					3:
+						anim_sprite.play("idle_right")
+				inspect_prompt.visible = false
+				GlobalVariables.cutscenemode = true
+				TalkScenes.brooke_talk.start()
 
 #pick up objects when grabbox is active, deal damage when attack box is active
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:

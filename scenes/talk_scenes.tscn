@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bb2x5gq7vn8d7" path="res://scenes/him_talk.tscn" id="10_yx4il"]
 [ext_resource type="PackedScene" uid="uid://bbiqnglchm32m" path="res://scenes/noble_talk.tscn" id="11_0d65g"]
 [ext_resource type="PackedScene" uid="uid://cs25bxucy7dhf" path="res://scenes/creator_talk.tscn" id="12_oh4qi"]
+[ext_resource type="PackedScene" uid="uid://c7fpa2lshxmif" path="res://scenes/brooke_talk.tscn" id="13_43vur"]
 
 [node name="TalkScenes" type="Node" unique_id=60612790]
 script = ExtResource("1_rfbig")
@@ -37,3 +38,5 @@ script = ExtResource("1_rfbig")
 [node name="NobleTalk" parent="." unique_id=1860672741 instance=ExtResource("11_0d65g")]
 
 [node name="CreatorTalk" parent="." unique_id=1956826583 instance=ExtResource("12_oh4qi")]
+
+[node name="BrookeTalk" parent="." unique_id=247517023 instance=ExtResource("13_43vur")]

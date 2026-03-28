@@ -1,5 +1,5 @@
 ~ start
-[speed=0.5]What do you hope to accomplish with your little story? Noone will listen to...
+[speed=0.5]What do you hope to accomplish with your little story? No one will listen to...
 [speed=0.5]...N-no! Stay back! [shake rate=20 level=10]Get away from me![/shake]
 do sfx_crunch()
 set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/finalmemory_protag_11.dialogue")

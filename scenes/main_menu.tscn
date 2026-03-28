@@ -458,7 +458,6 @@ stretch_mode = 0
 libraries/ = SubResource("AnimationLibrary_lgwnu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1716763988]
-volume_db = -20.0
 bus = &"Sound Effects"
 
 [connection signal="focus_entered" from="CanvasLayer/newgame" to="." method="_on_newgame_focus_entered"]

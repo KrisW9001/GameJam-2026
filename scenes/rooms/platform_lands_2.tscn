@@ -651,6 +651,9 @@ sources/1 = SubResource("TileSetAtlasSource_xxaau")
 sources/2 = SubResource("TileSetAtlasSource_1ps1c")
 sources/3 = SubResource("TileSetAtlasSource_d861w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn5kc"]
+size = Vector2(747.0514, 17.704834)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_necoh"]
 texture = ExtResource("3_3tthe")
 0:0/0 = 0
@@ -3171,9 +3174,6 @@ size = Vector2(86, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74vq3"]
 size = Vector2(86, 63)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn5kc"]
-size = Vector2(747.0514, 17.704834)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is77r"]
 size = Vector2(891.48206, 115.5)
 
@@ -3207,6 +3207,19 @@ tile_map_data = PackedByteArray("AAD8/wIAAQAAAAIAAAD9/wIAAQAAAAMAAAD9/wMAAQAAAAI
 tile_set = SubResource("TileSet_necoh")
 script = ExtResource("7_wet4o")
 cur_hp = 3
+
+[node name="InspectArea3" parent="BreakableWalls" unique_id=1404225831 instance=ExtResource("21_g02gd")]
+position = Vector2(2032.7998, -349.19998)
+rotation = 0.48250645
+scale = Vector2(0.39999995, 0.39999995)
+whichdialogue = ExtResource("27_tn3di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakableWalls/InspectArea3" unique_id=1012330137]
+position = Vector2(-5.5256042, -19.147583)
+rotation = -0.014903357
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_bn5kc")
+debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=1528886293]
 z_index = -2
@@ -3323,18 +3336,6 @@ debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 position = Vector2(-240, -408)
 texture = ExtResource("25_w6d14")
 whichdialogue = ExtResource("26_tn3di")
-
-[node name="InspectArea3" parent="Triggers" unique_id=1404225831 instance=ExtResource("21_g02gd")]
-position = Vector2(1002.99994, -912)
-rotation = 0.48250642
-whichdialogue = ExtResource("27_tn3di")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea3" unique_id=1012330137]
-position = Vector2(-5.5256042, -19.147583)
-rotation = -0.014903357
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_bn5kc")
-debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
 [node name="RoomTrigger" parent="Triggers" unique_id=1487844617 instance=ExtResource("34_p1os0")]
 position = Vector2(1105, -1417)

@@ -45,6 +45,6 @@ randomness = 0.2
 process_material = SubResource("ParticleProcessMaterial_h2qk3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=465592056]
-volume_db = -40.0
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

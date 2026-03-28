@@ -2,6 +2,7 @@ extends TileMapLayer
 
 @export var whichwall: int
 @export var cur_hp: int
+@export var respawn_coords: Vector2
 
 func ready() -> void:
 	cur_hp = 3
@@ -17,5 +18,6 @@ func killwalls() -> void:
 	position.y -= 50000
 
 func respawn() -> void:
-	position.x += 50000
-	position.y += 50000
+	position.x = respawn_coords.x
+	position.y = respawn_coords.y
+	cur_hp = 3

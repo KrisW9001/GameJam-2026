@@ -53,6 +53,7 @@ var mushroomquest: bool = false #set after getting mushroom "quest" from the sho
 var hasmushroom: bool = false #part 1 of village sequence, getting uncorrupted mushroom
 var hasshovel: bool = false #part 2 of village sequence, getting shovel
 var openedpassage: bool = false #dug up the passage in the village
+var metbrooke: bool = false #met brooke in her cameo under the town
 var haskey: bool = false #part 3 of village sequence, getting key on top of the storehouse
 var metdamien: bool = false #part 4 of village sequence, meeting damien and getting scroll
 var hasbook: bool = false #final part of village sequence, obtaining the spellbook

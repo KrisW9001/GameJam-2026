@@ -18,7 +18,7 @@ if GlobalVariables.metvagabond == false
 		???: That explains the predicament. Do not fret, your confusion is warranted.
 	???: Firstly, rest assured I am not your enemy. There is a group of self-proclaimed "Heroes" that poses a greater danger to all of us.
 	???: The fiends that haunt these wastelands are a threat to us all, and creating meaningless conflicts between each other only serves to further their goals.
-	???: Ah, but I have yet to introduce myself. In these dark times, comraderie is a comfort most welcome.
+	???: Ah, but I have yet to introduce myself. In these dark times, comradery is a comfort most welcome.
 	Vagabond: My name has been lost to time, but my title has not. I am a vagabond, traveling wherever fate may carry me. Or in lieu of fate, my own whims.
 	Vagabond: Or, if you are anything like my young friend, just about any moniker you can imagine for a man in red armor would suffice. And you are...?
 	- ...
@@ -55,19 +55,19 @@ if GlobalVariables.metvagabond == false
 			Vagabond: Indeed! And so long as The Creator breathes, the elements of the tale can still be given their final form.
 			Vagabond: Someday...in some form...I'm certain of it. => branch
 		- A...vision? Yeah right.
-			Vagabond: It may seem strange to you, but in due time you will recieve them as well. I can't say when or how, but many of your questions will be answered by them.
+			Vagabond: It may seem strange to you, but in due time you will receive them as well. I can't say when or how, but many of your questions will be answered by them.
 			Vagabond: What you do when you know the truth...I pray that you won't err in the manner that some ruffians have. => branch
 	- Tell me about "those fiends".
 		Vagabond: Have I yet to elaborate on them? Perhaps I should have started by warning you of them.
 		Vagabond: Well...my allusion to stage plays does little to explain them...But their intentions are unmistakable.
 		Vagabond: Those four "Heroes" have become blinded by delusion, preaching of [wave amp=25 freq=5]"truth"[/wave] and [wave amp=25 freq=5]"higher existence"[/wave] exhibited only by them, untainted by The Creator's failings.
-		Vagabond: And of course, their delusions have led them to believe the eradication of any and all who do not allign with their impossible standards is just.
+		Vagabond: And of course, their delusions have led them to believe the eradication of any and all who do not align with their impossible standards is just.
 		Vagabond: They were not always this violent...[shake rate=20 level=10]but their actions are unforgivable[/shake]. Avoid them if you are able to, and I will assist you whenever possible. => branch
 	- Your young friend?
 		Vagabond: It's a shame she isn't here to greet you. Her name is Zulie, a proficient fighter in every sense, though somewhat brash.
-		Vagabond: We were seperated when one of the "Heroes" decided their hunger for chaos was not yet sated. I fled here in search of safety.
+		Vagabond: We were separated when one of the "Heroes" decided their hunger for chaos was not yet sated. I fled here in search of safety.
 		Vagabond: Zulie's greatest strength is her agility, even when outnumbered she's nearly impossible to defeat. We'll meet again once I've recovered my strength.
-		Vagabond: I suspect you and her would get along well. If nothing else, she would take a likiing to you more than I! [wave amp=25 freq=5]Haha![/wave] => branch
+		Vagabond: I suspect you and her would get along well. If nothing else, she would take a liking to you more than I! [wave amp=25 freq=5]Haha![/wave] => branch
 	- I want to get out of here.
 		Vagabond: I'm afraid I can't be of much help in that regard. The passage I used to enter this place locked behind me, and its function is foreign to me.
 		Vagabond: It appeared to have some sort of panel that requested something. You're welcome to try your hand with it, I would appreciate if you were able to operate it.
@@ -80,13 +80,13 @@ if GlobalVariables.metvagabond == true
 	Vagabond: Hm? Is there something else you needed?
 	- Remind me where the exit is?
 		Vagabond: Of course. I entered from a passage to the east, but it closed behind me.
-		Vagabond: I'm unfamiliar with the technology, so I reccomend inspecting it for yourself.
+		Vagabond: I'm unfamiliar with the technology, so I recommend inspecting it for yourself.
 		do CutsceneManager.endcutscene()
 		=> END
 		Vagabond: I can assist more once I've regained my strength, in the meantime it would be greatly appreciated if you could determine how the device is operated.
 	- Can I ask something else?
 		Vagabond: You most certainly can. => branch
-	- Nevermind.
+	- Never mind.
 		Vagabond: Well, be cautious until I'll be fit to fight again.
 		do CutsceneManager.endcutscene()
 		=> END

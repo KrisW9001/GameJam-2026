@@ -1,9 +1,9 @@
 ~ start
 [speed=0.5]I'm not done.
-[speed=0.5]He promised everything. That every single problem I could possibly have would dissapear when I signed the paper.
+[speed=0.5]He promised everything. That every single problem I could possibly have would disappear when I signed the paper.
 [speed=0.5]And do you know what I said?
 [speed=0.5]"This sounds like the fakest thing I've ever heard. Even if this stuff is real, you expect me to believe this is gonna get my life back on track?"
-[speed=0.5]And then, He pivoted. His smile dissapeared and he tried to act all sentimenatal. "Think of the good this will do for the world!"
+[speed=0.5]And then, He pivoted. His smile was gone and he tried to act all sentimental. "Think of the good this will do for the world!"
 [speed=0.5]And I still didn't buy it.
 set TalkScenes.him_talk.dialogue_resource = load("res://dialogue/finalmemory_Him_10.dialogue")
 do TalkScenes.him_talk.start()

@@ -18,7 +18,7 @@ do get_tree().call_group("Player", "idle_down")
 [speed=0.5]That hopelessness is their greatest weapon. The ability to get under your skin and in your head, to convince you that you've lost before you've even tried.
 [speed=0.5]But now...Now they can't tell me no. With my own two hands, I can do anything.
 [speed=0.5]With that little push, a little help from a place I never thought I'd get it from, I can make my dreams into reality. And I dream of freedom from tyranny.
-[speed=0.5]...Maybe I can't make my destiny come true. My story doesn't exist, the world made for it hasn't been built. But I can still fight the tyranny I've seen here.
+[speed=0.5]...Maybe I can't make my destiny come true. My story doesn't exist; the world made for it hasn't been built. But I can still fight the tyranny I've seen here.
 [speed=0.5]It has a different face, a different name...but they act the same. Smile as wide as they can when they have what they want, throw insults at you when they don't.
 [speed=0.5]The cage I cornered myself into is gone. I know exactly who I am, what I'm capable of, and why I should do it.
 do get_tree().call_group("Player", "item_pose")

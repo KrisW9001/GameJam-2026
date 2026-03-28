@@ -227,7 +227,6 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1386133971]
 unique_name_in_owner = true
-volume_db = -20.0
 bus = &"Sound Effects"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

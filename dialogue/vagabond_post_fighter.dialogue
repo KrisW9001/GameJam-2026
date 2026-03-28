@@ -5,7 +5,7 @@ set GlobalVariables.vagabond_goto = false
 #conditional dialogue if the player talked to the vagabond earlier
 if GlobalVariables.metvagabond == true
 	Vagabond: I came as soon as I heard the commotion! Were you attacked by those fiends? [shake rate=20 level=10]Where are they?![/shake]
-	Vagabond: ...You look disturbed, friend. What occured here?
+	Vagabond: ...You look disturbed, friend. What occurred here?
 	- I took care of it.
 		Vagabond: I...I beg your pardon? I thought I heard one of the False Heroes' voices.
 		Vagabond: ...
@@ -26,7 +26,7 @@ if GlobalVariables.metvagabond == true
 		Vagabond: 'Tis a shame, that it should come to this. But such is the nature of wishing what could have been.
 		Vagabond: ...Your expression defies the silence. I suppose you deserve to know, so you can avoid repeating the past. => explain
 	- I had a vision of a memory.
-		Vagabond: That is good news, friend. Although, may I ask how and when it occured to you?
+		Vagabond: That is good news, friend. Although, may I ask how and when it occurred to you?
 		Vagabond: ...
 		Vagabond: Defeating one of the False Heroes is impressive...but this vision you had is of much greater importance, in my opinion.
 		Vagabond: You do not yet have the full picture, so please...proceed with caution.
@@ -55,18 +55,18 @@ if GlobalVariables.metvagabond == true
 				Vagabond: I do not believe you were psychotic. This is a warning, more than anything else.
 				The False Heroes once made similar reassurances of sanity...and then they became what they are. => explain
 			- What do you mean?
-				Vagabond: I refer to the decisions that led to the corruption of the poor, lost soul you just encountered. Desicions that wound the ego and taint the mind. => explain
+				Vagabond: I refer to the decisions that led to the corruption of the poor, lost soul you just encountered. Decisions that wound the ego and taint the mind. => explain
 	~ explain
 	do MusicController.vol_reset()
 	do MusicController.play_moody_music()
-	Vagabond: They were once simply fellow castaways. Another band of misfits mong a sea of their like.
+	Vagabond: They were once simply fellow castaways. Another band of misfits among a sea of their like.
 	Vagabond: Many of our kind were made by The Creator, created with a specific role in mind that we would play...they were not. Drifters, some called them.
 	Vagabond: In essence, their role is to assist in giving worlds their solid foundation. The bedrock on which all else is built upon...A starting point.
 	Vagabond: I cannot say for certain when or why...but they came to the conclusion that this was no longer the case. They believed themselves superior by transcending The Creator's will.
-	Vagabond: At one moment they were comerades, rough around the edges but still allies...The next, [shake rate=20 level=10]they killed on sight and gloated[/shake].
+	Vagabond: At one moment they were comrades, rough around the edges but still allies...The next, [shake rate=20 level=10]they killed on sight and gloated[/shake].
 	Vagabond: They are loathsome, all four of them. Our situation is already dire in this limbo of existence, and they decide to add to the challenge of survival tenfold.
-	Vagabond: I will never forgive them for their betrayal. They gain nothing from this charade and benefit noone. There is only suffering.
-	Vagabond: ...And unless the False Heroes are stopped, soon there will be noone left to suffer but themselves.
+	Vagabond: I will never forgive them for their betrayal. They gain nothing from this charade and benefit no one. There is only suffering.
+	Vagabond: ...And unless the False Heroes are stopped, soon there will be no one left to suffer but themselves.
 	- They're as good as dead.
 		Vagabond: I appreciate your enthusiasm, but do not forget my warnings lest they become wasted breath.
 		Vagabond: Powerful allies in such troubling times is greatly appreciated. For your sake, [shake rate=20 level=10]do not let them become your enemies.[/shake]
@@ -129,7 +129,7 @@ Vagabond: What would you like to know?
 	Vagabond: Have I yet to elaborate on them? Perhaps I should have started by warning you of them.
 	Vagabond: Well...my allusion to stage plays does little to explain them...But their intentions are unmistakable.
 	Vagabond: Those four "Heroes" have become blinded by delusion, preaching of [wave amp=25 freq=5]"truth"[/wave] and [wave amp=25 freq=5]"higher existence"[/wave] exhibited only by them, untainted by The Creator's failings.
-	Vagabond: And of course, their delusions have led them to believe the eradication of any and all who do not allign with their impossible standards is just.
+	Vagabond: And of course, their delusions have led them to believe the eradication of any and all who do not align with their impossible standards is just.
 	Vagabond: They were not always this violent...[shake rate=20 level=10]but their actions are unforgivable[/shake]. Avoid them if you are able to, and I will assist you whenever possible. => ask
 - Who are you?
 	Vagabond: There's not much to be said. My destiny is still unclear, but from what I have been able to recall...

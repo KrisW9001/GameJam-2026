@@ -17,6 +17,7 @@ class_name SaveDataResource
 @export var hasmushroom: bool = false
 @export var hasshovel: bool = false
 @export var openedpassage: bool = false
+@export var metbrooke: bool = false
 @export var haskey: bool = false
 @export var metdamien: bool = false
 @export var hasbook: bool = false

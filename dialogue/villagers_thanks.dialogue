@@ -1,4 +1,5 @@
 ~ start
+do get_tree().call_group("Player", "idle_down")
 do MusicController.play_town_music()
 Guy: Marcus! You did it! You saved us all!
 Woman: You're my hero! No...OUR hero! You're amazing!
@@ -18,5 +19,6 @@ Shopkeeper: Marcus, was it? We can't even begin to express how thankful we are! 
 	Shopkeeper: Take all the time you need to get ready!
 	Guy: You got this, Marcus!
 	Woman: [shake rate=20 level=10]GIVE EM WHAT FOR!!!![/shake]
+do MusicController.music_fadeout_slow()
 do CutsceneManager.endcutscene()
 => END

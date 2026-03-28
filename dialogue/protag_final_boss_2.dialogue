@@ -1,7 +1,7 @@
 ~ start
 do MusicController.music_stop()
 set GlobalVariables.player_goto_coords = Vector2(0, -2395)
-Marcus: I've noticed all of you have some annoying quirk about how you talk. And it sounds like yours is asssuming you know everything.
+Marcus: I've noticed all of you have some annoying quirk about how you talk. And it sounds like yours is assuming you know everything.
 set TalkScenes.noble_talk.dialogue_resource = load("res://dialogue/noble_final_boss_2.dialogue")
 do TalkScenes.noble_talk.start()
 => END

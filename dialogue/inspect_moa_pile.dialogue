@@ -1,4 +1,4 @@
 ~ start
-A bunch of files that look like character design stuff. There's a bunch of teens in white coats. Some drawings show them doing magic stuff like arcing lightning and launching walls of ice around.
+A bunch of files that look like character design stuff. There's a bunch of teens in white coats. Some drawings show them doing magic stuff like arcing lightning from their hands and launching walls of ice around.
 do CutsceneManager.endcutscene()
 => END

@@ -2,7 +2,7 @@
 set GlobalVariables.menutype = "Dialogue"
 "FOOD SERVICE STAFF ONLY - TRESPASSERS WILL BE SUBJECTED TO A LEGAL FEE OF 200$ AT MINIMUM."
 Is that before or after they kick you out? ...hey, there's a handwritten note.
-"Due to reoccuring incidents, subway management would like to make the following absolutely clear..."
+"Due to reoccurring  incidents, subway management would like to make the following absolutely clear..."
 "If an item is not on display, [shake rate=20 level=10]IT IS NOT IN STOCK. PLEASE STOP ASKING TO CHECK IN THE BACK[/shake]."
 set GlobalVariables.cutscenemode = false
 => END

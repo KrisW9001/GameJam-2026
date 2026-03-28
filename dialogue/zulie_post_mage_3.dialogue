@@ -5,7 +5,7 @@ do get_tree().call_group("Zulie", "idle_l")
 do get_tree().call_group("Player", "idle_r")
 Zulie: We're so close to stopping The Heroes' rampage for good. We can't get caught up in something trivial now. We have to keep going!
 Zulie: The village is close by. We have the chance to make a meaningful impact and catch them off guard, so I'll go ahead and scout it out.
-Zulie: Come on! We dont have any time to lose!
+Zulie: Come on! We don't have any time to lose!
 set TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_post_mage_3.dialogue")
 do TalkScenes.vagabond_talk.start()
 => END

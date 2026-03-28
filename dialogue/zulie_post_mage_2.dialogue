@@ -1,6 +1,6 @@
 ~ start
 Zulie: Let's hear the full story. We have more than enough time, now that The Mage and their minions are gone.
-Zulie: Take as much time as you need Marcus, But we need to know everything that you remember up till now. With no exceptions.
+Zulie: Take as much time as you need Marcus, but we need to know everything that you remember up till now. With no exceptions.
 set TalkScenes.protag_talk.dialogue_resource = load("res://dialogue/post_mage_transition.dialogue")
 do TalkScenes.protag_talk.start()
 => END

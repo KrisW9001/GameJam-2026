@@ -3,7 +3,7 @@ do MusicController.vol_reset()
 do MusicController.play_zulie_theme()
 do get_tree().call_group("Zulie", "crouch_l")
 do get_tree().call_group("VagabondActor", "crouch_noweapon_l")
-Vagabond: [shake rate=20 level=10]Nghh...[/shake] How embarrasing...I should be giving that coward what he deserves, not cowering and getting stitches!
+Vagabond: [shake rate=20 level=10]Nghh...[/shake] How embarrassing...I should be giving that coward what he deserves, not cowering myself and getting stitches!
 set TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_precredits.dialogue")
 set TalkScenes.zulie_talk.start()
 => END

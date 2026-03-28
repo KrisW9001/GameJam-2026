@@ -1,5 +1,5 @@
 ~ start
-Marcus: [speed=0.2][shake rate=20 level=10]I'm a great guy when you aren't trying to kill me.[/shake]
+Marcus: [speed=0.4][shake rate=20 level=10]I'm a great guy when you aren't trying to kill me.[/shake]
 do sfx_meaty_die()
 do TheCamera.finalboss_cut_3()
 => END

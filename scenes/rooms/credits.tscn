@@ -308,7 +308,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_my18k"]
 resource_name = "credits_scroll"
-length = 87.0
+length = 86.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -316,7 +316,7 @@ tracks/0/path = NodePath("actual credits/title:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -328,7 +328,7 @@ tracks/1/path = NodePath("actual credits/subtitle:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -340,10 +340,10 @@ tracks/2/path = NodePath("actual credits/RichTextLabel:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 87),
+"times": PackedFloat32Array(0, 86),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-575, 20), Vector2(-575, -9650.976)]
+"values": [Vector2(-485, -1450), Vector2(-485, -8200.64)]
 }
 
 [sub_resource type="Animation" id="Animation_47g4r"]
@@ -463,10 +463,10 @@ color = Color(0, 0, 0, 1)
 texture_filter = 1
 offset_left = -575.0
 offset_top = 318.0
-offset_right = 574.0
+offset_right = 403.0
 offset_bottom = 9953.0
 theme_override_fonts/normal_font = ExtResource("5_5h102")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 20
 text = "Created by Thunderspark,
 After finally getting the courage to try.
 
@@ -474,7 +474,8 @@ After finally getting the courage to try.
 
 
 
-All original Characters by Thunderspark
+Marcus, Zulie and Vagabond created by Thunderspark
+Brooke created by Cutiemonica
 
 
 
@@ -696,6 +697,7 @@ LightningSizzle
 CutieMonica
 FoxxArie
 Cabl
+Genric
 
 
 
@@ -734,7 +736,7 @@ You're probably sick of hearing that shtick, huh?
 
 
 
-Well, I'm not a corporation. Playing my game really makes a difference in my life.
+Well, I'm not a corporation. Playing my game really means the world to me.
 
 
 

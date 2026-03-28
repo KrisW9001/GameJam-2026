@@ -166,5 +166,5 @@ animation = &"strike"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=273989887]
 stream = ExtResource("3_vsje7")
-volume_db = -20.0
+volume_db = -10.0
 bus = &"Sound Effects"

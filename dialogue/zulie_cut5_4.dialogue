@@ -17,8 +17,6 @@ Zulie: Once you're ready to go, let us know and I'll take it down.
 do MusicController.music_fadein()
 do MusicController.play_level2_music()
 set GlobalVariables.zulie_goto = true
-#set GlobalVariables.vagabond_coords = Vector2(3500, 1950)
-#set GlobalVariables.zulie_coords = Vector2(3500, 2200)
 set GlobalVariables.zulie_coords = Vector2(2760, 1575)
 do get_tree().call_group("Zulie", "walk_r")
 do CutsceneManager.pair_togate()

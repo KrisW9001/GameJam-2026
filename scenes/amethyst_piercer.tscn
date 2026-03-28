@@ -200,7 +200,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_jxwds")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=843440871]
-volume_db = -30.0
+volume_db = -10.0
 pitch_scale = 2.0
 bus = &"Sound Effects"
 

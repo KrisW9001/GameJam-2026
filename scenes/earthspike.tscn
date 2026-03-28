@@ -74,5 +74,4 @@ shape = SubResource("RectangleShape2D_3jefk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1680577007]
 stream = ExtResource("3_srseb")
-volume_db = -20.0
 bus = &"Sound Effects"

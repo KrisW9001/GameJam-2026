@@ -3,7 +3,7 @@ do MusicController.music_fadeout_fast()
 ???: First and foremost, I have no ill intent when I say you are not the one I was expecting to see. In times like these, I don't have the luxury of being picky.
 - Huh?
 - Who are you?
-???: Either way, I'm surprised it took this long. The integrity of the passage was comprimised by The Healer's spell, but I suppose his hubris kept him from being thorough.
+???: Either way, I'm surprised it took this long. The integrity of the passage was compromised by The Healer's spell, but I suppose his hubris kept him from being thorough.
 do MusicController.music_fadein()
 do MusicController.play_damien_theme()
 ???: You came here at the perfect time, don't let my musing make you think otherwise. I may have a solution to the current predicament.
@@ -32,7 +32,7 @@ Damien: Do you know what this is?
 - I dunno.
 - No, tell me.
 - Are you gonna explain it no matter what I say?
-Damien: Incribed into this tome is a warding spell powerful enough to return the village to normal. It's only just now been completed.
+Damien: Inscribed into this tome is a warding spell powerful enough to return the village to normal. It's only just now been completed.
 Damien: However, there's been a complication. While developing it, I came to the conclusion that one of two detrimental effects must take place.
 do get_tree().call_group("Damien", "idle_left")
 Damien: Either the spell lacks the required potency to completely reverse The Healer's spell...or it must use the caster for additional mana.

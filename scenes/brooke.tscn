@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://d75kx5awqu05"]
+
+[ext_resource type="Texture2D" uid="uid://cn4xxxn8sm0wo" path="res://assets/temp/brookesheet.png" id="1_8bvnl"]
+[ext_resource type="Script" uid="uid://caxsx2eabqs6p" path="res://scripts/brooke.gd" id="1_suoc2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suoc2"]
+atlas = ExtResource("1_8bvnl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a3un"]
+atlas = ExtResource("1_8bvnl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxx1x"]
+atlas = ExtResource("1_8bvnl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjx8r"]
+atlas = ExtResource("1_8bvnl")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4odqc"]
+atlas = ExtResource("1_8bvnl")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5802r"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_7a3un")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_lxx1x")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_7a3un")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_suoc2")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4odqc")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vjx8r")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0orj"]
+radius = 59.008472
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic22l"]
+size = Vector2(27, 50)
+
+[node name="Brooke" type="CharacterBody2D" unique_id=1822442975]
+collision_mask = 2
+script = ExtResource("1_suoc2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2012958875 groups=["Brooke"]]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_5802r")
+animation = &"idle_left"
+autoplay = "idle_left"
+frame = 5
+frame_progress = 0.05944161
+
+[node name="Area2D" type="Area2D" parent="." unique_id=669170150]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1139855950]
+shape = SubResource("CircleShape2D_v0orj")
+debug_color = Color(0.6575431, 0.5163705, 1.92523e-07, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1492007820]
+position = Vector2(-1.5, -3)
+shape = SubResource("RectangleShape2D_ic22l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

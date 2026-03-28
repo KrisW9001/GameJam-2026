@@ -1558,6 +1558,7 @@ tile_map_data = PackedByteArray("AAASABMAAQAAAAAAAAATABMAAQAAAAAAAAAUABMAAQAAAAA
 tile_set = SubResource("TileSet_ngtda")
 script = ExtResource("5_1egqw")
 cur_hp = 3
+respawn_coords = Vector2(-616, -6231)
 
 [node name="TestObject" parent="." unique_id=629561269 instance=ExtResource("6_tqh5u")]
 position = Vector2(-851, -4736)
@@ -1744,7 +1745,7 @@ spawn_coords = Vector2(662, -4797)
 
 [node name="wizard3" parent="enemies" unique_id=557191464 instance=ExtResource("31_8oer2")]
 position = Vector2(-1770, -4715)
-spawn_coords = Vector2(349, -3055)
+spawn_coords = Vector2(-1770, -4715)
 
 [node name="wizard4" parent="enemies" unique_id=1687202496 instance=ExtResource("31_8oer2")]
 position = Vector2(1128, -5096)

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://brtqv6ram1mp8"
+path="res://.godot/imported/brooke_cameo.dialogue-57faa0770e449eeb008870bd200c7512.tres"
+
+[deps]
+
+source_file="res://dialogue/brooke_cameo.dialogue"
+dest_files=["res://.godot/imported/brooke_cameo.dialogue-57faa0770e449eeb008870bd200c7512.tres"]
+
+[params]
+
+defaults=true

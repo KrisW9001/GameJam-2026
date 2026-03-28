@@ -570,7 +570,6 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_v3hpu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=496504899]
-volume_db = -20.0
 bus = &"Sound Effects"
 
 [connection signal="focus_entered" from="CanvasLayer/retry" to="." method="_on_retry_focus_entered"]

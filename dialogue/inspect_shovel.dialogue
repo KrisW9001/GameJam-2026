@@ -6,7 +6,7 @@ if GlobalVariables.hasmushroom == false:
 if GlobalVariables.hasmushroom == true and GlobalVariables.hasshovel == false:
 	do get_tree().call_group("Player", "item_pose")
 	do sfx_success()
-	I guess I did what the shopkeep wanted? Well, at the very least I can take this without him giving me that look. I got a shovel!
+	I guess I did what the shopkeeper wanted? Well, at the very least I can take this without him giving me that look. I got a shovel!
 	do CutsceneManager.endcutscene()
 	set GlobalVariables.hasshovel = true
 	do get_tree().call_group("shovel", "invis")

@@ -18,5 +18,3 @@ func _on_body_entered(_body: CharacterBody2D) -> void:
 		TheCamera.shake()
 		audio_player.stream = damage_sfx
 		audio_player.play()
-		await get_tree().create_timer(1.06).timeout
-		audio_player.volume_db += 10

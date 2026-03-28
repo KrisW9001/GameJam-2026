@@ -1,0 +1,58 @@
+~ start
+if GlobalVariables.metbrooke == false:
+	???: Huh? Oh, hey. Didn't think anyone would come down here after...well, you know. 
+	???: How's it looking up there? Is baldie's corruption stuff still spreading?
+	- No, but it's pretty bad.
+		???: Yeah, no kidding. I guess peace and quiet was just too much to ask for from those "Heroes" or whatever they're calling themselves now.
+	- You should probably stay down here.
+		???: Wasn't planning on going up anytime soon. I'm doing just fine.
+	???: Come to think of it, I haven't seen anyone like you around before they started their witch hunt.
+	Brooke: I'm Brooke. And as for why I'm down here...I just like keeping to myself. Plus there's...all that happening on the surface.
+	Brooke: I'm surprised you were able to get down here with those jerks running around looking for a fight. What's the situation like?
+	Brooke: ...
+	Brooke: Huh. Looks like their "perfect forms" aren't so perfect after all. Serves 'em right.
+	Brooke: Now as important as your little mission is, it sounds like there's no need to rush right now. I wouldn't mind the company if you wanna chat.
+	- Sure.
+		Brooke: Cool. I was pretty bored anyways. => ask
+	- Nah.
+		Brooke: Suit yourself. I won't be going anywhere.
+		do CutsceneManager.endcutscene()
+		=> END
+if GlobalVariables.metbrooke == true:
+	Brooke: Oh hey, Marcus! What's up?
+	- Want to talk for a bit?
+		Brooke: Sure, no need to rush your big adventure right? => ask
+	- Just saying hi.
+		Brooke: Good to see you too. If you see Noble remind him that he sucks. => END
+
+
+~ ask
+Brooke: Whatcha wanna talk about?
+- Tell me about yourself.
+	Brooke: I haven't recovered much from my past. The gist of it is that I went to an island in search of...something.
+	Brooke: The thing is, the island was trapped in a time loop and it was difficult just to make any progress towards escaping.
+	Brooke: Crops would pop back to being fully grown, no one ever ages, nothing of consequence ever really happens...
+	Brooke: I made...well, would have made friends with the others who came to the island before me. Some had been there for so long they forgot when they first came.
+	Brooke: Is it weird that I miss them? Specifically that shopkeeper, I don't remember their name but I really enjoyed getting to chat with them.
+	Brooke: Having someone to relate to during times like that...it made it easier to keep going, y'know? => ask
+- Why not get a house above ground?
+	Brooke: I just feel like I don't fit in. Weird thing to say when we're all from completely different worlds, but I still feel...like an outcast, I guess.
+	Brooke: For example, you know the file dumps right? Best place to go when trying to figure out more about yourself and all that?
+	Brooke: Never found anything for me. Not once, for as long as I've been here. Apparently this hasn't happened to anyone else. Just me.
+	Brooke: ...The weirdness of me being here helped me remember some stuff, though. I remember being stuck in that island's time loop, and the struggle to adjust to it.
+	Brooke: First I get trapped in a place where time is dysfunctional, now I'm trapped in a place where it's like I'm not supposed to exist.
+	Brooke: And all the people that would help me cope with the situation on the island...none of them are here...
+	Brooke: ...I really appreciate you being here to chat. I just can't stop myself from feeling out of place. => ask
+- What's the village like normally?
+	Brooke: Boring. The most interesting thing that would ever happen is Zulie and Fighter sparring. You could hear it from miles away. => ask
+- What do you know about the Heroes?
+	Brooke: I'm not exactly sociable with the village, but they did tend to be the most talked about people in town. Y'know, before they killed everyone.
+	Brooke: Noble and Healer were always jerks. Acting stuck up and just generally bullying people. Even when Healer was doing his job as a doctor he was rude. Hate those guys.
+	Brooke: Fighter was probably the most "normal" of the four. They weren't even that bad of a person, they just got told sweet little lies and couldn't help themselves.
+	Brooke: And Mage...I dunno, they're just kinda weird. Smart as heck and great at working with anything magic related, but they were such a buzzkill. "Oh, this is so inefficient" this and "you're jumping to conclusions" that.
+	Brooke: Sure, it sucks that they turned heel and whatever good they had in themselves is gone, but I miss the people they targeted most. Everyone does.
+- I'm good. See you later.
+	Brooke: No problem. I'll be here if you want a break from your big important adventure. [wave amp=25 freq=5]Hehe.[/wave]
+	set GlobalVariables.metbrooke = true
+	do CutsceneManager.endcutscene()
+	=> END

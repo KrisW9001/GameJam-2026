@@ -342,7 +342,6 @@ scale = Vector2(0.5, 0.5)
 text = "funny"
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=229388952 groups=["sfx_players"]]
-volume_db = -20.0
 bus = &"Sound Effects"
 
 [node name="Timer" type="Timer" parent="." unique_id=1587582969]

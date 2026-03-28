@@ -685,7 +685,6 @@ animation = &"fight_end"
 shape = SubResource("RectangleShape2D_3oqcb")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1885484683]
-volume_db = -20.0
 bus = &"Sound Effects"
 
 [node name="glitch_effect" type="ColorRect" parent="." unique_id=1387063021]
