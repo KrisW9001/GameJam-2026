@@ -170,7 +170,7 @@ texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("3_47em7")
-theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -234,7 +234,6 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1386133971]
 unique_name_in_owner = true
-volume_db = -20.0
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

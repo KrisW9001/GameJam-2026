@@ -6,7 +6,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if zulie:
-		zulie.global_position = Vector2(66, -1910)
+		GlobalVariables.zulie_goto = false
+		zulie.position = Vector2(66, -1910)
 	if vagabond:
 		vagabond.global_position = Vector2(-238, -2156)
 

@@ -809,7 +809,7 @@ func recover() -> void:
 
 func kill_freeze() -> void:
 	health = 3
-	dmg_shader_1. visible = false
+	dmg_shader_1.visible = false
 	dmg_shader_2.visible = false
 	anim_sprite.modulate = Color("000000ff")
 	anim_sprite.pause()

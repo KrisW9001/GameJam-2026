@@ -11,7 +11,7 @@ do get_tree().call_group("Player", "idle_l")
 set GlobalVariables.player_goto_active = true
 set GlobalVariables.player_goto_coords = Vector2(2300, -310)
 Healer: Your attempts to help people that you have no reason to be personally indebted to are understandable, but there's no point to it. You're just wasting your time.
-Healer: Noone in these Wastelands understands this magic like I do. Do yourself a favor and stop before you make a fool of yourself.
+Healer: No one in these Wastelands understands this magic like I do. Do yourself a favor and stop before you make a fool of yourself.
 - I didn't ask you.
 	Healer: [wave amp=25 freq=5]And therein lies the root of the problem.[/wave] If you had any sense under that ugly hood of yours, you wouldn't be wasting your energy.
 	Healer: Do you even understand how to cast spells from spellbooks? Considering the fact that your friends all have their own distractions, I doubt they had time to teach you.

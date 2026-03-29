@@ -6,6 +6,5 @@
 ???: Once my strength has returned...[shake rate=20 level=10]you'll get your battle.[/shake]
 set GlobalVariables.seenfirstcut = true
 set GlobalVariables.cameralock = false
-do CutsceneManager.endcutscene()
 do CutsceneManager.vagabond_offscreen()
 => END

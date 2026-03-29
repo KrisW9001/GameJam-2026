@@ -50,7 +50,7 @@ Brooke: Whatcha wanna talk about?
 	Brooke: Noble and Healer were always jerks. Acting stuck up and just generally bullying people. Even when Healer was doing his job as a doctor he was rude. Hate those guys.
 	Brooke: Fighter was probably the most "normal" of the four. They weren't even that bad of a person, they just got told sweet little lies and couldn't help themselves.
 	Brooke: And Mage...I dunno, they're just kinda weird. Smart as heck and great at working with anything magic related, but they were such a buzzkill. "Oh, this is so inefficient" this and "you're jumping to conclusions" that.
-	Brooke: Sure, it sucks that they turned heel and whatever good they had in themselves is gone, but I miss the people they targeted most. Everyone does.
+	Brooke: Sure, it sucks that they turned heel and whatever good they had in themselves is gone, but I miss the people they targeted most. Everyone does. => ask
 - I'm good. See you later.
 	Brooke: No problem. I'll be here if you want a break from your big important adventure. [wave amp=25 freq=5]Hehe.[/wave]
 	set GlobalVariables.metbrooke = true

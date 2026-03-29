@@ -153,6 +153,7 @@ func vagabond_offscreen() -> void:
 	GlobalVariables.vagabond_goto = true
 	GlobalVariables.vagabond_coords = Vector2(2000, 1338)
 	await get_tree().create_timer(1).timeout
+	endcutscene()
 	GlobalVariables.vagabond_goto = false
 	get_tree().call_group("VagabondActor", "invis")
 

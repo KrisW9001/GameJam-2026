@@ -17,7 +17,7 @@ if GlobalVariables.methealer == false:
 			Healer: I wish I could have done the same to you three. The other two escaped before I could corrupt them, and you didn't even exist yet. A shame, but no matter.
 	- What do you want?
 		Healer: More than anything I want you to curl up in a corner and shut up until The Noble is well enough to put you out of your misery. But that's not going to happen, is it?
-		Healer: I believe the question you meant to ask is "why are you here?" Perhaps even "Why aren't you actively fighting your enemies?" In that case, I have just the answer you have been seeking.
+		Healer: I believe the question you meant to ask is "Why are you here?" Perhaps even "Why aren't you actively fighting your enemies?" In that case, I have just the answer you have been seeking.
 	- Enough talk. You're a dead man.
 		set GlobalVariables.aggressive = true
 		Healer: I expected as much. By all means, swing at me all you like.
