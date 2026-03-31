@@ -2,5 +2,5 @@
 set GlobalVariables.menutype = "Dialogue"
 This poster's been affected by the world too.
 At this point, I'd be more suprised if I went somewhere that [wave amp=25 freq=5]didn't[/wave] look like this.
-set GlobalVariables.cutscenemode = false
+do CutsceneManager.endcutscene()
 => END

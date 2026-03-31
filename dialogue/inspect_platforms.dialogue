@@ -3,5 +3,5 @@ set GlobalVariables.menutype = "Dialogue"
 This looks completely different from the city and the subway. Like it's from a different planet.
 Is this made by The "Creator", or is it like the False Heores and just plopped here to make part of a world?
 Well it's a crappy world, cause all it is to me is walls.
-set GlobalVariables.cutscenemode = false
+do CutsceneManager.endcutscene()
 => END

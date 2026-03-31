@@ -4170,6 +4170,13 @@ rotation = 0.013600886
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("18_qwcmg")
 
+[node name="Label4" type="Label" parent="testing visuals" unique_id=1721212454]
+offset_left = 91.0
+offset_top = 105.0
+offset_right = 379.0
+offset_bottom = 128.0
+text = "The game will be saved automatically"
+
 [node name="tutorial" type="Node" parent="." unique_id=971283357]
 
 [node name="Sprite2D" type="Sprite2D" parent="tutorial" unique_id=200850986]

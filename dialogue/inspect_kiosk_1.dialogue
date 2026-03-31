@@ -1,5 +1,5 @@
 ~ start
 set GlobalVariables.menutype = "Dialogue"
 "Made Fresh every day!"
-set GlobalVariables.cutscenemode = false
+do CutsceneManager.endcutscene()
 => END

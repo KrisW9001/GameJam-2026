@@ -2,5 +2,5 @@
 set GlobalVariables.menutype = "Dialogue"
 It's uh...what's the name for these again? It's not jar, but something more...sophisticated?
 Whatever. I can't pick it up anyways. And it looks ugly. And cold to the touch, for some reason?
-set GlobalVariables.cutscenemode = false
+do CutsceneManager.endcutscene()
 => END

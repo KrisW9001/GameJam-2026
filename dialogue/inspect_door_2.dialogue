@@ -11,5 +11,5 @@ elif GlobalVariables.seenreader == false:
 	=> END
 - Not yet => exit
 ~ exit
-set GlobalVariables.cutscenemode = false
+do CutsceneManager.endcutscene()
 => END

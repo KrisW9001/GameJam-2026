@@ -6,12 +6,12 @@ if GlobalVariables.haspass == false:
 		...There's a sticker next to the touchscreen. "Lost your Pass? Pass checker malfunctioning? Speak with the Pass office in tunnel 4."
 		Guess that's where I'm heading.
 		set GlobalVariables.seenreader
-		set GlobalVariables.cutscenemode = false
+		do CutsceneManager.endcutscene()
 	elif GlobalVariables.seenreader == true:
 		It's the ticket scanner. I can't do anything here unless I have a Subway Pass. Apparently I can get one in tunnel 4.
 elif GlobalVariables.haspass == true:
 	set GlobalVariables.menumode = "Dialogue"
 	do sfx_success()
 	The scanner accepted my pass. Time to get out of here.
-	set GlobalVariables.cutscenemode = false
+	do CutsceneManager.endcutscene()
 => END
