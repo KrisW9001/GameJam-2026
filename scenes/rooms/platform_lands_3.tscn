@@ -3100,6 +3100,7 @@ tile_map_data = PackedByteArray("AAD8/wIAAQAAAAIAAAD9/wIAAQAAAAMAAAD9/wMAAQAAAAI
 tile_set = SubResource("TileSet_xc4bf")
 script = ExtResource("8_00i21")
 cur_hp = 3
+respawn_coords = Vector2(-4079, -39)
 
 [node name="triggers" type="Node" parent="." unique_id=1863280312]
 
@@ -3176,8 +3177,8 @@ shape = SubResource("RectangleShape2D_qy3yr")
 debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("16_qy3yr")]
-position = Vector2(528, -180)
-scale = Vector2(8.286077, 8.161382)
+position = Vector2(319, -52.000015)
+scale = Vector2(41.68608, 31.841385)
 whattotrigger = 3
 
 [node name="CutsceneTrigger2" parent="triggers" unique_id=983906615 instance=ExtResource("17_7chve")]

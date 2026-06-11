@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://di6ug47oobgxc" path="res://dialogue/inspect_passage_ladder.dialogue" id="13_dq4fr"]
 [ext_resource type="Resource" uid="uid://8r8v7f4rx0yv" path="res://dialogue/underground_storeroom_ladder.dialogue" id="14_ir1hc"]
 [ext_resource type="Resource" uid="uid://cf480kn62m4es" path="res://dialogue/underground_ladder_zulie.dialogue" id="15_vlyba"]
+[ext_resource type="PackedScene" uid="uid://brihu5bdvef4f" path="res://scenes/audio_trigger.tscn" id="19_ikg1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dq4fr"]
 texture = ExtResource("3_6fggr")
@@ -4166,6 +4167,16 @@ whichdialogue = ExtResource("15_vlyba")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea3" unique_id=1316313097]
 position = Vector2(24, -134)
 shape = SubResource("RectangleShape2D_dq4fr")
+
+[node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("19_ikg1h")]
+position = Vector2(225, -116.00001)
+scale = Vector2(48.394318, -21.068596)
+whattotrigger = 4
+
+[node name="AudioTrigger2" parent="triggers" unique_id=1885970738 instance=ExtResource("19_ikg1h")]
+position = Vector2(-743, 1331)
+scale = Vector2(48.394318, -21.068596)
+whattotrigger = 4
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1774323190]
 z_index = -3

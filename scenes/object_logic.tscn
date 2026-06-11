@@ -4,3 +4,7 @@
 
 [node name="ObjectLogic1" type="Node" unique_id=986403099]
 script = ExtResource("1_a43wy")
+
+[node name="Timer" type="Timer" parent="." unique_id=1226458643]
+process_callback = 0
+one_shot = true

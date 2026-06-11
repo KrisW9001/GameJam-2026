@@ -12,5 +12,6 @@ if GlobalVariables.dismissive == true
 	I gripped the subway pass tight in my hands. If I'm going to get any answers, I won't get them here.
 	After collecting my thoughts, I went back the way I came.
 	I flipped the pass around in my hand, trying to distract myself from the writhing under my skin.
+do MusicController.music_fadeout_fast()
 do CutsceneManager.cutscene4_part2()
 => END

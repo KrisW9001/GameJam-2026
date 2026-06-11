@@ -2972,7 +2972,7 @@ size = Vector2(131, 59)
 size = Vector2(88, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1aadt"]
-size = Vector2(577, 115.5)
+size = Vector2(66, 53)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_28upq"]
 shader = ExtResource("11_kjpnq")
@@ -2987,7 +2987,7 @@ shader_parameter/color_low = Color(0.026499996, 0, 0.03, 1)
 shader_parameter/color_mid = Color(0.0019999982, 0.04820005, 0.2, 1)
 shader_parameter/color_high = Color(1, 0.04000002, 0.47199982, 1)
 
-[node name="PlatformLands1" type="Node2D" unique_id=1867616685]
+[node name="PlatformLands1" type="Node2D" unique_id=1867616685 groups=["room"]]
 script = ExtResource("1_c2feb")
 
 [node name="Player" parent="." unique_id=1720193695 instance=ExtResource("1_agnkg")]
@@ -3089,8 +3089,8 @@ shape = SubResource("RectangleShape2D_x3gdo")
 debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("17_x3gdo")]
-position = Vector2(240.00006, -398.99997)
-scale = Vector2(8.286077, 8.161382)
+position = Vector2(172, -380)
+scale = Vector2(33.446075, 28.001385)
 whattotrigger = 3
 
 [node name="Pickup" parent="triggers" unique_id=520107679 groups=["key"] instance=ExtResource("20_bx2u8")]
@@ -3127,7 +3127,7 @@ shape = SubResource("RectangleShape2D_5t4yq")
 debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 
 [node name="InspectArea4" parent="triggers" unique_id=355451210 instance=ExtResource("18_nr1en")]
-position = Vector2(136, 112)
+position = Vector2(425, 336)
 whichdialogue = ExtResource("26_ylj0l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/InspectArea4" unique_id=1238455579]
@@ -3137,7 +3137,7 @@ debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
 [node name="AudioTrigger2" parent="triggers" unique_id=1971659583 instance=ExtResource("17_x3gdo")]
 position = Vector2(4635, -313.00003)
-scale = Vector2(8.286077, 8.161382)
+scale = Vector2(24.32608, 26.561384)
 whattotrigger = 3
 
 [node name="InspectArea5" parent="triggers" unique_id=128750674 instance=ExtResource("18_nr1en")]
@@ -3166,6 +3166,16 @@ whichroom = "res://scenes/rooms/platform_lands_2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RoomTrigger" unique_id=1044806287]
 position = Vector2(39.5, 257)
+shape = SubResource("RectangleShape2D_1aadt")
+debug_color = Color(0.8813839, 0.3376081, 0, 0.41960785)
+
+[node name="RoomTrigger2" parent="triggers" unique_id=743828017 instance=ExtResource("31_i4trv")]
+position = Vector2(136, -139)
+whichroom = "res://scenes/rooms/subway1.tscn"
+set_town_room = "platlands"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RoomTrigger2" unique_id=1034521684]
+position = Vector2(53, 245.5)
 shape = SubResource("RectangleShape2D_1aadt")
 debug_color = Color(0.8813839, 0.3376081, 0, 0.41960785)
 

@@ -12,6 +12,6 @@ if GlobalVariables.haspass == false:
 elif GlobalVariables.haspass == true:
 	set GlobalVariables.menumode = "Dialogue"
 	do sfx_success()
-	The scanner accepted my pass. Time to get out of here.
+	The scanner accepted my pass.
 	do CutsceneManager.endcutscene()
 => END

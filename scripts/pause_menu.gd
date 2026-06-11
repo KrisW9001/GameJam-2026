@@ -9,6 +9,7 @@ extends Control
 @onready var cursor: AnimatedSprite2D = $CanvasLayer/cursor
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var timer: Timer = $Timer
 
 var focus_sfx = preload("res://audio/sfx/Hit 1.wav")
 var select_sfx = preload("res://audio/sfx/Gunshot.wav")
@@ -40,7 +41,9 @@ func create() -> void:
 	cursor.position.x = continue_btn.position.x + (continue_btn.size.x + 30)
 	cursor.position.y = continue_btn.position.y + ((continue_btn.size.y / 2))
 	get_tree().paused = true
-	await get_tree().create_timer(.5).timeout
+	#await get_tree().create_timer(.5).timeout
+	timer.start(.5)
+	await timer.timeout
 	pause_cooldown = false
 
 func _input(event: InputEvent) -> void:
@@ -49,6 +52,7 @@ func _input(event: InputEvent) -> void:
 			audio_player.stream = select_sfx
 			audio_player.play()
 			invis()
+			GameplayStats.inmaingame = true
 		else:
 			pass
 	
@@ -119,14 +123,15 @@ func _on_menu_btn_pressed() -> void:
 	audio_player.play()
 	TheCamera.transition_on()
 	MusicController.music_fadeout_fast()
-	await get_tree().create_timer(0.5).timeout
+	#await get_tree().create_timer(0.5).timeout
+	timer.start(.5)
+	await timer.timeout
 	get_tree().call_group("Player", "respawn")
 	get_tree().call_group("enemies", "respawn")
 	get_tree().call_group("Objects", "respawn")
 	GlobalVariables.menumode = false
-	TheCamera.transition_off()
 	invis()
-	get_tree().change_scene_to_file("res://scenes/rooms/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 #create settings popup
 func _on_settings_btn_pressed() -> void:
@@ -135,3 +140,4 @@ func _on_settings_btn_pressed() -> void:
 #return to normal gameplay
 func _on_continue_btn_pressed() -> void:
 	invis()
+	GameplayStats.inmaingame = true

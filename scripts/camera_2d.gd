@@ -8,6 +8,11 @@ extends Camera2D
 @onready var finalbosscutscene_1: Sprite2D = $CanvasLayer/finalbosscutscene1
 @onready var finalbosscutscene_2: Sprite2D = $CanvasLayer/finalbosscutscene2
 @onready var finalbosscutscene_3: Sprite2D = $CanvasLayer/finalbosscutscene3
+@onready var rat: Timer = $rat
+@onready var testlabel_1: Label = $CanvasLayer/DebugLabels/testlabel1
+@onready var testlabel_2: Label = $CanvasLayer/DebugLabels/testlabel2
+@onready var testlabel_3: Label = $CanvasLayer/DebugLabels/testlabel3
+@onready var testlabel_4: Label = $CanvasLayer/DebugLabels/testlabel4
 #setting variables to be used in functions
 var offscreen = false
 
@@ -27,6 +32,10 @@ func _process(delta: float) -> void:
 		position.x = move_toward(position.x, GlobalVariables.player_position.x, 960 * delta)
 		position.y = move_toward(position.y, GlobalVariables.player_position.y, 540 * delta)
 	label_2.text = str(GlobalVariables.cur_respawn)
+	testlabel_1.text = str("inmaingame = ", GameplayStats.inmaingame)
+	testlabel_2.text = str("time = ", GameplayStats.hours, ":", GameplayStats.minutes, ":", GameplayStats.seconds, ":", GameplayStats.msec)
+	testlabel_3.text = str("Deaths = ", GameplayStats.deathcount)
+	testlabel_4.text = str("town_room = ", GlobalVariables.town_room)
 
 #reset the camera in certain situations, like when entering a new room
 func reset() -> void:
@@ -59,7 +68,8 @@ func transition_on() -> void:
 	anim_player.play("trans_on")
 
 func transition_off() -> void:
-	await get_tree().create_timer(1).timeout
+	rat.start(1)
+	await rat.timeout
 	anim_player.play("trans_off")
 
 #make memory visual visible/invisible

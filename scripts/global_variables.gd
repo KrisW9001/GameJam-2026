@@ -18,7 +18,7 @@ var cont_scene: String = "null"
 #used to force characters to certain coordinates during a cutscene
 var player_goto_coords: Vector2
 var player_goto_active: bool = false
-var town_room: String = "null" #used to move player position in the town when exiting a building
+var town_room: String = "null" #used to move player position in the town when exiting a building - also used universally for backtracking
 var vagabond_position: Vector2
 var vagabond_coords: Vector2
 var vagabond_goto: bool = false
@@ -44,8 +44,10 @@ var metvagabond: bool = false #set after talking to the vagabond for the 1st tim
 var beatfirstboss : bool = false #set after defeating the first boss
 var seenreader: bool = false #set after inspecting the pass reader in the subway
 var haspass: bool = false #determines whether or not the player has the pickup needed to progress
+var haspass2: bool = false #identical to the original haspass, but used for the platform lands' keys
 var metfighter: bool = false #set after fighter cutscene, used to stop cutscene early when retrying boss
 var metzulie: bool = false #set after zulie's first cutscene
+var metmage: bool = false #set after viewing the mage cutscene for the first time
 var beatsecondboss: bool = false #set after defeating the second boss
 var methealer: bool = false #set after talking to healer in the corrupted village
 var aggressive: bool = false #set after telling the healer to fight immediately
@@ -60,3 +62,8 @@ var hasbook: bool = false #final part of village sequence, obtaining the spellbo
 var beatthirdboss: bool = false #set after beating the healer
 var seennoblecut: bool = false #set after seeing noble's introductory cutscene
 var nobleprefight: bool = false #set after seeing the noble's pre-fight cutscene
+var finishedgame: bool = false #set after completing the game, unlocks the extras tab in the main menu
+
+#secret flags: used to determine if a secret has already been claimed and prevent the same one contributing to the secrets found stat twice
+var zuliejournal: bool = false #zulie's secret journal in her house
+var brookemeeting: bool = false #spoke with Brooke in the town's underground tunnels

@@ -1772,7 +1772,7 @@ debug_color = Color(0.65457684, 0.5179122, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("10_hy0p7")]
 position = Vector2(31, -122)
-scale = Vector2(28.36, 1)
+scale = Vector2(28.36, 10.360001)
 whattotrigger = 5
 
 [node name="StartWall1" parent="triggers" unique_id=2056869257 instance=ExtResource("13_54sr3")]

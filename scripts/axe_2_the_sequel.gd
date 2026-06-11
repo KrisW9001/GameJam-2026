@@ -37,7 +37,7 @@ func throw() -> void:
 	target = GlobalVariables.player_position
 	thrown = true
 	anim_player.play("spin")
-	timer.start()
+	#timer.start()
 
 func dissapear() -> void:
 	normal_color()
@@ -61,5 +61,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		dissapear()
 
 #despawn axe after one second. the time it takes for the fighter to start a new attack is longer than the axe stays active.
-func _on_timer_timeout() -> void:
-	dissapear()
+#func _on_timer_timeout() -> void:
+	#dissapear()

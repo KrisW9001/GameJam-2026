@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bx52f2eafgkrr" path="res://assets/tilemaps/kenney town corrupt.png" id="16_7vx3s"]
 [ext_resource type="PackedScene" uid="uid://dbbknbkndue" path="res://scenes/room_trigger.tscn" id="16_mv214"]
 [ext_resource type="Texture2D" uid="uid://cm1ch602svpmd" path="res://assets/tilemaps/world_tileset.png" id="17_iqo0s"]
+[ext_resource type="Texture2D" uid="uid://cnoom4085df0r" path="res://assets/effects/lock.png" id="17_qrqvr"]
 [ext_resource type="PackedScene" uid="uid://bvd54whvovl88" path="res://scenes/corrupt_villager_2.tscn" id="18_1pgmg"]
 [ext_resource type="Resource" uid="uid://cygc60rqg4gl6" path="res://dialogue/inspect_corrupt_welcome.dialogue" id="18_salhr"]
 [ext_resource type="PackedScene" uid="uid://c6tm48hgaxx1f" path="res://scenes/respawn_anchor.tscn" id="19_0c4sx"]
@@ -1436,6 +1437,12 @@ whichroom = "res://scenes/rooms/file_dumps.tscn"
 position = Vector2(1727, -1117)
 shape = SubResource("RectangleShape2D_gxr3s")
 debug_color = Color(0.9977123, 0, 0.17001125, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="Triggers" unique_id=1132200165]
+texture_filter = 1
+position = Vector2(1776, -352)
+scale = Vector2(2, 2)
+texture = ExtResource("17_qrqvr")
 
 [node name="Npcs" type="Node" parent="." unique_id=1091450708]
 

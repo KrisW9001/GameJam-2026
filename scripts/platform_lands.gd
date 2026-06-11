@@ -5,7 +5,7 @@ extends Node2D
 
 #the only reason this script exists is to reset has_pass on entry so that the keys and barriers can work correctly in a full playthrough
 func _ready() -> void:
-	GlobalVariables.haspass = false
+	GlobalVariables.haspass2 = false
 	if zulie:
 		zulie.invis()
 	if vagabond:
@@ -22,3 +22,9 @@ func _ready() -> void:
 		GlobalVariables.zulie_goto = true
 		GlobalVariables.vagabond_goto = true
 		CutsceneManager.pair_togate()
+	if MusicController.is_playing:
+		MusicController.music_stop()
+
+#func reset_music() -> void:
+	#MusicController.music_fadein()
+	#MusicController.play_level2_music()

@@ -208,5 +208,7 @@ unique_name_in_owner = true
 volume_db = -10.0
 bus = &"Sound Effects"
 
+[node name="Timer" type="Timer" parent="." unique_id=711699661]
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

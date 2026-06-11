@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://bnu2us4cuupmb"]
+
+[ext_resource type="Texture2D" uid="uid://c7pphq5e0l342" path="res://icon.svg" id="1_63hat"]
+[ext_resource type="Script" uid="uid://qf01g3omjxt8" path="res://scripts/intro.gd" id="1_apfq8"]
+[ext_resource type="FontFile" uid="uid://dakg8p75upjre" path="res://assets/fonts/Kenney Pixel.ttf" id="2_hv022"]
+[ext_resource type="AudioStream" uid="uid://8ybodksamfj2" path="res://audio/sfx/Menu Close.wav" id="4_5eb4d"]
+[ext_resource type="AudioStream" uid="uid://cg83brutt1lcx" path="res://audio/sfx/Menu Cancel.wav" id="5_85ake"]
+
+[sub_resource type="Animation" id="Animation_bndg0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/creator:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/godotlogo:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/noai:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0y2wl"]
+resource_name = "intro_sequence"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/creator:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_5eb4d"), ExtResource("5_85ake")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2, 2, 2.4, 3.2, 4, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/godotlogo:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 1.7, 4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/noai:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.4, 2.9, 4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3xb0r"]
+_data = {
+&"RESET": SubResource("Animation_bndg0"),
+&"intro_sequence": SubResource("Animation_0y2wl")
+}
+
+[node name="Intro" type="Node2D" unique_id=1729115732]
+script = ExtResource("1_apfq8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2028281894]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=144504370]
+offset_left = -53.0
+offset_top = -43.0
+offset_right = 1244.0
+offset_bottom = 742.0
+color = Color(0, 0, 0, 1)
+
+[node name="godotlogo" type="Sprite2D" parent="CanvasLayer" unique_id=87160886]
+position = Vector2(576, 279)
+texture = ExtResource("1_63hat")
+
+[node name="Label" type="Label" parent="CanvasLayer/godotlogo" unique_id=1517382685]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -173.5
+offset_top = -54.585
+offset_right = 45.5
+offset_bottom = -14.584999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_hv022")
+theme_override_font_sizes/font_size = 52
+text = "Made in Godot"
+
+[node name="skipprompt" type="Label" parent="CanvasLayer" unique_id=867870290]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 275.0
+offset_top = -43.0
+offset_right = 663.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_hv022")
+theme_override_font_sizes/font_size = 38
+text = "Press Start/ESC to skip"
+
+[node name="creator" type="Label" parent="CanvasLayer" unique_id=903997017]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.5
+offset_top = 61.0
+offset_right = 109.5
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hv022")
+theme_override_font_sizes/font_size = 52
+text = "Created by
+Thunderspark"
+horizontal_alignment = 1
+
+[node name="noai" type="Label" parent="CanvasLayer" unique_id=377931335]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -221.5
+offset_top = 475.0
+offset_right = 221.5
+offset_bottom = 558.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hv022")
+theme_override_font_sizes/font_size = 52
+text = "Made with no generative A.I."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266121779]
+libraries/ = SubResource("AnimationLibrary_3xb0r")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1815354542]
+bus = &"Sound Effects"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

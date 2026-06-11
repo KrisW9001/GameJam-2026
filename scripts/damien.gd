@@ -48,11 +48,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				TalkScenes.damien_talk.dialogue_resource = load("res://dialogue/damien_intro.dialogue")
 			elif GlobalVariables.metdamien == true:
 				TalkScenes.damien_talk.dialogue_resource = load("res://dialogue/damien_dismiss.dialogue")
-			body.inspect_prompt.visible = true
+			body.emote_talk()
 			body.can_talk_d = true
 			print("showing inspect prompt")
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		body.inspect_prompt.visible = false
+		body.emote_invis()
 		body.can_talk_d = false

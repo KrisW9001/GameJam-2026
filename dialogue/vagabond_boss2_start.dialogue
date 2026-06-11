@@ -1,4 +1,5 @@
 ~ start
 Vagabond: [shake rate=20 level=10]I'll take care of the minions, focus on taking down The Mage![/shake]
+set GlobalVariables.metmage = true
 do CutsceneManager.cutscene6_end()
 => END

@@ -94,7 +94,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_town.dialogue")
 			if GlobalVariables.seennoblecut:
 				TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_final_dismiss.dialogue")
-			body.inspect_prompt.visible = true
+			body.emote_talk()
 			body.can_talk_v = true
 			print("showing inspect prompt")
 
@@ -105,5 +105,5 @@ func respawn() -> void:
 
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
-		body.inspect_prompt.visible = false
+		body.emote_invis()
 		body.can_talk_v = false

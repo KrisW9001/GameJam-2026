@@ -514,6 +514,8 @@ bus = &"Sound Effects"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1631799161]
 libraries/ = SubResource("AnimationLibrary_1s2dm")
 
+[node name="Timer" type="Timer" parent="." unique_id=1771499859]
+
 [connection signal="focus_entered" from="CanvasLayer/continue_btn" to="." method="_on_continue_btn_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/continue_btn" to="." method="_on_continue_btn_pressed"]
 [connection signal="focus_entered" from="CanvasLayer/settings_btn" to="." method="_on_settings_btn_focus_entered"]

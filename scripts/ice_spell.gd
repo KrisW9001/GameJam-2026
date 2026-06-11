@@ -46,9 +46,12 @@ func recall() -> void:
 #begin chasing the player
 func chase() -> void:
 	cast = true
-	##timer.start(2)
+	#timer.start(2)
+	#await timer.timeout
+	#print("chase timer done")
 	await get_tree().create_timer(2).timeout
 	destroy()
+	##BUG NOTE: destroy function only works with create timer function for some reason. sucks.
 
 func invis() -> void:
 	anim_player.play("RESET")
@@ -75,5 +78,6 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("wall"):
 		destroy()
 
-func _on_timer_timeout() -> void:
-	destroy()
+#func _on_timer_timeout() -> void:
+	#print("timer done")
+	#destroy()

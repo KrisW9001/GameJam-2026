@@ -572,6 +572,8 @@ libraries/ = SubResource("AnimationLibrary_v3hpu")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=496504899]
 bus = &"Sound Effects"
 
+[node name="Timer" type="Timer" parent="." unique_id=2142377350]
+
 [connection signal="focus_entered" from="CanvasLayer/retry" to="." method="_on_retry_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]
 [connection signal="focus_entered" from="CanvasLayer/menubutton" to="." method="_on_menubutton_focus_entered"]

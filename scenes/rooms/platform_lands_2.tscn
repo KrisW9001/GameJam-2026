@@ -3207,6 +3207,7 @@ tile_map_data = PackedByteArray("AAD8/wIAAQAAAAIAAAD9/wIAAQAAAAMAAAD9/wMAAQAAAAI
 tile_set = SubResource("TileSet_necoh")
 script = ExtResource("7_wet4o")
 cur_hp = 3
+respawn_coords = Vector2(-4079, -39)
 
 [node name="InspectArea3" parent="BreakableWalls" unique_id=1404225831 instance=ExtResource("21_g02gd")]
 position = Vector2(2032.7998, -349.19998)
@@ -3310,8 +3311,8 @@ shape = SubResource("RectangleShape2D_evtb7")
 debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="Triggers" unique_id=1633030172 instance=ExtResource("17_evtb7")]
-position = Vector2(44, -102)
-scale = Vector2(8.286077, 8.161382)
+position = Vector2(-1.9999962, -15.000008)
+scale = Vector2(20.32608, 21.56138)
 whattotrigger = 3
 
 [node name="InspectArea" parent="Triggers" unique_id=580571303 instance=ExtResource("21_g02gd")]

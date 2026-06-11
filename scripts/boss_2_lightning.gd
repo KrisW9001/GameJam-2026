@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var coll: CollisionShape2D = $CollisionShape2D
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var charge: Timer = $charge
+@onready var hitbox_reset: Timer = $"hitbox reset"
 @onready var area_2d: Area2D = $Area2D
 @export var damage: int
 var active: bool
@@ -54,9 +55,14 @@ func _on_charge_timeout() -> void:
 		audio_player.play()
 		striking = true
 		area_2d.set_collision_mask_value(2, true)
+		hitbox_reset.start()
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player") and body.dead == false and !dealtdamage:
 		print("you took damage from a spell")
 		body.hurt_player(damage, position.x, position.y)
 		dealtdamage = true
+
+#when hitbox reset timer ends, disable the hitbox
+func _on_hitbox_reset_timeout() -> void:
+	area_2d.set_collision_mask_value(2, false)

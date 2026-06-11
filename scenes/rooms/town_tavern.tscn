@@ -4424,6 +4424,11 @@ shape = SubResource("RectangleShape2D_fiqim")
 debug_color = Color(0.31783572, 0.62569904, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("20_8a5fl")]
-position = Vector2(-499, -668)
-scale = Vector2(1, 6.8)
+position = Vector2(667, -668)
+scale = Vector2(12.3200035, 6.8)
+whattotrigger = 4
+
+[node name="AudioTrigger2" parent="triggers" unique_id=1786753297 instance=ExtResource("20_8a5fl")]
+position = Vector2(-1.9999995, 18.000006)
+scale = Vector2(11.640001, 6.8)
 whattotrigger = 4

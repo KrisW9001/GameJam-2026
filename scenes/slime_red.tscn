@@ -272,8 +272,7 @@ script = ExtResource("1_02a0s")
 texture_filter = 1
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_srws1")
-animation = &"move"
-frame_progress = 0.995913
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1612225920]
 position = Vector2(0, 1)

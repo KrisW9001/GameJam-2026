@@ -53,13 +53,13 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player") and !GlobalVariables.cutscenemode:
 		#check event flags for which dialogue to play when interacted with outside of a cutscene
 		TalkScenes.healer_talk.dialogue_resource = load("res://dialogue/healer_intro.dialogue")
-		body.inspect_prompt.visible = true
+		body.emote_talk()
 		body.can_talk_h = true
 		print("showing inspect prompt")
 
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
-		body.inspect_prompt.visible = false
+		body.emote_invis()
 		body.can_talk_h = false
 
 func _on_displacer_animation_finished(anim_name: StringName) -> void:

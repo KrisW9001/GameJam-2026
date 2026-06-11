@@ -95,6 +95,8 @@ func hurt_boss(damage: int) -> void:
 
 func respawn() -> void:
 	position = Vector2(4000, 2105)
+	GlobalVariables.mage_coords = Vector2.ZERO
+	GlobalVariables.mage_goto = false
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_away":

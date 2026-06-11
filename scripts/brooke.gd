@@ -6,12 +6,12 @@ extends CharacterBody2D
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and !GlobalVariables.cutscenemode:
 		TalkScenes.brooke_talk.dialogue_resource = whichtalk
-		body.inspect_prompt.visible = true
+		body.emote_talk()
 		body.can_talk_b = true
 		print("showing inspect prompt")
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		body.inspect_prompt.visible = false
+		body.emote_invis()
 		body.can_talk_b = false

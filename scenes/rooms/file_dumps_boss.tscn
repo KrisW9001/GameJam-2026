@@ -4392,7 +4392,7 @@ debug_color = Color(0.6735091, 0.5078217, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("20_lmndc")]
 position = Vector2(0, -106)
-scale = Vector2(32.99111, 3.5473702)
+scale = Vector2(32.99111, 23.987371)
 whattotrigger = 5
 
 [node name="boss stuff" type="Node" parent="." unique_id=1368261561]

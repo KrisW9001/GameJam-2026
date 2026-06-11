@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cljbsiqqcadhk"
+path="res://.godot/imported/inspect_town_entrance.dialogue-5f2ed9536c7e8d538491da4c003bc1b6.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_town_entrance.dialogue"
+dest_files=["res://.godot/imported/inspect_town_entrance.dialogue-5f2ed9536c7e8d538491da4c003bc1b6.tres"]
+
+[params]
+
+defaults=true

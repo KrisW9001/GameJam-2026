@@ -19,7 +19,7 @@ There's a bunch of pages just describing them running around the wastes trying t
 "The species of furless individuals are supposedly called 'Humans'. The Mage was surprised to hear that humans don't exist where I come from, and never have. They said something interesting when I mentioned where I came from, though."
 "They claimed that such a place doesn't exist. In a somewhat mocking tone, they told me that I'll figure it out eventually. I changed the subject and eventually went on my way."
 - Keep going => part3
-- Stop reading => END
+- Stop reading => finish
 
 ~ part3
 I skip ahead by another few pages since it just describes her moving in.
@@ -66,5 +66,6 @@ do CutsceneManager.endcutscene()
 ~ finish2
 do MusicController.music_stop()
 ...I put the photo back and set the journal down. 
+set GlobalVariables.zuliejournal = true
 do CutsceneManager.endcutscene()
 => END

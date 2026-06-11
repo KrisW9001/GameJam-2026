@@ -13,12 +13,12 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
 		TalkScenes.protag_talk.dialogue_resource = whichdialogue
-		body.inspect_prompt.visible = true
+		body.emote_inspect()
 		body.can_inspect = true
 
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
-		body.inspect_prompt.visible = false
+		body.emote_invis()
 		body.can_inspect = false
 
 func appear() -> void:

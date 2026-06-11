@@ -1,4 +1,5 @@
 class_name DialogueManagerHealerBalloon extends CanvasLayer
+@onready var timer: Timer = $Timer
 
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
@@ -157,7 +158,9 @@ func apply_dialogue_line() -> void:
 		responses_menu.show()
 	elif dialogue_line.time != "":
 		var time: float = dialogue_line.text.length() * 0.02 if dialogue_line.time == "auto" else dialogue_line.time.to_float()
-		await get_tree().create_timer(time).timeout
+		#await get_tree().create_timer(time).timeout
+		timer.start(time)
+		await timer.timeout
 		next(dialogue_line.next_id)
 	else:
 		is_waiting_for_input = true
@@ -197,7 +200,7 @@ func _on_mutated(_mutation: Dictionary) -> void:
 		mutation_cooldown.start(0.1)
 
 
-func _on_balloon_gui_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	# See if we need to skip typing of the dialogue
 	if dialogue_label.is_typing:
 		var mouse_was_clicked: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()

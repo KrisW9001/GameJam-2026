@@ -1428,13 +1428,13 @@ shape = SubResource("RectangleShape2D_chsw6")
 debug_color = Color(0.8445289, 0.0010371214, 0.9141247, 0.41960785)
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("16_613tl")]
-position = Vector2(40.000004, -578)
-scale = Vector2(28.36, 1)
+position = Vector2(43, -516)
+scale = Vector2(28.36, 12.919999)
 whattotrigger = 5
 
 [node name="AudioTrigger2" parent="triggers" unique_id=1584549321 instance=ExtResource("16_613tl")]
-position = Vector2(-78, -2613)
-scale = Vector2(28.36, 1)
+position = Vector2(-75, -2667.9998)
+scale = Vector2(28.36, 15.44)
 whattotrigger = 1
 
 [node name="RoomTrigger" parent="triggers" unique_id=1487844617 instance=ExtResource("17_oieft")]

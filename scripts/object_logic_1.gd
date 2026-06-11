@@ -6,6 +6,7 @@ class_name ObjectLogic
 #this is the first of multiple object logic codes, used for small objects
 @onready var parent_anim_sprite: AnimatedSprite2D = $"../AnimatedSprite2D"
 @onready var coll_shape: CollisionShape2D = $"../CollisionShape2D"
+@onready var timer: Timer = $Timer
 @export var friction_lerp_weight: float = 16.5
 @export var position_lerp_weight: float = 28.5
 @export var gravity_x: float = 1000.0
@@ -51,6 +52,7 @@ func _physics_process(delta: float) -> void:
 func pickup(holder: CharacterBody2D) -> void:
 	held_by = holder
 	await get_tree().create_timer(0.18).timeout
+	#BUG NOTE: didn't play nicely when switched to a normal timer.
 	get_parent().velocity = Vector2.ZERO
 
 func drop(global_pos: Vector2, x_drop: float, y_drop: float) -> void:
@@ -78,7 +80,7 @@ func throw(throw_x: float, throw_y: float) -> void:
 #when an object is dropped by the player or ends its intended purpose after being thrown, enter a grace period where it cannot be picked back up
 func cooldown() -> void:
 	coll_shape.disabled = true
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(.5).timeout
 	coll_shape.disabled = false
 
 func collide() -> void:

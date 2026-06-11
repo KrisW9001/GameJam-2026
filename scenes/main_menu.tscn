@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://6t5755g8cjle" path="res://assets/UI/mm settings button.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://da002ge3ogtg7" path="res://assets/UI/cursor.png" id="5_8ln24"]
 [ext_resource type="FontFile" uid="uid://bveubh61dirkp" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="6_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://2eswnkl7bg47" path="res://assets/UI/mm extras button.png" id="8_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://crq2g6148t4wh" path="res://assets/UI/mm exit button.png" id="8_tbmy8"]
+[ext_resource type="FontFile" uid="uid://b5t4vmktelcvq" path="res://assets/fonts/CompassGold.ttf" id="9_jk1qb"]
+[ext_resource type="FontFile" uid="uid://dakg8p75upjre" path="res://assets/fonts/Kenney Pixel.ttf" id="10_5dd4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
 font = ExtResource("6_rtw2f")
@@ -62,6 +65,136 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Shader" id="Shader_1s2dm"]
+code = "// Pixelated noise effect based on https://godotshaders.com/shader/warped-fractal-noise/
+//
+// Copyright Gerardo Montaño 2025
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of 
+// this software and associated documentation files (the “Software”), to deal in 
+// the Software without restriction, including without limitation the rights to 
+// use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies 
+// of the Software, and to permit persons to whom the Software is furnished to do 
+// so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all 
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+// SOFTWARE.
+
+shader_type canvas_item;
+uniform float speed = 0.1; 
+
+uniform float pixelation = 8.0;
+uniform float zoom = 2.0;
+
+uniform float gradient_pixelation : hint_range(0.001, 1.0) = 0.2;
+uniform float background_threshold : hint_range(0.0, 1.0) = 0.0;
+uniform float color_low_threshold : hint_range(0.0, 1.0)  = 0.24;
+uniform float color_mid_threshold : hint_range(0.0, 1.0)  = 0.48;
+
+uniform vec4 color_low : source_color = vec4(0.01, 0.41, 0.51, 1.0); 
+uniform vec4 color_mid : source_color = vec4(.50, 0.10, 0.30, 1.0); 
+uniform vec4 color_high : source_color = vec4(1.0, 1.0, 1.0, 1.0); 
+
+#define iTime (TIME * speed)
+#define iResolution 1.0/SCREEN_PIXEL_SIZE
+
+const mat2 mtx = mat2( vec2(0.80, -0.60), vec2(0.60, 0.80) );
+
+float rand(vec2 n) { 
+    return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+}
+
+float noise(vec2 p){
+    vec2 ip = floor(p);
+    vec2 u = fract(p);
+    u = u * u * (3.0 - 2.0 * u);
+
+    float res = mix(
+        mix(rand(ip), rand(ip + vec2(1.0, 0.0)), u.x),
+        mix(rand(ip + vec2(0.0, 1.0)), rand(ip + vec2(1.0, 1.0)), u.x), u.y);
+        
+    return res * res;
+}
+
+float fbm( vec2 p )
+{
+    float f = 0.0;
+    
+    f += 0.500000 * noise( p + iTime ); p = mtx * p * 2.02;
+    f += 0.031250 * noise( p ); p = mtx * p * 2.01;
+    f += 0.250000 * noise( p ); p = mtx * p * 2.03;
+    f += 0.125000 * noise( p ); p = mtx * p * 2.01;
+    f += 0.062500 * noise( p ); p = mtx * p * 2.04;
+    f += 0.015625 * noise( p + sin(iTime) );
+
+    return f / 0.96875;
+}
+
+float pattern( in vec2 p )
+{
+	return fbm( p + fbm( p + fbm( p ) ) );
+}
+
+vec4 colormap(float x, vec2 uv) {
+	
+	x *= (1.0 - pow(max(abs(0.5 - uv.x), abs(0.5 - uv.y)) * 2.0, 3.0));
+    
+    if (x < background_threshold) { 
+        return vec4(0.0, 0.0, 0.0, 0.0);
+    }
+    else if (x < color_low_threshold) { 
+        return mix(
+			vec4(0.0, 0.0, 0.0, 0.0),
+			color_low,
+			round((x - background_threshold) / (color_low_threshold - background_threshold) / gradient_pixelation) * gradient_pixelation
+		);
+    }
+    else if (x < color_mid_threshold) { 
+        return 
+			mix(
+				color_low,
+				color_mid,
+				round((x - color_low_threshold) / (color_mid_threshold - color_low_threshold) / gradient_pixelation) * gradient_pixelation
+			);
+    }
+	else
+		return
+			mix(
+				color_mid,
+				color_high,
+				round((x - color_mid_threshold) / (1.0 - color_mid_threshold) / gradient_pixelation) * gradient_pixelation
+			);
+}
+
+void fragment()
+{
+    vec2 uv = floor(UV / SCREEN_PIXEL_SIZE / pixelation) * SCREEN_PIXEL_SIZE * pixelation; 
+   	float shade = pattern(uv * zoom);
+    
+    COLOR = colormap(shade, uv);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1qb"]
+shader = SubResource("Shader_1s2dm")
+shader_parameter/speed = 0.3
+shader_parameter/pixelation = 5.0
+shader_parameter/zoom = 1.5
+shader_parameter/gradient_pixelation = 0.0010000000475
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_low_threshold = 0.29200001387
+shader_parameter/color_mid_threshold = 0.41600001976
+shader_parameter/color_low = Color(0.070666656, 0, 0.08, 1)
+shader_parameter/color_mid = Color(0.36960006, 0.08799999, 0.44, 1)
+shader_parameter/color_high = Color(0.7, 0, 0.31499985, 1)
 
 [sub_resource type="Animation" id="Animation_tbmy8"]
 length = 0.001
@@ -396,8 +529,9 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_l6cm7")
 
 [node name="cursor" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=805452381]
+z_index = 2
 texture_filter = 1
-position = Vector2(295.99997, 197.99997)
+position = Vector2(334, -117.99997)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_flqon")
 autoplay = "default"
@@ -405,9 +539,9 @@ autoplay = "default"
 [node name="newgame" type="TextureButton" parent="CanvasLayer" unique_id=1791499253]
 texture_filter = 1
 offset_left = 74.0
-offset_top = 87.0
+offset_top = 31.0
 offset_right = 264.0
-offset_bottom = 182.0
+offset_bottom = 126.0
 focus_neighbor_bottom = NodePath("../continue")
 mouse_filter = 2
 action_mode = 0
@@ -417,9 +551,9 @@ stretch_mode = 0
 [node name="continue" type="TextureButton" parent="CanvasLayer" unique_id=608746320]
 texture_filter = 1
 offset_left = 74.0
-offset_top = 210.0
+offset_top = 154.0
 offset_right = 262.0
-offset_bottom = 304.0
+offset_bottom = 248.0
 focus_neighbor_top = NodePath("../newgame")
 focus_neighbor_bottom = NodePath("../settings")
 mouse_filter = 2
@@ -430,29 +564,132 @@ stretch_mode = 0
 [node name="settings" type="TextureButton" parent="CanvasLayer" unique_id=1311809275]
 texture_filter = 1
 offset_left = 74.0
-offset_top = 332.0
+offset_top = 276.0
 offset_right = 260.0
-offset_bottom = 425.0
+offset_bottom = 369.0
 focus_neighbor_top = NodePath("../continue")
-focus_neighbor_bottom = NodePath("../exit")
+focus_neighbor_bottom = NodePath("../extras")
 mouse_filter = 2
 action_mode = 0
 button_mask = 0
 texture_normal = ExtResource("4_rtw2f")
 stretch_mode = 0
 
+[node name="extras" type="TextureButton" parent="CanvasLayer" unique_id=772763824]
+texture_filter = 1
+offset_left = 74.0
+offset_top = 395.0
+offset_right = 260.0
+offset_bottom = 488.0
+focus_neighbor_top = NodePath("../settings")
+focus_neighbor_bottom = NodePath("../exit")
+texture_normal = ExtResource("8_lgwnu")
+stretch_mode = 0
+
 [node name="exit" type="TextureButton" parent="CanvasLayer" unique_id=2007927495]
 texture_filter = 1
 offset_left = 74.0
-offset_top = 451.0
+offset_top = 514.0
 offset_right = 260.0
-offset_bottom = 544.0
-focus_neighbor_top = NodePath("../settings")
+offset_bottom = 607.0
+focus_neighbor_top = NodePath("../extras")
 mouse_filter = 2
 action_mode = 0
 button_mask = 0
 texture_normal = ExtResource("8_tbmy8")
 stretch_mode = 0
+
+[node name="truedelete" type="ColorRect" parent="CanvasLayer" unique_id=54199059]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -202.5
+offset_right = 330.0
+offset_bottom = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.08, 0.5372549)
+
+[node name="Label" type="Label" parent="CanvasLayer/truedelete" unique_id=168670174]
+texture_filter = 1
+layout_mode = 0
+offset_left = 82.0
+offset_top = 48.5
+offset_right = 563.0
+offset_bottom = 105.5
+theme_override_fonts/font = ExtResource("9_jk1qb")
+theme_override_font_sizes/font_size = 60
+text = "Delete all save data?"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/truedelete" unique_id=2124799393]
+texture_filter = 1
+layout_mode = 0
+offset_left = 109.0
+offset_top = 102.5
+offset_right = 526.0
+offset_bottom = 151.5
+theme_override_fonts/font = ExtResource("9_jk1qb")
+theme_override_font_sizes/font_size = 32
+text = "This includes any extra content unlocked by finding secrets in previous playthroughs."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="truedeleteyes" type="Button" parent="CanvasLayer/truedelete" unique_id=214090214]
+texture_filter = 1
+layout_mode = 0
+offset_left = 66.0
+offset_top = 243.5
+offset_right = 279.0
+offset_bottom = 349.0
+focus_neighbor_right = NodePath("../truedeleteno")
+theme_override_fonts/font = ExtResource("9_jk1qb")
+theme_override_font_sizes/font_size = 48
+text = "Yes"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/truedelete/truedeleteyes" unique_id=2097108365]
+z_index = -1
+material = SubResource("ShaderMaterial_jk1qb")
+layout_mode = 0
+offset_top = 0.5
+offset_right = 213.0
+offset_bottom = 105.0
+
+[node name="truedeleteno" type="Button" parent="CanvasLayer/truedelete" unique_id=554331900]
+texture_filter = 1
+layout_mode = 0
+offset_left = 363.0
+offset_top = 243.5
+offset_right = 576.0
+offset_bottom = 349.0
+focus_neighbor_left = NodePath("../truedeleteyes")
+theme_override_fonts/font = ExtResource("9_jk1qb")
+theme_override_font_sizes/font_size = 48
+text = "No
+"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/truedelete/truedeleteno" unique_id=63781437]
+z_index = -1
+material = SubResource("ShaderMaterial_jk1qb")
+layout_mode = 0
+offset_top = 0.5
+offset_right = 213.0
+offset_bottom = 105.0
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=467293031]
+texture_filter = 1
+offset_left = 746.0
+offset_top = 603.0
+offset_right = 1136.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("10_5dd4i")
+theme_override_font_sizes/font_size = 32
+text = "Hold Start/ESC to delete all save data"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=877996567]
 libraries/ = SubResource("AnimationLibrary_lgwnu")
@@ -460,11 +697,20 @@ libraries/ = SubResource("AnimationLibrary_lgwnu")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1716763988]
 bus = &"Sound Effects"
 
+[node name="gupfromriskofrain2" type="Timer" parent="." unique_id=619831441]
+process_callback = 0
+one_shot = true
+
 [connection signal="focus_entered" from="CanvasLayer/newgame" to="." method="_on_newgame_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/newgame" to="." method="_on_newgame_pressed"]
 [connection signal="focus_entered" from="CanvasLayer/continue" to="." method="_on_continue_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/continue" to="." method="_on_continue_pressed"]
 [connection signal="focus_entered" from="CanvasLayer/settings" to="." method="_on_settings_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/settings" to="." method="_on_settings_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/extras" to="." method="_on_extras_focus_entered"]
 [connection signal="focus_entered" from="CanvasLayer/exit" to="." method="_on_exit_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_exit_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/truedelete/truedeleteyes" to="." method="_on_truedeleteyes_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/truedelete/truedeleteyes" to="." method="_on_truedeleteyes_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/truedelete/truedeleteno" to="." method="_on_truedeleteno_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/truedelete/truedeleteno" to="." method="_on_truedeleteno_pressed"]

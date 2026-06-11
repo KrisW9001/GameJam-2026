@@ -36,7 +36,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_gs5a3"]
 resource_name = "fadeout_fast"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,7 +44,7 @@ tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -80.0]
@@ -64,6 +64,38 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, -40.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_j6opp"]
+resource_name = "filter_off"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-30.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_k4fks"]
+resource_name = "filter_on"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -30.0]
 }
 
 [sub_resource type="Animation" id="Animation_annk1"]
@@ -87,6 +119,8 @@ _data = {
 &"fade_in": SubResource("Animation_tlpki"),
 &"fadeout_fast": SubResource("Animation_gs5a3"),
 &"fadeout_slow": SubResource("Animation_i0j14"),
+&"filter_off": SubResource("Animation_j6opp"),
+&"filter_on": SubResource("Animation_k4fks"),
 &"play_normal": SubResource("Animation_annk1")
 }
 

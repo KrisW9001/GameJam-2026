@@ -15,6 +15,10 @@ region = Rect2(112, 16, 16, 16)
 atlas = ExtResource("3_tuyoq")
 region = Rect2(128, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs1tg"]
+atlas = ExtResource("3_tuyoq")
+region = Rect2(672, 208, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_w5j5w"]
 atlas = ExtResource("3_tuyoq")
 region = Rect2(112, 32, 16, 16)
@@ -22,6 +26,10 @@ region = Rect2(112, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cbf1i"]
 atlas = ExtResource("3_tuyoq")
 region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dvfe"]
+atlas = ExtResource("3_tuyoq")
+region = Rect2(640, 400, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4vfid"]
 animations = [{
@@ -38,6 +46,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_cs1tg")
+}],
+"loop": true,
+"name": &"inspect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_w5j5w")
 }, {
 "duration": 1.0,
@@ -45,6 +61,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"question",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dvfe")
+}],
+"loop": true,
+"name": &"talk",
 "speed": 5.0
 }]
 
@@ -1515,9 +1539,7 @@ texture_filter = 1
 position = Vector2(0, -43)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4vfid")
-animation = &"question"
-frame = 1
-frame_progress = 0.4868495
+animation = &"inspect"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=93938555]
 texture_filter = 1
@@ -1579,7 +1601,23 @@ offset_bottom = 717.0
 color = Color(0.32, 0, 0, 1)
 
 [node name="HealTimer" type="Timer" parent="." unique_id=629184720]
+process_callback = 0
 wait_time = 10.0
+
+[node name="AttackMovementTimer" type="Timer" parent="." unique_id=425494807]
+process_callback = 0
+one_shot = true
+
+[node name="LoadBuffer" type="Timer" parent="." unique_id=1726833650]
+process_callback = 0
+one_shot = true
+
+[node name="HurtTimer" type="Timer" parent="." unique_id=376290545]
+process_callback = 0
+one_shot = true
+
+[node name="EmoteTimer" type="Timer" parent="." unique_id=348407671]
+one_shot = true
 
 [node name="purpleflash" type="AnimationPlayer" parent="." unique_id=1347673166]
 libraries/ = SubResource("AnimationLibrary_jej6c")

@@ -274,7 +274,7 @@ script = ExtResource("1_n6pvg")
 texture_filter = 1
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_srws1")
-animation = &"die"
+animation = &"detect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1612225920]
 position = Vector2(0, 1)
@@ -344,8 +344,8 @@ text = "funny"
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=229388952 groups=["sfx_players"]]
 bus = &"Sound Effects"
 
-[node name="Timer" type="Timer" parent="." unique_id=1587582969]
-wait_time = 0.05
+[node name="Timer" type="Timer" parent="." unique_id=246239256]
+process_callback = 0
 one_shot = true
 
 [connection signal="body_entered" from="box" to="." method="_on_box_body_entered"]

@@ -679,7 +679,9 @@ script = ExtResource("1_3oqcb")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_63hua")
-animation = &"fight_end"
+animation = &"punch_l"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1991665026]
 shape = SubResource("RectangleShape2D_3oqcb")
@@ -705,6 +707,11 @@ libraries/ = SubResource("AnimationLibrary_47f75")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1578389669]
 wait_time = 2.0
+
+[node name="BufferTimer" type="Timer" parent="." unique_id=904712090]
+one_shot = true
+
+[node name="PunchTimer" type="Timer" parent="." unique_id=1131257438]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2097855045]
 collision_layer = 0
@@ -732,5 +739,6 @@ shape = SubResource("RectangleShape2D_lb3ct")
 debug_color = Color(0.9891035, 0, 0.29972324, 0.41960785)
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="PunchTimer" to="." method="_on_punch_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

@@ -4,6 +4,7 @@ extends Node
 @onready var menubutton: TextureButton = $CanvasLayer/menubutton
 @onready var im_just_so_you_can_see_the_stuff: ColorRect = $"CanvasLayer/im just so you can see the stuff"
 @onready var label: Label = $CanvasLayer/Label
+@onready var timer: Timer = $Timer
 @onready var color_rect: ColorRect = $CanvasLayer/Label/ColorRect
 @onready var anim_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
 @onready var audio_player: AudioStreamPlayer = $CanvasLayer/AudioStreamPlayer
@@ -49,7 +50,8 @@ func death_menu() -> void:
 			label.text = "Get up."
 	GlobalVariables.menumode = false
 	anim_player.play("create_death_menu")
-	await get_tree().create_timer(3).timeout
+	timer.start(3)
+	await timer.timeout
 	GlobalVariables.menumode = true
 	GlobalVariables.menutype = "Death"
 	retry.grab_focus()
@@ -78,10 +80,12 @@ func _on_retry_pressed() -> void:
 	audio_player.stream = select_sfx
 	audio_player.play()
 	anim_player.play("select_retry")
-	await get_tree().create_timer(1.5).timeout
+	timer.start(1.5)
+	await timer.timeout
 	TheCamera.transition_on()
 	MusicController.music_stop()
-	await get_tree().create_timer(0.5).timeout
+	timer.start(0.5)
+	await timer.timeout
 	get_tree().call_group("Player", "respawn")
 	get_tree().call_group("enemies", "respawn")
 	get_tree().call_group("boss", "respawn")
@@ -90,14 +94,17 @@ func _on_retry_pressed() -> void:
 	get_tree().call_group("breakable_wall", "respawn")
 	get_tree().call_group("Zulie", "respawn")
 	get_tree().call_group("VagabondActor", "respawn")
-	await get_tree().create_timer(0.5).timeout
+	timer.start(0.5)
+	await timer.timeout
 	TheCamera.snap(GlobalVariables.player_position)
 	GlobalVariables.menumode = false
 	GlobalVariables.haspass = false
 	get_tree().call_group("subway_pass", "appear")
 	get_tree().call_group("key", "appear")
+	#get_tree().call_group("room", "reset_music")
 	TheCamera.transition_off()
 	invis()
+	GameplayStats.inmaingame = true
 
 func _on_menubutton_pressed() -> void:
 	if can_select and GlobalVariables.menumode and GlobalVariables.menutype == "Death":
@@ -106,15 +113,17 @@ func _on_menubutton_pressed() -> void:
 	audio_player.stream = select_sfx
 	audio_player.play()
 	anim_player.play("select_menu")
-	await get_tree().create_timer(1.5).timeout
+	timer.start(1.5)
+	await timer.timeout
 	TheCamera.transition_on()
 	MusicController.music_fadeout_slow()
-	await get_tree().create_timer(0.5).timeout
+	timer.start(0.5)
+	await timer.timeout
 	get_tree().call_group("Player", "respawn")
 	get_tree().call_group("enemies", "respawn")
 	get_tree().call_group("Objects", "respawn")
-	await get_tree().create_timer(0.5).timeout
+	timer.start(0.5)
+	await timer.timeout
 	GlobalVariables.menumode = false
-	TheCamera.transition_off()
-	get_tree().change_scene_to_file("res://scenes/rooms/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	invis()

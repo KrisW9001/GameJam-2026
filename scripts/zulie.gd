@@ -122,7 +122,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 				TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_post_book.dialogue")
 			if GlobalVariables.seennoblecut:
 				TalkScenes.zulie_talk.dialogue_resource = load("res://dialogue/zulie_final_dismiss.dialogue")
-			body.inspect_prompt.visible = true
+			body.emote_talk()
 			body.can_talk_z = true
 			print("showing inspect prompt")
 
@@ -134,5 +134,5 @@ func respawn() -> void:
 
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
-		body.inspect_prompt.visible = false
+		body.emote_invis()
 		body.can_talk_z = false

@@ -10,6 +10,8 @@ func _ready() -> void:
 		zulie.position = Vector2(66, -1910)
 	if vagabond:
 		vagabond.global_position = Vector2(-238, -2156)
+	MusicController.vol_reset()
+	MusicController.play_level3_music()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

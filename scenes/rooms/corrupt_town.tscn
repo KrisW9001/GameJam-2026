@@ -36,6 +36,8 @@
 [ext_resource type="Script" uid="uid://d22d7jlirgomd" path="res://scripts/key.gd" id="29_wyv1g"]
 [ext_resource type="Resource" uid="uid://js3bjsnaa2bd" path="res://dialogue/storeroom_roof_ladder.dialogue" id="31_wyv1g"]
 [ext_resource type="Resource" uid="uid://bhxl6n3sl1onb" path="res://dialogue/inspect_corrupted_house.dialogue" id="32_1s1b7"]
+[ext_resource type="Texture2D" uid="uid://cnoom4085df0r" path="res://assets/effects/lock.png" id="33_30tr4"]
+[ext_resource type="Resource" uid="uid://cljbsiqqcadhk" path="res://dialogue/inspect_town_entrance.dialogue" id="34_7qheb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oxjpx"]
 texture = ExtResource("7_vuhth")
@@ -1963,6 +1965,7 @@ sources/1 = SubResource("TileSetAtlasSource_7qheb")
 sources/2 = SubResource("TileSetAtlasSource_oqygb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb3pg"]
+size = Vector2(76, 204)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkae1"]
 size = Vector2(197, 299)
@@ -2087,7 +2090,7 @@ debug_color = Color(0.6443247, 0.52313304, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="Triggers" unique_id=1633030172 instance=ExtResource("16_kx8gp")]
 position = Vector2(699, 75)
-scale = Vector2(1.688813, 17.491028)
+scale = Vector2(19.648815, 17.491028)
 whattotrigger = 4
 
 [node name="InspectArea2" parent="Triggers" unique_id=1089090468 instance=ExtResource("13_3cyy8")]
@@ -2200,6 +2203,26 @@ whichdialogue = ExtResource("32_1s1b7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea12" unique_id=1997257725]
 position = Vector2(-7.5, -5.75)
 shape = SubResource("RectangleShape2D_30tr4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Triggers" unique_id=1991849610]
+texture_filter = 1
+position = Vector2(1776, -352)
+scale = Vector2(2, 2)
+texture = ExtResource("33_30tr4")
+
+[node name="InspectArea13" parent="Triggers" unique_id=2062738046 instance=ExtResource("13_3cyy8")]
+position = Vector2(-337, 52)
+whichdialogue = ExtResource("34_7qheb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/InspectArea13" unique_id=1780520606]
+position = Vector2(266, -20)
+shape = SubResource("RectangleShape2D_yb3pg")
+debug_color = Color(1.0588765e-06, 0.6505686, 0.10330597, 0.41960785)
+
+[node name="AudioTrigger2" parent="Triggers" unique_id=908560133 instance=ExtResource("16_kx8gp")]
+position = Vector2(1678, -591.00006)
+scale = Vector2(60.768814, 30.731026)
+whattotrigger = 4
 
 [node name="Npcs" type="Node" parent="." unique_id=1091450708]
 

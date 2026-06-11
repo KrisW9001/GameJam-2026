@@ -1,0 +1,5 @@
+~ start
+set GlobalVariables.menutype = "Dialogue"
+No reason to go back now.
+do CutsceneManager.endcutscene()
+=> END

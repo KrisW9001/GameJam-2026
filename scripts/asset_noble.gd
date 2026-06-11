@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var warp_player: AnimationPlayer = $warp
 @onready var damage: AnimationPlayer = $damage
 @onready var attack_timer: Timer = $AttackTimer
+@onready var buffer_timer: Timer = $BufferTimer
+@onready var punch_timer: Timer = $PunchTimer
 @onready var hitbox_right: CollisionShape2D = $Area2D/hitbox_right
 @onready var hitbox_left: CollisionShape2D = $Area2D/hitbox_left
 @onready var hurtbox: Area2D = $hurtbox
@@ -55,10 +57,13 @@ func fight_start() -> void:
 
 #end the fight when the boss reaches 0 hp
 func fight_end() -> void:
+	GameplayStats.inmaingame = false
+	SaveLoad._save()
 	in_fight = false
 	get_tree().call_group("enemy_projectiles", "deactivate")
 	get_tree().call_group("axe", "disable")
 	recoil()
+	buffer_timer.stop()
 	hitbox_left.disabled = true
 	hitbox_right.disabled = true
 	audio_player.stream = die_sfx
@@ -99,7 +104,8 @@ func left_lightning() -> void:
 	GlobalVariables.noble_coords = Vector2(-500, -2450)
 	warp()
 	idle_r()
-	await get_tree().create_timer(.5).timeout
+	buffer_timer.start(.5)
+	await buffer_timer.timeout
 	shoot_r()
 	get_tree().call_group("enemy_projectiles", "activate")
 	cur_action = randi_range(3,4)
@@ -109,7 +115,8 @@ func right_lightning() -> void:
 	GlobalVariables.noble_coords = Vector2(500, -2450)
 	warp()
 	idle_l()
-	await get_tree().create_timer(.5).timeout
+	buffer_timer.start(.5)
+	await buffer_timer.timeout
 	shoot_l()
 	get_tree().call_group("enemy_projectiles", "activate")
 	cur_action = randi_range(3,4)
@@ -127,7 +134,8 @@ func punch_from_left() -> void:
 	GlobalVariables.noble_coords = Vector2(GlobalVariables.player_position.x - 100, GlobalVariables.player_position.y)
 	warp()
 	idle_r()
-	await get_tree().create_timer(.9).timeout
+	buffer_timer.start(.9)
+	await buffer_timer.timeout
 	punch_r()
 	hitbox_right.disabled = false
 	audio_player.stream = punch_sfx
@@ -136,21 +144,24 @@ func punch_from_left() -> void:
 	punch_loc = global_position
 	move_right = true
 	cur_action = randi_range(0,2)
+	punch_timer.start(0.45)
 	attack_timer.start(1)
 
 func punch_from_right() -> void:
 	GlobalVariables.noble_coords = Vector2(GlobalVariables.player_position.x + 100, GlobalVariables.player_position.y)
 	warp()
 	idle_l()
-	await get_tree().create_timer(.9).timeout
+	buffer_timer.start(.9)
+	await buffer_timer.timeout
 	punch_l()
-	hitbox_right.disabled = false
+	hitbox_left.disabled = false
 	audio_player.stream = punch_sfx
 	audio_player.play()
 	#set punch_loc to be used to move noble during punch attack
 	punch_loc = global_position
 	move_left = true
 	cur_action = randi_range(0,2)
+	punch_timer.start(0.45)
 	attack_timer.start(1)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -235,3 +246,8 @@ func cutscene_damage() -> void:
 	damage.play("damage_flash")
 	audio_player.stream = dmg_sfx
 	audio_player.play()
+
+
+func _on_punch_timer_timeout() -> void:
+	hitbox_left.disabled = true
+	hitbox_right.disabled = true

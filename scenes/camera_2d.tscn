@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3011ueddeovj" path="res://scripts/camera_2d.gd" id="1_qnfst"]
 [ext_resource type="Shader" uid="uid://bqde24p16vvny" path="res://shaders/tintfordamage.gdshader" id="2_h73wr"]
+[ext_resource type="FontFile" uid="uid://b5t4vmktelcvq" path="res://assets/fonts/CompassGold.ttf" id="2_w01ff"]
 [ext_resource type="Shader" uid="uid://b2eoim5h1p8xo" path="res://shaders/memory.gdshader" id="3_oor3b"]
 [ext_resource type="Texture2D" uid="uid://b5prhfw218gfn" path="res://assets/effects/final boss cutscene 1.png" id="4_pq3sa"]
 [ext_resource type="Texture2D" uid="uid://5j1x0slmr8u0" path="res://assets/effects/final boss cutscene 2.png" id="5_85k5n"]
@@ -649,6 +650,56 @@ libraries/ = SubResource("AnimationLibrary_uhu2c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1925342993]
 
+[node name="DebugLabels" type="Node" parent="CanvasLayer" unique_id=1898502377]
+
+[node name="testlabel1" type="Label" parent="CanvasLayer/DebugLabels" unique_id=1137315309]
+z_index = 8
+texture_filter = 1
+offset_left = 840.0
+offset_top = 519.0
+offset_right = 1148.0
+offset_bottom = 561.0
+theme_override_fonts/font = ExtResource("2_w01ff")
+theme_override_font_sizes/font_size = 20
+text = "hi"
+horizontal_alignment = 2
+
+[node name="testlabel2" type="Label" parent="CanvasLayer/DebugLabels" unique_id=1442684060]
+z_index = 8
+texture_filter = 1
+offset_left = 840.0
+offset_top = 538.0
+offset_right = 1148.0
+offset_bottom = 580.0
+theme_override_fonts/font = ExtResource("2_w01ff")
+theme_override_font_sizes/font_size = 20
+text = "hi"
+horizontal_alignment = 2
+
+[node name="testlabel3" type="Label" parent="CanvasLayer/DebugLabels" unique_id=857045806]
+z_index = 8
+texture_filter = 1
+offset_left = 840.0
+offset_top = 558.0
+offset_right = 1148.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("2_w01ff")
+theme_override_font_sizes/font_size = 20
+text = "hi"
+horizontal_alignment = 2
+
+[node name="testlabel4" type="Label" parent="CanvasLayer/DebugLabels" unique_id=1093441561]
+z_index = 8
+texture_filter = 1
+offset_left = 840.0
+offset_top = 579.0
+offset_right = 1148.0
+offset_bottom = 621.0
+theme_override_fonts/font = ExtResource("2_w01ff")
+theme_override_font_sizes/font_size = 20
+text = "hi"
+horizontal_alignment = 2
+
 [node name="damagetint" type="ColorRect" parent="CanvasLayer" unique_id=584360024]
 visible = false
 material = SubResource("ShaderMaterial_oor3b")
@@ -790,5 +841,7 @@ texture_filter = 1
 position = Vector2(578, 330)
 scale = Vector2(5.1615396, 5.161539)
 texture = ExtResource("6_fqqy3")
+
+[node name="rat" type="Timer" parent="." unique_id=2034171089]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

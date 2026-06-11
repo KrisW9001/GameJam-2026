@@ -44,6 +44,10 @@ var y_drop: float = 0
 @onready var heal_timer: Timer = $HealTimer
 @onready var purpleflash: AnimationPlayer = $purpleflash
 @onready var book: Sprite2D = $book
+@onready var am_timer: Timer = $AttackMovementTimer
+@onready var load_buffer: Timer = $LoadBuffer
+@onready var hurt_timer: Timer = $HurtTimer
+@onready var emote_timer: Timer = $EmoteTimer
 
 #variables to control whether or not the player input has influence over stuff (IE: removing the ability to move the player character during cutscenes)
 var debug_mode: bool = false
@@ -81,16 +85,18 @@ var dmg_sfx = preload("res://audio/sfx/Door Close Big.wav")
 var die_sfx = preload("res://audio/sfx/Explosion.wav")
 
 func ready() -> void:
-	print("readying")
+	respawn()
 	facing = 1
 	dmg_shader_1.visible = false
 	dmg_shader_2.visible = false
 	deathscreen.visible = false
-	inspect_prompt.visible = false
+	emote_invis()
 	anim_sprite.play("idle_down")
 	#put new thing here
 	health = 3
-	await get_tree().create_timer(1).timeout
+	#await get_tree().create_timer(2).timeout
+	load_buffer.start(2)
+	await load_buffer.timeout
 	dead = false
 	can_move = true
 	col_box.disabled = false
@@ -135,7 +141,7 @@ func _physics_process(delta: float) -> void:
 		#replaces the above input vector2 during a cutscene where the player needs to move to a location
 		
 		#animate the player depending on which direction they should be facing and whether or not they are moving or carrying an object
-		if input and can_move:
+		if input and can_move and !dead:
 			if !held_object and !run:
 				if input.y < -0.5:
 					facing = 0
@@ -288,7 +294,7 @@ func _physics_process(delta: float) -> void:
 #controls actions performed by the player when inputs are performed
 func _input(_event: InputEvent) -> void:
 	#controls animations and hitboxes for the basic attack
-	if !GlobalVariables.cutscenemode and !GlobalVariables.player_goto_active:
+	if !GlobalVariables.cutscenemode and !GlobalVariables.player_goto_active and !dead:
 		if Input.is_action_just_pressed("attack") and !attacking and !grabbing and !GlobalVariables.menumode and !dead:
 			#if you're not holding an object, do a basic attack
 			if !held_object:
@@ -304,17 +310,19 @@ func _input(_event: InputEvent) -> void:
 					0:
 						anim_sprite.play("attack_up")
 						box_control.play("atk_up")
-						await get_tree().create_timer(0.25).timeout
+						am_timer.start(0.25)
+						await am_timer.timeout
 						audio_player.stream = atk_sfx
 						audio_player.play()
 						if atk_vec:
 							velocity = lerp(velocity, atk_vec * atk1_max_spd, atk1_friction)
 						else:
 							velocity = lerp(velocity, Vector2(0,-1) * atk1_max_spd, atk1_friction)
-						await get_tree().create_timer(0.04).timeout
+						am_timer.start(0.04)
+						await am_timer.timeout
 						velocity = Vector2(0,0)
-						#below line was previously await get_tree().create_timer(0.21).timeout
-						await get_tree().create_timer(0.25).timeout
+						am_timer.start(0.25)
+						await am_timer.timeout
 						box_control.play("RESET")
 						attacking = false
 						can_move = true
@@ -322,16 +330,19 @@ func _input(_event: InputEvent) -> void:
 					1:
 						anim_sprite.play("attack_down")
 						box_control.play("atk_down")
-						await get_tree().create_timer(0.25).timeout
+						am_timer.start(0.25)
+						await am_timer.timeout
 						audio_player.stream = atk_sfx
 						audio_player.play()
 						if atk_vec:
 							velocity = lerp(velocity, atk_vec * atk1_max_spd, atk1_friction)
 						else:
 							velocity = lerp(velocity, Vector2(0,1) * atk1_max_spd, atk1_friction)
-						await get_tree().create_timer(0.04).timeout
+						am_timer.start(0.04)
+						await am_timer.timeout
 						velocity = Vector2(0,0)
-						await get_tree().create_timer(0.25).timeout
+						am_timer.start(0.25)
+						await am_timer.timeout
 						box_control.play("RESET")
 						attacking = false
 						can_move = true
@@ -339,16 +350,19 @@ func _input(_event: InputEvent) -> void:
 					2:
 						anim_sprite.play("attack_left")
 						box_control.play("atk_left")
-						await get_tree().create_timer(0.25).timeout
+						am_timer.start(0.25)
+						await am_timer.timeout
 						audio_player.stream = atk_sfx
 						audio_player.play()
 						if atk_vec:
 							velocity = lerp(velocity, atk_vec * atk1_max_spd, atk1_friction)
 						else:
 							velocity = lerp(velocity, Vector2(-1,0) * atk1_max_spd, atk1_friction)
-						await get_tree().create_timer(0.04).timeout
+						am_timer.start(0.04)
+						await am_timer.timeout
 						velocity = Vector2(0,0)
-						await get_tree().create_timer(0.25).timeout
+						am_timer.start(0.25)
+						await am_timer.timeout
 						box_control.play("RESET")
 						attacking = false
 						can_move = true
@@ -356,30 +370,32 @@ func _input(_event: InputEvent) -> void:
 					3:
 						anim_sprite.play("attack_right")
 						box_control.play("atk_right")
-						await get_tree().create_timer(0.25).timeout
+						am_timer.start(0.25)
+						await am_timer.timeout
 						audio_player.stream = atk_sfx
 						audio_player.play()
 						if atk_vec:
 							velocity = lerp(velocity, atk_vec * atk1_max_spd, atk1_friction)
 						else:
 							velocity = lerp(velocity, Vector2(1,0) * atk1_max_spd, atk1_friction)
-						await get_tree().create_timer(0.04).timeout
+						am_timer.start(0.04)
+						await am_timer.timeout
 						velocity = Vector2(0,0)
-						await get_tree().create_timer(0.25).timeout
+						am_timer.start(0.25)
+						await am_timer.timeout
 						box_control.play("RESET")
 						attacking = false
 						can_move = true
 						is_playing = false
 			#if holding an object, throw it
 			elif held_object:
-				#var throw_vec = Vector2(
-				#Input.get_action_strength("right_input") - Input.get_action_strength("left_input"), Input.get_action_strength("down_input") - Input.get_action_strength("up_input")
-			#).normalized()
 				attacking = true
 				can_move = false
 				velocity = Vector2.ZERO
 				match facing:
 					0:
+						attacking = true
+						can_move = false
 						anim_sprite.play("throw_up")
 						var throw_x = 0
 						var throw_y = throw_strength
@@ -387,10 +403,14 @@ func _input(_event: InputEvent) -> void:
 						held_object = null
 						audio_player.stream = throw_sfx
 						audio_player.play()
-						await get_tree().create_timer(0.1).timeout
+						#await get_tree().create_timer(0.1).timeout
+						am_timer.start(0.15)
+						await am_timer.timeout
 						attacking = false
 						can_move = true
 					1:
+						attacking = true
+						can_move = false
 						anim_sprite.play("throw_down")
 						var throw_x = 0
 						var throw_y = throw_strength * -1
@@ -398,10 +418,13 @@ func _input(_event: InputEvent) -> void:
 						held_object = null
 						audio_player.stream = throw_sfx
 						audio_player.play()
-						await get_tree().create_timer(0.1).timeout
+						am_timer.start(0.15)
+						await am_timer.timeout
 						attacking = false
 						can_move = true
 					2:
+						attacking = true
+						can_move = false
 						anim_sprite.play("throw_left")
 						held_object.position.y += 25
 						var throw_x = throw_strength
@@ -410,10 +433,13 @@ func _input(_event: InputEvent) -> void:
 						held_object = null
 						audio_player.stream = throw_sfx
 						audio_player.play()
-						await get_tree().create_timer(0.1).timeout
+						am_timer.start(0.15)
+						await am_timer.timeout
 						attacking = false
 						can_move = true
 					3:
+						attacking = true
+						can_move = false
 						anim_sprite.play("throw_right")
 						held_object.position.y += 25
 						var throw_x = throw_strength * -1
@@ -422,7 +448,8 @@ func _input(_event: InputEvent) -> void:
 						held_object = null
 						audio_player.stream = throw_sfx
 						audio_player.play()
-						await get_tree().create_timer(0.1).timeout
+						am_timer.start(0.15)
+						await am_timer.timeout
 						attacking = false
 						can_move = true
 				can_throw = false
@@ -436,28 +463,33 @@ func _input(_event: InputEvent) -> void:
 				0:
 					anim_sprite.play("grab_up")
 					box_control.play("grab_up")
-					await get_tree().create_timer(0.3).timeout
+					#await get_tree().create_timer(0.3).timeout
+					am_timer.start(0.3)
+					await am_timer.timeout
 					grabbing = false
 					can_move = true
 					box_control.play("RESET")
 				1:
 					anim_sprite.play("grab_down")
 					box_control.play("grab_down")
-					await get_tree().create_timer(0.3).timeout
+					am_timer.start(0.3)
+					await am_timer.timeout
 					grabbing = false
 					can_move = true
 					box_control.play("RESET")
 				2:
 					anim_sprite.play("grab_left")
 					box_control.play("grab_left")
-					await get_tree().create_timer(0.3).timeout
+					am_timer.start(0.3)
+					await am_timer.timeout
 					grabbing = false
 					can_move = true
 					box_control.play("RESET")
 				3:
 					anim_sprite.play("grab_right")
 					box_control.play("grab_right")
-					await get_tree().create_timer(0.3).timeout
+					am_timer.start(0.3)
+					await am_timer.timeout
 					grabbing = false
 					can_move = true
 					box_control.play("RESET")
@@ -472,6 +504,7 @@ func _input(_event: InputEvent) -> void:
 		if Input.is_action_just_pressed("pause"):
 			print("pausing")
 			PauseMenu.create()
+			GameplayStats.inmaingame = false
 		
 		##debug mode - DO NOT LEAVE THIS ACTIVE WHEN EXPORTING
 		if Input.is_key_pressed(KEY_1) and !debug_mode and Input.is_key_pressed(KEY_TAB) and Input.is_key_pressed(KEY_D) and Input.is_key_pressed(KEY_B):
@@ -498,6 +531,7 @@ func _input(_event: InputEvent) -> void:
 			GlobalVariables.beatfirstboss = false
 			GlobalVariables.haspass = false
 			GlobalVariables.metzulie = false
+			GlobalVariables.metmage = false
 			GlobalVariables.beatsecondboss = false
 			GlobalVariables.mushroomquest = false
 			GlobalVariables.hasmushroom = false
@@ -529,6 +563,19 @@ func _input(_event: InputEvent) -> void:
 			GlobalVariables.cutscenemode = true
 			CutsceneManager.cutscene13_part2()
 		
+		if Input.is_key_pressed(KEY_M) and debug_mode:
+			GameplayStats.inmaingame = true
+		
+		if Input.is_key_pressed(KEY_N) and debug_mode:
+			GameplayStats.inmaingame = false
+		
+		if Input.is_key_pressed(KEY_B) and debug_mode:
+			GameplayStats.time = 0
+		
+		if Input.is_key_pressed(KEY_P) and debug_mode:
+			GlobalVariables.haspass = true
+			print("giving subway pass")
+		
 		if Input.is_action_just_pressed("enhance") and debug_mode:
 			get_tree().call_group("boss", "fight_end")
 		
@@ -545,7 +592,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("idle_left")
 					3:
 						anim_sprite.play("idle_right")
-				inspect_prompt.visible = false
+				emote_invis()
 				GlobalVariables.cutscenemode = true
 				TalkScenes.protag_talk.start()
 				if GlobalVariables.haspass:
@@ -562,7 +609,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("idle_left")
 					3:
 						anim_sprite.play("idle_right")
-				inspect_prompt.visible = false
+				emote_invis()
 				GlobalVariables.cutscenemode = true
 				TalkScenes.vagabond_talk.start()
 			elif can_talk_z and !GlobalVariables.menumode and !dead and !can_inspect:
@@ -576,7 +623,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("idle_left")
 					3:
 						anim_sprite.play("idle_right")
-				inspect_prompt.visible = false
+				emote_invis()
 				GlobalVariables.cutscenemode = true
 				TalkScenes.zulie_talk.start()
 			elif can_talk_h and !GlobalVariables.menumode and !dead and !can_inspect:
@@ -590,7 +637,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("idle_left")
 					3:
 						anim_sprite.play("idle_right")
-				inspect_prompt.visible = false
+				emote_invis()
 				GlobalVariables.cutscenemode = true
 				TalkScenes.healer_talk.start()
 			elif can_talk_n and !GlobalVariables.menumode and !dead and !can_inspect:
@@ -604,7 +651,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("idle_left")
 					3:
 						anim_sprite.play("idle_right")
-				inspect_prompt.visible = false
+				emote_invis()
 				GlobalVariables.cutscenemode = true
 				TalkScenes.npc_talk.start()
 			elif can_talk_d and !GlobalVariables.menumode and !dead and !can_inspect:
@@ -618,7 +665,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("idle_left")
 					3:
 						anim_sprite.play("idle_right")
-				inspect_prompt.visible = false
+				emote_invis()
 				GlobalVariables.cutscenemode = true
 				TalkScenes.damien_talk.start()
 			elif can_talk_b and !GlobalVariables.menumode and !dead and !can_inspect:
@@ -632,7 +679,7 @@ func _input(_event: InputEvent) -> void:
 						anim_sprite.play("idle_left")
 					3:
 						anim_sprite.play("idle_right")
-				inspect_prompt.visible = false
+				emote_invis()
 				GlobalVariables.cutscenemode = true
 				TalkScenes.brooke_talk.start()
 
@@ -676,7 +723,8 @@ func hurt_player(damage: int, enemy_x: float, enemy_y: float) -> void:
 			enemy_pos_y = enemy_y
 			TheCamera.screentint(1)
 			heal_timer.start()
-			await get_tree().create_timer(0.3).timeout
+			hurt_timer.start(0.3)
+			await hurt_timer.timeout
 			can_move = true
 			damaged = false
 		2:
@@ -691,11 +739,14 @@ func hurt_player(damage: int, enemy_x: float, enemy_y: float) -> void:
 			enemy_pos_x = enemy_x
 			enemy_pos_y = enemy_y
 			heal_timer.start()
-			await get_tree().create_timer(0.3).timeout
+			hurt_timer.start(0.3)
+			await hurt_timer.timeout
 			can_move = true
 			damaged = false
 			TheCamera.screentint(2)
 		1:
+			GameplayStats.inmaingame = false
+			GameplayStats.deathcount += 1
 			MusicController.music_stop()
 			health -= 1
 			heal_timer.stop()
@@ -721,10 +772,11 @@ func hurt_player(damage: int, enemy_x: float, enemy_y: float) -> void:
 			dmg_shader_2.visible = false
 			deathscreen.visible = true
 			z_index = 4
-			await get_tree().create_timer(3).timeout
+			hurt_timer.start(3)
+			await hurt_timer.timeout
+			MusicController.music_fadein()
 			MusicController.play_death_music()
 			GameOver.death_menu()
-			print(z_index)
 
 #when the heal timer ends, increase the player's health
 func _on_heal_timer_timeout() -> void:
@@ -759,7 +811,8 @@ func respawn() -> void:
 	anim_sprite.play("idle_down")
 	health = 3
 	set_collision_layer_value(2, true)
-	await get_tree().create_timer(1.5).timeout
+	load_buffer.start(2)
+	await load_buffer.timeout
 	dead = false
 	can_move = true
 	col_box.disabled = false
@@ -770,7 +823,8 @@ func respawn() -> void:
 func pause_shaders() -> void:
 	dmg_shader_1.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	dmg_shader_2.modulate = Color(1.0, 1.0, 1.0, 0.0)
-	await get_tree().create_timer(0.3).timeout
+	load_buffer.start(0.3)
+	await load_buffer.timeout
 	dmg_shader_1.modulate = Color(1.0, 1.0, 1.0)
 	dmg_shader_2.modulate = Color(1.0, 1.0, 1.0)
 
@@ -807,6 +861,13 @@ func recover() -> void:
 	anim_sprite.play("idle_down")
 	deathscreen.visible = false
 
+#function for healing to full when an important cutscene starts
+func healtofull() -> void:
+	health = 3
+	heal_timer.stop()
+	dmg_shader_1.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	dmg_shader_2.modulate = Color(1.0, 1.0, 1.0, 0.0)
+
 func kill_freeze() -> void:
 	health = 3
 	dmg_shader_1.visible = false
@@ -819,13 +880,27 @@ func kill_freeze() -> void:
 func emote_exclaim() -> void:
 	emote.visible = true
 	emote.play("exclamation")
-	await get_tree().create_timer(0.5).timeout
+	#await get_tree().create_timer(0.5).timeout
+	emote_timer.start(0.5)
+	await emote_timer.timeout
 	emote.visible = false
 
 func emote_question() -> void:
 	emote.visible = true
 	emote.play("question")
-	await get_tree().create_timer(0.5).timeout
+	emote_timer.start(0.5)
+	await emote_timer.timeout
+	emote.visible = false
+
+func emote_inspect() -> void:
+	emote.visible = true
+	emote.play("inspect")
+
+func emote_talk() -> void:
+	emote.visible = true
+	emote.play("talk")
+
+func emote_invis() -> void:
 	emote.visible = false
 
 func walk_r() -> void:

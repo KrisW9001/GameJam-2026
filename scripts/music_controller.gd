@@ -57,7 +57,7 @@ func music_fadeout_slow() -> void:
 
 func music_fadeout_fast() -> void:
 	animation_player.play("fadeout_fast")
-	timer.start(3)
+	timer.start(2)
 
 func test_music_settings() -> void:
 	if !is_playing:

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cr6q6wntht5ml"]
+
+[ext_resource type="Script" uid="uid://mvim6xmmukaa" path="res://scripts/cutscene_manager.gd" id="1_af8s6"]
+
+[node name="CutsceneManager" type="Node" unique_id=756573520]
+script = ExtResource("1_af8s6")
+
+[node name="penis clock" type="Timer" parent="." unique_id=1621171025]
+process_callback = 0
+one_shot = true

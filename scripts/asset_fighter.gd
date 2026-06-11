@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var resettimer: Timer = $resettimer
 @onready var waittimer: Timer = $waittimer
+@onready var jumptimer: Timer = $jumptimer
+@onready var punchtimer: Timer = $punchtimer
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var damageplayer: AnimationPlayer = $damageplayer
 @onready var offscreen: Sprite2D = $"../Boss Positioning/Offscreen"
@@ -84,8 +86,12 @@ func choose_action() -> void:
 
 func top_left_axe() -> void:
 	backstep_r()
+	set_collision_layer_value(8, false)
 	GlobalVariables.fighter_coords = Vector2(335, 241)
-	await get_tree().create_timer(1).timeout
+	#await get_tree().create_timer(1).timeout
+	jumptimer.start(1)
+	await jumptimer.timeout
+	set_collision_layer_value(8, true)
 	charging = true
 	charge_r()
 	get_tree().call_group("enemy_projectiles", "spawn")
@@ -97,8 +103,11 @@ func top_left_axe() -> void:
 
 func bottom_left_axe() -> void:
 	backstep_r()
+	set_collision_layer_value(8, false)
 	GlobalVariables.fighter_coords = Vector2(335, 431)
-	await get_tree().create_timer(1).timeout
+	jumptimer.start(1)
+	await jumptimer.timeout
+	set_collision_layer_value(8, true)
 	charging = true
 	charge_r()
 	get_tree().call_group("enemy_projectiles", "spawn")
@@ -111,27 +120,34 @@ func bottom_left_axe() -> void:
 func right_punch() -> void:
 	punch_target = GlobalVariables.player_position
 	ready_melee_r()
-	await get_tree().create_timer(.5).timeout
+	jumptimer.start(0.5)
+	await jumptimer.timeout
 	punch_atk = true
 	attacking = true
 	punch_r()
 	action = randi_range(4, 5)
+	punchtimer.start(0.75)
 	resettimer.start(1)
 
 func left_punch() -> void:
 	punch_target = GlobalVariables.player_position
 	ready_melee_l()
-	await get_tree().create_timer(.5).timeout
+	jumptimer.start(0.5)
+	await jumptimer.timeout
 	punch_atk = true
 	attacking = true
 	punch_l()
 	action = randi_range(0, 1)
+	punchtimer.start(0.75)
 	resettimer.start(1)
 
 func top_right_axe() -> void:
 	backstep_l()
+	set_collision_layer_value(8, false)
 	GlobalVariables.fighter_coords = Vector2(816, 241)
-	await get_tree().create_timer(1).timeout
+	jumptimer.start(1)
+	await jumptimer.timeout
+	set_collision_layer_value(8, true)
 	charging = true
 	charge_l()
 	get_tree().call_group("enemy_projectiles", "spawn")
@@ -143,8 +159,11 @@ func top_right_axe() -> void:
 
 func bottom_right_axe() -> void:
 	backstep_l()
+	set_collision_layer_value(8, false)
 	GlobalVariables.fighter_coords = Vector2(816, 431)
-	await get_tree().create_timer(1).timeout
+	jumptimer.start(1)
+	await jumptimer.timeout
+	set_collision_layer_value(8, true)
 	charging = true
 	charge_l()
 	get_tree().call_group("enemy_projectiles", "spawn")
@@ -166,6 +185,7 @@ func respawn() -> void:
 	get_tree().call_group("enemy_projectiles", "dissapear")
 	GlobalVariables.fighter_goto = false
 	position = Vector2(-62, 370)
+	health = 10
 
 #damage the boss
 func hurt_boss(damage: int) -> void:
@@ -212,6 +232,7 @@ func _on_resettimer_timeout() -> void:
 	if attacking == true:
 		punch_atk = false
 		attacking = false
+		get_tree().call_group("enemy_projectiles", "dissapear")
 		choose_action()
 
 #take damage from projectiles
@@ -293,3 +314,7 @@ func _on_detector_body_entered(body: Node2D) -> void:
 		print("you took damage from a spell")
 		body.hurt_player(1, position.x, position.y)
 		dealtdamage = true
+
+
+func _on_punchtimer_timeout() -> void:
+	melee.disabled = true

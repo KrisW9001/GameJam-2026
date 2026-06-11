@@ -1,5 +1,6 @@
 ~ start
 if GlobalVariables.metbrooke == false:
+	set GlobalVariables.brookemeeting = true
 	???: Huh? Oh, hey. Didn't think anyone would come down here after...well, you know. 
 	???: How's it looking up there? Is baldie's corruption stuff still spreading?
 	- No, but it's pretty bad.
@@ -23,7 +24,9 @@ if GlobalVariables.metbrooke == true:
 	- Want to talk for a bit?
 		Brooke: Sure, no need to rush your big adventure right? => ask
 	- Just saying hi.
-		Brooke: Good to see you too. If you see Noble remind him that he sucks. => END
+		Brooke: Good to see you too. If you see Noble remind him that he sucks.
+		do CutsceneManager.endcutscene()
+		=> END
 
 
 ~ ask
