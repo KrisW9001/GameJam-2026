@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bsg87885iehmy"
+path="res://.godot/imported/inspect_artifact1.dialogue-1da0fc3c2fb8414b2275a3c5a7b19a8c.tres"
+
+[deps]
+
+source_file="res://dialogue/inspect_artifact1.dialogue"
+dest_files=["res://.godot/imported/inspect_artifact1.dialogue-1da0fc3c2fb8414b2275a3c5a7b19a8c.tres"]
+
+[params]
+
+defaults=true

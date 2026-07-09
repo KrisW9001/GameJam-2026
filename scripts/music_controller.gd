@@ -9,12 +9,12 @@ var oneshot: bool = false
 
 #declaring all music
 var test_music = preload("res://audio/music/3-28-2019 (edm fight theme).wav")
-var level1_music = load("res://audio/music/12-4-2016 - 1 (exploration theme).wav")
+var level1_music = preload("res://audio/music/12-4-2016 - 1 (exploration theme).ogg")
 var death_music = preload("res://audio/music/trimmed/5-16-2018 - 1 (death theme trimmed).ogg")
 var fight1_intro_music = load("res://audio/music/trimmed/11-21-2015 - 1 (fight 1 intro).ogg")
 var fight1_music = load("res://audio/music/trimmed/11-21-2015 - 1 (fight 1 loop).ogg")
 var memory_music = load("res://audio/music/trimmed/Damaged Mind (memory cutscene).ogg")
-var moody_cutscene = preload("res://audio/music/trimmed/12-4-2018 - 2 (moody guitar).ogg")
+var moody_cutscene = load("res://audio/music/trimmed/12-4-2018 - 2 (moody guitar).ogg")
 var level2_music = load("res://audio/music/trimmed/10-6-2015 - 1 (exploration theme trimmed).ogg")
 var zulie_theme = load("res://audio/music/trimmed/7-1-2018 - 1 (cutscene theme trimmed).ogg")
 var fight2_intro_music = load("res://audio/music/trimmed/3-3-2017 - 1 (fight 2 intro).ogg")

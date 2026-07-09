@@ -13,5 +13,6 @@ elif GlobalVariables.haspass == true:
 	set GlobalVariables.menumode = "Dialogue"
 	do sfx_success()
 	The scanner accepted my pass.
+	do get_tree().call_group("breakable_wall", "killwalls")
 	do CutsceneManager.endcutscene()
 => END

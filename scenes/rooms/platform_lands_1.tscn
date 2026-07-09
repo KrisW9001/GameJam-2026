@@ -2971,6 +2971,9 @@ size = Vector2(131, 59)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bx2u8"]
 size = Vector2(88, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc5se"]
+size = Vector2(643, 85.25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1aadt"]
 size = Vector2(66, 53)
 
@@ -3084,13 +3087,13 @@ scale = Vector2(25.056019, 19.163206)
 location = Vector2(116, -358)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RespawnAnchor2" unique_id=1508536598]
-position = Vector2(2.8536072, -0.18264008)
+position = Vector2(-0.119731426, -0.10436667)
 shape = SubResource("RectangleShape2D_x3gdo")
 debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("17_x3gdo")]
-position = Vector2(172, -380)
-scale = Vector2(33.446075, 28.001385)
+position = Vector2(217, -382.99997)
+scale = Vector2(3.1660743, 20.241385)
 whattotrigger = 3
 
 [node name="Pickup" parent="triggers" unique_id=520107679 groups=["key"] instance=ExtResource("20_bx2u8")]
@@ -3136,8 +3139,8 @@ shape = SubResource("RectangleShape2D_5be8d")
 debug_color = Color(2.9359758e-06, 0.641002, 0.32187772, 0.41960785)
 
 [node name="AudioTrigger2" parent="triggers" unique_id=1971659583 instance=ExtResource("17_x3gdo")]
-position = Vector2(4635, -313.00003)
-scale = Vector2(24.32608, 26.561384)
+position = Vector2(4626, -337)
+scale = Vector2(18.366081, 7.961385)
 whattotrigger = 3
 
 [node name="InspectArea5" parent="triggers" unique_id=128750674 instance=ExtResource("18_nr1en")]
@@ -3165,8 +3168,8 @@ position = Vector2(5115, -1495)
 whichroom = "res://scenes/rooms/platform_lands_2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RoomTrigger" unique_id=1044806287]
-position = Vector2(39.5, 257)
-shape = SubResource("RectangleShape2D_1aadt")
+position = Vector2(42.5, 358.625)
+shape = SubResource("RectangleShape2D_uc5se")
 debug_color = Color(0.8813839, 0.3376081, 0, 0.41960785)
 
 [node name="RoomTrigger2" parent="triggers" unique_id=743828017 instance=ExtResource("31_i4trv")]
@@ -3178,6 +3181,16 @@ set_town_room = "platlands"
 position = Vector2(53, 245.5)
 shape = SubResource("RectangleShape2D_1aadt")
 debug_color = Color(0.8813839, 0.3376081, 0, 0.41960785)
+
+[node name="AudioTrigger3" parent="triggers" unique_id=1226669869 instance=ExtResource("17_x3gdo")]
+position = Vector2(-376, 382)
+scale = Vector2(2.6399994, 5)
+whattotrigger = 2
+
+[node name="AudioTrigger4" parent="triggers" unique_id=1493940763 instance=ExtResource("17_x3gdo")]
+position = Vector2(4626, -62)
+scale = Vector2(18.366081, 7.961385)
+whattotrigger = 3
 
 [node name="objects" type="Node" parent="." unique_id=1941737786]
 

@@ -1745,6 +1745,9 @@ physics_layer_0/collision_mask = 10
 sources/0 = SubResource("TileSetAtlasSource_u56q5")
 sources/1 = SubResource("TileSetAtlasSource_5nfov")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3frr"]
+size = Vector2(22.270098, 9.914833)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmnbr"]
 size = Vector2(13.010849, 9.914833)
 
@@ -4315,8 +4318,8 @@ collision_mask = 2
 lock_coord = Vector2(578, 325)
 
 [node name="AudioTrigger" parent="triggers" unique_id=1633030172 instance=ExtResource("18_diphd")]
-position = Vector2(-547, -157)
-scale = Vector2(31.726074, 19.281384)
+position = Vector2(-542.00006, 27)
+scale = Vector2(28.446074, 1.4013824)
 
 [node name="RespawnAnchor" parent="triggers" unique_id=1057853141 instance=ExtResource("19_hmnbr")]
 position = Vector2(-373, -47.999985)
@@ -4324,8 +4327,8 @@ scale = Vector2(25.056019, 19.163206)
 location = Vector2(-373, -48)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/RespawnAnchor" unique_id=1361485666]
-position = Vector2(-5.268196, -6.0532675)
-shape = SubResource("RectangleShape2D_hmnbr")
+position = Vector2(-5.866853, 0.2087326)
+shape = SubResource("RectangleShape2D_j3frr")
 debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 
 [node name="RespawnAnchor2" parent="triggers" unique_id=846692266 instance=ExtResource("19_hmnbr")]

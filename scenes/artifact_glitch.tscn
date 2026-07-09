@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bmjibxlb7dxe0"]
+
+[ext_resource type="Texture2D" uid="uid://bo2fjk3564m3w" path="res://assets/GB city asset pack stuff/soft.png" id="1_vivy6"]
+[ext_resource type="Script" uid="uid://bqqfipx7230sk" path="res://scripts/visualfuckery.gd" id="2_5b6tn"]
+
+[node name="glitch" type="Sprite2D" unique_id=3082237 groups=["visualfuckery"]]
+light_mask = 2
+z_index = 1
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_vivy6")
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+script = ExtResource("2_5b6tn")

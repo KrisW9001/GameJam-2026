@@ -1,0 +1,13 @@
+~ start
+if GlobalVariables.artifact1 == false:
+	...The corruption is spreading out like roots from this thing. I can reach out and touch it, and I feel fine when I do.
+	...
+	- Destroy it.
+		do CutsceneManager.artifact1_destroy()
+		=> END
+	- Leave it alone. => exit
+if GlobalVariables.artifact1 == true:
+	=> exit
+~ exit
+do CutsceneManager.endcutscene()
+=> END

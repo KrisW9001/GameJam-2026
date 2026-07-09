@@ -77,7 +77,7 @@ animations = [{
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_l4hps")
 }],
-"loop": true,
+"loop": 1,
 "name": &"detect",
 "speed": 5.0
 }, {
@@ -94,7 +94,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2v7ff")
 }],
-"loop": false,
+"loop": 0,
 "name": &"die",
 "speed": 5.0
 }, {
@@ -111,7 +111,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cf5el")
 }],
-"loop": true,
+"loop": 1,
 "name": &"giveup",
 "speed": 5.0
 }, {
@@ -122,7 +122,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_1lfab")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -139,7 +139,7 @@ animations = [{
 "duration": 0.8,
 "texture": SubResource("AtlasTexture_lv6l0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move",
 "speed": 5.0
 }]
@@ -184,7 +184,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fd6lc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -265,7 +265,6 @@ shader_parameter/shake_color_rate = 0.01
 process_mode = 1
 scale = Vector2(2.5, 2.5)
 collision_layer = 16
-collision_mask = 9
 script = ExtResource("1_02a0s")
 
 [node name="slimebody" type="AnimatedSprite2D" parent="." unique_id=289324005]

@@ -3,8 +3,8 @@ extends CharacterBody2D
 #basic movement stats are for simply moving the control stick
 #roll movement stats are for when the player uses their dodge roll
 #attack movement stats are for when a small movement is made for visual flair, or as an integral part to how the attack works
-const accel: int = 20
-const max_speed: int = 295
+var accel: int = 20
+var max_speed: int = 295
 var sprint_speed: int = 415
 var sprint_accel: int = 3
 const atk1_max_spd: int = 7
@@ -83,6 +83,7 @@ var grab_sfx = preload("res://audio/sfx/Hit 2.wav")
 var throw_sfx = preload("res://audio/sfx/Laser Shot.wav")
 var dmg_sfx = preload("res://audio/sfx/Door Close Big.wav")
 var die_sfx = preload("res://audio/sfx/Explosion.wav")
+var artifact_sfx = load("res://audio/sfx/Rock Break 1.wav")
 
 func ready() -> void:
 	respawn()
@@ -509,16 +510,16 @@ func _input(_event: InputEvent) -> void:
 		##debug mode - DO NOT LEAVE THIS ACTIVE WHEN EXPORTING
 		if Input.is_key_pressed(KEY_1) and !debug_mode and Input.is_key_pressed(KEY_TAB) and Input.is_key_pressed(KEY_D) and Input.is_key_pressed(KEY_B):
 			print("debug mode on")
-			sprint_speed = 600
-			sprint_accel = 100
+			max_speed = 600
+			accel = 100
 			set_collision_layer_value(2, false)
 			set_collision_mask_value(1, false)
 			debug_mode = true
 		
 		if Input.is_key_pressed(KEY_2) and debug_mode:
 			print("debug mode off")
-			sprint_speed = 350
-			sprint_accel = 5
+			accel = 20
+			max_speed = 295
 			set_collision_layer_value(2, true)
 			set_collision_mask_value(1, true)
 			debug_mode = false
@@ -563,6 +564,13 @@ func _input(_event: InputEvent) -> void:
 			GlobalVariables.cutscenemode = true
 			CutsceneManager.cutscene13_part2()
 		
+		if Input.is_key_pressed(KEY_8) and debug_mode:
+			print("removing artifact progress")
+			GlobalVariables.artifact1 = false
+			GlobalVariables.artifact2 = false
+			GlobalVariables.artifact3 = false
+			GlobalVariables.artifact4 = false
+		
 		if Input.is_key_pressed(KEY_M) and debug_mode:
 			GameplayStats.inmaingame = true
 		
@@ -595,8 +603,6 @@ func _input(_event: InputEvent) -> void:
 				emote_invis()
 				GlobalVariables.cutscenemode = true
 				TalkScenes.protag_talk.start()
-				if GlobalVariables.haspass:
-					get_tree().call_group("breakable_wall", "killwalls")
 				print("starting dialogue")
 			elif can_talk_v and !GlobalVariables.menumode and !dead and !can_inspect:
 				velocity = Vector2.ZERO
@@ -946,6 +952,17 @@ func cool_toss() -> void:
 func cool_throw() -> void:
 	anim_sprite.play("cool_throw")
 	audio_player.stream = throw_sfx
+	audio_player.play()
+
+#the two animation sequences for destroying artifacts
+func artifact_destroy_1() -> void:
+	anim_sprite.play("destroy_artifact_1")
+	audio_player.stream = grab_sfx
+	audio_player.play()
+
+func artifact_destroy_2() -> void:
+	anim_sprite.play("destroy_artifact_2")
+	audio_player.stream = artifact_sfx
 	audio_player.play()
 
 #stop moving instantly.

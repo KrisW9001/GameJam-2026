@@ -22,3 +22,6 @@ func teleport() -> void:
 		"platlands":
 			player.global_position = Vector2(3650, 250)
 			TheCamera.snap(player.global_position)
+		"secret":
+			player.global_position = Vector2(190, 1242)
+			TheCamera.snap(player.global_position)

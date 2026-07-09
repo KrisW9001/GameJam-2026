@@ -65,5 +65,11 @@ var nobleprefight: bool = false #set after seeing the noble's pre-fight cutscene
 var finishedgame: bool = false #set after completing the game, unlocks the extras tab in the main menu
 
 #secret flags: used to determine if a secret has already been claimed and prevent the same one contributing to the secrets found stat twice
+
+#the artifacts are collectibles that unlock the bonus levels, there is one for each major area
+var artifact1: bool = false #subway artifact
+var artifact2: bool = false #platform lands artifact
+var artifact3: bool = false #village artifact
+var artifact4: bool = false #file dumps artifact
 var zuliejournal: bool = false #zulie's secret journal in her house
 var brookemeeting: bool = false #spoke with Brooke in the town's underground tunnels

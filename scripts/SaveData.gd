@@ -44,5 +44,9 @@ class_name SaveDataResource
 @export var secretsfound: int = 0 
 
 #secret flags
+@export var artifact1: bool = false
+@export var artifact2: bool = false
+@export var artifact3: bool = false
+@export var artifact4: bool = false
 @export var zuliejournal: bool = false
 @export var brookemeeting: bool = false

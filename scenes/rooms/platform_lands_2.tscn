@@ -3311,8 +3311,8 @@ shape = SubResource("RectangleShape2D_evtb7")
 debug_color = Color(0.6690203, 0.51026857, 0, 0.41960785)
 
 [node name="AudioTrigger" parent="Triggers" unique_id=1633030172 instance=ExtResource("17_evtb7")]
-position = Vector2(-1.9999962, -15.000008)
-scale = Vector2(20.32608, 21.56138)
+position = Vector2(19, -89)
+scale = Vector2(-17.077219, 1.6189932)
 whattotrigger = 3
 
 [node name="InspectArea" parent="Triggers" unique_id=580571303 instance=ExtResource("21_g02gd")]

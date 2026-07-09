@@ -176,79 +176,118 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ci886"]
-resource_name = "vagabond_appear"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("vagabond_visual:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_1bhv1"]
-resource_name = "vagabond_dissapear"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("vagabond_visual:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_5h102"]
-resource_name = "zulie_appear"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("zulie_visual:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_wmkfn"]
-resource_name = "zulie_dissapear"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("zulie_visual:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pagdy"]
 _data = {
 &"RESET": SubResource("Animation_k4ywg"),
-&"marcus_appear": SubResource("Animation_jyle0"),
-&"marcus_dissapear": SubResource("Animation_vj7rh"),
-&"vagabond_appear": SubResource("Animation_ci886"),
-&"vagabond_dissapear": SubResource("Animation_1bhv1"),
-&"zulie_appear": SubResource("Animation_5h102"),
-&"zulie_dissapear": SubResource("Animation_wmkfn")
+&"appear": SubResource("Animation_jyle0"),
+&"disappear": SubResource("Animation_vj7rh")
+}
+
+[sub_resource type="Animation" id="Animation_wmkfn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vagabond_visual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v7bbo"]
+resource_name = "vagabond"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vagabond_visual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a8dg7"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vagabond_visual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tp0b4"]
+_data = {
+&"RESET": SubResource("Animation_wmkfn"),
+&"appear": SubResource("Animation_v7bbo"),
+&"disappear": SubResource("Animation_a8dg7")
+}
+
+[sub_resource type="Animation" id="Animation_tp0b4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zulie_visual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3lakf"]
+resource_name = "appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zulie_visual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o0rts"]
+resource_name = "disappear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zulie_visual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3082y"]
+_data = {
+&"RESET": SubResource("Animation_tp0b4"),
+&"appear": SubResource("Animation_3lakf"),
+&"disappear": SubResource("Animation_o0rts")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_5h102"]
@@ -305,6 +344,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("actual credits/RichTextLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_my18k"]
 resource_name = "credits_scroll"
@@ -340,10 +391,22 @@ tracks/2/path = NodePath("actual credits/RichTextLabel:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 86),
+"times": PackedFloat32Array(0, 78.333336),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-485, -1450), Vector2(-485, -8200.64)]
+"values": [Vector2(-485, -1450), Vector2(-485, -7608.476)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("actual credits/RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 83.260155, 86),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_47g4r"]
@@ -445,8 +508,14 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.0047198827
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="visuals" unique_id=1737978224]
+[node name="marcus_anim" type="AnimationPlayer" parent="visuals" unique_id=1737978224]
 libraries/ = SubResource("AnimationLibrary_pagdy")
+
+[node name="vagabond_anim" type="AnimationPlayer" parent="visuals" unique_id=1361961724]
+libraries/ = SubResource("AnimationLibrary_tp0b4")
+
+[node name="zulie_anim" type="AnimationPlayer" parent="visuals" unique_id=2144647240]
+libraries/ = SubResource("AnimationLibrary_3082y")
 
 [node name="ColorRect" type="ColorRect" parent="visuals" unique_id=1492436832]
 visible = false

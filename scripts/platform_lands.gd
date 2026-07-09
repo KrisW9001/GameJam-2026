@@ -22,8 +22,13 @@ func _ready() -> void:
 		GlobalVariables.zulie_goto = true
 		GlobalVariables.vagabond_goto = true
 		CutsceneManager.pair_togate()
-	if MusicController.is_playing:
+	if !MusicController.is_playing:
+		MusicController.music_fadein()
+		MusicController.play_level2_music()
+	elif MusicController.bgm_player.stream != MusicController.level2_music:
 		MusicController.music_stop()
+		MusicController.music_fadein()
+		MusicController.play_level2_music()
 
 #func reset_music() -> void:
 	#MusicController.music_fadein()

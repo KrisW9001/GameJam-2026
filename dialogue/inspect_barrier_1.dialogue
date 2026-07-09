@@ -4,8 +4,9 @@ if GlobalVariables.haspass == false
 	Some weird writing is on all of them that I don't recognize. They won't budge at all.
 	Maybe there's something around here I can use to break them?
 	do CutsceneManager.endcutscene()
-if GlobalVariables.haspass == true
+if GlobalVariables.haspass2 == true
 	do sfx_success()
 	I held the key out towards the shields, and they both disappeared.
+	do get_tree().call_group("breakable_wall", "killwalls")
 	do CutsceneManager.endcutscene()
 => END

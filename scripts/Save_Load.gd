@@ -47,6 +47,10 @@ func _save():
 	SaveFileData.secretsfound = GameplayStats.secretsfound
 	
 	#secret flags
+	SaveFileData.artifact1 = GlobalVariables.artifact1
+	SaveFileData.artifact2 = GlobalVariables.artifact2
+	SaveFileData.artifact3 = GlobalVariables.artifact3
+	SaveFileData.artifact4 = GlobalVariables.artifact4
 	SaveFileData.zuliejournal = GlobalVariables.zuliejournal
 	SaveFileData.brookemeeting = GlobalVariables.brookemeeting
 	
@@ -95,6 +99,10 @@ func _load():
 		GameplayStats.secretsfound = SaveFileData.secretsfound
 		
 		#secret flags
+		GlobalVariables.artifact1 = SaveFileData.artifact1
+		GlobalVariables.artifact2 = SaveFileData.artifact2
+		GlobalVariables.artifact3 = SaveFileData.artifact3
+		GlobalVariables.artifact4 = SaveFileData.artifact4
 		GlobalVariables.zuliejournal = SaveFileData.zuliejournal
 		GlobalVariables.brookemeeting = SaveFileData.brookemeeting
 
@@ -172,8 +180,16 @@ func clear_save() -> void:
 func full_clear_save() -> void:
 	clear_save()
 	GlobalVariables.finishedgame = false
+	GlobalVariables.artifact1 = false
+	GlobalVariables.artifact2 = false
+	GlobalVariables.artifact3 = false
+	GlobalVariables.artifact4 = false
 	GlobalVariables.zuliejournal = false
 	GlobalVariables.brookemeeting = false
 	SaveFileData.finishedgame = false
+	SaveFileData.artifact1 = false
+	SaveFileData.artifact2 = false
+	SaveFileData.artifact3 = false
+	SaveFileData.artifact4 = false
 	SaveFileData.brookemeeting = false
 	SaveFileData.brookemeeting = false

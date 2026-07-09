@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2wqjrvgx1of7"]
 
-[ext_resource type="AudioStream" uid="uid://b0dv7o58i6lwu" path="res://audio/music/12-4-2016 - 1 (exploration theme).wav" id="1_nm08u"]
 [ext_resource type="Script" uid="uid://ccavm4ud5c7kl" path="res://scripts/music_controller.gd" id="1_wk4np"]
+[ext_resource type="AudioStream" uid="uid://bi2dw6y5ip58r" path="res://audio/music/12-4-2016 - 1 (exploration theme).ogg" id="2_nm08u"]
 
 [sub_resource type="Animation" id="Animation_nm08u"]
 length = 5.0
@@ -132,7 +132,7 @@ libraries/ = SubResource("AnimationLibrary_annk1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=700760971]
 process_mode = 3
-stream = ExtResource("1_nm08u")
+stream = ExtResource("2_nm08u")
 bus = &"Music"
 
 [node name="Timer" type="Timer" parent="." unique_id=1528921667]

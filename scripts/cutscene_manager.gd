@@ -15,6 +15,7 @@ var incut5: bool = false
 var incut6: bool = false
 var incut10: bool = false
 var incut13: bool = false
+var inartifact1: bool = false
 var part2: bool = false
 
 func _process(delta: float) -> void:
@@ -25,6 +26,9 @@ func _process(delta: float) -> void:
 	
 	if player_at_coords and incut13:
 		get_tree().call_group("Player", "idle_r")
+	
+	if player_at_coords and inartifact1:
+		artifact1_part2()
 	
 	if GlobalVariables.camera_position == GlobalVariables.lock_pos and incut1 and !part2:
 		#play next part of cutscene
@@ -94,6 +98,7 @@ func endcutscene() -> void:
 	incut1 = false
 	incut5 = false
 	incut6 = false
+	inartifact1 = false
 	part2 = false
 	SaveLoad._save()
 	GlobalVariables.player_goto_active = false
@@ -566,3 +571,36 @@ func cutscene14() -> void:
 	await penis_clock.timeout
 	TalkScenes.vagabond_talk.dialogue_resource = load("res://dialogue/vagabond_precredits.dialogue")
 	TalkScenes.vagabond_talk.start()
+
+#destroying the first artifact
+func artifact1_destroy() -> void:
+	GlobalVariables.cutscenemode = true
+	inartifact1 = true
+	GlobalVariables.player_goto_active = true
+	GlobalVariables.player_goto_coords = Vector2(485, 425)
+	get_tree().call_group("Player", "walk_up")
+
+func artifact1_part2() -> void:
+	inartifact1 = false
+	GlobalVariables.artifact1 = true
+	GlobalVariables.player_goto_active = false
+	get_tree().call_group("Player", "idle_up")
+	penis_clock.start(.5)
+	await penis_clock.timeout
+	get_tree().call_group("Player", "artifact_destroy_1")
+	penis_clock.start(1)
+	await penis_clock.timeout
+	get_tree().call_group("Player", "artifact_destroy_2")
+	TheCamera.dmg_shake()
+	penis_clock.start(.3)
+	await penis_clock.timeout
+	get_tree().call_group("artifact", "destroy")
+	penis_clock.start(.55)
+	await penis_clock.timeout
+	get_tree().call_group("room", "glitch_begone")
+	penis_clock.start(1)
+	await penis_clock.timeout
+	endcutscene()
+	
+	#do destroy animation 1 and play a sfx, then do part two before setting the artifact 1 variable to true and ending the cutscene
+	

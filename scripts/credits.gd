@@ -1,31 +1,35 @@
 extends Node2D
-@onready var anim_player: AnimationPlayer = $visuals/AnimationPlayer
+@onready var marcus_anim: AnimationPlayer = $visuals/marcus_anim
+@onready var vagabond_anim: AnimationPlayer = $visuals/vagabond_anim
+@onready var zulie_anim: AnimationPlayer = $visuals/zulie_anim
 @onready var credits_anim: AnimationPlayer = $"actual credits/CreditsAnim"
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	anim_player.play("RESET")
+	marcus_anim.play("RESET")
+	vagabond_anim.play("RESET")
+	zulie_anim.play("RESET")
 	GlobalVariables.cameralock = true
 	GlobalVariables.lock_pos = Vector2(0,0)
 
 #declaring animations for the character visuals
 func vagabond_appear() -> void:
-	anim_player.play("vagabond_appear")
+	vagabond_anim.play("appear")
 
-func vagabond_dissapear() -> void:
-	anim_player.play("vagabond_dissapear")
+func vagabond_disappear() -> void:
+	vagabond_anim.play("disappear")
 
 func marcus_appear() -> void:
-	anim_player.play("marcus_appear")
+	marcus_anim.play("appear")
 
-func marcus_dissapear() -> void:
-	anim_player.play("marcus_dissapear")
+func marcus_disappear() -> void:
+	marcus_anim.play("disappear")
 
 func zulie_appear() -> void:
-	anim_player.play("zulie_appear")
+	zulie_anim.play("appear")
 
-func zulie_dissapear() -> void:
-	anim_player.play("zulie_dissapear")
+func zulie_disappear() -> void:
+	zulie_anim.play("disappear")
 
 func show_title() -> void:
 	credits_anim.play("show_title")
@@ -33,7 +37,7 @@ func show_title() -> void:
 func _on_credits_anim_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
 		"show_title":
-			anim_player.play("RESET")
+			marcus_anim.play("RESET")
 			#await get_tree().create_timer(1).timeout
 			timer.start(1)
 			await timer.timeout
